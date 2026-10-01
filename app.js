@@ -1,3 +1,4 @@
+const OFFLINE_PACK_SOURCE = "./data/vocab-3000.json";
 const LEVEL_SOURCE = "https://raw.githubusercontent.com/mankhb2k/Vocabulary-English/main/json/Vocabulary-levels.json";
 const TOPIC_SOURCE = "https://raw.githubusercontent.com/mankhb2k/Vocabulary-English/main/json/Vocabulary-topics.json";
 const DICTIONARY_API = "https://api.dictionaryapi.dev/api/v2/entries/en/";
@@ -92,6 +93,8 @@ state.stats = { ...defaultState.stats, ...(state.stats || {}) };
 
 let vocab = [];
 let topics = [];
+let offlinePack = null;
+let offlineByWord = new Map();
 let currentSession = [];
 let currentIndex = 0;
 let score = 0;
@@ -185,19 +188,85 @@ function attachTopics(topicData) {
   if (!topics.some(t => t.id === state.selectedTopicId)) state.selectedTopicId = topics[0].id;
 }
 
-async function loadVocabulary() {
-  try {
-    const [levelData, topicData] = await Promise.all([fetchJson(LEVEL_SOURCE), fetchJson(TOPIC_SOURCE)]);
-    vocab = buildCoreVocabulary(levelData);
-    if (vocab.length < 100) throw new Error("Too few words");
-    attachTopics(topicData);
-  } catch (e) {
-    vocab = Object.keys(OFFLINE_MEANINGS).map(word => ({word,level:"A1",topics:[1]}));
-    topics = [{id:1,name:"Từ cơ bản offline",words:vocab.map(x=>keyOf(x.word))}];
-    state.selectedTopicId = 1;
+function applyOfflinePack(pack) {
+  offlinePack = pack;
+  offlineByWord = new Map((pack?.words || []).map(item => [keyOf(item.word), item]));
+  vocab = (pack?.words || []).map(item => ({
+    word: item.word,
+    level: item.level || "A1",
+    topics: Array.isArray(item.topicIds) ? item.topicIds : []
+  }));
+  topics = (pack?.topics || []).map(topic => ({
+    id: topic.id,
+    name: topic.name || topic.nameVi || `Topic ${topic.id}`,
+    nameVi: topic.nameVi || "",
+    words: (topic.words || []).map(keyOf)
+  }));
+  if (!topics.length && vocab.length) {
+    topics = [{id:99,name:"Offline Vocabulary",nameVi:"Từ vựng offline",words:vocab.map(x=>keyOf(x.word))}];
   }
+  if (topics.length && !topics.some(t => t.id === state.selectedTopicId)) {
+    state.selectedTopicId = topics[0].id;
+  }
+}
+
+async function loadOfflinePack() {
+  try {
+    const response = await fetch(OFFLINE_PACK_SOURCE, {cache:"no-cache"});
+    if (!response.ok) return null;
+    const pack = await response.json();
+    if (!Array.isArray(pack?.words) || !pack.words.length) return null;
+    applyOfflinePack(pack);
+    return pack;
+  } catch (_) {
+    return null;
+  }
+}
+
+function updateOfflinePackStatus() {
+  const card = $("offlinePackCard");
+  if (!card) return;
+  const count = offlinePack?.words?.length || 0;
+  const full = count >= 2500 && offlinePack?.meta?.fullOffline !== false;
+  card.classList.toggle("ready", full);
+  card.classList.toggle("seed", !full);
+  $("offlinePackCount").textContent = `${count}/3000`;
+  if (full) {
+    $("offlinePackStatus").textContent = "Gói offline đã sẵn sàng";
+    $("offlinePackHint").textContent = "Nghĩa, IPA, loại từ và ví dụ được đọc từ file local.";
+  } else if (count) {
+    $("offlinePackStatus").textContent = "Đang dùng gói seed";
+    $("offlinePackHint").textContent = "Deploy bằng GitHub Actions để tự build gói 3000 từ đầy đủ.";
+  } else {
+    $("offlinePackStatus").textContent = "Chưa có gói offline";
+    $("offlinePackHint").textContent = navigator.onLine ? "App sẽ tạm dùng nguồn online." : "Cần build data/vocab-3000.json trước.";
+  }
+}
+
+async function loadVocabulary() {
+  const localPack = await loadOfflinePack();
+  const localCount = localPack?.words?.length || 0;
+
+  if (localCount < 2500 && navigator.onLine) {
+    try {
+      const [levelData, topicData] = await Promise.all([fetchJson(LEVEL_SOURCE), fetchJson(TOPIC_SOURCE)]);
+      vocab = buildCoreVocabulary(levelData);
+      if (vocab.length < 100) throw new Error("Too few words");
+      attachTopics(topicData);
+    } catch (_) {
+      // Keep the local seed if online sources are temporarily unavailable.
+    }
+  }
+
+  if (!vocab.length) {
+    vocab = Object.keys(OFFLINE_MEANINGS).map(word => ({word,level:"A1",topics:[99]}));
+    topics = [{id:99,name:"Offline seed",nameVi:"Từ cơ bản offline",words:vocab.map(x=>keyOf(x.word))}];
+    state.selectedTopicId = 99;
+  }
+
   migrateSrs();
   renderHome();
+  updateOfflinePackStatus();
 }
 
 async function translateText(text, cacheBucket, cacheKey) {
@@ -228,6 +297,8 @@ async function translateText(text, cacheBucket, cacheKey) {
 
 async function translateWord(word) {
   const k = keyOf(word);
+  const local = offlineByWord.get(k);
+  if (local?.meaning) return local.meaning;
   if (OFFLINE_MEANINGS[k]) return OFFLINE_MEANINGS[k];
   if (state.meaningCache[k]) return state.meaningCache[k];
   const value = await translateText(word, "meaningCache", k);
@@ -241,8 +312,22 @@ function normalizeAudioUrl(url) {
 
 async function getLexicalData(word) {
   const k = keyOf(word);
+  const local = offlineByWord.get(k);
+  if (local) {
+    const cached = state.lexCache[k] || {};
+    return {
+      ipa: local.ipa || cached.ipa || "",
+      us: cached.us || "",
+      uk: cached.uk || "",
+      generic: cached.generic || "",
+      pos: local.pos || cached.pos || "",
+      definition: local.meaning || cached.definition || "",
+      example: local.example || cached.example || "",
+      exampleVi: local.exampleVi || ""
+    };
+  }
   if (state.lexCache[k]) return state.lexCache[k];
-  const result = {ipa:"",us:"",uk:"",generic:"",pos:"",definition:"",example:""};
+  const result = {ipa:"",us:"",uk:"",generic:"",pos:"",definition:"",example:"",exampleVi:""};
   if (!navigator.onLine) return result;
   try {
     const r = await fetch(DICTIONARY_API + encodeURIComponent(word), {cache:"force-cache"});
@@ -275,6 +360,35 @@ async function getLexicalData(word) {
   return result;
 }
 
+
+async function fetchOnlineAudioData(word) {
+  const k = keyOf(word);
+  const cached = state.lexCache[k] || {};
+  if (cached.us || cached.uk || cached.generic) return cached;
+  if (!navigator.onLine) return cached;
+  const result = {...cached};
+  try {
+    const r = await fetch(DICTIONARY_API + encodeURIComponent(word), {cache:"force-cache"});
+    if (!r.ok) return result;
+    const data = await r.json();
+    for (const entry of (Array.isArray(data) ? data : [])) {
+      if (!result.ipa && entry.phonetic) result.ipa = entry.phonetic;
+      for (const p of entry.phonetics || []) {
+        if (!result.ipa && p.text) result.ipa = p.text;
+        const audio = normalizeAudioUrl(p.audio);
+        if (!audio) continue;
+        const low = audio.toLowerCase();
+        if (!result.us && (low.includes("-us.") || low.includes("_us.") || low.includes("us.mp3"))) result.us = audio;
+        else if (!result.uk && (low.includes("-uk.") || low.includes("_uk.") || low.includes("uk.mp3"))) result.uk = audio;
+        else if (!result.generic) result.generic = audio;
+      }
+    }
+    state.lexCache[k] = result;
+    saveState();
+  } catch (_) {}
+  return result;
+}
+
 function ttsSpeak(text) {
   if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
@@ -289,7 +403,10 @@ function playUrl(url, fallbackWord) {
   audio.play().catch(() => ttsSpeak(fallbackWord));
 }
 async function playBestPronunciation(item, dialect="best") {
-  const p = await getLexicalData(item.word);
+  let p = await getLexicalData(item.word);
+  if (!(p.us || p.uk || p.generic) && navigator.onLine) {
+    p = {...p, ...(await fetchOnlineAudioData(item.word))};
+  }
   if (dialect === "us" && p.us) return playUrl(p.us,item.word);
   if (dialect === "uk" && p.uk) return playUrl(p.uk,item.word);
   if (dialect === "generic" && p.generic) return playUrl(p.generic,item.word);
@@ -297,7 +414,7 @@ async function playBestPronunciation(item, dialect="best") {
 }
 
 function findItem(k) { return vocab.find(x => keyOf(x.word) === k); }
-function topicLabel(topic) { return TOPIC_VI[topic.id] || topic.name; }
+function topicLabel(topic) { return topic.nameVi || TOPIC_VI[topic.id] || topic.name; }
 function getMasteredSet() { return new Set(state.mastered || []); }
 
 function srsFor(word) {
@@ -411,6 +528,7 @@ function renderBrowseMode() {
 }
 function renderHome() {
   todayStatsReset();
+  updateOfflinePackStatus();
   const mastered = getMasteredSet();
   const masteredCount = vocab.length ? vocab.filter(x=>mastered.has(keyOf(x.word))).length : mastered.size;
   $("masteredTop").textContent = masteredCount;
@@ -595,9 +713,16 @@ async function showWordDetail(item,card,isCorrect) {
   const example = item.lex?.example || `This sentence helps me remember the word "${item.word}".`;
   $("detailExampleEn").textContent=example;
   const ek = `${keyOf(item.word)}::${example}`;
-  $("detailExampleVi").textContent="Đang dịch ví dụ…";
-  const vi = state.exampleViCache[ek] || await translateText(example,"exampleViCache",ek);
-  $("detailExampleVi").textContent=vi || "Chưa có bản dịch ví dụ.";
+  const localExampleVi = item.lex?.exampleVi || offlineByWord.get(keyOf(item.word))?.exampleVi || "";
+  if (localExampleVi) {
+    $("detailExampleVi").textContent = localExampleVi;
+  } else if (navigator.onLine) {
+    $("detailExampleVi").textContent="Đang dịch ví dụ…";
+    const vi = state.exampleViCache[ek] || await translateText(example,"exampleViCache",ek);
+    $("detailExampleVi").textContent=vi || `Nghĩa từ: ${item.meaning}`;
+  } else {
+    $("detailExampleVi").textContent=`Nghĩa từ: ${item.meaning}`;
+  }
 
   const interval = Math.max(0,Math.round((new Date(card.due+"T00:00:00")-new Date(localDateString()+"T00:00:00"))/86400000));
   $("srsNote").textContent = isCorrect

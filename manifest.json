@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3",
+  "name": "English 3000 V3.1",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "Học 3000 từ tiếng Anh cơ bản theo chủ đề với IPA, audio và spaced repetition."
+  "description": "English 3000 offline-first: nghĩa Việt, IPA, ví dụ, chủ đề và SRS."
 }

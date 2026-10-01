@@ -1,17 +1,30 @@
-const CACHE = "english-3000-v3-shell";
-const DATA_CACHE = "english-3000-v3-data";
-const ASSETS = ["./","./index.html","./style.css","./app.js","./manifest.json"];
+const CACHE = "english-3000-v3-1-shell";
+const DATA_CACHE = "english-3000-v3-1-data";
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./style.css",
+  "./app.js",
+  "./manifest.json",
+  "./data/vocab-3000.json"
+];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
+  event.waitUntil(
+    caches.open(CACHE).then(async cache => {
+      for (const asset of ASSETS) {
+        try { await cache.add(asset); } catch (_) {}
+      }
+    })
+  );
   self.skipWaiting();
 });
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.filter(k => ![CACHE,DATA_CACHE].includes(k)).map(k => caches.delete(k))
-    ))
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => ![CACHE,DATA_CACHE].includes(k)).map(k => caches.delete(k)))
+    )
   );
   self.clients.claim();
 });
@@ -23,11 +36,13 @@ self.addEventListener("fetch", event => {
 
   if (url.origin === self.location.origin) {
     event.respondWith(
-      caches.match(req).then(cached => cached || fetch(req).then(res => {
-        const clone = res.clone();
-        caches.open(CACHE).then(c => c.put(req,clone));
-        return res;
-      }))
+      caches.match(req).then(cached =>
+        cached || fetch(req).then(res => {
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(req, clone)).catch(()=>{});
+          return res;
+        })
+      )
     );
     return;
   }
@@ -40,11 +55,13 @@ self.addEventListener("fetch", event => {
 
   if (cacheableHosts.includes(url.hostname)) {
     event.respondWith(
-      fetch(req).then(res => {
-        const clone = res.clone();
-        caches.open(DATA_CACHE).then(c => c.put(req,clone)).catch(()=>{});
-        return res;
-      }).catch(() => caches.match(req))
+      caches.match(req).then(cached =>
+        cached || fetch(req).then(res => {
+          const clone = res.clone();
+          caches.open(DATA_CACHE).then(c => c.put(req, clone)).catch(()=>{});
+          return res;
+        })
+      )
     );
   }
 });
