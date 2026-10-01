@@ -394,3 +394,46 @@ body.result-mode .app{padding-top:max(12px,env(safe-area-inset-top));padding-bot
   .result-card-v2 h2{font-size:1.38rem}
   .result-word-row{grid-template-columns:29px minmax(0,1fr) auto;padding:9px}
 }
+
+
+/* ===== V3.2 Adaptive Quiz ===== */
+.adaptive-mode-grid .adaptive-card{
+  border-color:rgba(37,99,235,.35);
+  background:linear-gradient(135deg,rgba(37,99,235,.09),rgba(124,58,237,.07));
+}
+.question-badges{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.adaptive-stage-badge{
+  display:inline-flex;align-items:center;padding:6px 9px;border-radius:999px;
+  font-size:.7rem;font-weight:900;background:rgba(37,99,235,.10);color:var(--primary);
+}
+.adaptive-stage-badge.stage-learning{background:rgba(245,158,11,.12);color:#b45309}
+.adaptive-stage-badge.stage-remembering{background:rgba(124,58,237,.11);color:#7c3aed}
+.adaptive-stage-badge.stage-strong{background:rgba(22,163,74,.10);color:var(--success)}
+.adaptive-stage-badge.stage-weak{background:rgba(220,38,38,.09);color:var(--danger)}
+.typing-box{
+  margin-top:12px;padding:14px;border:1px solid var(--line);border-radius:17px;background:var(--bg)
+}
+.typing-box label{display:block;font-size:.78rem;font-weight:850;color:var(--muted);margin-bottom:8px}
+.typing-input-row{display:grid;grid-template-columns:1fr auto;gap:8px}
+.typing-input-row input{
+  min-width:0;border:1px solid var(--line);background:var(--card);color:var(--text);
+  border-radius:14px;padding:13px 14px;font-size:1.05rem;font-weight:750;outline:none
+}
+.typing-input-row input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.typing-input-row input.correct{border-color:var(--success);background:rgba(22,163,74,.08)}
+.typing-input-row input.wrong{border-color:var(--danger);background:rgba(220,38,38,.07)}
+.typing-check-btn{width:auto;margin:0;min-width:92px;padding-inline:14px}
+.typing-hint-btn{
+  border:0;background:transparent;color:var(--primary);font-weight:800;padding:9px 3px 2px;margin-top:5px
+}
+.typing-hint-text{min-height:20px;margin:3px 0 0;font-size:.82rem;font-weight:700}
+.answer.smart-distractor{position:relative}
+.quiz-mode-chip{
+  display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;
+  background:var(--bg);color:var(--muted);font-size:.68rem;font-weight:850
+}
+.adaptive-info-card b{color:var(--text)}
+@media(max-width:420px){
+  .typing-input-row{grid-template-columns:1fr}
+  .typing-check-btn{width:100%}
+}

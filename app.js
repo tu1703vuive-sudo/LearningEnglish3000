@@ -23,13 +23,13 @@ function addDaysString(dateString, days) {
 }
 
 const defaultState = {
-  dataVersion:"3.1.4-clean-3pdf",
+  dataVersion:"3.2-adaptive",
   selectedStage:1,
   selectedTopicId:1,
   selectedLevel:"A1",
   browseMode:"topic",
   sessionSize:10,
-  mode:"envi",
+  mode:"adaptive",
   mastered:[],
   wrong:{},
   seen:{},
@@ -38,16 +38,17 @@ const defaultState = {
   lexCache:{},
   exampleViCache:{},
   srs:{},
+  adaptive:{},
   stats:{ lastStudyDate:"", streak:0, totalAnswers:0, todayDate:"", todayAnswers:0, todayCorrect:0 },
   dark:false
 };
 
 let state = { ...defaultState, ...JSON.parse(localStorage.getItem("english3000State") || "{}") };
-for (const k of ["wrong","seen","meaningCache","pronCache","lexCache","exampleViCache","srs"]) state[k] ||= {};
+for (const k of ["wrong","seen","meaningCache","pronCache","lexCache","exampleViCache","srs","adaptive"]) state[k] ||= {};
 state.mastered ||= [];
 state.stats = { ...defaultState.stats, ...(state.stats || {}) };
-if (state.dataVersion !== "3.1.4-clean-3pdf") {
-  state.dataVersion = "3.1.4-clean-3pdf";
+if (state.dataVersion !== "3.2-adaptive") {
+  state.dataVersion = "3.2-adaptive";
   state.selectedTopicId = 1;
   if (state.browseMode === "level") state.browseMode = "topic";
 }
@@ -68,6 +69,8 @@ let answered = false;
 let sessionKind = "normal";
 let meaningJobs = new Map();
 let sessionPreloadToken = 0;
+let currentQuestionMode = "envi";
+let typingHintUsed = false;
 
 function saveState() { localStorage.setItem("english3000State", JSON.stringify(state)); }
 function showView(id) {
@@ -277,7 +280,21 @@ function dueKeys() {
     .filter(([,v]) => v?.due && v.due <= today)
     .map(([k]) => k);
 }
-function recordAnswer(item, isCorrect) {
+function adaptiveRecordFor(word) {
+  const k = keyOf(word);
+  if (!state.adaptive[k]) {
+    state.adaptive[k] = {
+      streak:0,
+      totalCorrect:0,
+      totalWrong:0,
+      lastMode:"",
+      byMode:{envi:{c:0,w:0},vien:{c:0,w:0},listen:{c:0,w:0},type:{c:0,w:0}}
+    };
+  }
+  return state.adaptive[k];
+}
+
+function recordAnswer(item, isCorrect, quizMode=currentQuestionMode) {
   const k = keyOf(item.word);
   const today = localDateString();
   registerStudyDay();
@@ -299,6 +316,22 @@ function recordAnswer(item, isCorrect) {
   }
   card.last = today;
   state.srs[k] = card;
+
+  const adaptive = adaptiveRecordFor(item.word);
+  adaptive.byMode[quizMode] ||= {c:0,w:0};
+  if (isCorrect) {
+    adaptive.streak = (adaptive.streak || 0) + 1;
+    adaptive.totalCorrect = (adaptive.totalCorrect || 0) + 1;
+    adaptive.byMode[quizMode].c = (adaptive.byMode[quizMode].c || 0) + 1;
+  } else {
+    adaptive.streak = 0;
+    adaptive.totalWrong = (adaptive.totalWrong || 0) + 1;
+    adaptive.byMode[quizMode].w = (adaptive.byMode[quizMode].w || 0) + 1;
+  }
+  adaptive.lastMode = quizMode;
+  adaptive.lastResult = isCorrect ? "correct" : "wrong";
+  adaptive.lastAt = Date.now();
+
   state.seen[k] = (state.seen[k] || 0) + 1;
   state.stats.totalAnswers = (state.stats.totalAnswers || 0) + 1;
   state.stats.todayAnswers = (state.stats.todayAnswers || 0) + 1;
@@ -415,19 +448,42 @@ function uniqueByWord(items) {
     return true;
   });
 }
+function takeUnique(target, source, count, used) {
+  for (const item of source) {
+    if (target.length >= count) break;
+    const k = keyOf(item.word);
+    if (used.has(k)) continue;
+    used.add(k);
+    target.push(item);
+  }
+}
 function pickSmartSessionWords() {
   const pool = getActivePool();
+  const n = Math.min(state.sessionSize,pool.length);
+  if (!n) return [];
   const due = dueInPool(pool).sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0));
   const fresh = shuffled(newInPool(pool));
   const weak = weakInPool(pool).sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0));
   const rest = [...pool].sort((a,b)=>priorityScore(b)-priorityScore(a));
-  return uniqueByWord([...due,...fresh,...weak,...rest]).slice(0,Math.min(state.sessionSize,pool.length));
+
+  const dueGoal = Math.round(n*.4);
+  const newGoal = Math.round(n*.4);
+  const weakGoal = Math.max(0,n-dueGoal-newGoal);
+  const result=[], used=new Set();
+  takeUnique(result,due,dueGoal,used);
+  const afterDue=result.length;
+  takeUnique(result,fresh,afterDue+newGoal,used);
+  const afterNew=result.length;
+  takeUnique(result,weak,afterNew+weakGoal,used);
+  takeUnique(result,[...due,...fresh,...weak,...rest],n,used);
+  return result.slice(0,n);
 }
 function pickNewWords() {
   const pool = getActivePool();
   return shuffled(newInPool(pool)).slice(0,Math.min(state.sessionSize,pool.length));
 }
 function modeLabel() {
+  if (state.mode === "adaptive") return "Adaptive";
   return state.mode === "vien" ? "Việt → Anh" : state.mode === "listen" ? "Nghe → Nghĩa" : "Anh → Việt";
 }
 function updateSettingsSummary() {
@@ -439,14 +495,21 @@ function renderStartRecommendation() {
   const due = dueInPool(pool).length;
   const fresh = newInPool(pool).length;
   const weak = weakInPool(pool).length;
-  const takeDue = Math.min(due,state.sessionSize);
-  const takeNew = Math.min(fresh,Math.max(0,state.sessionSize-takeDue));
-  const takeWeak = Math.min(weak,Math.max(0,state.sessionSize-takeDue-takeNew));
+  const preview = pickSmartSessionWords();
+  const dueSet = new Set(dueInPool(pool).map(x=>keyOf(x.word)));
+  const newSet = new Set(newInPool(pool).map(x=>keyOf(x.word)));
+  let takeDue=0,takeNew=0,takeWeak=0;
+  for (const item of preview) {
+    const k=keyOf(item.word);
+    if (dueSet.has(k)) takeDue++;
+    else if (newSet.has(k)) takeNew++;
+    else takeWeak++;
+  }
   const known = pool.filter(item=>getMasteredSet().has(keyOf(item.word))).length;
   const pct = pool.length ? Math.round(known/pool.length*100) : 0;
 
   $("continueTitle").textContent = `Học tiếp ${Math.min(state.sessionSize,pool.length || state.sessionSize)} từ`;
-  $("continueSubtitle").textContent = `${activeContextName()} · ${modeLabel()}`;
+  $("continueSubtitle").textContent = `${activeContextName()} · Adaptive · 40% ôn · 40% mới · 20% yếu`;
   $("mixDue").textContent = takeDue;
   $("mixNew").textContent = takeNew;
   $("mixWeak").textContent = takeWeak;
@@ -602,21 +665,92 @@ async function startWrongReview() {
   await prepareSession(words,"wrong");
 }
 
+function adaptiveStage(item) {
+  const k = keyOf(item.word);
+  const card = state.srs[k];
+  const a = state.adaptive[k];
+  const wrong = state.wrong[k] || 0;
+  if (wrong >= 2 || a?.lastResult === "wrong") return "weak";
+  if (!card && !(state.seen[k] > 0)) return "new";
+  const box = card?.box || 0;
+  if (box <= 1) return "learning";
+  if (box <= 3) return "remembering";
+  return "strong";
+}
+function adaptiveStageText(stage) {
+  return ({new:"Mới",learning:"Đang học",remembering:"Đang nhớ",strong:"Gần thuộc",weak:"Từ yếu"})[stage] || "Adaptive";
+}
+function modeSuccessRate(item, mode) {
+  const rec = state.adaptive[keyOf(item.word)]?.byMode?.[mode];
+  if (!rec) return null;
+  const total=(rec.c||0)+(rec.w||0);
+  return total ? (rec.c||0)/total : null;
+}
+function chooseAdaptiveQuestionMode(item,index=0) {
+  if (sessionKind !== "smart" && state.mode !== "adaptive") return state.mode;
+  const stage = adaptiveStage(item);
+  const last = state.adaptive[keyOf(item.word)]?.lastMode || "";
+  if (stage === "new") return "envi";
+  if (stage === "weak") return last === "envi" ? "vien" : "envi";
+  if (stage === "learning") return last === "vien" ? "envi" : "vien";
+  if (stage === "remembering") {
+    const listenRate = modeSuccessRate(item,"listen");
+    if (listenRate === null || listenRate < .8) return "listen";
+    return index % 2 ? "vien" : "listen";
+  }
+  // Strong words must be recalled, not recognized. Typing is the default.
+  const typeRate = modeSuccessRate(item,"type");
+  if (typeRate === null || typeRate >= .6) return "type";
+  return "listen";
+}
+function smartDistractorScore(candidate,item) {
+  let score=0;
+  const p1=String(candidate.pos||"").split(',')[0].trim();
+  const p2=String(item.pos||"").split(',')[0].trim();
+  if (p1 && p2 && p1===p2) score += 6;
+  const topics1=new Set(candidate.topics||[]);
+  const shared=(item.topics||[]).filter(t=>topics1.has(t)).length;
+  score += shared*5;
+  const lenDiff=Math.abs(String(candidate.word).length-String(item.word).length);
+  score += Math.max(0,3-Math.floor(lenDiff/3));
+  const candidateSeen=state.seen[keyOf(candidate.word)]||0;
+  if (candidateSeen>0) score += 1;
+  return score + Math.random()*1.5;
+}
+function normalizeTypedAnswer(value) {
+  return String(value||"").trim().toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ");
+}
+function typingIsCorrect(value,item) {
+  const typed=normalizeTypedAnswer(value);
+  const expected=normalizeTypedAnswer(item.word);
+  if (typed===expected) return true;
+  // Treat hyphen/space variants as equivalent for phrases such as post-it / post it.
+  return typed.replace(/[-\s]/g,"") === expected.replace(/[-\s]/g,"");
+}
+
 function makeDistractors(item) {
-  let pool = currentSession.filter(x =>
-    x && x.word !== item.word && x.meaning && x.meaning !== item.meaning
-  );
-  if (pool.length >= 3) return shuffled(pool).slice(0,3);
+  const all = vocab
+    .filter(x=>keyOf(x.word)!==keyOf(item.word))
+    .map(x=>({ ...x, meaning: x.meaning || cachedMeaningFor(x) }))
+    .filter(x=>x.meaning && x.meaning!==item.meaning);
 
-  const fallback = vocab
-    .filter(x=>x.word!==item.word)
-    .map(x=>({ ...x, meaning: cachedMeaningFor(x) }))
-    .filter(x=>x.meaning && x.meaning!==item.meaning)
-    .slice(0,80);
+  // Prefer same topic + same part of speech. This makes recognition questions
+  // substantially harder than random unrelated distractors.
+  const ranked = all
+    .map(x=>({item:x,score:smartDistractorScore(x,item)}))
+    .sort((a,b)=>b.score-a.score)
+    .map(x=>x.item);
 
-  return shuffled([...pool,...fallback]).filter((x,i,a)=>
-    a.findIndex(y=>keyOf(y.word)===keyOf(x.word))===i
-  ).slice(0,3);
+  const result=[];
+  const usedMeanings=new Set([String(item.meaning).trim().toLowerCase()]);
+  for (const x of ranked) {
+    const m=String(x.meaning).trim().toLowerCase();
+    if (usedMeanings.has(m)) continue;
+    usedMeanings.add(m);
+    result.push(x);
+    if (result.length===3) break;
+  }
+  return result;
 }
 
 function resetPronunciationUi(conceal) {
@@ -661,6 +795,24 @@ function addAnswer(label,isCorrect,item) {
   b.onclick=()=>chooseAnswer(b,isCorrect,item);
   $("answers").appendChild(b);
 }
+function setAdaptiveBadge(item) {
+  const badge=$("adaptiveStageLabel");
+  if (!badge) return;
+  const stage=adaptiveStage(item);
+  badge.textContent = state.mode === "adaptive" ? adaptiveStageText(stage) : modeLabel();
+  badge.className = "adaptive-stage-badge " + (stage === "learning" ? "stage-learning" : stage === "remembering" ? "stage-remembering" : stage === "strong" ? "stage-strong" : stage === "weak" ? "stage-weak" : "");
+}
+function resetTypingUi() {
+  typingHintUsed=false;
+  $("typingBox")?.classList.add("hidden");
+  if ($("typingAnswerInput")) {
+    $("typingAnswerInput").value="";
+    $("typingAnswerInput").disabled=false;
+    $("typingAnswerInput").classList.remove("correct","wrong");
+  }
+  if ($("checkTypingBtn")) $("checkTypingBtn").disabled=false;
+  if ($("typingHintText")) $("typingHintText").textContent="";
+}
 function renderQuestion() {
   answered=false;
   $("feedback").className="feedback feedback-banner";
@@ -668,38 +820,48 @@ function renderQuestion() {
   $("wordDetail").classList.add("hidden");
   $("nextBtn").classList.add("hidden");
   $("nextBar")?.classList.add("hidden");
+  resetTypingUi();
 
   const item=currentSession[currentIndex];
   if (!item?.meaning) {
     ensureQuestionWindow(currentIndex).then(()=>renderQuestion()).catch(()=>{});
     return;
   }
+  currentQuestionMode = chooseAdaptiveQuestionMode(item,currentIndex);
   const total=currentSession.length;
   $("quizProgressBar").style.width=`${currentIndex/total*100}%`;
   $("quizProgressText").textContent=`${currentIndex+1}/${total}`;
   $("scoreValue").textContent=score;
-  $("contextLabel").textContent=sessionKind==="due" ? "Ôn đến hạn" : sessionKind==="wrong" ? "Ôn từ sai" : sessionKind==="new" ? "Từ mới" : sessionKind==="smart" ? "Học tiếp" : activeContextName();
+  $("contextLabel").textContent=sessionKind==="due" ? "Ôn đến hạn" : sessionKind==="wrong" ? "Ôn từ sai" : sessionKind==="new" ? "Từ mới" : sessionKind==="smart" ? "Adaptive" : activeContextName();
   $("posLabel").textContent=item.pos || item.lex?.pos || "word";
+  setAdaptiveBadge(item);
   $("answers").innerHTML="";
-  $("listenMainBtn").classList.toggle("hidden",state.mode!=="listen");
+  $("listenMainBtn").classList.toggle("hidden",currentQuestionMode!=="listen");
 
   const options=shuffled([item,...makeDistractors(item)]);
-  if (state.mode==="envi") {
+  if (currentQuestionMode==="envi") {
     $("promptLabel").textContent="Chọn nghĩa tiếng Việt đúng";
     $("questionWord").textContent=item.word;
     options.forEach(opt=>addAnswer(opt.meaning,opt.word===item.word,item));
     fillPronunciationUi(item,true);
-  } else if (state.mode==="vien") {
+  } else if (currentQuestionMode==="vien") {
     $("promptLabel").textContent="Chọn từ tiếng Anh đúng";
     $("questionWord").textContent=item.meaning;
     options.forEach(opt=>addAnswer(opt.word,opt.word===item.word,item));
     fillPronunciationUi(item,false);
-  } else {
+  } else if (currentQuestionMode==="listen") {
     $("promptLabel").textContent="Nghe rồi chọn nghĩa đúng";
     $("questionWord").textContent="🎧";
     options.forEach(opt=>addAnswer(opt.meaning,opt.word===item.word,item));
     fillPronunciationUi(item,false);
-    setTimeout(()=>playBestPronunciation(item),280);
+    setTimeout(()=>playBestPronunciation(item),260);
+  } else {
+    $("promptLabel").textContent="Nhìn nghĩa và tự gõ từ tiếng Anh";
+    $("questionWord").textContent=item.meaning;
+    $("answers").innerHTML="";
+    $("typingBox").classList.remove("hidden");
+    fillPronunciationUi(item,false);
+    setTimeout(()=>$("typingAnswerInput")?.focus(),120);
   }
   $("listenMainBtn").onclick=()=>playBestPronunciation(item);
 }
@@ -732,8 +894,8 @@ async function chooseAnswer(button,isCorrect,item) {
   const buttons=[...document.querySelectorAll(".answer")];
   buttons.forEach(btn=>btn.disabled=true);
 
-  if (state.mode!=="envi") revealPronunciation(item);
-  const correctText=state.mode==="vien" ? item.word : item.meaning;
+  if (currentQuestionMode!=="envi") revealPronunciation(item);
+  const correctText=currentQuestionMode==="vien" ? item.word : item.meaning;
 
   if (isCorrect) {
     score++;
@@ -749,13 +911,56 @@ async function chooseAnswer(button,isCorrect,item) {
     $("feedback").textContent="✕ Chưa đúng — đáp án đúng đã được đánh dấu";
   }
 
-  const card=recordAnswer(item,isCorrect);
+  const card=recordAnswer(item,isCorrect,currentQuestionMode);
   $("scoreValue").textContent=score;
   $("nextBtn").classList.remove("hidden");
   $("nextBar")?.classList.remove("hidden");
   $("nextBtn").textContent=currentIndex===currentSession.length-1 ? "Xem kết quả" : "Tiếp tục";
   showWordDetail(item,card,isCorrect).catch(()=>{});
 }
+function submitTypingAnswer() {
+  if (answered) return;
+  const item=currentSession[currentIndex];
+  const input=$("typingAnswerInput");
+  const value=input?.value || "";
+  if (!value.trim()) {
+    $("typingHintText").textContent="Hãy nhập một đáp án trước.";
+    input?.focus();
+    return;
+  }
+  const ok=typingIsCorrect(value,item);
+  answered=true;
+  input.disabled=true;
+  $("checkTypingBtn").disabled=true;
+  input.classList.add(ok ? "correct" : "wrong");
+  revealPronunciation(item);
+  if (ok) {
+    score++;
+    $("feedback").className="feedback feedback-banner ok";
+    $("feedback").textContent="✓ Chính xác";
+  } else {
+    wrongThisSession.push(item);
+    $("feedback").className="feedback feedback-banner bad";
+    $("feedback").textContent=`✕ Đáp án đúng: ${item.word}`;
+  }
+  const card=recordAnswer(item,ok,"type");
+  $("scoreValue").textContent=score;
+  $("nextBtn").classList.remove("hidden");
+  $("nextBar")?.classList.remove("hidden");
+  $("nextBtn").textContent=currentIndex===currentSession.length-1 ? "Xem kết quả" : "Tiếp tục";
+  showWordDetail(item,card,ok).catch(()=>{});
+}
+function showTypingHint() {
+  if (answered) return;
+  const item=currentSession[currentIndex];
+  const word=String(item?.word||"");
+  if (!word) return;
+  typingHintUsed=true;
+  const parts=word.split(/\s+/).map(part=>part ? part[0] + "•".repeat(Math.max(0,part.length-1)) : "");
+  $("typingHintText").textContent=`Gợi ý: ${parts.join(" ")} · ${word.length} ký tự`;
+  $("typingAnswerInput")?.focus();
+}
+
 async function nextQuestion() {
   if (!answered) return;
   if (currentIndex < currentSession.length-1) {
@@ -875,6 +1080,7 @@ function applyTheme() {
   $("themeBtn").textContent=state.dark ? "🌙":"☀️";
 }
 function restoreChoices() {
+  if (!["adaptive","envi","vien","listen"].includes(state.mode)) state.mode="adaptive";
   document.querySelectorAll("#sizeChoices .choice").forEach(x=>x.classList.toggle("active",Number(x.dataset.size)===state.sessionSize));
   document.querySelectorAll("#modeChoices .mode-card").forEach(x=>x.classList.toggle("active",x.dataset.mode===state.mode));
 }
@@ -929,6 +1135,10 @@ $("retryWrongBtn").onclick=async()=>{
   }
   if (uniq.length) await prepareSession(uniq,"wrong");
 };
+
+if ($("checkTypingBtn")) $("checkTypingBtn").onclick=submitTypingAnswer;
+if ($("typingHintBtn")) $("typingHintBtn").onclick=showTypingHint;
+if ($("typingAnswerInput")) $("typingAnswerInput").addEventListener("keydown",e=>{if(e.key==="Enter") submitTypingAnswer();});
 
 todayStatsReset();
 applyTheme();

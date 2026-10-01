@@ -1,5 +1,5 @@
-const CACHE = "english-3000-v3-1-5-shell";
-const DATA_CACHE = "english-3000-v3-1-5-data";
+const CACHE = "english-3000-v3-2-shell";
+const DATA_CACHE = "english-3000-v3-2-data";
 const ASSETS = [
   "./", "./index.html", "./style.css", "./app.js", "./manifest.json",
   "./data/vocab-3000-clean.json"

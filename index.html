@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 V3.1.4 - database sạch 3000 từ từ 3 PDF, IPA, chủ đề và SRS" />
+  <meta name="description" content="English 3000 V3.2 - Adaptive Quiz, database sạch 3000 từ, IPA và SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.1.5</title>
+  <title>English 3000 V3.2</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.1.5</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.2</p>
         <h1>3000 từ vựng nền tảng</h1>
-        <p class="muted">Database sạch • IPA • SRS • Offline</p>
+        <p class="muted">Adaptive Quiz • Database sạch • SRS • Offline</p>
       </div>
       <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
     </header>
@@ -26,7 +26,7 @@
           <div>
             <span class="tag">Lộ trình chính</span>
             <h2>3000 từ đã làm sạch</h2>
-            <p>Quiz chỉ dùng từ đã có nghĩa, IPA, từ loại và không bị đánh dấu mâu thuẫn.</p>
+            <p>Quiz tự tăng/giảm độ khó theo mức nhớ của từng từ, trên database 3000 từ đã làm sạch.</p>
           </div>
           <div class="hero-stat">
             <strong id="masteredTop">0</strong>
@@ -46,7 +46,7 @@
           <div class="offline-pack-icon">📦</div>
           <div class="offline-pack-copy">
             <strong id="offlinePackStatus">Đang kiểm tra gói offline…</strong>
-            <span id="offlinePackHint">V3.1.4 dùng trực tiếp database sạch từ 3 PDF bạn đã cung cấp.</span>
+            <span id="offlinePackHint">V3.2 dùng trực tiếp database sạch từ 3 PDF và thêm lịch sử Adaptive cho từng từ.</span>
           </div>
           <span id="offlinePackCount" class="offline-pack-count">0</span>
         </article>
@@ -74,14 +74,14 @@
             <div>
               <p class="eyebrow mini-eyebrow">BUỔI HỌC TIẾP THEO</p>
               <h2>Bắt đầu học</h2>
-              <p class="muted small">App tự ưu tiên từ đến hạn, từ mới rồi mới đến từ yếu.</p>
+              <p class="muted small">Adaptive tự trộn từ đến hạn, từ mới và từ yếu — đồng thời chọn dạng câu phù hợp.</p>
             </div>
           </div>
 
           <article class="continue-card card">
             <div class="continue-head">
               <div>
-                <span class="tag">Đề xuất cho bạn</span>
+                <span class="tag">Adaptive Quiz</span>
                 <h2 id="continueTitle">Học tiếp 10 từ</h2>
                 <p id="continueSubtitle" class="muted">Đang chuẩn bị gợi ý…</p>
               </div>
@@ -91,10 +91,10 @@
             <div class="session-mix">
               <div><span class="mix-dot review"></span><strong id="mixDue">0</strong><small>cần ôn</small></div>
               <div><span class="mix-dot fresh"></span><strong id="mixNew">0</strong><small>từ mới</small></div>
-              <div><span class="mix-dot weak"></span><strong id="mixWeak">0</strong><small>từ yếu</small></div>
+              <div><span class="mix-dot weak"></span><strong id="mixWeak">0</strong><small>củng cố</small></div>
             </div>
 
-            <button id="continueBtn" class="primary continue-main-btn">▶ Học tiếp</button>
+            <button id="continueBtn" class="primary continue-main-btn">▶ Học thông minh</button>
 
             <div class="quick-start-grid">
               <button id="newWordsBtn" class="quick-start-btn">
@@ -115,7 +115,7 @@
           <details id="lessonSettings" class="lesson-settings">
             <summary>
               <span>⚙️ Tùy chỉnh buổi học</span>
-              <small id="settingsSummary">10 từ · Anh → Việt</small>
+              <small id="settingsSummary">10 từ · Adaptive</small>
             </summary>
 
             <div class="settings-body">
@@ -158,9 +158,14 @@
               </div>
 
               <div class="settings-block">
-                <div class="settings-label"><strong>Kiểu học</strong><span class="muted small">Có thể đổi bất cứ lúc nào</span></div>
-                <div class="mode-grid" id="modeChoices">
-                  <button class="mode-card active" data-mode="envi">
+                <div class="settings-label"><strong>Kiểu học</strong><span class="muted small">Adaptive được khuyên dùng</span></div>
+                <div class="mode-grid adaptive-mode-grid" id="modeChoices">
+                  <button class="mode-card adaptive-card active" data-mode="adaptive">
+                    <span class="mode-icon">🧠</span>
+                    <strong>Adaptive</strong>
+                    <small>Tự đổi Chọn → Nghe → Gõ theo mức nhớ</small>
+                  </button>
+                  <button class="mode-card" data-mode="envi">
                     <span class="mode-icon">🇬🇧</span>
                     <strong>Anh → Việt</strong>
                     <small>Nhìn từ, chọn nghĩa</small>
@@ -183,9 +188,9 @@
           </details>
         </section>
 
-        <article class="info-card compact-info">
-          <strong>Luồng mới</strong>
-          <p>V3.1.4 bỏ các từ thiếu IPA/từ loại hoặc có mâu thuẫn khỏi Quiz. Nghĩa Quiz không còn lấy từ API dịch.</p>
+        <article class="info-card compact-info adaptive-info-card">
+          <strong>🧠 Adaptive hoạt động thế nào?</strong>
+          <p><b>Mới</b> → chọn nghĩa · <b>Đang học</b> → đảo Anh/Việt · <b>Đang nhớ</b> → nghe · <b>Gần thuộc</b> → gõ từ. Sai nhiều thì app tự hạ độ khó và cho ôn sớm.</p>
         </article>
       </section>
 
@@ -210,7 +215,7 @@
         <article class="question-card card">
           <div class="question-meta">
             <span id="contextLabel" class="tag">Chủ đề</span>
-            <span id="posLabel" class="soft-tag">word</span>
+            <div class="question-badges"><span id="adaptiveStageLabel" class="adaptive-stage-badge">Mới</span><span id="posLabel" class="soft-tag">word</span></div>
           </div>
 
           <p id="promptLabel" class="quiz-instruction">Chọn nghĩa đúng</p>
@@ -229,6 +234,17 @@
           </div>
 
           <div id="answers" class="answers quiz-answers"></div>
+
+          <div id="typingBox" class="typing-box hidden">
+            <label for="typingAnswerInput">Gõ từ tiếng Anh</label>
+            <div class="typing-input-row">
+              <input id="typingAnswerInput" type="text" inputmode="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Nhập đáp án…" />
+              <button id="checkTypingBtn" class="primary typing-check-btn">Kiểm tra</button>
+            </div>
+            <button id="typingHintBtn" class="typing-hint-btn">💡 Gợi ý chữ đầu</button>
+            <p id="typingHintText" class="typing-hint-text muted"></p>
+          </div>
+
           <div id="feedback" class="feedback feedback-banner"></div>
 
           <div id="wordDetail" class="answer-detail hidden">
@@ -324,7 +340,7 @@
     </main>
 
     <footer>
-      <p>Tiến độ được lưu trên trình duyệt. V3.1.5 giữ SRS từ các bản trước và chỉ tính các từ trong database sạch.</p>
+      <p>Tiến độ được lưu trên trình duyệt. V3.2 giữ toàn bộ SRS cũ và bổ sung lịch sử Adaptive cho từng từ.</p>
     </footer>
   </div>
 

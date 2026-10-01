@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3.1.5",
+  "name": "English 3000 V3.2",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "English 3000 clean database, compact result screen, IPA, SRS and offline learning."
+  "description": "Adaptive Quiz: tự chọn từ và dạng bài theo mức nhớ, với database sạch 3000 từ."
 }

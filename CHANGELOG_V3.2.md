@@ -1,4 +1,4 @@
-# English 3000 V3.2 — Adaptive Quiz
+# V3.2 Changelog — Adaptive Quiz
 
 ## Adaptive engine
 - `Học thông minh` tạo buổi học theo mục tiêu khoảng **40% từ đến hạn + 40% từ mới + 20% từ yếu**; thiếu nhóm nào thì tự bù từ phù hợp.
@@ -22,7 +22,3 @@
 ## Compatibility
 - Giữ `english3000State`, SRS, streak, mastered và tiến độ V3.1.x.
 - Thêm `state.adaptive` nhưng không xóa lịch sử cũ.
-
-
-## Cài đặt
-Ghi đè các file của V3.1.5 hoặc dùng full ZIP. Tiến độ cũ được giữ nguyên trên cùng domain.
