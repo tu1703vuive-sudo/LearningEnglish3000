@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 - học 3000 từ vựng cơ bản bằng lựa chọn" />
+  <meta name="description" content="English 3000 - học 3000 từ vựng cơ bản theo chủ đề, trình độ và lựa chọn" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
   <title>English 3000</title>
@@ -13,21 +13,20 @@
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000</p>
+        <p class="eyebrow">ENGLISH 3000 · PATCH 2.1</p>
         <h1>3000 từ vựng cơ bản</h1>
-        <p class="muted">Học theo chặng nhỏ • Chọn đáp án • Ôn từ sai</p>
+        <p class="muted">Theo chủ đề • Theo trình độ • IPA & audio từ điển</p>
       </div>
       <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
     </header>
 
     <main>
-      <!-- HOME -->
       <section id="homeView" class="view active">
         <article class="hero card">
           <div>
             <span class="tag">Lộ trình chính</span>
             <h2>3000 từ nền tảng</h2>
-            <p>30 chặng × 100 từ. Mỗi ngày chỉ cần học 10–30 từ.</p>
+            <p>Chọn chủ đề hoặc trình độ, sau đó học 10–30 từ mỗi phiên.</p>
           </div>
           <div class="hero-stat">
             <strong id="masteredTop">0</strong>
@@ -43,15 +42,41 @@
           <div class="progress-bar"><span id="totalProgress"></span></div>
         </div>
 
-        <div class="section-title">
+        <div class="section-title compact-bottom">
           <div>
-            <h2>1. Chọn chặng</h2>
-            <p class="muted small">Mỗi chặng gồm 100 từ.</p>
+            <h2>1. Chọn cách học</h2>
+            <p class="muted small">Tiến độ cũ vẫn được giữ nguyên.</p>
           </div>
           <button id="reviewWrongBtn" class="ghost-btn">Ôn từ sai</button>
         </div>
 
-        <div id="stageGrid" class="stage-grid"></div>
+        <div id="browseTabs" class="browse-tabs">
+          <button class="browse-tab active" data-browse="topic">🧩 Chủ đề</button>
+          <button class="browse-tab" data-browse="level">📚 Trình độ</button>
+          <button class="browse-tab" data-browse="stage">🔢 Chặng</button>
+        </div>
+
+        <div id="topicPanel" class="selector-panel">
+          <div class="search-wrap">
+            <input id="topicSearch" type="search" placeholder="Tìm chủ đề, ví dụ: Food, Work, Travel..." autocomplete="off" />
+          </div>
+          <div id="topicGrid" class="topic-grid"></div>
+        </div>
+
+        <div id="levelPanel" class="selector-panel hidden">
+          <div id="levelGrid" class="level-grid"></div>
+        </div>
+
+        <div id="stagePanel" class="selector-panel hidden">
+          <p class="muted small panel-note">30 chặng × 100 từ — giữ lại cách học của bản V2.</p>
+          <div id="stageGrid" class="stage-grid"></div>
+        </div>
+
+        <div class="selection-summary card-lite">
+          <span class="muted small">Đang chọn</span>
+          <strong id="selectionSummary">Chủ đề 1</strong>
+          <span id="selectionCount" class="muted small">0 từ</span>
+        </div>
 
         <div class="section-title">
           <div>
@@ -67,9 +92,7 @@
         </div>
 
         <div class="section-title">
-          <div>
-            <h2>3. Chọn kiểu học</h2>
-          </div>
+          <div><h2>3. Chọn kiểu học</h2></div>
         </div>
 
         <div class="mode-grid" id="modeChoices">
@@ -86,31 +109,29 @@
           <button class="mode-card" data-mode="listen">
             <span class="mode-icon">🎧</span>
             <strong>Nghe → Chọn nghĩa</strong>
-            <small>Nghe phát âm rồi chọn nghĩa</small>
+            <small>Ưu tiên audio từ điển, TTS chỉ dự phòng</small>
           </button>
         </div>
 
         <button id="startBtn" class="primary big">Bắt đầu học</button>
 
         <article class="info-card">
-          <strong>Gợi ý:</strong>
-          <p>Đừng cố học 100 từ một lúc. Học 10–20 từ, làm lại các từ sai, rồi mới chuyển sang nhóm tiếp theo.</p>
+          <strong>Patch 2.1:</strong>
+          <p>Chủ đề lấy trực tiếp từ bộ dữ liệu nguồn. Phát âm dùng IPA và audio từ điển; không dùng Google Translate để phát âm.</p>
         </article>
       </section>
 
-      <!-- LOADING -->
       <section id="loadingView" class="view">
         <div class="center-card card">
           <div class="spinner"></div>
           <h2>Đang chuẩn bị bài học…</h2>
-          <p id="loadingText" class="muted">Đang tải danh sách từ và nghĩa tiếng Việt.</p>
+          <p id="loadingText" class="muted">Đang tải dữ liệu.</p>
         </div>
       </section>
 
-      <!-- QUIZ -->
       <section id="quizView" class="view">
         <div class="quiz-top">
-          <button id="backBtn" class="icon-btn">←</button>
+          <button id="backBtn" class="icon-btn" aria-label="Quay lại">←</button>
           <div class="quiz-progress">
             <div class="progress-bar"><span id="quizProgressBar"></span></div>
             <small id="quizProgressText">1/10</small>
@@ -120,35 +141,40 @@
 
         <article class="question-card card">
           <div class="question-meta">
-            <span id="stageLabel" class="tag">Chặng 1</span>
+            <span id="contextLabel" class="tag">Chủ đề</span>
             <span id="levelLabel" class="soft-tag">A1</span>
           </div>
 
           <p id="promptLabel" class="muted center">Chọn nghĩa đúng</p>
 
-          <button id="audioBtn" class="audio-btn hidden" aria-label="Nghe từ">
-            🔊
-          </button>
-
+          <button id="listenMainBtn" class="audio-btn hidden" aria-label="Nghe từ">🔊</button>
           <h2 id="questionWord" class="question-word">hello</h2>
 
-          <button id="wordAudioBtn" class="mini-audio">🔊 Nghe phát âm</button>
+          <div id="pronunciationBox" class="pronunciation-box">
+            <div class="ipa-line">
+              <span class="ipa-label">IPA</span>
+              <strong id="ipaText">Đang tải…</strong>
+            </div>
+            <div id="audioChoices" class="audio-choices">
+              <button id="audioUsBtn" class="pron-btn hidden">🇺🇸 US</button>
+              <button id="audioUkBtn" class="pron-btn hidden">🇬🇧 UK</button>
+              <button id="audioDictBtn" class="pron-btn hidden">🔊 Từ điển</button>
+              <button id="audioTtsBtn" class="pron-btn hidden">🔈 TTS dự phòng</button>
+            </div>
+          </div>
 
           <div id="answers" class="answers"></div>
-
           <div id="feedback" class="feedback"></div>
-
           <button id="nextBtn" class="primary big hidden">Tiếp tục</button>
         </article>
       </section>
 
-      <!-- RESULT -->
       <section id="resultView" class="view">
         <article class="result-card card">
           <div class="result-emoji" id="resultEmoji">🎉</div>
           <p class="eyebrow">HOÀN THÀNH</p>
           <h2 id="resultTitle">8/10 câu đúng</h2>
-          <p id="resultText" class="muted">Tốt lắm. Hãy ôn lại 2 từ bạn vừa chọn sai.</p>
+          <p id="resultText" class="muted">Hãy ôn lại các từ vừa chọn sai.</p>
 
           <div class="result-stats">
             <div><strong id="resultCorrect">0</strong><small>Đúng</small></div>
@@ -157,14 +183,12 @@
           </div>
 
           <button id="retryWrongBtn" class="primary big">Ôn lại từ sai</button>
-          <button id="homeBtn" class="secondary big">Về chọn chặng</button>
+          <button id="homeBtn" class="secondary big">Về màn hình chọn</button>
         </article>
       </section>
     </main>
 
-    <footer>
-      <p>Dữ liệu tiến độ được lưu trên chính trình duyệt của bạn.</p>
-    </footer>
+    <footer><p>Dữ liệu tiến độ được lưu trên chính trình duyệt của bạn.</p></footer>
   </div>
 
   <script src="./app.js"></script>

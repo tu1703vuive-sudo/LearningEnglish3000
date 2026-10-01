@@ -1,5 +1,6 @@
-
-const VOCAB_SOURCE = "https://raw.githubusercontent.com/mankhb2k/Vocabulary-English/main/json/Vocabulary-levels.json";
+const LEVEL_SOURCE = "https://raw.githubusercontent.com/mankhb2k/Vocabulary-English/main/json/Vocabulary-levels.json";
+const TOPIC_SOURCE = "https://raw.githubusercontent.com/mankhb2k/Vocabulary-English/main/json/Vocabulary-topics.json";
+const DICTIONARY_API = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const TARGET_WORDS = 3000;
 const STAGE_SIZE = 100;
 
@@ -10,197 +11,341 @@ const $ = (id) => document.getElementById(id);
 
 const defaultState = {
   selectedStage: 1,
+  selectedTopicId: 1,
+  selectedLevel: "A1",
+  browseMode: "topic",
   sessionSize: 10,
   mode: "envi",
   mastered: [],
   wrong: {},
   seen: {},
   meaningCache: {},
+  pronCache: {},
   dark: false
 };
 
 let state = { ...defaultState, ...JSON.parse(localStorage.getItem("english3000State") || "{}") };
-if (!state.wrong) state.wrong = {};
-if (!state.seen) state.seen = {};
-if (!state.meaningCache) state.meaningCache = {};
+state.wrong ||= {};
+state.seen ||= {};
+state.meaningCache ||= {};
+state.pronCache ||= {};
+state.mastered ||= [];
 
 let vocab = [];
+let topics = [];
 let currentSession = [];
 let currentIndex = 0;
 let score = 0;
 let wrongThisSession = [];
 let answered = false;
 
-function saveState() {
-  localStorage.setItem("english3000State", JSON.stringify(state));
-}
-
+function keyOf(word) { return String(word || "").trim().toLowerCase(); }
+function saveState() { localStorage.setItem("english3000State", JSON.stringify(state)); }
 function showView(id) {
   document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
   $(id).classList.add("active");
-  window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function shuffled(arr) { return [...arr].sort(() => Math.random() - .5); }
+
+async function fetchJson(url) {
+  const r = await fetch(url, { cache: "force-cache" });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  return r.json();
 }
 
-function uniqueWords(items) {
-  const seen = new Set();
-  const out = [];
-  for (const raw of items) {
-    if (typeof raw !== "string") continue;
-    const word = raw.trim();
-    if (!word || word.length > 40) continue;
-    if (/^(adj\.|adv\.|n\.|v\.)$/i.test(word)) continue;
-    const key = word.toLowerCase();
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(word);
+function buildCoreVocabulary(levelData) {
+  const rows = [];
+  Object.entries(levelData?.levels || {}).forEach(([level, item]) => {
+    (item.words || []).forEach(word => rows.push({ word, level }));
+  });
+
+  const used = new Set();
+  const clean = [];
+  for (const item of rows) {
+    const word = String(item.word || "").trim();
+    const key = keyOf(word);
+    if (!key || used.has(key) || key.length > 55) continue;
+    if (/^(adj\.|adv\.|n\.|v\.)$/i.test(key)) continue;
+    used.add(key);
+    clean.push({ word, level: item.level, topics: [] });
+    if (clean.length >= TARGET_WORDS) break;
   }
-  return out;
+
+  for (const word of EXTRA_WORDS) {
+    if (clean.length >= TARGET_WORDS) break;
+    const key = keyOf(word);
+    if (!used.has(key)) {
+      used.add(key);
+      clean.push({ word, level: "B2", topics: [] });
+    }
+  }
+  return clean;
+}
+
+function attachTopics(topicData) {
+  const itemMap = new Map(vocab.map(item => [keyOf(item.word), item]));
+  const nextTopics = [];
+  for (const raw of topicData?.topics || []) {
+    const keys = [];
+    const seen = new Set();
+    for (const word of raw.words || []) {
+      const key = keyOf(word);
+      if (!itemMap.has(key) || seen.has(key)) continue;
+      seen.add(key);
+      keys.push(key);
+      itemMap.get(key).topics.push(raw.id);
+    }
+    if (keys.length) nextTopics.push({ id: raw.id, name: raw.name, words: keys });
+  }
+  topics = nextTopics;
+
+  if (!topics.length) {
+    topics = [{ id: 1, name: "Core Vocabulary", words: vocab.map(x => keyOf(x.word)) }];
+  }
+  if (!topics.some(t => t.id === state.selectedTopicId)) state.selectedTopicId = topics[0].id;
 }
 
 async function loadVocabulary() {
   try {
-    const r = await fetch(VOCAB_SOURCE, { cache: "force-cache" });
-    if (!r.ok) throw new Error("Không tải được dữ liệu");
-    const data = await r.json();
-    const rows = [];
-    Object.entries(data.levels || {}).forEach(([level, item]) => {
-      (item.words || []).forEach(word => rows.push({word, level}));
-    });
-
-    const clean = [];
-    const used = new Set();
-    for (const item of rows) {
-      const key = String(item.word).trim().toLowerCase();
-      if (!key || used.has(key) || key.length > 40) continue;
-      if (/^(adj\.|adv\.|n\.|v\.)$/i.test(key)) continue;
-      used.add(key);
-      clean.push({word:item.word.trim(), level:item.level});
-    }
-
-    for (const w of EXTRA_WORDS) {
-      if (clean.length >= TARGET_WORDS) break;
-      const key = w.toLowerCase();
-      if (!used.has(key)) {
-        used.add(key);
-        clean.push({word:w, level:"B2"});
-      }
-    }
-
-    vocab = clean.slice(0, TARGET_WORDS);
-    if (vocab.length < 100) throw new Error("Dữ liệu quá ít");
+    const [levelData, topicData] = await Promise.all([
+      fetchJson(LEVEL_SOURCE),
+      fetchJson(TOPIC_SOURCE)
+    ]);
+    vocab = buildCoreVocabulary(levelData);
+    if (vocab.length < 100) throw new Error("Dữ liệu level quá ít");
+    attachTopics(topicData);
   } catch (e) {
-    // Offline fallback: đủ để app vẫn chạy và người dùng có thể học nhóm đầu.
-    vocab = Object.keys(OFFLINE_MEANINGS).map(word => ({word, level:"A1"}));
+    vocab = Object.keys(OFFLINE_MEANINGS).map(word => ({ word, level: "A1", topics: [1] }));
+    topics = [{ id: 1, name: "Từ cơ bản offline", words: vocab.map(x => keyOf(x.word)) }];
+    state.selectedTopicId = 1;
   }
+  saveState();
   renderHome();
 }
 
 async function translateWord(word) {
-  const key = word.toLowerCase();
+  const key = keyOf(word);
   if (OFFLINE_MEANINGS[key]) return OFFLINE_MEANINGS[key];
   if (state.meaningCache[key]) return state.meaningCache[key];
-
-  const cachedOnly = !navigator.onLine;
-  if (cachedOnly) return "chưa có nghĩa offline";
+  if (!navigator.onLine) return "chưa có nghĩa offline";
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 6500);
-
   try {
-    const url = "https://api.mymemory.translated.net/get?q=" +
-      encodeURIComponent(word) + "&langpair=en|vi";
+    const url = "https://api.mymemory.translated.net/get?q=" + encodeURIComponent(word) + "&langpair=en|vi";
     const r = await fetch(url, { signal: controller.signal });
     const data = await r.json();
-    let translated = data?.responseData?.translatedText?.trim();
-    if (translated && translated.toLowerCase() !== key && translated.length < 120) {
+    const translated = data?.responseData?.translatedText?.trim();
+    if (translated && keyOf(translated) !== key && translated.length < 120) {
       state.meaningCache[key] = translated;
       saveState();
       return translated;
     }
-  } catch (e) {
-  } finally {
-    clearTimeout(timer);
-  }
-
-  try {
-    const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&q=" + encodeURIComponent(word);
-    const r = await fetch(url);
-    const data = await r.json();
-    const translated = data?.[0]?.map(x => x?.[0] || "").join("").trim();
-    if (translated) {
-      state.meaningCache[key] = translated;
-      saveState();
-      return translated;
-    }
-  } catch (e) {}
+  } catch (_) {
+  } finally { clearTimeout(timer); }
 
   return "chưa tải được nghĩa";
 }
 
-function speak(text) {
+function normalizeAudioUrl(url) {
+  if (!url) return "";
+  if (url.startsWith("//")) return "https:" + url;
+  return url;
+}
+
+async function getPronunciation(word) {
+  const key = keyOf(word);
+  if (state.pronCache[key]) return state.pronCache[key];
+
+  const result = { ipa: "", us: "", uk: "", generic: "" };
+  if (!navigator.onLine || /\s/.test(key)) {
+    state.pronCache[key] = result;
+    saveState();
+    return result;
+  }
+
+  try {
+    const r = await fetch(DICTIONARY_API + encodeURIComponent(word));
+    if (!r.ok) throw new Error("dictionary lookup failed");
+    const data = await r.json();
+    const entries = Array.isArray(data) ? data : [];
+
+    for (const entry of entries) {
+      if (!result.ipa && entry.phonetic) result.ipa = entry.phonetic;
+      for (const ph of entry.phonetics || []) {
+        if (!result.ipa && ph.text) result.ipa = ph.text;
+        const url = normalizeAudioUrl(ph.audio || "");
+        if (!url) continue;
+        if (!result.generic) result.generic = url;
+        const lower = url.toLowerCase();
+        if (!result.us && (lower.includes("-us.") || lower.includes("_us_") || lower.includes("/us/") || lower.includes("american"))) result.us = url;
+        if (!result.uk && (lower.includes("-uk.") || lower.includes("_uk_") || lower.includes("-gb.") || lower.includes("_gb_") || lower.includes("/uk/") || lower.includes("british"))) result.uk = url;
+      }
+    }
+  } catch (_) {}
+
+  state.pronCache[key] = result;
+  saveState();
+  return result;
+}
+
+function ttsSpeak(text) {
   if (!("speechSynthesis" in window)) return;
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = "en-US";
   u.rate = .82;
+  const voices = speechSynthesis.getVoices?.() || [];
+  const preferred = voices.find(v => /en-US/i.test(v.lang) && /natural|enhanced|premium/i.test(v.name))
+    || voices.find(v => /en-US/i.test(v.lang))
+    || voices.find(v => /^en/i.test(v.lang));
+  if (preferred) u.voice = preferred;
   speechSynthesis.speak(u);
 }
 
-function renderHome() {
-  const mastered = new Set(state.mastered || []);
-  $("masteredTop").textContent = mastered.size;
-  const pct = Math.min(100, Math.round(mastered.size / TARGET_WORDS * 100));
-  $("totalPercent").textContent = pct + "%";
-  $("totalProgress").style.width = pct + "%";
+function playUrl(url, fallbackWord) {
+  if (!url) return ttsSpeak(fallbackWord);
+  const audio = new Audio(url);
+  audio.play().catch(() => ttsSpeak(fallbackWord));
+}
 
-  const grid = $("stageGrid");
+async function playBestPronunciation(item, dialect = "best") {
+  const p = await getPronunciation(item.word);
+  if (dialect === "us" && p.us) return playUrl(p.us, item.word);
+  if (dialect === "uk" && p.uk) return playUrl(p.uk, item.word);
+  if (dialect === "generic" && p.generic) return playUrl(p.generic, item.word);
+  playUrl(p.us || p.uk || p.generic, item.word);
+}
+
+function getMasteredSet() { return new Set(state.mastered || []); }
+function findItem(key) { return vocab.find(x => keyOf(x.word) === key); }
+
+function topicLabel(topic) {
+  const known = {
+    1:"Chào hỏi & bản thân",2:"Gia đình & bạn bè",3:"Số, thời gian & ngày tháng",4:"Đồ ăn & thức uống",
+    5:"Màu sắc & mô tả",6:"Nghề nghiệp & công việc",7:"Nhà cửa & sinh hoạt",8:"Thói quen hằng ngày",
+    9:"Thời tiết",10:"Giao thông",11:"Sở thích & thời gian rảnh",12:"Quốc gia & quốc tịch",
+    13:"Quần áo & phụ kiện",14:"Thiên nhiên & động vật",15:"Mua sắm & tiền bạc",16:"Sức khỏe & cơ thể",
+    18:"Văn phòng cơ bản",19:"Trường học",20:"Nhà hàng & nấu ăn",21:"Tình huống khẩn cấp",
+    22:"Cảm xúc",23:"Ngoại hình & tính cách",24:"Đời sống số",25:"Du lịch & kỳ nghỉ",
+    27:"Khách sạn & sân bay",28:"Kết bạn",29:"Giao tiếp xã giao",34:"Họp & thuyết trình",
+    37:"Văn hóa & xã hội",38:"Truyền thông & giải trí",39:"Giáo dục nâng cao",44:"Tài chính & ngân hàng",
+    49:"Môi trường & bền vững",51:"Động từ & hành động cốt lõi",53:"Tính từ & trạng từ cốt lõi",54:"Từ trừu tượng & học thuật"
+  };
+  return known[topic.id] || topic.name;
+}
+
+function getActivePool() {
+  if (state.browseMode === "topic") {
+    const topic = topics.find(t => t.id === state.selectedTopicId) || topics[0];
+    return (topic?.words || []).map(findItem).filter(Boolean);
+  }
+  if (state.browseMode === "level") return vocab.filter(x => x.level === state.selectedLevel);
+  const start = (state.selectedStage - 1) * STAGE_SIZE;
+  return vocab.slice(start, start + STAGE_SIZE);
+}
+
+function activeContextName() {
+  if (state.browseMode === "topic") {
+    const topic = topics.find(t => t.id === state.selectedTopicId);
+    return topic ? topicLabel(topic) : "Chủ đề";
+  }
+  if (state.browseMode === "level") return `Trình độ ${state.selectedLevel}`;
+  return `Chặng ${state.selectedStage}`;
+}
+
+function renderTopics(filter = "") {
+  const grid = $("topicGrid");
   grid.innerHTML = "";
-  for (let i=1;i<=30;i++) {
-    const start = (i-1)*STAGE_SIZE;
-    const end = Math.min(i*STAGE_SIZE, TARGET_WORDS);
-    const stageWords = vocab.slice(start,end);
-    const known = stageWords.filter(x => mastered.has(x.word.toLowerCase())).length;
+  const mastered = getMasteredSet();
+  const q = keyOf(filter);
+  const matches = topics.filter(t => !q || keyOf(t.name).includes(q) || keyOf(topicLabel(t)).includes(q));
 
+  for (const topic of matches) {
+    const known = topic.words.filter(k => mastered.has(k)).length;
     const b = document.createElement("button");
-    b.className = "stage-btn" + (state.selectedStage===i ? " active":"") + (known>=100 ? " done":"");
-    b.innerHTML = `<strong>Chặng ${i}</strong><small>${known}/100 từ</small>`;
-    b.onclick = () => {
-      state.selectedStage = i;
-      saveState();
-      renderHome();
-    };
+    b.className = "topic-btn" + (state.selectedTopicId === topic.id ? " active" : "");
+    b.innerHTML = `<strong>${topicLabel(topic)}</strong><small>${known}/${topic.words.length} từ · ${topic.name}</small>`;
+    b.onclick = () => { state.selectedTopicId = topic.id; saveState(); renderHome(); };
+    grid.appendChild(b);
+  }
+  if (!matches.length) grid.innerHTML = '<p class="muted small">Không tìm thấy chủ đề.</p>';
+}
+
+function renderLevels() {
+  const grid = $("levelGrid");
+  grid.innerHTML = "";
+  const mastered = getMasteredSet();
+  const names = {A1:"Cơ bản",A2:"Sơ trung cấp",B1:"Trung cấp",B2:"Trung cao cấp"};
+  for (const level of ["A1","A2","B1","B2"]) {
+    const pool = vocab.filter(x => x.level === level);
+    const known = pool.filter(x => mastered.has(keyOf(x.word))).length;
+    const b = document.createElement("button");
+    b.className = "level-btn" + (state.selectedLevel === level ? " active" : "");
+    b.innerHTML = `<strong>${level} · ${names[level]}</strong><small>${known}/${pool.length} từ đã thuộc</small>`;
+    b.onclick = () => { state.selectedLevel = level; saveState(); renderHome(); };
     grid.appendChild(b);
   }
 }
 
-function pickSessionWords() {
-  const start = (state.selectedStage-1) * STAGE_SIZE;
-  const stage = vocab.slice(start, start + STAGE_SIZE);
-  if (!stage.length) return [];
-
-  const wrongFirst = [...stage].sort((a,b) =>
-    (state.wrong[b.word.toLowerCase()] || 0) - (state.wrong[a.word.toLowerCase()] || 0)
-  );
-
-  // Ưu tiên từ chưa thuộc, sau đó mới đến từ đã thuộc.
-  const notMastered = wrongFirst.filter(x => !state.mastered.includes(x.word.toLowerCase()));
-  const mastered = wrongFirst.filter(x => state.mastered.includes(x.word.toLowerCase()));
-  return [...notMastered, ...mastered].slice(0, state.sessionSize);
+function renderStages() {
+  const grid = $("stageGrid");
+  grid.innerHTML = "";
+  const mastered = getMasteredSet();
+  for (let i = 1; i <= 30; i++) {
+    const pool = vocab.slice((i - 1) * STAGE_SIZE, i * STAGE_SIZE);
+    const known = pool.filter(x => mastered.has(keyOf(x.word))).length;
+    const b = document.createElement("button");
+    b.className = "stage-btn" + (state.selectedStage === i ? " active" : "") + (pool.length && known === pool.length ? " done" : "");
+    b.innerHTML = `<strong>Chặng ${i}</strong><small>${known}/${pool.length || 100} từ</small>`;
+    b.onclick = () => { state.selectedStage = i; saveState(); renderHome(); };
+    grid.appendChild(b);
+  }
 }
 
-function shuffled(arr) {
-  return [...arr].sort(() => Math.random() - .5);
+function renderBrowseMode() {
+  document.querySelectorAll(".browse-tab").forEach(b => b.classList.toggle("active", b.dataset.browse === state.browseMode));
+  $("topicPanel").classList.toggle("hidden", state.browseMode !== "topic");
+  $("levelPanel").classList.toggle("hidden", state.browseMode !== "level");
+  $("stagePanel").classList.toggle("hidden", state.browseMode !== "stage");
+}
+
+function renderHome() {
+  const mastered = getMasteredSet();
+  const masteredCount = vocab.length ? vocab.filter(x => mastered.has(keyOf(x.word))).length : mastered.size;
+  $("masteredTop").textContent = masteredCount;
+  const pct = Math.min(100, Math.round(masteredCount / TARGET_WORDS * 100));
+  $("totalPercent").textContent = pct + "%";
+  $("totalProgress").style.width = pct + "%";
+
+  renderBrowseMode();
+  renderTopics($("topicSearch")?.value || "");
+  renderLevels();
+  renderStages();
+
+  const pool = getActivePool();
+  $("selectionSummary").textContent = activeContextName();
+  $("selectionCount").textContent = `${pool.length} từ`;
+}
+
+function pickSessionWords() {
+  const pool = getActivePool();
+  if (!pool.length) return [];
+  const sorted = [...pool].sort((a, b) => (state.wrong[keyOf(b.word)] || 0) - (state.wrong[keyOf(a.word)] || 0));
+  const newWords = sorted.filter(x => !state.mastered.includes(keyOf(x.word)));
+  const oldWords = sorted.filter(x => state.mastered.includes(keyOf(x.word)));
+  return [...newWords, ...oldWords].slice(0, Math.min(state.sessionSize, pool.length));
 }
 
 async function prepareSession(words) {
   showView("loadingView");
-  $("loadingText").textContent = `Đang chuẩn bị ${words.length} từ…`;
-
   currentSession = [];
-  for (let i=0;i<words.length;i++) {
-    $("loadingText").textContent = `Đang tải nghĩa ${i+1}/${words.length}…`;
+
+  for (let i = 0; i < words.length; i++) {
+    $("loadingText").textContent = `Đang chuẩn bị từ ${i + 1}/${words.length}…`;
     const meaning = await translateWord(words[i].word);
-    currentSession.push({...words[i], meaning});
+    currentSession.push({ ...words[i], meaning });
   }
 
   currentIndex = 0;
@@ -213,76 +358,52 @@ async function prepareSession(words) {
 async function startNormalSession() {
   if (!vocab.length) await loadVocabulary();
   const words = pickSessionWords();
-  if (!words.length) return alert("Chặng này chưa có dữ liệu.");
+  if (!words.length) return alert("Nhóm này chưa có dữ liệu phù hợp.");
   await prepareSession(words);
 }
 
 async function startWrongReview() {
   if (!vocab.length) await loadVocabulary();
   const wrongKeys = Object.entries(state.wrong)
-    .filter(([,count]) => count > 0)
-    .sort((a,b) => b[1]-a[1])
-    .map(([w]) => w);
-
-  const pool = vocab.filter(x => wrongKeys.includes(x.word.toLowerCase())).slice(0, state.sessionSize);
-  if (!pool.length) {
-    alert("Bạn chưa có từ sai để ôn.");
-    return;
-  }
+    .filter(([, count]) => count > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([word]) => word);
+  const pool = wrongKeys.map(findItem).filter(Boolean).slice(0, state.sessionSize);
+  if (!pool.length) return alert("Bạn chưa có từ sai để ôn.");
   await prepareSession(pool);
 }
 
 function makeDistractors(item) {
-  let pool = currentSession.filter(x => x.word !== item.word && x.meaning !== item.meaning);
-  if (pool.length < 3) {
-    pool = vocab
-      .filter(x => x.word !== item.word)
-      .slice(0, Math.max(20, state.sessionSize))
-      .map(x => ({...x, meaning: state.meaningCache[x.word.toLowerCase()] || OFFLINE_MEANINGS[x.word.toLowerCase()] || x.word}));
-  }
-  return shuffled(pool).slice(0,3);
+  return shuffled(currentSession.filter(x => x.word !== item.word && x.meaning !== item.meaning)).slice(0, 3);
 }
 
-function renderQuestion() {
-  answered = false;
-  $("feedback").className = "feedback";
-  $("feedback").textContent = "";
-  $("nextBtn").classList.add("hidden");
+function resetPronunciationUi(conceal) {
+  $("pronunciationBox").classList.toggle("concealed", !!conceal);
+  $("ipaText").textContent = "Đang tải…";
+  ["audioUsBtn","audioUkBtn","audioDictBtn","audioTtsBtn"].forEach(id => $(id).classList.add("hidden"));
+}
 
-  const item = currentSession[currentIndex];
-  const total = currentSession.length;
-  const pct = ((currentIndex) / total) * 100;
+async function fillPronunciationUi(item, reveal = true) {
+  resetPronunciationUi(!reveal);
+  const expected = keyOf(item.word);
+  const p = await getPronunciation(item.word);
+  if (!currentSession[currentIndex] || keyOf(currentSession[currentIndex].word) !== expected) return;
 
-  $("quizProgressBar").style.width = pct + "%";
-  $("quizProgressText").textContent = `${currentIndex+1}/${total}`;
-  $("scoreValue").textContent = score;
-  $("stageLabel").textContent = `Chặng ${state.selectedStage}`;
-  $("levelLabel").textContent = item.level || "A1";
+  $("ipaText").textContent = p.ipa || "IPA chưa có trong từ điển";
+  $("audioUsBtn").classList.toggle("hidden", !p.us);
+  $("audioUkBtn").classList.toggle("hidden", !p.uk);
+  $("audioDictBtn").classList.toggle("hidden", !p.generic || !!p.us || !!p.uk);
+  $("audioTtsBtn").classList.toggle("hidden", !!(p.us || p.uk || p.generic));
 
-  const options = shuffled([item, ...makeDistractors(item)]);
-  const answerBox = $("answers");
-  answerBox.innerHTML = "";
+  $("audioUsBtn").onclick = () => playBestPronunciation(item, "us");
+  $("audioUkBtn").onclick = () => playBestPronunciation(item, "uk");
+  $("audioDictBtn").onclick = () => playBestPronunciation(item, "generic");
+  $("audioTtsBtn").onclick = () => ttsSpeak(item.word);
+}
 
-  $("audioBtn").classList.toggle("hidden", state.mode !== "listen");
-  $("wordAudioBtn").classList.toggle("hidden", state.mode === "listen");
-
-  if (state.mode === "envi") {
-    $("promptLabel").textContent = "Chọn nghĩa tiếng Việt đúng";
-    $("questionWord").textContent = item.word;
-    options.forEach(opt => addAnswer(opt.meaning, opt.word === item.word, item));
-  } else if (state.mode === "vien") {
-    $("promptLabel").textContent = "Chọn từ tiếng Anh đúng";
-    $("questionWord").textContent = item.meaning;
-    options.forEach(opt => addAnswer(opt.word, opt.word === item.word, item));
-  } else {
-    $("promptLabel").textContent = "Nghe rồi chọn nghĩa đúng";
-    $("questionWord").textContent = "🎧";
-    options.forEach(opt => addAnswer(opt.meaning, opt.word === item.word, item));
-    setTimeout(() => speak(item.word), 350);
-  }
-
-  $("wordAudioBtn").onclick = () => speak(item.word);
-  $("audioBtn").onclick = () => speak(item.word);
+function revealPronunciation(item) {
+  $("pronunciationBox").classList.remove("concealed");
+  fillPronunciationUi(item, true);
 }
 
 function addAnswer(label, isCorrect, item) {
@@ -293,48 +414,76 @@ function addAnswer(label, isCorrect, item) {
   $("answers").appendChild(b);
 }
 
+function renderQuestion() {
+  answered = false;
+  $("feedback").className = "feedback";
+  $("feedback").textContent = "";
+  $("nextBtn").classList.add("hidden");
+
+  const item = currentSession[currentIndex];
+  const total = currentSession.length;
+  $("quizProgressBar").style.width = `${currentIndex / total * 100}%`;
+  $("quizProgressText").textContent = `${currentIndex + 1}/${total}`;
+  $("scoreValue").textContent = score;
+  $("contextLabel").textContent = activeContextName();
+  $("levelLabel").textContent = item.level || "—";
+
+  const options = shuffled([item, ...makeDistractors(item)]);
+  $("answers").innerHTML = "";
+  $("listenMainBtn").classList.toggle("hidden", state.mode !== "listen");
+
+  if (state.mode === "envi") {
+    $("promptLabel").textContent = "Chọn nghĩa tiếng Việt đúng";
+    $("questionWord").textContent = item.word;
+    options.forEach(opt => addAnswer(opt.meaning, opt.word === item.word, item));
+    fillPronunciationUi(item, true);
+  } else if (state.mode === "vien") {
+    $("promptLabel").textContent = "Chọn từ tiếng Anh đúng";
+    $("questionWord").textContent = item.meaning;
+    options.forEach(opt => addAnswer(opt.word, opt.word === item.word, item));
+    fillPronunciationUi(item, false);
+  } else {
+    $("promptLabel").textContent = "Chạm loa, nghe rồi chọn nghĩa đúng";
+    $("questionWord").textContent = "🎧";
+    options.forEach(opt => addAnswer(opt.meaning, opt.word === item.word, item));
+    fillPronunciationUi(item, false);
+  }
+
+  $("listenMainBtn").onclick = () => playBestPronunciation(item);
+}
+
 function chooseAnswer(button, isCorrect, item) {
   if (answered) return;
   answered = true;
-
-  const key = item.word.toLowerCase();
+  const key = keyOf(item.word);
   state.seen[key] = (state.seen[key] || 0) + 1;
-
   document.querySelectorAll(".answer").forEach(btn => btn.disabled = true);
 
   if (isCorrect) {
     score++;
     button.classList.add("correct");
     state.wrong[key] = Math.max(0, (state.wrong[key] || 0) - 1);
-
-    // Sau 2 lần trả lời đúng thì coi như đã thuộc.
     const correctKey = "correct:" + key;
     state.seen[correctKey] = (state.seen[correctKey] || 0) + 1;
-    if (state.seen[correctKey] >= 2 && !state.mastered.includes(key)) {
-      state.mastered.push(key);
-    }
-
+    if (state.seen[correctKey] >= 2 && !state.mastered.includes(key)) state.mastered.push(key);
     $("feedback").className = "feedback ok";
     $("feedback").textContent = `✓ Chính xác — ${item.word} = ${item.meaning}`;
   } else {
     button.classList.add("wrong");
     state.wrong[key] = (state.wrong[key] || 0) + 1;
     wrongThisSession.push(item);
-
-    // đánh dấu đáp án đúng
-    const answers = [...document.querySelectorAll(".answer")];
     const correctText = state.mode === "vien" ? item.word : item.meaning;
-    const correctButton = answers.find(x => x.textContent === correctText);
+    const correctButton = [...document.querySelectorAll(".answer")].find(x => x.textContent === correctText);
     if (correctButton) correctButton.classList.add("correct");
-
     $("feedback").className = "feedback bad";
     $("feedback").textContent = `✕ ${item.word} = ${item.meaning}`;
   }
 
+  if (state.mode !== "envi") revealPronunciation(item);
   saveState();
   $("scoreValue").textContent = score;
   $("nextBtn").classList.remove("hidden");
-  $("nextBtn").textContent = currentIndex === currentSession.length-1 ? "Xem kết quả" : "Tiếp tục";
+  $("nextBtn").textContent = currentIndex === currentSession.length - 1 ? "Xem kết quả" : "Tiếp tục";
 }
 
 function nextQuestion() {
@@ -342,9 +491,7 @@ function nextQuestion() {
   if (currentIndex < currentSession.length - 1) {
     currentIndex++;
     renderQuestion();
-  } else {
-    showResult();
-  }
+  } else showResult();
 }
 
 function showResult() {
@@ -358,14 +505,13 @@ function showResult() {
   if (score === currentSession.length) {
     $("resultEmoji").textContent = "🏆";
     $("resultText").textContent = "Bạn làm đúng toàn bộ. Có thể chuyển sang nhóm từ tiếp theo.";
-  } else if (score >= Math.ceil(currentSession.length*.7)) {
+  } else if (score >= Math.ceil(currentSession.length * .7)) {
     $("resultEmoji").textContent = "🎉";
     $("resultText").textContent = `Khá tốt. Hãy ôn lại ${wrongCount} từ vừa sai để nhớ chắc hơn.`;
   } else {
     $("resultEmoji").textContent = "💪";
     $("resultText").textContent = `Bạn nên làm lại ${wrongCount} từ sai trước khi học nhóm mới.`;
   }
-
   $("retryWrongBtn").classList.toggle("hidden", wrongThisSession.length === 0);
   showView("resultView");
 }
@@ -374,6 +520,15 @@ function applyTheme() {
   document.body.classList.toggle("dark", !!state.dark);
   $("themeBtn").textContent = state.dark ? "🌙" : "☀️";
 }
+
+function restoreChoices() {
+  document.querySelectorAll("#sizeChoices .choice").forEach(x => x.classList.toggle("active", Number(x.dataset.size) === state.sessionSize));
+  document.querySelectorAll("#modeChoices .mode-card").forEach(x => x.classList.toggle("active", x.dataset.mode === state.mode));
+}
+
+document.querySelectorAll("#browseTabs .browse-tab").forEach(btn => {
+  btn.onclick = () => { state.browseMode = btn.dataset.browse; saveState(); renderHome(); };
+});
 
 document.querySelectorAll("#sizeChoices .choice").forEach(btn => {
   btn.onclick = () => {
@@ -393,15 +548,7 @@ document.querySelectorAll("#modeChoices .mode-card").forEach(btn => {
   };
 });
 
-function restoreChoices() {
-  document.querySelectorAll("#sizeChoices .choice").forEach(x =>
-    x.classList.toggle("active", Number(x.dataset.size) === state.sessionSize)
-  );
-  document.querySelectorAll("#modeChoices .mode-card").forEach(x =>
-    x.classList.toggle("active", x.dataset.mode === state.mode)
-  );
-}
-
+$("topicSearch").addEventListener("input", e => renderTopics(e.target.value));
 $("themeBtn").onclick = () => { state.dark = !state.dark; saveState(); applyTheme(); };
 $("startBtn").onclick = startNormalSession;
 $("reviewWrongBtn").onclick = startWrongReview;
@@ -411,12 +558,11 @@ $("homeBtn").onclick = () => { renderHome(); showView("homeView"); };
 $("retryWrongBtn").onclick = async () => {
   const uniq = [];
   const seen = new Set();
-  for (const w of wrongThisSession) {
-    const k = w.word.toLowerCase();
-    if (!seen.has(k)) { seen.add(k); uniq.push(w); }
+  for (const item of wrongThisSession) {
+    const key = keyOf(item.word);
+    if (!seen.has(key)) { seen.add(key); uniq.push(item); }
   }
-  if (!uniq.length) return;
-  await prepareSession(uniq);
+  if (uniq.length) await prepareSession(uniq);
 };
 
 applyTheme();
@@ -424,5 +570,5 @@ restoreChoices();
 loadVocabulary();
 
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-  navigator.serviceWorker.register("./sw.js").catch(()=>{});
+  navigator.serviceWorker.register("./sw.js").catch(() => {});
 }
