@@ -333,3 +333,7 @@ button.today-card{cursor:pointer}
   .question-word{font-size:3.15rem;margin-top:9px}
   .quiz-answers .answer{min-height:54px;padding-top:11px;padding-bottom:11px}
 }
+
+/* ===== V3.1.4 clean database ===== */
+.topic-btn.empty{opacity:.48;cursor:not-allowed;background:var(--bg)}
+.topic-btn.empty:active{transform:none}

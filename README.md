@@ -1,82 +1,43 @@
-# English 3000 V3.1.3 — Fast Start
+# English 3000 V3.1.4
 
-Bản này tối ưu tốc độ vào bài: chỉ chuẩn bị dữ liệu cần cho câu đầu tiên, còn nghĩa các câu sau và IPA/audio/ví dụ được preload/lazy-load ở nền.
+Bản này dùng trực tiếp database đã làm sạch từ 3 PDF của người dùng.
 
-# English 3000 V3.1 — Offline Pack
+## Database Quiz
 
-V3.1 chuyển phần dữ liệu học sang **offline-first**.
+`data/vocab-3000-clean.json` có đúng 3000 mục được phép vào Quiz.
 
-## Cách hoạt động
+Quy tắc lọc:
+- bắt buộc có nghĩa Việt
+- bắt buộc có IPA
+- bắt buộc có từ loại
+- không có cờ `needsReview` / mâu thuẫn
 
-App luôn thử đọc:
+Nguồn chính được ưu tiên theo thứ tự trong `3000.pdf`. Sau đối chiếu có 2995 mục nguồn chính đạt chuẩn; 5 mục sạch từ PDF chủ đề được bổ sung để đủ 3000.
 
-`data/vocab-3000.json`
+## Không tự sửa nguồn
 
-trước. File này chứa các trường:
+- Nghĩa Quiz không lấy từ Google Translate / MyMemory.
+- IPA và từ loại không bị Dictionary API ghi đè.
+- Dictionary API chỉ được dùng để lấy **audio** khi có mạng.
+- Nếu dữ liệu thiếu/không chắc, mục đó không xuất hiện trong Quiz.
 
-- `word`
-- `meaning` (nghĩa Việt)
-- `ipa`
-- `pos`
-- `example`
-- `level`
-- `topicIds`
+## Chủ đề
 
-Khi file đầy đủ đã được build, việc mở bài học, xem nghĩa, IPA, loại từ và ví dụ
-không cần gọi API. Audio thật vẫn được lấy online khi có mạng; nếu không có
-mạng app dùng TTS của thiết bị làm fallback.
+60 chủ đề từ PDF theo chủ đề vẫn được giữ. Chỉ những từ khớp chính xác với bộ 3000 sạch mới được gắn vào từng chủ đề. Một số chủ đề có thể ít hoặc chưa có từ; app hiển thị trạng thái này thay vì tự đoán.
 
-## Quan trọng: ZIP có seed, GitHub Actions tự build bản đầy đủ
+## CEFR
 
-ZIP này chứa một **seed pack nhỏ** để app vẫn mở được ngay.
+V3.1.4 tạm bỏ lựa chọn A1/A2/B1/B2 vì ba PDF không cung cấp CEFR nhất quán. App không tự gán level.
 
-Khi bạn push repo lên GitHub, workflow:
+## Cập nhật GitHub
 
-`.github/workflows/deploy-pages.yml`
+Nếu đang ở V3.1.3, dùng patch-only và ghi đè các file. Nhớ upload cả `data/vocab-3000-clean.json` và `.github/workflows/deploy-pages.yml`.
 
-sẽ tự chạy `scripts/build_offline_pack.py`, tải các nguồn dữ liệu và tạo lại
-`data/vocab-3000.json` với khoảng 3000 mục trước khi deploy GitHub Pages.
+GitHub → Settings → Pages → Source: **GitHub Actions**.
 
-### Bật GitHub Pages
+## Báo cáo dữ liệu
 
-Sau khi upload/push repo:
+- `data/vocab-3000-clean-report.json`
+- `data/vocab-3000-clean-issues.csv`
 
-1. GitHub → **Settings**
-2. **Pages**
-3. `Build and deployment` → Source: **GitHub Actions**
-4. Push lại nhánh `main` hoặc mở tab **Actions** → chạy workflow
-   `Build and deploy English 3000 V3.1`
-5. Chờ workflow xanh rồi mở link Pages.
-
-## Build full pack trên máy tính
-
-Máy cần Internet ở bước build:
-
-```bash
-python scripts/build_offline_pack.py --output data/vocab-3000.json
-python -m http.server 8080
-```
-
-Sau khi build xong, `data/vocab-3000.json` là file local của app.
-
-## Build từ các file đã tải sẵn
-
-```bash
-python scripts/build_offline_pack.py   --levels path/to/Vocabulary-levels.json   --topics path/to/Vocabulary-topics.json   --db path/to/dictionary_en_vi.db   --output data/vocab-3000.json
-```
-
-## Tiến độ cũ
-
-V3.1 tiếp tục sử dụng:
-
-`localStorage["english3000State"]`
-
-nên giữ tiến độ từ V2 / V2.1 / V3 trên cùng domain.
-
-## License dữ liệu
-
-Đọc `ATTRIBUTION.md`.
-
-Phần dữ liệu Anh–Việt lấy từ database Skypedia được công bố theo CC BY-SA 4.0,
-vì vậy khi redistribute dữ liệu đã build cần giữ attribution và tuân thủ
-ShareAlike.
+Các file này để kiểm tra/chỉnh sửa, app không dùng chúng để tạo đáp án.

@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 V3.1.3 - học 3000 từ vựng cơ bản theo chủ đề, IPA, audio và ôn lặp lại SRS" />
+  <meta name="description" content="English 3000 V3.1.4 - database sạch 3000 từ từ 3 PDF, IPA, chủ đề và SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.1.3</title>
+  <title>English 3000 V3.1.4</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.1.3</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.1.4</p>
         <h1>3000 từ vựng nền tảng</h1>
-        <p class="muted">Offline pack • IPA • Chủ đề • Ôn lặp lại thông minh</p>
+        <p class="muted">Database sạch từ 3 PDF • IPA • SRS • Offline</p>
       </div>
       <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
     </header>
@@ -25,8 +25,8 @@
         <article class="hero card">
           <div>
             <span class="tag">Lộ trình chính</span>
-            <h2>3000 từ cơ bản A1–B2</h2>
-            <p>Gói dữ liệu local giúp học nghĩa, IPA và ví dụ ngay cả khi mất mạng.</p>
+            <h2>3000 từ đã làm sạch</h2>
+            <p>Quiz chỉ dùng từ đã có nghĩa, IPA, từ loại và không bị đánh dấu mâu thuẫn.</p>
           </div>
           <div class="hero-stat">
             <strong id="masteredTop">0</strong>
@@ -46,7 +46,7 @@
           <div class="offline-pack-icon">📦</div>
           <div class="offline-pack-copy">
             <strong id="offlinePackStatus">Đang kiểm tra gói offline…</strong>
-            <span id="offlinePackHint">V3.1.2 ưu tiên dữ liệu local trước mọi API.</span>
+            <span id="offlinePackHint">V3.1.4 dùng trực tiếp database sạch từ 3 PDF bạn đã cung cấp.</span>
           </div>
           <span id="offlinePackCount" class="offline-pack-count">0</span>
         </article>
@@ -127,7 +127,6 @@
 
                 <div id="browseTabs" class="browse-tabs compact-tabs">
                   <button class="browse-tab active" data-browse="topic">🧩 Chủ đề</button>
-                  <button class="browse-tab" data-browse="level">📚 Trình độ</button>
                   <button class="browse-tab" data-browse="stage">🔢 Chặng</button>
                 </div>
 
@@ -136,10 +135,6 @@
                     <input id="topicSearch" type="search" placeholder="Tìm: Work, Food, Travel, Health..." autocomplete="off" />
                   </div>
                   <div id="topicGrid" class="topic-grid"></div>
-                </div>
-
-                <div id="levelPanel" class="selector-panel hidden">
-                  <div id="levelGrid" class="level-grid"></div>
                 </div>
 
                 <div id="stagePanel" class="selector-panel hidden">
@@ -190,7 +185,7 @@
 
         <article class="info-card compact-info">
           <strong>Luồng mới</strong>
-          <p>Mở app → bấm <b>Học tiếp</b>. Chỉ mở “Tùy chỉnh buổi học” khi bạn muốn đổi chủ đề, số từ hoặc kiểu câu hỏi.</p>
+          <p>V3.1.4 bỏ các từ thiếu IPA/từ loại hoặc có mâu thuẫn khỏi Quiz. Nghĩa Quiz không còn lấy từ API dịch.</p>
         </article>
       </section>
 
@@ -215,7 +210,7 @@
         <article class="question-card card">
           <div class="question-meta">
             <span id="contextLabel" class="tag">Chủ đề</span>
-            <span id="levelLabel" class="soft-tag">A1</span>
+            <span id="posLabel" class="soft-tag">word</span>
           </div>
 
           <p id="promptLabel" class="quiz-instruction">Chọn nghĩa đúng</p>
@@ -278,7 +273,7 @@
     </main>
 
     <footer>
-      <p>Tiến độ được lưu trên trình duyệt. V3.1.2 tương thích dữ liệu V2/V2.1/V3/V3.1.</p>
+      <p>Tiến độ được lưu trên trình duyệt. V3.1.4 giữ SRS từ các bản trước và chỉ tính các từ trong database sạch.</p>
     </footer>
   </div>
 

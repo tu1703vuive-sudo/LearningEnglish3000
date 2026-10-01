@@ -1,0 +1,2115 @@
+{
+  "counts": {
+    "primary_rows_parsed": 3396,
+    "primary_unique_words_case_sensitive": 3394,
+    "prep_rows_extracted": 2877,
+    "prep_rows_parsed": 2877,
+    "prep_rows_matched_to_core": 2772,
+    "topic_rows_parsed": 1760,
+    "topic_count": 60,
+    "topic_rows_matched_to_core": 674,
+    "core_words_with_at_least_one_topic": 588,
+    "core_words_missing_meaning_after_merge": 0,
+    "core_words_missing_ipa_after_merge": 83,
+    "core_words_missing_pos_after_merge": 31,
+    "core_words_with_any_conflict": 310,
+    "conflicts_by_field": {
+      "meaning": 248,
+      "pos": 47,
+      "ipa": 49
+    },
+    "core_words_with_any_secondary_difference": 773,
+    "supplemental_topic_only_words": 1024,
+    "supplemental_prep_only_words": 20
+  },
+  "sample_conflicts": [
+    {
+      "word": "accident",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.206,
+          "source": "topics",
+          "source_page": 51,
+          "primary_value": "tai nạn, rủi ro. by accident: tình cờ",
+          "source_value": "Tai nạn"
+        }
+      ]
+    },
+    {
+      "word": "advanced",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.196,
+          "source": "topics",
+          "source_page": 102,
+          "primary_value": "tiên tiến, tiến bộ, cap cao. in advance trước, sớm",
+          "source_value": "Tiên tiến"
+        }
+      ]
+    },
+    {
+      "word": "air",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.265,
+          "source": "topics",
+          "source_page": 24,
+          "primary_value": "không khí, bầu không khí, không gian",
+          "source_value": "Không khí"
+        }
+      ]
+    },
+    {
+      "word": "ally",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.191,
+          "source": "topics",
+          "source_page": 20,
+          "primary_value": "nước đồng minh, liên minh; liên kết, kết thông gia",
+          "source_value": "Đồng minh"
+        }
+      ]
+    },
+    {
+      "word": "alternatively",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 6,
+          "primary_value": "adv",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "arm",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.242,
+          "source": "topics",
+          "source_page": 76,
+          "primary_value": "cánh tay; vũ trang, trang bị (vũ khí)",
+          "source_value": "Cánh tay"
+        }
+      ]
+    },
+    {
+      "word": "around",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 15,
+          "primary_value": "xung quanh, vòng quanh",
+          "source_value": "Khoảng"
+        }
+      ]
+    },
+    {
+      "word": "asleep",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.324,
+          "source": "prep",
+          "source_page": 9,
+          "primary_value": "ngủ, đang ngủ. fall asleep ngủ thiếp đi",
+          "source_value": "ngủ, đang ngủ"
+        }
+      ]
+    },
+    {
+      "word": "assistant",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 95,
+          "primary_value": "người giúp đỡ, người phụ tá; giúp đỡ",
+          "source_value": "Trợ lý"
+        }
+      ]
+    },
+    {
+      "word": "associate",
+      "conflict_fields": [
+        "ipa",
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 20,
+          "primary_value": "kết giao, liên kết, kết hợp, cho cộng tác. associated with liên kết với",
+          "source_value": "Bạn đồng liêu, đồng minh"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.471,
+          "source": "topics",
+          "source_page": 20,
+          "primary_value": "ə'souʃiit",
+          "source_value": "/əˈsəʊ.si.eɪt/"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 20,
+          "primary_value": "v",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "back",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.143,
+          "source": "topics",
+          "source_page": 77,
+          "primary_value": "lưng, sau, về phía sau, trở lại",
+          "source_value": "Lưng"
+        }
+      ]
+    },
+    {
+      "word": "bad",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.212,
+          "source": "prep",
+          "source_page": 11,
+          "primary_value": "xấu, tồi. go bad bẩn thỉu, thối, hỏng",
+          "source_value": "xấu, tồi"
+        }
+      ]
+    },
+    {
+      "word": "bag",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.188,
+          "source": "topics",
+          "source_page": 17,
+          "primary_value": "bao, túi, cặp xách",
+          "source_value": "Túi"
+        }
+      ]
+    },
+    {
+      "word": "band",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 41,
+          "primary_value": "băng, đai, nẹp",
+          "source_value": "Ban nhạc"
+        },
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 64,
+          "primary_value": "băng, đai, nẹp",
+          "source_value": "Nhóm nhạc, ban nhạc"
+        }
+      ]
+    },
+    {
+      "word": "bargain",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.207,
+          "source": "topics",
+          "source_page": 17,
+          "primary_value": "sự mặc cả, sự giao kèo mua bán",
+          "source_value": "Mặc cả"
+        }
+      ]
+    },
+    {
+      "word": "battery",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.3,
+          "source": "topics",
+          "source_page": 30,
+          "primary_value": "pin, ắc quy",
+          "source_value": "Pin"
+        },
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.3,
+          "source": "topics",
+          "source_page": 94,
+          "primary_value": "pin, ắc quy",
+          "source_value": "Pin"
+        }
+      ]
+    },
+    {
+      "word": "bay",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.073,
+          "source": "topics",
+          "source_page": 39,
+          "primary_value": "gian (nhà), nhịp (cầu), chuồng (ngựa); bays: vòng nguyệt quế, vịnh",
+          "source_value": "Vịnh"
+        }
+      ]
+    },
+    {
+      "word": "bear",
+      "conflict_fields": [
+        "ipa",
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 87,
+          "primary_value": "mang, cầm, vác, đeo, ôm",
+          "source_value": "Gấu"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.333,
+          "source": "topics",
+          "source_page": 87,
+          "primary_value": "beə",
+          "source_value": "/bɛr/"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 87,
+          "primary_value": "v",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "beard",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 76,
+          "primary_value": "biəd",
+          "source_value": "/bɪrd/"
+        }
+      ]
+    },
+    {
+      "word": "because",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.257,
+          "source": "prep",
+          "source_page": 13,
+          "primary_value": "bởi vì, vì. because of prep. vì, do bởi",
+          "source_value": "bởi vì, vì"
+        }
+      ]
+    },
+    {
+      "word": "beer",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.286,
+          "source": "topics",
+          "source_page": 56,
+          "primary_value": "bi:ə",
+          "source_value": "/bɪr/"
+        }
+      ]
+    },
+    {
+      "word": "behalf",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.196,
+          "source": "prep",
+          "source_page": 13,
+          "primary_value": "sự thay mặt. on behalf of sb thay mặt cho ai, nhân danh ai",
+          "source_value": "sự thay mặt"
+        }
+      ]
+    },
+    {
+      "word": "behind",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 100,
+          "primary_value": "prep, adv",
+          "source_value": "pre"
+        }
+      ]
+    },
+    {
+      "word": "bell",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.261,
+          "source": "topics",
+          "source_page": 61,
+          "primary_value": "cái chuông, tiếng chuông",
+          "source_value": "Chuông"
+        }
+      ]
+    },
+    {
+      "word": "beside",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 100,
+          "primary_value": "prep",
+          "source_value": "pre"
+        }
+      ]
+    },
+    {
+      "word": "between",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 100,
+          "primary_value": "prep, adv",
+          "source_value": "pre"
+        }
+      ]
+    },
+    {
+      "word": "bit",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.323,
+          "source": "prep",
+          "source_page": 15,
+          "primary_value": "miếng, mảnh. a bit một chút, một t",
+          "source_value": "miếng, mảnh"
+        }
+      ]
+    },
+    {
+      "word": "bitter",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.182,
+          "source": "topics",
+          "source_page": 56,
+          "primary_value": "đắng; đắng cay, chua xót",
+          "source_value": "Đắng"
+        }
+      ]
+    },
+    {
+      "word": "blind",
+      "conflict_fields": [
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 18,
+          "primary_value": "đui, mù",
+          "source_value": "Mành, rèm che"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 18,
+          "primary_value": "adj",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "board",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 6,
+          "primary_value": "tấm ván; lát ván, lót ván. on board trên tàu thủy",
+          "source_value": "Bảng"
+        }
+      ]
+    },
+    {
+      "word": "boat",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 13,
+          "primary_value": "bout",
+          "source_value": "/bəʊt/"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 39,
+          "primary_value": "bout",
+          "source_value": "/bəʊt/"
+        }
+      ]
+    },
+    {
+      "word": "book",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.308,
+          "source": "topics",
+          "source_page": 6,
+          "primary_value": "sách; ghi chép",
+          "source_value": "Sách"
+        }
+      ]
+    },
+    {
+      "word": "bored",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 16,
+          "primary_value": "adj",
+          "source_value": "n"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 53,
+          "primary_value": "adj",
+          "source_value": "v"
+        }
+      ]
+    },
+    {
+      "word": "bowl",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 21,
+          "primary_value": "boul",
+          "source_value": "/bəʊl/"
+        }
+      ]
+    },
+    {
+      "word": "burn",
+      "conflict_fields": [
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 45,
+          "primary_value": "đốt, đốt cháy, thắp, nung, thiêu",
+          "source_value": "Bỏng"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 45,
+          "primary_value": "v",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "bush",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.333,
+          "source": "topics",
+          "source_page": 91,
+          "primary_value": "bu∫",
+          "source_value": "/bʊʃ/"
+        }
+      ]
+    },
+    {
+      "word": "captain",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 13,
+          "primary_value": "người cầm đầu, người chỉ huy, thủ lĩnh",
+          "source_value": "Thuyền trưởng"
+        },
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 38,
+          "primary_value": "người cầm đầu, người chỉ huy, thủ lĩnh",
+          "source_value": "Đội trưởng"
+        }
+      ]
+    },
+    {
+      "word": "card",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 61,
+          "primary_value": "thẻ, thiếp",
+          "source_value": "Tấm thiệp"
+        }
+      ]
+    },
+    {
+      "word": "carelessly",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 20,
+          "primary_value": "adv",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "case",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.22,
+          "source": "prep",
+          "source_page": 20,
+          "primary_value": "vỏ, ngăn, túi,trường hợp, cảnh ngộ, hoàn cảnh, tình thế",
+          "source_value": "vỏ, ngăn, túi"
+        }
+      ]
+    },
+    {
+      "word": "celebrate",
+      "conflict_fields": [
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.175,
+          "source": "topics",
+          "source_page": 36,
+          "primary_value": "kỷ niệm, làm lễ kỷ niệm; tán dương, ca tụng",
+          "source_value": "Kỷ niệm"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 36,
+          "primary_value": "v",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "challenge",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.191,
+          "source": "topics",
+          "source_page": 105,
+          "primary_value": "sự thử thách, sự thách thức; thách thức, thử thách",
+          "source_value": "Thử thách"
+        }
+      ]
+    },
+    {
+      "word": "charge",
+      "conflict_fields": [
+        "ipa",
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 106,
+          "primary_value": "nhiệm vụ, bổn phận, trách nhiệm; giao nhiệm vụ, giao việc. in charge of phụ trách",
+          "source_value": "Phí, tiền phải trả"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.364,
+          "source": "topics",
+          "source_page": 106,
+          "primary_value": "tʃɑ:dʤ",
+          "source_value": "/ʧɑrdʒ/"
+        }
+      ]
+    },
+    {
+      "word": "cheap",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 16,
+          "primary_value": "adj",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "cheaply",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 22,
+          "primary_value": "adv",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "chemist’s",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 22,
+          "primary_value": "nhà hóa học",
+          "source_value": "(BrE)"
+        }
+      ]
+    },
+    {
+      "word": "chemistry",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.212,
+          "source": "topics",
+          "source_page": 70,
+          "primary_value": "hóa học, môn hóa học, ngành hóa học",
+          "source_value": "Hóa học"
+        }
+      ]
+    },
+    {
+      "word": "chest",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 76,
+          "primary_value": "tủ, rương, hòm",
+          "source_value": "Ngực"
+        }
+      ]
+    },
+    {
+      "word": "chicken",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.118,
+          "source": "topics",
+          "source_page": 86,
+          "primary_value": "gà, gà con, thịt gà",
+          "source_value": "Gà"
+        }
+      ]
+    },
+    {
+      "word": "chip",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 62,
+          "primary_value": "vỏ bào, mảnh vỡ, chỗ sứt, mẻ",
+          "source_value": "Khoai tây chiên"
+        }
+      ]
+    },
+    {
+      "word": "classroom",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.429,
+          "source": "topics",
+          "source_page": 69,
+          "primary_value": "klα:si",
+          "source_value": "/ˈklæs.ruːm/"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.429,
+          "source": "topics",
+          "source_page": 80,
+          "primary_value": "klα:si",
+          "source_value": "/ˈklæs.ruːm/"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.429,
+          "source": "topics",
+          "source_page": 89,
+          "primary_value": "klα:si",
+          "source_value": "/ˈklæsˌruːm/"
+        }
+      ]
+    },
+    {
+      "word": "clear",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 23,
+          "primary_value": "adj, v",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "clever",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.27,
+          "source": "topics",
+          "source_page": 54,
+          "primary_value": "lanh lợi, thông minh. tài giỏi, khéo léo",
+          "source_value": "Thông minh"
+        }
+      ]
+    },
+    {
+      "word": "close",
+      "conflict_fields": [
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 20,
+          "primary_value": "đóng kín, chật chội, che đậy",
+          "source_value": "Thân thiết"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 29,
+          "primary_value": "adj",
+          "source_value": "v"
+        }
+      ]
+    },
+    {
+      "word": "closet",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 19,
+          "primary_value": "buồng, phòng để đồ, phòng kho",
+          "source_value": "Tủ đóng trong tường"
+        }
+      ]
+    },
+    {
+      "word": "cold",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.154,
+          "source": "topics",
+          "source_page": 72,
+          "primary_value": "lạnh, sự lạnh lẽo, lạnh nhạt",
+          "source_value": "Lạnh"
+        }
+      ]
+    },
+    {
+      "word": "college",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 69,
+          "primary_value": "kɔlidʤ",
+          "source_value": "/ˈkɒl.ɪdʒ/"
+        },
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 78,
+          "primary_value": "kɔlidʤ",
+          "source_value": "/ˈkɒl.ɪdʒ/"
+        }
+      ]
+    },
+    {
+      "word": "commit",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 106,
+          "primary_value": "giao, gửi, ủy nhiệm, ủy thác; tống giam, bỏ tù",
+          "source_value": "Cam kết"
+        }
+      ]
+    },
+    {
+      "word": "concerning",
+      "conflict_fields": [
+        "meaning",
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 27,
+          "primary_value": "có liên quan, dính líu tới",
+          "source_value": "bâng khuâng, ái ngại"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 27,
+          "primary_value": "n",
+          "source_value": "prep."
+        }
+      ]
+    },
+    {
+      "word": "confuse",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 27,
+          "primary_value": "v",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "cook",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.316,
+          "source": "topics",
+          "source_page": 10,
+          "primary_value": "nấu ăn, người nấu ăn",
+          "source_value": "Nấu ăn"
+        }
+      ]
+    },
+    {
+      "word": "cool",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.25,
+          "source": "topics",
+          "source_page": 72,
+          "primary_value": "mát mẻ, điềm tĩnh; làm mát,",
+          "source_value": "Mát mẻ"
+        }
+      ]
+    },
+    {
+      "word": "copy",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.157,
+          "source": "topics",
+          "source_page": 29,
+          "primary_value": "bản sao, bản chép lại; sự sao chép; sao chép, bắt chước",
+          "source_value": "Sao chép"
+        }
+      ]
+    },
+    {
+      "word": "cottage",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 39,
+          "primary_value": "kɔtidʤ",
+          "source_value": "/ˈkɒt.ɪdʒ/"
+        }
+      ]
+    },
+    {
+      "word": "cough",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.111,
+          "source": "topics",
+          "source_page": 44,
+          "primary_value": "ho, sự ho, tiếng hoa",
+          "source_value": "Ho"
+        }
+      ]
+    },
+    {
+      "word": "could",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.333,
+          "source": "prep",
+          "source_page": 30,
+          "primary_value": "có thể",
+          "source_value": "có thể, có khả năng"
+        }
+      ]
+    },
+    {
+      "word": "counter",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.29,
+          "source": "topics",
+          "source_page": 16,
+          "primary_value": "quầy hàng, quầy thu tiền, máy đếm",
+          "source_value": "Quầy hàng"
+        }
+      ]
+    },
+    {
+      "word": "couple",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.125,
+          "source": "topics",
+          "source_page": 66,
+          "primary_value": "đôi, cặp; đôi vợ chồng, cặp nam nữ. a couple một cặp, một đôi",
+          "source_value": "Cặp đôi"
+        }
+      ]
+    },
+    {
+      "word": "course",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 79,
+          "primary_value": "tiến trình, quá trình diễn tiến; sân chạy đua. of course dĩ nhiên, loạt; khoá; đợt; lớp",
+          "source_value": "Khóa học"
+        }
+      ]
+    },
+    {
+      "word": "crazy",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 55,
+          "primary_value": "điên, mất trí",
+          "source_value": "Ngu ngốc"
+        }
+      ]
+    },
+    {
+      "word": "credit card",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 16,
+          "primary_value": "n",
+          "source_value": "n. phr"
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 105,
+          "primary_value": "n",
+          "source_value": "n. phr"
+        }
+      ]
+    },
+    {
+      "word": "curtain",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 18,
+          "primary_value": "màn (cửa, rạp hát, khói, sương)",
+          "source_value": "Rèm"
+        }
+      ]
+    },
+    {
+      "word": "curve",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.186,
+          "source": "topics",
+          "source_page": 100,
+          "primary_value": "đường cong, đường vòng; cong, uốn cong, bẻ cong",
+          "source_value": "Uốn cong"
+        }
+      ]
+    },
+    {
+      "word": "dancer",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 95,
+          "primary_value": "diễn viên múa, người nhảy múa",
+          "source_value": "Vũ công"
+        }
+      ]
+    },
+    {
+      "word": "date",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 66,
+          "primary_value": "ngày, kỳ, kỳ hạn, thời kỳ, thời đại; đề ngày tháng, ghi niên hiệu",
+          "source_value": "Buổi hẹn hò"
+        }
+      ]
+    },
+    {
+      "word": "debate",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.306,
+          "source": "topics",
+          "source_page": 78,
+          "primary_value": "cuộc tranh luận, cuộc tranh cãi; tranh luận, bàn cãi",
+          "source_value": "Cuộc tranh luận"
+        }
+      ]
+    },
+    {
+      "word": "degree",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.296,
+          "source": "topics",
+          "source_page": 70,
+          "primary_value": "mức độ, trình độ; bằng cấp; độ",
+          "source_value": "Bằng cấp"
+        },
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.296,
+          "source": "topics",
+          "source_page": 78,
+          "primary_value": "mức độ, trình độ; bằng cấp; độ",
+          "source_value": "Bằng cấp"
+        }
+      ]
+    },
+    {
+      "word": "desk",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.269,
+          "source": "topics",
+          "source_page": 6,
+          "primary_value": "bàn (học sinh, viết, làm việc)",
+          "source_value": "Bàn học"
+        },
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.269,
+          "source": "topics",
+          "source_page": 89,
+          "primary_value": "bàn (học sinh, viết, làm việc)",
+          "source_value": "Bàn học"
+        }
+      ]
+    },
+    {
+      "word": "detail",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.235,
+          "source": "prep",
+          "source_page": 36,
+          "primary_value": "chi tiết. in detail: tường tận, tỉ mỉ",
+          "source_value": "chi tiết"
+        }
+      ]
+    },
+    {
+      "word": "dictionary",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 6,
+          "primary_value": "n",
+          "source_value": "adj"
+        }
+      ]
+    },
+    {
+      "word": "dinner",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.333,
+          "source": "topics",
+          "source_page": 101,
+          "primary_value": "bữa trưa, chiều",
+          "source_value": "Bữa ăn tối"
+        }
+      ]
+    },
+    {
+      "word": "director",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 58,
+          "primary_value": "giám đốc, người điều khiển, chỉ huy",
+          "source_value": "Đạo diễn"
+        }
+      ]
+    },
+    {
+      "word": "dismiss",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.159,
+          "source": "topics",
+          "source_page": 104,
+          "primary_value": "giải tán (quân đội, đám đông); sa thải (người làm)",
+          "source_value": "Sa thải"
+        }
+      ]
+    },
+    {
+      "word": "divide",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.2,
+          "source": "topics",
+          "source_page": 15,
+          "primary_value": "chia, chia ra, phân ra",
+          "source_value": "Chia"
+        }
+      ]
+    },
+    {
+      "word": "doctor (abbr Dr)",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.286,
+          "source": "topics",
+          "source_page": 27,
+          "primary_value": "bác sĩ y khoa, tiến sĩ",
+          "source_value": "Bác sĩ"
+        },
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.286,
+          "source": "topics",
+          "source_page": 97,
+          "primary_value": "bác sĩ y khoa, tiến sĩ",
+          "source_value": "Bác sĩ"
+        }
+      ]
+    },
+    {
+      "word": "dog",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.333,
+          "source": "topics",
+          "source_page": 86,
+          "primary_value": "dɔg",
+          "source_value": "/dɒɡ/"
+        }
+      ]
+    },
+    {
+      "word": "dozen",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 40,
+          "primary_value": "ndet",
+          "source_value": "n., det."
+        },
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 15,
+          "primary_value": "ndet",
+          "source_value": "n"
+        }
+      ]
+    },
+    {
+      "word": "drink",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.333,
+          "source": "topics",
+          "source_page": 11,
+          "primary_value": "đồ uống; uống",
+          "source_value": "Uống"
+        }
+      ]
+    },
+    {
+      "word": "drive",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 52,
+          "primary_value": "v, n",
+          "source_value": "n. phr"
+        }
+      ]
+    },
+    {
+      "word": "driver",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 52,
+          "primary_value": "người lái xe",
+          "source_value": "Tài xế"
+        }
+      ]
+    },
+    {
+      "word": "drum",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.238,
+          "source": "topics",
+          "source_page": 64,
+          "primary_value": "cái trống, tiếng trống",
+          "source_value": "Trống"
+        }
+      ]
+    },
+    {
+      "word": "dry",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.13,
+          "source": "topics",
+          "source_page": 72,
+          "primary_value": "khô, cạn; làm khô, sấy khô",
+          "source_value": "Khô"
+        }
+      ]
+    },
+    {
+      "word": "dull",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 73,
+          "primary_value": "chậm hiểu, ngu đần",
+          "source_value": "U ám"
+        }
+      ]
+    },
+    {
+      "word": "each other",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 41,
+          "primary_value": "n, pro",
+          "source_value": "pron"
+        }
+      ]
+    },
+    {
+      "word": "ear",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0,
+          "source": "topics",
+          "source_page": 76,
+          "primary_value": "iə",
+          "source_value": "/ɪr/"
+        }
+      ]
+    },
+    {
+      "word": "engaged",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 42,
+          "primary_value": "adj",
+          "source_value": "v"
+        }
+      ]
+    },
+    {
+      "word": "exam",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "topics",
+          "source_page": 79,
+          "primary_value": "viết tắt của Examination (xem nghĩa phía dưới)",
+          "source_value": "Bài thi, kì thi"
+        }
+      ]
+    },
+    {
+      "word": "exhibit",
+      "conflict_fields": [
+        "meaning"
+      ],
+      "conflicts": [
+        {
+          "field": "meaning",
+          "status": "conflict",
+          "similarity": 0.277,
+          "source": "topics",
+          "source_page": 33,
+          "primary_value": "trưng bày, triển lãm; vật trưng bày vật triển lãm",
+          "source_value": "Vật triển lãm"
+        }
+      ]
+    },
+    {
+      "word": "extent",
+      "conflict_fields": [
+        "pos"
+      ],
+      "conflicts": [
+        {
+          "field": "pos",
+          "status": "conflict",
+          "similarity": 0.0,
+          "source": "prep",
+          "source_page": 49,
+          "primary_value": "nv",
+          "source_value": "v"
+        }
+      ]
+    },
+    {
+      "word": "eye",
+      "conflict_fields": [
+        "ipa"
+      ],
+      "conflicts": [
+        {
+          "field": "ipa",
+          "status": "conflict",
+          "similarity": 0.5,
+          "source": "topics",
+          "source_page": 76,
+          "primary_value": "ai",
+          "source_value": "/aɪ/"
+        }
+      ]
+    }
+  ],
+  "missing_ipa_words": [
+    "a",
+    "advertising",
+    "airport",
+    "alternatively",
+    "anti",
+    "any",
+    "apart from, aside from",
+    "apparently",
+    "arms",
+    "as well",
+    "attached",
+    "automatically",
+    "awfully",
+    "awkwardly",
+    "bathroom",
+    "be sick",
+    "behalf, on sb’s behalf",
+    "behaviour, behavior",
+    "businessman, businesswoman",
+    "carelessly",
+    "CD",
+    "cellphone, cellular phone",
+    "centimetre, centimeter",
+    "cheaply",
+    "cheerfully",
+    "chemist’s",
+    "clear",
+    "confuse",
+    "dressed",
+    "DVD",
+    "e.g.",
+    "each other",
+    "ex-",
+    "feel sick",
+    "finish",
+    "fixed",
+    "further, furthest",
+    "give birth",
+    "glasses",
+    "grey, usually gray",
+    "have to",
+    "i.e.",
+    "ice cream",
+    "import",
+    "impressed",
+    "in addition",
+    "in case of",
+    "in control of",
+    "in exchange for",
+    "interested",
+    "look after",
+    "make friends with",
+    "mid-",
+    "mine",
+    "mobile phone (mobile)",
+    "morally",
+    "movie theater",
+    "Mr",
+    "Mrs",
+    "Ms",
+    "non-",
+    "old-fashioned",
+    "outer",
+    "pay attention to",
+    "per cent (percent)",
+    "promise",
+    "put sth on",
+    "re-",
+    "refer to",
+    "self-",
+    "stick out, stick for",
+    "stress",
+    "swearing",
+    "swimming pool",
+    "take part in",
+    "take sth over",
+    "thank you",
+    "TV television",
+    "upwards",
+    "used to",
+    "website",
+    "Yours sincerely",
+    "Yours Truly"
+  ],
+  "missing_meaning_words": [],
+  "missing_pos_words": [
+    "as well",
+    "be sick",
+    "behalf, on sb’s behalf",
+    "etc., et cetera",
+    "feel sick",
+    "in case of",
+    "in control of",
+    "in exchange for",
+    "look after",
+    "make friends with",
+    "opposed to",
+    "pay attention to",
+    "put sth on",
+    "stick out, stick for",
+    "take part in",
+    "take sth over",
+    "the",
+    "till, until",
+    "TV television",
+    "unacceptable, acceptable",
+    "uncertain, certain",
+    "uncomfortable,comfortable",
+    "unconscious, conscious",
+    "uncontrolled, control",
+    "Unfair, unfairly",
+    "Unusual",
+    "Unwilling",
+    "worse, worst",
+    "Yours sincerely",
+    "Yours Truly",
+    "zero number"
+  ],
+  "multi_primary": [
+    {
+      "word": "each other",
+      "source_index": [
+        941,
+        942
+      ],
+      "sources": [
+        {
+          "page": 33,
+          "index": 941,
+          "word": "each other",
+          "pos": "n, pro",
+          "ipa": "",
+          "meaning": "nhau, lẫn nhau"
+        },
+        {
+          "page": 33,
+          "index": 942,
+          "word": "each other",
+          "pos": "",
+          "ipa": "",
+          "meaning": "nhau, lẫn nhau"
+        }
+      ]
+    },
+    {
+      "word": "side",
+      "source_index": [
+        2692,
+        2693
+      ],
+      "sources": [
+        {
+          "page": 94,
+          "index": 2692,
+          "word": "side",
+          "pos": "n",
+          "ipa": "said",
+          "meaning": "mặt, mặt phẳng"
+        },
+        {
+          "page": 94,
+          "index": 2693,
+          "word": "side",
+          "pos": "n",
+          "ipa": "sait",
+          "meaning": "chỗ, vị trí"
+        }
+      ]
+    }
+  ]
+}
