@@ -1,0 +1,9 @@
+{
+  "name": "English 3000",
+  "short_name": "English3000",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0f172a",
+  "description": "Học 3000 từ vựng tiếng Anh cơ bản bằng lựa chọn."
+}

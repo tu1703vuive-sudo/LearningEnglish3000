@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="English 3000 - học 3000 từ vựng cơ bản bằng lựa chọn" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>English 3000</title>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ENGLISH 3000</p>
+        <h1>3000 từ vựng cơ bản</h1>
+        <p class="muted">Học theo chặng nhỏ • Chọn đáp án • Ôn từ sai</p>
+      </div>
+      <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="homeView" class="view active">
+        <article class="hero card">
+          <div>
+            <span class="tag">Lộ trình chính</span>
+            <h2>3000 từ nền tảng</h2>
+            <p>30 chặng × 100 từ. Mỗi ngày chỉ cần học 10–30 từ.</p>
+          </div>
+          <div class="hero-stat">
+            <strong id="masteredTop">0</strong>
+            <span>/3000</span>
+          </div>
+        </article>
+
+        <div class="progress-wrap">
+          <div class="progress-head">
+            <span>Tiến độ tổng</span>
+            <strong id="totalPercent">0%</strong>
+          </div>
+          <div class="progress-bar"><span id="totalProgress"></span></div>
+        </div>
+
+        <div class="section-title">
+          <div>
+            <h2>1. Chọn chặng</h2>
+            <p class="muted small">Mỗi chặng gồm 100 từ.</p>
+          </div>
+          <button id="reviewWrongBtn" class="ghost-btn">Ôn từ sai</button>
+        </div>
+
+        <div id="stageGrid" class="stage-grid"></div>
+
+        <div class="section-title">
+          <div>
+            <h2>2. Chọn số từ</h2>
+            <p class="muted small">Khuyên dùng 10–20 từ mỗi buổi.</p>
+          </div>
+        </div>
+
+        <div class="choice-row" id="sizeChoices">
+          <button class="choice active" data-size="10">10 từ</button>
+          <button class="choice" data-size="20">20 từ</button>
+          <button class="choice" data-size="30">30 từ</button>
+        </div>
+
+        <div class="section-title">
+          <div>
+            <h2>3. Chọn kiểu học</h2>
+          </div>
+        </div>
+
+        <div class="mode-grid" id="modeChoices">
+          <button class="mode-card active" data-mode="envi">
+            <span class="mode-icon">🇬🇧</span>
+            <strong>Anh → Việt</strong>
+            <small>Nhìn từ tiếng Anh, chọn nghĩa</small>
+          </button>
+          <button class="mode-card" data-mode="vien">
+            <span class="mode-icon">🇻🇳</span>
+            <strong>Việt → Anh</strong>
+            <small>Nhìn nghĩa, chọn từ tiếng Anh</small>
+          </button>
+          <button class="mode-card" data-mode="listen">
+            <span class="mode-icon">🎧</span>
+            <strong>Nghe → Chọn nghĩa</strong>
+            <small>Nghe phát âm rồi chọn nghĩa</small>
+          </button>
+        </div>
+
+        <button id="startBtn" class="primary big">Bắt đầu học</button>
+
+        <article class="info-card">
+          <strong>Gợi ý:</strong>
+          <p>Đừng cố học 100 từ một lúc. Học 10–20 từ, làm lại các từ sai, rồi mới chuyển sang nhóm tiếp theo.</p>
+        </article>
+      </section>
+
+      <!-- LOADING -->
+      <section id="loadingView" class="view">
+        <div class="center-card card">
+          <div class="spinner"></div>
+          <h2>Đang chuẩn bị bài học…</h2>
+          <p id="loadingText" class="muted">Đang tải danh sách từ và nghĩa tiếng Việt.</p>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quizView" class="view">
+        <div class="quiz-top">
+          <button id="backBtn" class="icon-btn">←</button>
+          <div class="quiz-progress">
+            <div class="progress-bar"><span id="quizProgressBar"></span></div>
+            <small id="quizProgressText">1/10</small>
+          </div>
+          <div class="score-pill">✓ <span id="scoreValue">0</span></div>
+        </div>
+
+        <article class="question-card card">
+          <div class="question-meta">
+            <span id="stageLabel" class="tag">Chặng 1</span>
+            <span id="levelLabel" class="soft-tag">A1</span>
+          </div>
+
+          <p id="promptLabel" class="muted center">Chọn nghĩa đúng</p>
+
+          <button id="audioBtn" class="audio-btn hidden" aria-label="Nghe từ">
+            🔊
+          </button>
+
+          <h2 id="questionWord" class="question-word">hello</h2>
+
+          <button id="wordAudioBtn" class="mini-audio">🔊 Nghe phát âm</button>
+
+          <div id="answers" class="answers"></div>
+
+          <div id="feedback" class="feedback"></div>
+
+          <button id="nextBtn" class="primary big hidden">Tiếp tục</button>
+        </article>
+      </section>
+
+      <!-- RESULT -->
+      <section id="resultView" class="view">
+        <article class="result-card card">
+          <div class="result-emoji" id="resultEmoji">🎉</div>
+          <p class="eyebrow">HOÀN THÀNH</p>
+          <h2 id="resultTitle">8/10 câu đúng</h2>
+          <p id="resultText" class="muted">Tốt lắm. Hãy ôn lại 2 từ bạn vừa chọn sai.</p>
+
+          <div class="result-stats">
+            <div><strong id="resultCorrect">0</strong><small>Đúng</small></div>
+            <div><strong id="resultWrong">0</strong><small>Sai</small></div>
+            <div><strong id="resultMastered">0</strong><small>Đã thuộc</small></div>
+          </div>
+
+          <button id="retryWrongBtn" class="primary big">Ôn lại từ sai</button>
+          <button id="homeBtn" class="secondary big">Về chọn chặng</button>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Dữ liệu tiến độ được lưu trên chính trình duyệt của bạn.</p>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
