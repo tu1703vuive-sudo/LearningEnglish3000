@@ -1,0 +1,1231 @@
+{
+  "meta": {
+    "count": 150,
+    "purpose": "regression fixture",
+    "humanReviewComplete": false,
+    "note": "Manual-override anchors are explicitly reviewed; remaining entries are two-source-consensus and should receive human review over time."
+  },
+  "words": [
+    {
+      "word": "academic",
+      "meaning": "thuộc học thuật; thuộc trường đại học, học viện",
+      "ipa": "/ˌækəˈdemik/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "accommodation",
+      "meaning": "chỗ ở, nơi ở",
+      "ipa": "/əˌkɔməˈdeiʃn/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "actually",
+      "meaning": "thực ra, thật ra",
+      "ipa": "/æktjuəli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "adapt",
+      "meaning": "thích nghi; điều chỉnh cho phù hợp",
+      "ipa": "/əˈdæpt/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "address",
+      "meaning": "địa chỉ; đề cập, giải quyết (v)",
+      "ipa": "/əˈdres/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "admit",
+      "meaning": "thừa nhận; cho phép vào, nhận vào",
+      "ipa": "/ədˈmit/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "advertise",
+      "meaning": "quảng cáo",
+      "ipa": "/ædvətaiz/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "aged",
+      "meaning": "có tuổi, già",
+      "ipa": "/eidʒid/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "agency",
+      "meaning": "cơ quan; đại lý",
+      "ipa": "/eidʒənsi/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "aid",
+      "meaning": "sự giúp đỡ; giúp đỡ",
+      "ipa": "/eid/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "alarmed",
+      "meaning": "lo sợ, hoảng hốt",
+      "ipa": "/əˈlɑːm/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "amount",
+      "meaning": "số lượng; lên tới, tương đương (v)",
+      "ipa": "/əˈmaunt/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "apartment",
+      "meaning": "căn hộ",
+      "ipa": "/əˈpɑːtmənt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "application",
+      "meaning": "đơn xin, đơn đăng ký; ứng dụng",
+      "ipa": "/ˌæpliˈkeiʃn/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "approximate",
+      "meaning": "xấp xỉ, gần đúng",
+      "ipa": "/əˈprɔksimit/",
+      "pos": "adj, to",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "assure",
+      "meaning": "đảm bảo, cam đoan",
+      "ipa": "/əˈʃuə/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "audience",
+      "meaning": "khán giả, thính giả",
+      "ipa": "/ɔːdjəns/",
+      "pos": "n",
+      "topicIds": [
+        32
+      ],
+      "verification": "manual-override"
+    },
+    {
+      "word": "awake",
+      "meaning": "thức, tỉnh",
+      "ipa": "/əˈweik/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "aware",
+      "meaning": "nhận thức được, biết",
+      "ipa": "/əˈweə/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "awful",
+      "meaning": "rất tệ, khủng khiếp",
+      "ipa": "/ɔːful/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "manual-override"
+    },
+    {
+      "word": "abandon",
+      "meaning": "bỏ, từ bỏ",
+      "ipa": "/əˈbændən/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "accompany",
+      "meaning": "đi theo, đi cùng, kèm theo.",
+      "ipa": "/əˈkʌmpəni/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "addition",
+      "meaning": "tính cộng, phép cộng",
+      "ipa": "/əˈdiʃn/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "afford",
+      "meaning": "có thể, có đủ khả năng, điều kiện (làm gì)",
+      "ipa": "/əˈfɔːd/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "alcoholic",
+      "meaning": "rượu; người nghiện rượu",
+      "ipa": "/ˌælkəˈhɔlik/",
+      "pos": "adj, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "altogether",
+      "meaning": "hoàn toàn, hầu như; nói chung",
+      "ipa": "/ˌɔːltəˈgeðə/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "animal",
+      "meaning": "động vật, thú vật",
+      "ipa": "/æniməl/",
+      "pos": "n",
+      "topicIds": [
+        47
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "apart",
+      "meaning": "về một bên, qua một bên",
+      "ipa": "/əˈpɑːt/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "area",
+      "meaning": "diện tích, bề mặt",
+      "ipa": "/eəriə/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "as",
+      "meaning": "như (as you know…)",
+      "ipa": "/æz, əz/",
+      "pos": "adv, conj, prep",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "attract",
+      "meaning": "hút; thu hút, hấp dẫn",
+      "ipa": "/əˈtrækt/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "badly",
+      "meaning": "xấu, tồi",
+      "ipa": "/bædli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "beat",
+      "meaning": "tiếng đập, sự đập; đánh đập, đấm",
+      "ipa": "/biːt/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "benefit",
+      "meaning": "lợi, lợi ích; giúp ích, làm lợi cho",
+      "ipa": "/benifit/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "blame",
+      "meaning": "khiển trách, mắng trách; sự khiển trách, sự mắng trách",
+      "ipa": "/bleim/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "both",
+      "meaning": "cả hai",
+      "ipa": "/bouθ/",
+      "pos": "det, pron",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "breed",
+      "meaning": "nuôi dưỡng, chăm sóc, giáo dục; sinh đẻ; nòi giống",
+      "ipa": "/briːd/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "bullet",
+      "meaning": "đạn (súng trường, súng lục)",
+      "ipa": "/bulit/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "calculation",
+      "meaning": "sự tính toán",
+      "ipa": "/ˌkælkjuˈlei∫n/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "cardboard",
+      "meaning": "bìa cứng, các tông",
+      "ipa": "/´kaːd¸bɔːd/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "cell",
+      "meaning": "ô, ngăn",
+      "ipa": "/sel/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "character",
+      "meaning": "tính cách, đặc tính, nhân vật",
+      "ipa": "/kæriktə/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "choice",
+      "meaning": "sự lựa chọn",
+      "ipa": "/tʃɔɪs/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "client",
+      "meaning": "khách hàng",
+      "ipa": "/´klaiənt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "coldly",
+      "meaning": "lạnh nhạt, hờ hững, vô tâm",
+      "ipa": "/kouldli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "commitment",
+      "meaning": "sự phạm tội, sự tận tụy, tận tâm",
+      "ipa": "/kəˈmmənt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "complicated",
+      "meaning": "phức tạp, rắc rối",
+      "ipa": "/komplikeitid/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "confined",
+      "meaning": "hạn chế, giới hạn",
+      "ipa": "/kənˈfaind/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "constantly",
+      "meaning": "kiên định",
+      "ipa": "/kɔnstəntli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "contribution",
+      "meaning": "sự đóng góp, sự góp phần",
+      "ipa": "/¸kɔntri´bjuːʃən/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "coughing",
+      "meaning": "ho",
+      "ipa": "/´kɔfiη/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "creature",
+      "meaning": "sinh vật, loài vật",
+      "ipa": "/kriːtʃə/",
+      "pos": "n",
+      "topicIds": [
+        11
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "cultural",
+      "meaning": "(thuộc) văn hóa",
+      "ipa": "/ˈkʌltʃərəl/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "cycling",
+      "meaning": "sự đi xe đạp",
+      "ipa": "/saikliŋ/",
+      "pos": "n",
+      "topicIds": [
+        20
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "debt",
+      "meaning": "nợ",
+      "ipa": "/det/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "definitely",
+      "meaning": "rạch ròi, dứt khoát",
+      "ipa": "/definitli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "depressed",
+      "meaning": "chán nản, thất vọng, phiền muộn; suy yếu, đình trệ",
+      "ipa": "/di-ˈprest/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "determined",
+      "meaning": "đã được xác định, đã được xác định rõ",
+      "ipa": "/di´təːmind/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "directly",
+      "meaning": "trực tiếp, thẳng",
+      "ipa": "/dai´rektli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "discount",
+      "meaning": "sự bớt giá, sự chiết khấu, tiền bớt chiết khấu",
+      "ipa": "/diskaunt/",
+      "pos": "n",
+      "topicIds": [
+        6,
+        60
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "distribution",
+      "meaning": "sự phân bổ, sự phân phối, phân phát, sự sắp xếp",
+      "ipa": "/ˌdistriˈbjuːʃn/",
+      "pos": "n",
+      "topicIds": [
+        60
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "downwards",
+      "meaning": "xuống, đi xuống",
+      "ipa": "/´daun¸wədz/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "dust",
+      "meaning": "bụi, rác; rắc (bụi, phấn), quét bụi, phủi bụi",
+      "ipa": "/dʌst/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "educated",
+      "meaning": "được giáo dục, được đào tạo",
+      "ipa": "/edjuːkeitid/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "elegant",
+      "meaning": "thanh lịch, tao nhã",
+      "ipa": "/´eligənt/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "employee",
+      "meaning": "người lao động, người làm công",
+      "ipa": "/¸emplɔi´iː/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "enormous",
+      "meaning": "to lớn, khổng lồ",
+      "ipa": "/iˈnɔːməs/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "equal",
+      "meaning": "ngang, bằng; người ngang hàng, ngang tài, sức; bằng, ngang",
+      "ipa": "/´iːkwəl/",
+      "pos": "adj, n, v",
+      "topicIds": [
+        5
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "every",
+      "meaning": "mỗi, mọi",
+      "ipa": "/evəri/",
+      "pos": "det",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "excitement",
+      "meaning": "sự kích thích, sự kích động",
+      "ipa": "/ik´saitmənt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "experiment",
+      "meaning": "cuộc thí nghiệm; thí nghiệm",
+      "ipa": "/(n)ɪkˈspɛrəmənt/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "facility",
+      "meaning": "điều kiện dễ dàng, sự dễ dàng, thuận lợi",
+      "ipa": "/fəˈsɪlɪti/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "far",
+      "meaning": "xa",
+      "ipa": "/fɑː/",
+      "pos": "adv, adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "feel",
+      "meaning": "cảm thấy",
+      "ipa": "/fiːl/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "finger",
+      "meaning": "ngón tay",
+      "ipa": "/fiŋgə/",
+      "pos": "n",
+      "topicIds": [
+        43
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "focus",
+      "meaning": "tập trung; trung tâm, trọng tâm ((n)bóng)",
+      "ipa": "/foukəs/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "formerly",
+      "meaning": "trước đây, thuở xưa",
+      "ipa": "/´fɔːməli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "frightening",
+      "meaning": "kinh khủng, khủng khiếp",
+      "ipa": "/´fraiəniη/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "gamble",
+      "meaning": "đánh bạc; cuộc đánh bạc",
+      "ipa": "/gæmbl/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "genuinely",
+      "meaning": "thành thật, chân thật",
+      "ipa": "/´dʒenjuinli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "grain",
+      "meaning": "thóc lúa, hạt, hột; tính chất, bản chất",
+      "ipa": "/grein/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "guard",
+      "meaning": "cái chắn, người bảo vệ; bảo vệ, gác, canh giữ",
+      "ipa": "/gaːd/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "harmful",
+      "meaning": "gây tai hại, có hại",
+      "ipa": "/´haːmful/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "hell",
+      "meaning": "địa ngục",
+      "ipa": "/hel/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "himself",
+      "meaning": "chính nó, chính hắn, chính ông ta, chính anh ta",
+      "ipa": "/him´self/",
+      "pos": "pron",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "horror",
+      "meaning": "điều kinh khủng, sự ghê rợn",
+      "ipa": "/´hɔrə/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "idea",
+      "meaning": "ý tưởng, quan niệm",
+      "ipa": "/aiˈdiз/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "impact",
+      "meaning": "sự và chạm, sự tác động, ảnh hưởng",
+      "ipa": "/ˈɪmpækt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "incident",
+      "meaning": "việc xảy ra, việc có liên quan",
+      "ipa": "/´insidənt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "industry",
+      "meaning": "công nghiệp, kỹ nghệ",
+      "ipa": "/indəstri/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "innocent",
+      "meaning": "vô tội, trong trắng, ngây thơ",
+      "ipa": "/inəsnt/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "intention",
+      "meaning": "ý định, mục đích",
+      "ipa": "/inˈtenʃn/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "investigate",
+      "meaning": "điều tra, nghiên cứu",
+      "ipa": "/inˈvestigeit/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "jelly",
+      "meaning": "thạch",
+      "ipa": "/´dʒeli/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "justified",
+      "meaning": "hợp lý, được chứng minh là đúng",
+      "ipa": "/dʒʌstɪfaɪd/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "knitting",
+      "meaning": "việc đan; hàng dệt kim",
+      "ipa": "/´nitiη/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "last",
+      "meaning": "lần cuối, sau cùng; người cuối cùng; cuối cùng, rốt hết; kéo dài",
+      "ipa": "/lɑːst/",
+      "pos": "det, , adv, n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "leather",
+      "meaning": "da thuộc",
+      "ipa": "/leðə/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "lift",
+      "meaning": "giơ lên, nhấc lên; sự nâng, sự nhấc lên",
+      "ipa": "/lift/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "loan",
+      "meaning": "sự vay mượn",
+      "ipa": "/ləʊn/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "lost",
+      "meaning": "thua, mất",
+      "ipa": "/lost/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "mail",
+      "meaning": "thư tư, bưu kiện; gửi qua bưu điện",
+      "ipa": "/meil/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "market",
+      "meaning": "chợ, thị trường",
+      "ipa": "/mɑːkit/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "mean",
+      "meaning": "nghĩa, có nghĩa là",
+      "ipa": "/miːn/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "mention",
+      "meaning": "kể ra, nói đến, đề cập",
+      "ipa": "/menʃn/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "mind",
+      "meaning": "tâm trí, tinh thần, trí tuệ; chú ý, để ý, chăm sóc, quan tâm",
+      "ipa": "/maid/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "Monday (abbr Mon)",
+      "meaning": "thứ 2",
+      "ipa": "/mʌndi/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "moving",
+      "meaning": "động, hoạt động",
+      "ipa": "/muːviŋ/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "nation",
+      "meaning": "dân tộc, quốc gia",
+      "ipa": "/nei∫n/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "nephew",
+      "meaning": "cháu trai (con anh, chị, em)",
+      "ipa": "/´nevjuː/",
+      "pos": "n",
+      "topicIds": [
+        45
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "nobody (noone)",
+      "meaning": "không ai, không người nào",
+      "ipa": "/noubədi/",
+      "pos": "pron",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "nowhere",
+      "meaning": "không nơi nào, không ở đâu",
+      "ipa": "/´nou¸wɛə/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "oddly",
+      "meaning": "kỳ quặc, kỳ cục, lẻ (số)",
+      "ipa": "/´ɔdli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "only",
+      "meaning": "chỉ có 1, duy nhất; chỉ, mới",
+      "ipa": "/ounli/",
+      "pos": "adj, adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "original",
+      "meaning": "(thuộc) gốc, nguồn gốc, căn nguyên; nguyên bản",
+      "ipa": "/əˈridʒənl/",
+      "pos": "adj, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "owner",
+      "meaning": "người chủ, chủ nhân",
+      "ipa": "/´ounə/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "parallel",
+      "meaning": "song song, tương đương",
+      "ipa": "/pærəlel/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "pattern",
+      "meaning": "mẫu, khuôn mẫu",
+      "ipa": "/pætə(r)n/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "permanently",
+      "meaning": "cách thường xuyên, vĩnh cửu",
+      "ipa": "/pəːmənəntli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "physics",
+      "meaning": "vật lý học",
+      "ipa": "/fiziks/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "platform",
+      "meaning": "nền, bục, bệ; thềm, sân ga",
+      "ipa": "/plætfɔːm/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "politely",
+      "meaning": "lễ phép, lịch sự",
+      "ipa": "/pəˈlaɪtli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "possibly",
+      "meaning": "có lẽ, có thể, có thể chấp nhận được",
+      "ipa": "/´pɔsibli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "precisely",
+      "meaning": "đúng, chính xác, cần thận",
+      "ipa": "/pri´saisli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "previous",
+      "meaning": "vội vàng, hấp tấp; trước (vd. ngày hôm trước), ưu tiên",
+      "ipa": "/ˈpriviəs/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "prize",
+      "meaning": "giải, giải thưởng",
+      "ipa": "/praiz/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "promotion",
+      "meaning": "sự thăng chức, sự thăng cấp",
+      "ipa": "/prəˈmou∫n/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "public",
+      "meaning": "chung, công cộng; công chúng, nhân dân. in public giữa công chúng, công khai",
+      "ipa": "/pʌblik/",
+      "pos": "adj, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "quantity",
+      "meaning": "lượng, số lượng",
+      "ipa": "/ˈkwɒntɪti/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "rank",
+      "meaning": "hàng, dãy; sắp xếp thành hàng, dãy",
+      "ipa": "/ræŋk/",
+      "pos": "n, v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "rear",
+      "meaning": "phía sau; ở đằng sau, ở đằng sau",
+      "ipa": "/rɪər/",
+      "pos": "n, adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "reform",
+      "meaning": "cải cách, cải thiện, cải tạo; sự cải cách, sự cải thiện, cải tạo",
+      "ipa": "/ri´fɔːm/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "relaxing",
+      "meaning": "làm giảm, bớt căng thẳng",
+      "ipa": "/riˈlæksiŋ/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "repair",
+      "meaning": "sửa chữa, chỉnh tu; sự sửa chữa, sự chỉnh tu",
+      "ipa": "/riˈpeə/",
+      "pos": "v, n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "resistance",
+      "meaning": "sự chống lại, sự phản đối, sự kháng cự",
+      "ipa": "/ri´zistəns/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "retirement",
+      "meaning": "sự ẩn dật, nơi hẻo lánh, sự về hưu, sự nghỉ việc",
+      "ipa": "/rɪˈtaɪərmənt/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "rival",
+      "meaning": "đối thủ, địch thủ; đối địch, cạnh tranh",
+      "ipa": "/raivl/",
+      "pos": "n, adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "rubbish",
+      "meaning": "vật vô giá trị, bỏ đi, rác rưởi",
+      "ipa": "/ˈrʌbɪʃ/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "salary",
+      "meaning": "tiền lương",
+      "ipa": "/ˈsæləri/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "scheme",
+      "meaning": "sự sắp xếp, sự phối hợp; kế hoạch thực hiện; lược đồ, sơ đồ",
+      "ipa": "/skiːm/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "sector",
+      "meaning": "khu vực, lĩnh vực",
+      "ipa": "/ˈsɛktər/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "separately",
+      "meaning": "không cùng nhau, thành người riêng, vật riêng",
+      "ipa": "/seprətli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "sexually",
+      "meaning": "giới tính, các vấn đề sinh lý",
+      "ipa": "/sekSJli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "shiny",
+      "meaning": "sáng chói, bóng",
+      "ipa": "/∫aini/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "shy",
+      "meaning": "nhút nhát, e thẹn",
+      "ipa": "/ʃaɪ/",
+      "pos": "adj",
+      "topicIds": [
+        29
+      ],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "sincerely",
+      "meaning": "một cách chân thành",
+      "ipa": "/sinˈsiəli/",
+      "pos": "adv",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "slip",
+      "meaning": "trượt, tuột, trôi qua, chạy qua",
+      "ipa": "/slip/",
+      "pos": "v",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "sock",
+      "meaning": "tất ngắn, miếng lót giày",
+      "ipa": "/sɔk/",
+      "pos": "n",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "unemployed",
+      "meaning": "thất nghiệp; không dùng, không sử dụng được",
+      "ipa": "/¸ʌnim´plɔid/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    },
+    {
+      "word": "well known",
+      "meaning": "nổi tiếng, được nhiều người biết đến",
+      "ipa": "/´wel´noun/",
+      "pos": "adj",
+      "topicIds": [],
+      "verification": "two-source-consensus"
+    }
+  ]
+}

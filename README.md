@@ -1,28 +1,48 @@
-# English 3000 V3.2 — Adaptive Quiz
+# English 3000 V3.2.1 — Stabilization & Data Quality
 
-## Adaptive engine
-- `Học thông minh` tạo buổi học theo mục tiêu khoảng **40% từ đến hạn + 40% từ mới + 20% từ yếu**; thiếu nhóm nào thì tự bù từ phù hợp.
-- Mỗi từ có lịch sử riêng theo dạng bài: Anh→Việt, Việt→Anh, Nghe và Gõ.
-- Từ mới: bắt đầu bằng nhận diện nghĩa.
-- Đang học: đảo chiều Việt→Anh / Anh→Việt.
-- Đang nhớ: ưu tiên nghe.
-- Gần thuộc: chuyển sang **gõ từ**, buộc phải nhớ chủ động.
-- Từ yếu/sai: hạ độ khó và đưa về ôn sớm.
+This release intentionally prioritizes correctness and maintainability over new UI features.
 
-## Smart distractors
-- Đáp án nhiễu ưu tiên từ **cùng chủ đề + cùng từ loại + độ dài gần nhau**.
-- Loại trùng nghĩa để tránh hai đáp án cùng đúng.
+## Data
+Runtime source: `data/vocab-clean.json`. The app does **not** require exactly 3000 entries. Untrusted/review rows are quarantined instead of padded back into Quiz.
 
-## Typing quiz
-- Thêm bài `Gõ từ tiếng Anh`.
-- Enter để kiểm tra.
-- Có gợi ý chữ đầu; gợi ý không tự tính là đúng.
-- Chấp nhận khác biệt dấu gạch nối / khoảng trắng cơ bản.
+Files:
+- `data/vocab-clean.json` — runtime vocabulary
+- `data/manual-overrides.json` — explicit reviewed corrections
+- `data/quarantine.json` — excluded source rows
+- `data/audit-report-v3.2.1.json` — audit summary
+- `tests/fixtures/golden-vocab.json` — 150-entry regression fixture
 
-## Compatibility
-- Giữ `english3000State`, SRS, streak, mastered và tiến độ V3.1.x.
-- Thêm `state.adaptive` nhưng không xóa lịch sử cũ.
+The golden fixture is transparent: manual override anchors are reviewed; the rest are two-source-consensus regression entries and are **not falsely labelled fully human-reviewed**. Continue human review over time.
 
+## Architecture
+Core logic is split into ES modules under `src/`:
+`state.js`, `data.js`, `srs.js`, `session.js`, `quiz-engine.js`, `audio.js`, `ui.js`, `utils.js`, `config.js`.
 
-## Cài đặt
-Ghi đè các file của V3.1.5 hoặc dùng full ZIP. Tiến độ cũ được giữ nguyên trên cùng domain.
+## Tests
+No npm dependencies are required.
+
+```bash
+npm test
+npm run audit
+```
+
+## Local run
+Because V3.2.1 uses ES modules, serve it over HTTP:
+
+```bash
+python -m http.server 8080
+```
+
+Then open `http://localhost:8080`.
+
+## GitHub Pages safety gate
+
+`.github/workflows/deploy-pages.yml` runs both automated tests and the vocabulary audit before deployment. A failing test/audit blocks the Pages deploy.
+
+## Current audit snapshot
+
+- Runtime trusted words: **2,994**
+- Missing meaning / IPA / POS: **0 / 0 / 0**
+- Manual overrides: **20**
+- Source rows quarantined before runtime: **399**
+- Topic mapping is intentionally conservative; only exact trusted mappings are kept, so topic coverage is incomplete rather than guessed.

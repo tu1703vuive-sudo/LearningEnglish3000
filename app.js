@@ -1,59 +1,21 @@
-const OFFLINE_PACK_SOURCE = "./data/vocab-3000-clean.json";
-const DICTIONARY_API = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-const TARGET_WORDS = 3000;
-const STAGE_SIZE = 100;
-const REVIEW_INTERVALS = [0, 1, 3, 7, 14, 30];
+import { APP_VERSION, STAGE_SIZE } from './src/config.js';
+import { keyOf, fisherYates, localDateString } from './src/utils.js';
+import { loadState, saveState as persistState, ensureTodayStats, applyLearningAnswer } from './src/state.js';
+import { masteredKeys, dueKeys as getDueKeys } from './src/srs.js';
+import { loadVocabPack, buildIndexes } from './src/data.js';
+import {
+  isNewWord as coreIsNewWord, isWeakWord as coreIsWeakWord,
+  dueInPool as coreDueInPool, newInPool as coreNewInPool, weakInPool as coreWeakInPool,
+  priorityScore as corePriorityScore, pickSmartSession, pickNewSession, pickDueSession, pickWrongSession
+} from './src/session.js';
+import {
+  adaptiveStage as coreAdaptiveStage, adaptiveStageText,
+  chooseAdaptiveMode, selectDistractors, typingIsCorrect
+} from './src/quiz-engine.js';
+import { fetchOnlineAudioData as fetchAudioData, ttsSpeak, playUrl } from './src/audio.js';
+import { $, showView } from './src/ui.js';
 
-
-const $ = id => document.getElementById(id);
-const keyOf = word => String(word || "").trim().toLowerCase();
-const shuffled = arr => [...arr].sort(() => Math.random() - .5);
-
-function localDateString(date = new Date()) {
-  const y = date.getFullYear();
-  const m = String(date.getMonth()+1).padStart(2,"0");
-  const d = String(date.getDate()).padStart(2,"0");
-  return `${y}-${m}-${d}`;
-}
-function addDaysString(dateString, days) {
-  const [y,m,d] = dateString.split("-").map(Number);
-  const date = new Date(y, m-1, d);
-  date.setDate(date.getDate()+days);
-  return localDateString(date);
-}
-
-const defaultState = {
-  dataVersion:"3.2-adaptive",
-  selectedStage:1,
-  selectedTopicId:1,
-  selectedLevel:"A1",
-  browseMode:"topic",
-  sessionSize:10,
-  mode:"adaptive",
-  mastered:[],
-  wrong:{},
-  seen:{},
-  meaningCache:{},
-  pronCache:{},
-  lexCache:{},
-  exampleViCache:{},
-  srs:{},
-  adaptive:{},
-  stats:{ lastStudyDate:"", streak:0, totalAnswers:0, todayDate:"", todayAnswers:0, todayCorrect:0 },
-  dark:false
-};
-
-let state = { ...defaultState, ...JSON.parse(localStorage.getItem("english3000State") || "{}") };
-for (const k of ["wrong","seen","meaningCache","pronCache","lexCache","exampleViCache","srs","adaptive"]) state[k] ||= {};
-state.mastered ||= [];
-state.stats = { ...defaultState.stats, ...(state.stats || {}) };
-if (state.dataVersion !== "3.2-adaptive") {
-  state.dataVersion = "3.2-adaptive";
-  state.selectedTopicId = 1;
-  if (state.browseMode === "level") state.browseMode = "topic";
-}
-if (state.browseMode === "level") state.browseMode = "topic";
-
+let state = loadState();
 let vocab = [];
 let topics = [];
 let offlinePack = null;
@@ -67,137 +29,28 @@ let sessionMasteredBefore = 0;
 let resultWordsExpanded = false;
 let answered = false;
 let sessionKind = "normal";
-let meaningJobs = new Map();
 let sessionPreloadToken = 0;
 let currentQuestionMode = "envi";
 let typingHintUsed = false;
 
-function saveState() { localStorage.setItem("english3000State", JSON.stringify(state)); }
-function showView(id) {
-  document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
-  $(id).classList.add("active");
-  document.body.classList.toggle("result-mode", id === "resultView");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-function todayStatsReset() {
-  const today = localDateString();
-  if (state.stats.todayDate !== today) {
-    state.stats.todayDate = today;
-    state.stats.todayAnswers = 0;
-    state.stats.todayCorrect = 0;
-  }
-}
-function registerStudyDay() {
-  const today = localDateString();
-  todayStatsReset();
-  if (state.stats.lastStudyDate === today) return;
-  const yesterday = addDaysString(today, -1);
-  state.stats.streak = state.stats.lastStudyDate === yesterday ? state.stats.streak + 1 : 1;
-  state.stats.lastStudyDate = today;
-}
-function migrateSrs() {
-  const today = localDateString();
-  for (const word of state.mastered) {
-    const k = keyOf(word);
-    if (!state.srs[k]) state.srs[k] = { box:4, due:addDaysString(today,14), correct:2, wrong:0, last:today };
-  }
-  for (const [word,count] of Object.entries(state.wrong || {})) {
-    const k = keyOf(word);
-    if (count > 0 && !state.srs[k]) state.srs[k] = { box:0, due:today, correct:0, wrong:count, last:today };
-  }
-  saveState();
-}
-
-async function fetchJson(url) {
-  const r = await fetch(url, {cache:"force-cache"});
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r.json();
-}
-
-
-function applyOfflinePack(pack) {
-  offlinePack = pack;
-  const rawWords = Array.isArray(pack?.words) ? pack.words : [];
-  offlineByWord = new Map(rawWords.map(item => [keyOf(item.word), item]));
-  vocab = rawWords.map(item => ({
-    word: item.word,
-    level: "unknown",
-    topics: Array.isArray(item.topicIds) ? item.topicIds : [],
-    meaning: item.meaning || "",
-    ipa: item.ipa || "",
-    pos: item.pos || "",
-    example: item.example || "",
-    exampleVi: item.exampleVi || "",
-    sourceKind: item.sourceKind || "primary"
-  }));
-  vocabByKey = new Map(vocab.map(item => [keyOf(item.word), item]));
-  topics = (pack?.topics || []).map(topic => ({
-    id: topic.id,
-    name: topic.name || topic.nameVi || `Chủ đề ${topic.id}`,
-    nameVi: topic.nameVi || topic.name || `Chủ đề ${topic.id}`,
-    words: (topic.words || []).map(keyOf).filter(k => vocabByKey.has(k))
-  }));
-  const nonEmpty = topics.find(t => t.words.length);
-  const selected = topics.find(t => t.id === state.selectedTopicId);
-  if ((!selected || !selected.words.length) && nonEmpty) state.selectedTopicId = nonEmpty.id;
-}
-
-async function loadOfflinePack() {
-  try {
-    const response = await fetch(OFFLINE_PACK_SOURCE, {cache:"no-cache"});
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const pack = await response.json();
-    if (!Array.isArray(pack?.words) || pack.words.length !== 3000) throw new Error("Database không đủ 3000 từ sạch");
-    applyOfflinePack(pack);
-    return pack;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
-
+function saveState() { persistState(state); }
+function todayStatsReset() { ensureTodayStats(state); }
 function updateOfflinePackStatus() {
   const card = $("offlinePackCard");
   if (!card) return;
   const count = offlinePack?.words?.length || 0;
   const excluded = offlinePack?.meta?.excludedReviewCount ?? 0;
-  const full = count === 3000;
+  const full = count > 0;
   card.classList.toggle("ready", full);
   card.classList.toggle("seed", !full);
-  $("offlinePackCount").textContent = `${count}/3000`;
+  $("offlinePackCount").textContent = `${count} từ`;
   if (full) {
-    $("offlinePackStatus").textContent = "Database Quiz sạch đã sẵn sàng";
-    $("offlinePackHint").textContent = `${excluded} mục nghi ngờ của nguồn gốc đã bị loại khỏi Quiz; nghĩa + IPA + từ loại chạy local.`;
+    $("offlinePackStatus").textContent = "Database trust-first đã sẵn sàng";
+    $("offlinePackHint").textContent = `${offlinePack?.meta?.quarantinedCount ?? excluded} mục không đủ tin cậy đã bị loại; app không ép đủ 3.000.`;
   } else {
     $("offlinePackStatus").textContent = "Không tải được database sạch";
-    $("offlinePackHint").textContent = "Kiểm tra file data/vocab-3000-clean.json. App không tự chuyển sang database cũ để tránh học sai nghĩa.";
+    $("offlinePackHint").textContent = "Kiểm tra file data/vocab-clean.json. App không fallback sang dữ liệu chưa kiểm định.";
   }
-}
-
-async function loadVocabulary() {
-  const localPack = await loadOfflinePack();
-  if (!localPack) {
-    vocab = [];
-    topics = [];
-    vocabByKey = new Map();
-    updateOfflinePackStatus();
-    renderHome();
-    return;
-  }
-  migrateSrs();
-  renderHome();
-  updateOfflinePackStatus();
-}
-
-
-async function translateWord(word) {
-  const local = offlineByWord.get(keyOf(word));
-  return local?.meaning || "";
-}
-
-function normalizeAudioUrl(url) {
-  if (!url) return "";
-  return url.startsWith("//") ? "https:" + url : url;
 }
 
 async function getLexicalData(word) {
@@ -216,128 +69,63 @@ async function getLexicalData(word) {
   };
 }
 
-async function fetchOnlineAudioData(word) {
-  const k = keyOf(word);
-  const cached = state.lexCache[k] || {};
-  if (cached.us || cached.uk || cached.generic) return cached;
-  if (!navigator.onLine) return cached;
-  const result = {...cached};
-  try {
-    const r = await fetch(DICTIONARY_API + encodeURIComponent(word), {cache:"force-cache"});
-    if (!r.ok) return result;
-    const data = await r.json();
-    for (const entry of (Array.isArray(data) ? data : [])) {
-      for (const p of entry.phonetics || []) {
-        const audio = normalizeAudioUrl(p.audio);
-        if (!audio) continue;
-        const low = audio.toLowerCase();
-        if (!result.us && (low.includes("-us.") || low.includes("_us.") || low.includes("us.mp3"))) result.us = audio;
-        else if (!result.uk && (low.includes("-uk.") || low.includes("_uk.") || low.includes("uk.mp3"))) result.uk = audio;
-        else if (!result.generic) result.generic = audio;
-      }
-    }
-    state.lexCache[k] = result;
-    saveState();
-  } catch (_) {}
-  return result;
-}
-
-function ttsSpeak(text) {
-  if (!("speechSynthesis" in window)) return;
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "en-US";
-  u.rate = .82;
-  speechSynthesis.speak(u);
-}
-function playUrl(url, fallbackWord) {
-  if (!url) return ttsSpeak(fallbackWord);
-  const audio = new Audio(url);
-  audio.play().catch(() => ttsSpeak(fallbackWord));
-}
-async function playBestPronunciation(item, dialect="best") {
-  let p = await getLexicalData(item.word);
-  if (!(p.us || p.uk || p.generic) && navigator.onLine) {
-    p = {...p, ...(await fetchOnlineAudioData(item.word))};
-  }
-  if (dialect === "us" && p.us) return playUrl(p.us,item.word);
-  if (dialect === "uk" && p.uk) return playUrl(p.uk,item.word);
-  if (dialect === "generic" && p.generic) return playUrl(p.generic,item.word);
-  playUrl(p.us || p.uk || p.generic, item.word);
-}
-
 function findItem(k) { return vocabByKey.get(keyOf(k)) || null; }
 function topicLabel(topic) { return topic.nameVi || topic.name || `Chủ đề ${topic.id}`; }
-function getMasteredSet() { return new Set(state.mastered || []); }
-
-function srsFor(word) {
-  const k = keyOf(word);
-  return state.srs[k] || null;
-}
-function dueKeys() {
-  const today = localDateString();
-  return Object.entries(state.srs)
-    .filter(([,v]) => v?.due && v.due <= today)
-    .map(([k]) => k);
-}
-function adaptiveRecordFor(word) {
-  const k = keyOf(word);
-  if (!state.adaptive[k]) {
-    state.adaptive[k] = {
-      streak:0,
-      totalCorrect:0,
-      totalWrong:0,
-      lastMode:"",
-      byMode:{envi:{c:0,w:0},vien:{c:0,w:0},listen:{c:0,w:0},type:{c:0,w:0}}
-    };
+async function loadOfflinePack() {
+  try {
+    const checked = await loadVocabPack();
+    offlinePack = { meta: checked.meta, words: checked.words, topics: checked.topics };
+    vocab = checked.words.map(item => ({ ...item, level:'unknown' }));
+    topics = checked.topics;
+    const indexes = buildIndexes(vocab);
+    vocabByKey = indexes.byKey;
+    offlineByWord = new Map(vocab.map(item => [keyOf(item.word), item]));
+    const nonEmpty = topics.find(t=>t.words.length);
+    const selected = topics.find(t=>t.id===state.selectedTopicId);
+    if ((!selected || !selected.words.length) && nonEmpty) state.selectedTopicId=nonEmpty.id;
+    return offlinePack;
+  } catch (error) {
+    console.error(error);
+    offlinePack=null; vocab=[]; topics=[]; vocabByKey=new Map(); offlineByWord=new Map();
+    return null;
   }
-  return state.adaptive[k];
 }
 
-function recordAnswer(item, isCorrect, quizMode=currentQuestionMode) {
-  const k = keyOf(item.word);
-  const today = localDateString();
-  registerStudyDay();
-  todayStatsReset();
+async function loadVocabulary() {
+  await loadOfflinePack();
+  renderHome();
+  updateOfflinePackStatus();
+}
 
-  let card = state.srs[k] || {box:0,due:today,correct:0,wrong:0,last:""};
-  if (isCorrect) {
-    card.correct = (card.correct || 0) + 1;
-    card.box = Math.min(5, (card.box || 0) + 1);
-    card.due = addDaysString(today, REVIEW_INTERVALS[card.box] ?? 30);
-    state.wrong[k] = Math.max(0,(state.wrong[k] || 0)-1);
-    if (card.box >= 4 && !state.mastered.includes(k)) state.mastered.push(k);
-  } else {
-    card.wrong = (card.wrong || 0) + 1;
-    card.box = Math.max(0,(card.box || 0)-2);
-    card.due = today;
-    state.wrong[k] = (state.wrong[k] || 0) + 1;
-    if (card.box < 4) state.mastered = state.mastered.filter(x => x !== k);
-  }
-  card.last = today;
-  state.srs[k] = card;
-
-  const adaptive = adaptiveRecordFor(item.word);
-  adaptive.byMode[quizMode] ||= {c:0,w:0};
-  if (isCorrect) {
-    adaptive.streak = (adaptive.streak || 0) + 1;
-    adaptive.totalCorrect = (adaptive.totalCorrect || 0) + 1;
-    adaptive.byMode[quizMode].c = (adaptive.byMode[quizMode].c || 0) + 1;
-  } else {
-    adaptive.streak = 0;
-    adaptive.totalWrong = (adaptive.totalWrong || 0) + 1;
-    adaptive.byMode[quizMode].w = (adaptive.byMode[quizMode].w || 0) + 1;
-  }
-  adaptive.lastMode = quizMode;
-  adaptive.lastResult = isCorrect ? "correct" : "wrong";
-  adaptive.lastAt = Date.now();
-
-  state.seen[k] = (state.seen[k] || 0) + 1;
-  state.stats.totalAnswers = (state.stats.totalAnswers || 0) + 1;
-  state.stats.todayAnswers = (state.stats.todayAnswers || 0) + 1;
-  if (isCorrect) state.stats.todayCorrect = (state.stats.todayCorrect || 0) + 1;
+function getMasteredSet(){ return masteredKeys(state); }
+function dueKeys(){ return getDueKeys(state); }
+function recordAnswer(item,isCorrect,quizMode=currentQuestionMode){
+  const card=applyLearningAnswer(state,item,isCorrect,quizMode);
   saveState();
   return card;
+}
+function isNewWord(item){ return coreIsNewWord(state,item); }
+function isWeakWord(item){ return coreIsWeakWord(state,item); }
+function dueInPool(pool){ return coreDueInPool(state,pool); }
+function newInPool(pool){ return coreNewInPool(state,pool); }
+function weakInPool(pool){ return coreWeakInPool(state,pool); }
+function priorityScore(item){ return corePriorityScore(state,item); }
+function pickSmartSessionWords(){ return pickSmartSession(state,getActivePool(),state.sessionSize); }
+function pickNewWords(){ return pickNewSession(state,getActivePool(),state.sessionSize); }
+function pickSessionWords(){ return [...getActivePool()].sort((a,b)=>priorityScore(b)-priorityScore(a)).slice(0,state.sessionSize); }
+function pickDueWords(){ return pickDueSession(state,vocab,state.sessionSize); }
+function pickWrongWords(){ return pickWrongSession(state,vocab,state.sessionSize); }
+function adaptiveStage(item){ return coreAdaptiveStage(state,item); }
+function chooseAdaptiveQuestionMode(item,index=0){ return chooseAdaptiveMode(state,item,index,state.mode,sessionKind); }
+function makeDistractors(item){ return selectDistractors(item,vocab,currentQuestionMode,3); }
+async function fetchOnlineAudioData(word){ return fetchAudioData(word,state.lexCache,saveState); }
+async function playBestPronunciation(item,dialect='best'){
+  let p=await getLexicalData(item.word);
+  if(!(p.us||p.uk||p.generic) && navigator.onLine) p={...p,...(await fetchOnlineAudioData(item.word))};
+  if(dialect==='us'&&p.us)return playUrl(p.us,item.word);
+  if(dialect==='uk'&&p.uk)return playUrl(p.uk,item.word);
+  if(dialect==='generic'&&p.generic)return playUrl(p.generic,item.word);
+  playUrl(p.us||p.uk||p.generic,item.word);
 }
 
 function getActivePool() {
@@ -377,7 +165,7 @@ function renderStages() {
   const grid = $("stageGrid");
   grid.innerHTML = "";
   const mastered = getMasteredSet();
-  for (let i=1;i<=30;i++) {
+  for (let i=1;i<=Math.ceil(vocab.length/STAGE_SIZE);i++) {
     const pool = vocab.slice((i-1)*STAGE_SIZE,i*STAGE_SIZE);
     const known = pool.filter(x=>mastered.has(keyOf(x.word))).length;
     const b = document.createElement("button");
@@ -399,6 +187,7 @@ function renderHome() {
   const mastered = getMasteredSet();
   const masteredCount = vocab.length ? vocab.filter(x=>mastered.has(keyOf(x.word))).length : mastered.size;
   $("masteredTop").textContent = masteredCount;
+  if ($("heroTotalCount")) $("heroTotalCount").textContent = vocab.length;
   const pct = vocab.length ? Math.min(100,Math.round(masteredCount/vocab.length*100)) : 0;
   $("totalPercent").textContent = pct+"%";
   $("totalProgress").style.width = pct+"%";
@@ -420,68 +209,6 @@ function renderHome() {
   saveState();
 }
 
-function isNewWord(item) {
-  return !state.srs[keyOf(item.word)] && !(state.seen[keyOf(item.word)] > 0);
-}
-function isWeakWord(item) {
-  const k = keyOf(item.word);
-  const card = state.srs[k];
-  return !!card && ((state.wrong[k] || 0) > 0 || (card.box || 0) <= 2);
-}
-function dueInPool(pool) {
-  const today = localDateString();
-  return pool.filter(item => state.srs[keyOf(item.word)]?.due && state.srs[keyOf(item.word)].due <= today);
-}
-function newInPool(pool) {
-  return pool.filter(isNewWord);
-}
-function weakInPool(pool) {
-  const today = localDateString();
-  return pool.filter(item => isWeakWord(item) && !(state.srs[keyOf(item.word)]?.due <= today));
-}
-function uniqueByWord(items) {
-  const seen = new Set();
-  return items.filter(item => {
-    const k = keyOf(item.word);
-    if (seen.has(k)) return false;
-    seen.add(k);
-    return true;
-  });
-}
-function takeUnique(target, source, count, used) {
-  for (const item of source) {
-    if (target.length >= count) break;
-    const k = keyOf(item.word);
-    if (used.has(k)) continue;
-    used.add(k);
-    target.push(item);
-  }
-}
-function pickSmartSessionWords() {
-  const pool = getActivePool();
-  const n = Math.min(state.sessionSize,pool.length);
-  if (!n) return [];
-  const due = dueInPool(pool).sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0));
-  const fresh = shuffled(newInPool(pool));
-  const weak = weakInPool(pool).sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0));
-  const rest = [...pool].sort((a,b)=>priorityScore(b)-priorityScore(a));
-
-  const dueGoal = Math.round(n*.4);
-  const newGoal = Math.round(n*.4);
-  const weakGoal = Math.max(0,n-dueGoal-newGoal);
-  const result=[], used=new Set();
-  takeUnique(result,due,dueGoal,used);
-  const afterDue=result.length;
-  takeUnique(result,fresh,afterDue+newGoal,used);
-  const afterNew=result.length;
-  takeUnique(result,weak,afterNew+weakGoal,used);
-  takeUnique(result,[...due,...fresh,...weak,...rest],n,used);
-  return result.slice(0,n);
-}
-function pickNewWords() {
-  const pool = getActivePool();
-  return shuffled(newInPool(pool)).slice(0,Math.min(state.sessionSize,pool.length));
-}
 function modeLabel() {
   if (state.mode === "adaptive") return "Adaptive";
   return state.mode === "vien" ? "Việt → Anh" : state.mode === "listen" ? "Nghe → Nghĩa" : "Anh → Việt";
@@ -520,33 +247,6 @@ function renderStartRecommendation() {
   $("continueRing").style.background = `conic-gradient(var(--primary) ${pct}%,var(--line) ${pct}%)`;
 }
 
-function priorityScore(item) {
-  const k = keyOf(item.word);
-  const card = state.srs[k];
-  const today = localDateString();
-  if (card?.due && card.due <= today) return 1000 + (state.wrong[k] || 0) * 10 - (card.box || 0);
-  if (!card) return 700;
-  return 300 - (card.box || 0) * 20 + (state.wrong[k] || 0) * 10;
-}
-function pickSessionWords() {
-  const pool = getActivePool();
-  return [...pool].sort((a,b)=>priorityScore(b)-priorityScore(a)).slice(0,Math.min(state.sessionSize,pool.length));
-}
-function pickDueWords() {
-  const keys = dueKeys();
-  return keys.map(findItem).filter(Boolean)
-    .sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0))
-    .slice(0,state.sessionSize);
-}
-function pickWrongWords() {
-  return Object.entries(state.wrong)
-    .filter(([,count])=>count>0)
-    .sort((a,b)=>b[1]-a[1])
-    .map(([k])=>findItem(k))
-    .filter(Boolean)
-    .slice(0,state.sessionSize);
-}
-
 function cachedMeaningFor(item) {
   return offlineByWord.get(keyOf(item.word))?.meaning || "";
 }
@@ -568,8 +268,6 @@ async function ensureQuestionWindow(index) {
   await Promise.all(wanted.map(ensureMeaningAt));
 }
 
-async function backgroundPreloadMeanings(token) { return; }
-
 function backgroundPrefetchAssets(index, token) {
   const run = async () => {
     if (token !== sessionPreloadToken) return;
@@ -590,7 +288,6 @@ async function prepareSession(words, kind="normal") {
   if (!words.length) return alert("Chưa có từ phù hợp trong nhóm này.");
   sessionKind = kind;
   const token = ++sessionPreloadToken;
-  meaningJobs.clear();
 
   // Build the session immediately from local/cache data. Do NOT fetch IPA/audio/
   // examples for all 10–30 words before entering the quiz.
@@ -617,7 +314,7 @@ async function prepareSession(words, kind="normal") {
   currentIndex = 0;
   score = 0;
   wrongThisSession = [];
-  sessionMasteredBefore = state.mastered.length;
+  sessionMasteredBefore = getMasteredSet().size;
   resultWordsExpanded = false;
 
   // Only wait for enough meanings to draw question 1 + its choices.
@@ -633,7 +330,6 @@ async function prepareSession(words, kind="normal") {
   showView("quizView");
 
   // Everything else happens in the background while the learner answers.
-  backgroundPreloadMeanings(token).catch(()=>{});
   backgroundPrefetchAssets(0, token);
 }
 async function startNormalSession() {
@@ -663,94 +359,6 @@ async function startWrongReview() {
   const words = pickWrongWords();
   if (!words.length) return alert("Bạn chưa có từ sai để ôn.");
   await prepareSession(words,"wrong");
-}
-
-function adaptiveStage(item) {
-  const k = keyOf(item.word);
-  const card = state.srs[k];
-  const a = state.adaptive[k];
-  const wrong = state.wrong[k] || 0;
-  if (wrong >= 2 || a?.lastResult === "wrong") return "weak";
-  if (!card && !(state.seen[k] > 0)) return "new";
-  const box = card?.box || 0;
-  if (box <= 1) return "learning";
-  if (box <= 3) return "remembering";
-  return "strong";
-}
-function adaptiveStageText(stage) {
-  return ({new:"Mới",learning:"Đang học",remembering:"Đang nhớ",strong:"Gần thuộc",weak:"Từ yếu"})[stage] || "Adaptive";
-}
-function modeSuccessRate(item, mode) {
-  const rec = state.adaptive[keyOf(item.word)]?.byMode?.[mode];
-  if (!rec) return null;
-  const total=(rec.c||0)+(rec.w||0);
-  return total ? (rec.c||0)/total : null;
-}
-function chooseAdaptiveQuestionMode(item,index=0) {
-  if (sessionKind !== "smart" && state.mode !== "adaptive") return state.mode;
-  const stage = adaptiveStage(item);
-  const last = state.adaptive[keyOf(item.word)]?.lastMode || "";
-  if (stage === "new") return "envi";
-  if (stage === "weak") return last === "envi" ? "vien" : "envi";
-  if (stage === "learning") return last === "vien" ? "envi" : "vien";
-  if (stage === "remembering") {
-    const listenRate = modeSuccessRate(item,"listen");
-    if (listenRate === null || listenRate < .8) return "listen";
-    return index % 2 ? "vien" : "listen";
-  }
-  // Strong words must be recalled, not recognized. Typing is the default.
-  const typeRate = modeSuccessRate(item,"type");
-  if (typeRate === null || typeRate >= .6) return "type";
-  return "listen";
-}
-function smartDistractorScore(candidate,item) {
-  let score=0;
-  const p1=String(candidate.pos||"").split(',')[0].trim();
-  const p2=String(item.pos||"").split(',')[0].trim();
-  if (p1 && p2 && p1===p2) score += 6;
-  const topics1=new Set(candidate.topics||[]);
-  const shared=(item.topics||[]).filter(t=>topics1.has(t)).length;
-  score += shared*5;
-  const lenDiff=Math.abs(String(candidate.word).length-String(item.word).length);
-  score += Math.max(0,3-Math.floor(lenDiff/3));
-  const candidateSeen=state.seen[keyOf(candidate.word)]||0;
-  if (candidateSeen>0) score += 1;
-  return score + Math.random()*1.5;
-}
-function normalizeTypedAnswer(value) {
-  return String(value||"").trim().toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g," ");
-}
-function typingIsCorrect(value,item) {
-  const typed=normalizeTypedAnswer(value);
-  const expected=normalizeTypedAnswer(item.word);
-  if (typed===expected) return true;
-  // Treat hyphen/space variants as equivalent for phrases such as post-it / post it.
-  return typed.replace(/[-\s]/g,"") === expected.replace(/[-\s]/g,"");
-}
-
-function makeDistractors(item) {
-  const all = vocab
-    .filter(x=>keyOf(x.word)!==keyOf(item.word))
-    .map(x=>({ ...x, meaning: x.meaning || cachedMeaningFor(x) }))
-    .filter(x=>x.meaning && x.meaning!==item.meaning);
-
-  // Prefer same topic + same part of speech. This makes recognition questions
-  // substantially harder than random unrelated distractors.
-  const ranked = all
-    .map(x=>({item:x,score:smartDistractorScore(x,item)}))
-    .sort((a,b)=>b.score-a.score)
-    .map(x=>x.item);
-
-  const result=[];
-  const usedMeanings=new Set([String(item.meaning).trim().toLowerCase()]);
-  for (const x of ranked) {
-    const m=String(x.meaning).trim().toLowerCase();
-    if (usedMeanings.has(m)) continue;
-    usedMeanings.add(m);
-    result.push(x);
-    if (result.length===3) break;
-  }
-  return result;
 }
 
 function resetPronunciationUi(conceal) {
@@ -838,7 +446,7 @@ function renderQuestion() {
   $("answers").innerHTML="";
   $("listenMainBtn").classList.toggle("hidden",currentQuestionMode!=="listen");
 
-  const options=shuffled([item,...makeDistractors(item)]);
+  const options=fisherYates([item,...makeDistractors(item)]);
   if (currentQuestionMode==="envi") {
     $("promptLabel").textContent="Chọn nghĩa tiếng Việt đúng";
     $("questionWord").textContent=item.word;
@@ -1045,7 +653,8 @@ function showResult() {
   const total = currentSession.length || 1;
   const wrongCount = total-score;
   const percent = Math.round(score/total*100);
-  const masteredDelta = Math.max(0,state.mastered.length-sessionMasteredBefore);
+  const masteredNow=getMasteredSet().size;
+  const masteredDelta = Math.max(0,masteredNow-sessionMasteredBefore);
 
   $("resultSessionLabel").textContent = sessionKindLabel();
   $("resultPercent").textContent = `${percent}%`;
@@ -1053,7 +662,7 @@ function showResult() {
   $("resultCorrect").textContent = `${score}/${total}`;
   $("resultMasteredDelta").textContent = `+${masteredDelta}`;
   $("resultStreak").textContent = state.stats?.streak || 0;
-  $("resultTotalMastered").textContent = `Tổng ${state.mastered.length}/3000 từ đã thuộc`;
+  $("resultTotalMastered").textContent = `Tổng ${masteredNow}/${vocab.length} từ đã thuộc`;
   $("resultReviewText").textContent = resultReviewSummary(wrongCount);
   $("resultTitle").textContent = `${score}/${total} câu đúng`;
 
@@ -1107,7 +716,7 @@ document.querySelectorAll("#modeChoices .mode-card").forEach(btn=>{
 });
 document.querySelectorAll(".browse-tab").forEach(btn=>{
   btn.onclick=()=>{
-    state.browseMode=btn.dataset.browse === "level" ? "topic" : btn.dataset.browse;
+    state.browseMode=btn.dataset.browse;
     saveState();
     renderHome();
   };

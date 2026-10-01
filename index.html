@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 V3.2 - Adaptive Quiz, database sạch 3000 từ, IPA và SRS" />
+  <meta name="description" content="English 3000 V3.2.1 - Adaptive Quiz, database sạch 3000 từ, IPA và SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.2</title>
+  <title>English 3000 V3.2.1</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.2</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.2.1</p>
         <h1>3000 từ vựng nền tảng</h1>
-        <p class="muted">Adaptive Quiz • Database sạch • SRS • Offline</p>
+        <p class="muted">Stabilization • Data Quality • Adaptive Quiz</p>
       </div>
       <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
     </header>
@@ -25,12 +25,12 @@
         <article class="hero card">
           <div>
             <span class="tag">Lộ trình chính</span>
-            <h2>3000 từ đã làm sạch</h2>
+            <h2>Bộ từ vựng đã kiểm định</h2>
             <p>Quiz tự tăng/giảm độ khó theo mức nhớ của từng từ, trên database 3000 từ đã làm sạch.</p>
           </div>
           <div class="hero-stat">
             <strong id="masteredTop">0</strong>
-            <span>/3000</span>
+            <span>/<span id="heroTotalCount">0</span></span>
           </div>
         </article>
 
@@ -46,7 +46,7 @@
           <div class="offline-pack-icon">📦</div>
           <div class="offline-pack-copy">
             <strong id="offlinePackStatus">Đang kiểm tra gói offline…</strong>
-            <span id="offlinePackHint">V3.2 dùng trực tiếp database sạch từ 3 PDF và thêm lịch sử Adaptive cho từng từ.</span>
+            <span id="offlinePackHint">V3.2.1 chỉ nạp mục đạt validation; số lượng thực tế không bị ép về 3.000.</span>
           </div>
           <span id="offlinePackCount" class="offline-pack-count">0</span>
         </article>
@@ -309,7 +309,7 @@
             </div>
           </div>
 
-          <p id="resultTotalMastered" class="result-total muted">Tổng 0/3000 từ đã thuộc</p>
+          <p id="resultTotalMastered" class="result-total muted">Tổng 0 từ đã thuộc</p>
 
           <div class="next-review-card">
             <span class="next-review-icon">🧠</span>
@@ -340,10 +340,10 @@
     </main>
 
     <footer>
-      <p>Tiến độ được lưu trên trình duyệt. V3.2 giữ toàn bộ SRS cũ và bổ sung lịch sử Adaptive cho từng từ.</p>
+      <p>V3.2.1 dùng schema state có migration an toàn; “đã thuộc” được tính trực tiếp từ SRS.</p>
     </footer>
   </div>
 
-  <script src="./app.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>

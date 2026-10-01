@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3.2",
+  "name": "English 3000 V3.2.1",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "Adaptive Quiz: tự chọn từ và dạng bài theo mức nhớ, với database sạch 3000 từ."
+  "description": "English 3000 stabilization: trust-first data, safe state migration, tested adaptive quiz."
 }

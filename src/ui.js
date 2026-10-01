@@ -1,0 +1,1 @@
+export const $=id=>document.getElementById(id);export function showView(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));$(id)?.classList.add('active');document.body.classList.toggle('result-mode',id==='resultView');window.scrollTo({top:0,behavior:'smooth'});}

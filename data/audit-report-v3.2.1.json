@@ -1,0 +1,16 @@
+{
+  "version": "3.2.1",
+  "runtimeWordCount": 2994,
+  "manualOverrides": 20,
+  "quarantined": 399,
+  "duplicatesRemoved": 1,
+  "missingMeaning": 0,
+  "missingIpa": 0,
+  "missingPos": 0,
+  "topics": 60,
+  "goldenFixtureCount": 150,
+  "goldenHumanReviewComplete": false,
+  "topicMappedWords": 321,
+  "topicCoveragePercent": 10.7,
+  "emptyTopics": 60
+}
