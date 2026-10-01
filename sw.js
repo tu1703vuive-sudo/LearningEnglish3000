@@ -1,9 +1,50 @@
-const CACHE = "english-3000-v2-1";
+const CACHE = "english-3000-v3-shell";
+const DATA_CACHE = "english-3000-v3-data";
 const ASSETS = ["./","./index.html","./style.css","./app.js","./manifest.json"];
-self.addEventListener("install", e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS))));
-self.addEventListener("activate", e => e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))));
-self.addEventListener("fetch", e => {
-  if (e.request.url.startsWith(self.location.origin)) {
-    e.respondWith(caches.match(e.request).then(cached => cached || fetch(e.request)));
+
+self.addEventListener("install", event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.filter(k => ![CACHE,DATA_CACHE].includes(k)).map(k => caches.delete(k))
+    ))
+  );
+  self.clients.claim();
+});
+
+self.addEventListener("fetch", event => {
+  const req = event.request;
+  if (req.method !== "GET") return;
+  const url = new URL(req.url);
+
+  if (url.origin === self.location.origin) {
+    event.respondWith(
+      caches.match(req).then(cached => cached || fetch(req).then(res => {
+        const clone = res.clone();
+        caches.open(CACHE).then(c => c.put(req,clone));
+        return res;
+      }))
+    );
+    return;
+  }
+
+  const cacheableHosts = [
+    "raw.githubusercontent.com",
+    "api.dictionaryapi.dev",
+    "api.mymemory.translated.net"
+  ];
+
+  if (cacheableHosts.includes(url.hostname)) {
+    event.respondWith(
+      fetch(req).then(res => {
+        const clone = res.clone();
+        caches.open(DATA_CACHE).then(c => c.put(req,clone)).catch(()=>{});
+        return res;
+      }).catch(() => caches.match(req))
+    );
   }
 });
