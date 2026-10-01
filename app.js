@@ -364,7 +364,7 @@ async function getLexicalData(word) {
 async function fetchOnlineAudioData(word) {
   const k = keyOf(word);
   const cached = state.lexCache[k] || {};
-  if (cached.us || cached.uk || cached.generic) return cached;
+  if (cached.ipa && (cached.us || cached.uk || cached.generic)) return cached;
   if (!navigator.onLine) return cached;
   const result = {...cached};
   try {
@@ -722,15 +722,26 @@ function makeDistractors(item) {
 
 function resetPronunciationUi(conceal) {
   $("pronunciationBox").classList.toggle("concealed",!!conceal);
-  $("ipaText").textContent = "Đang tải…";
+  $("ipaText").textContent = "Đang tìm IPA…";
+  $("ipaText").classList.remove("is-missing");
   ["audioUsBtn","audioUkBtn","audioDictBtn","audioTtsBtn"].forEach(id=>$(id).classList.add("hidden"));
 }
 async function fillPronunciationUi(item,reveal=true) {
   resetPronunciationUi(!reveal);
   const expected = keyOf(item.word);
-  const p = item.lex || await getLexicalData(item.word);
+  let p = item.lex || await getLexicalData(item.word);
+
+  // V3.1.2: local pack may have meaning but miss IPA/audio. Enrich only missing
+  // pronunciation fields from the dictionary when online, then cache them.
+  if (navigator.onLine && (!p.ipa || !(p.us || p.uk || p.generic))) {
+    const online = await fetchOnlineAudioData(item.word);
+    p = {...p, ...online, ipa: online.ipa || p.ipa || ""};
+    item.lex = {...(item.lex || {}), ...p};
+  }
+
   if (!currentSession[currentIndex] || keyOf(currentSession[currentIndex].word)!==expected) return;
-  $("ipaText").textContent = p.ipa || "IPA chưa có";
+  $("ipaText").textContent = p.ipa || "Chưa có IPA";
+  $("ipaText").classList.toggle("is-missing", !p.ipa);
   $("audioUsBtn").classList.toggle("hidden",!p.us);
   $("audioUkBtn").classList.toggle("hidden",!p.uk);
   $("audioDictBtn").classList.toggle("hidden",!p.generic || !!p.us || !!p.uk);
@@ -753,10 +764,11 @@ function addAnswer(label,isCorrect,item) {
 }
 function renderQuestion() {
   answered=false;
-  $("feedback").className="feedback";
+  $("feedback").className="feedback feedback-banner";
   $("feedback").textContent="";
   $("wordDetail").classList.add("hidden");
   $("nextBtn").classList.add("hidden");
+  $("nextBar")?.classList.add("hidden");
 
   const item=currentSession[currentIndex];
   const total=currentSession.length;
@@ -796,18 +808,24 @@ async function showWordDetail(item,card,isCorrect) {
   $("detailMeaning").textContent=item.meaning;
   $("detailAudioBtn").onclick=()=>playBestPronunciation(item);
 
-  const example = item.lex?.example || `This sentence helps me remember the word "${item.word}".`;
-  $("detailExampleEn").textContent=example;
-  const ek = `${keyOf(item.word)}::${example}`;
-  const localExampleVi = item.lex?.exampleVi || offlineByWord.get(keyOf(item.word))?.exampleVi || "";
-  if (localExampleVi) {
-    $("detailExampleVi").textContent = localExampleVi;
-  } else if (navigator.onLine) {
-    $("detailExampleVi").textContent="Đang dịch ví dụ…";
-    const vi = state.exampleViCache[ek] || await translateText(example,"exampleViCache",ek);
-    $("detailExampleVi").textContent=vi || `Nghĩa từ: ${item.meaning}`;
+  const example = item.lex?.example || offlineByWord.get(keyOf(item.word))?.example || "";
+  const exampleBox = $("detailExampleEn").closest(".example-box");
+  if (!example) {
+    exampleBox?.classList.add("hidden");
   } else {
-    $("detailExampleVi").textContent=`Nghĩa từ: ${item.meaning}`;
+    exampleBox?.classList.remove("hidden");
+    $("detailExampleEn").textContent=example;
+    const ek = `${keyOf(item.word)}::${example}`;
+    const localExampleVi = item.lex?.exampleVi || offlineByWord.get(keyOf(item.word))?.exampleVi || "";
+    if (localExampleVi) {
+      $("detailExampleVi").textContent = localExampleVi;
+    } else if (navigator.onLine) {
+      $("detailExampleVi").textContent="Đang dịch…";
+      const vi = state.exampleViCache[ek] || await translateText(example,"exampleViCache",ek);
+      $("detailExampleVi").textContent=vi || "";
+    } else {
+      $("detailExampleVi").textContent="";
+    }
   }
 
   const interval = Math.max(0,Math.round((new Date(card.due+"T00:00:00")-new Date(localDateString()+"T00:00:00"))/86400000));
@@ -828,20 +846,21 @@ async function chooseAnswer(button,isCorrect,item) {
   if (isCorrect) {
     score++;
     button.classList.add("correct");
-    $("feedback").className="feedback ok";
-    $("feedback").textContent=`✓ Chính xác — ${item.word} = ${item.meaning}`;
+    $("feedback").className="feedback feedback-banner ok";
+    $("feedback").textContent="✓ Chính xác";
   } else {
     button.classList.add("wrong");
     wrongThisSession.push(item);
     const correctButton=buttons.find(x=>x.textContent===correctText);
     if (correctButton) correctButton.classList.add("correct");
-    $("feedback").className="feedback bad";
-    $("feedback").textContent=`✕ ${item.word} = ${item.meaning}`;
+    $("feedback").className="feedback feedback-banner bad";
+    $("feedback").textContent="✕ Chưa đúng — đáp án đúng đã được đánh dấu";
   }
 
   const card=recordAnswer(item,isCorrect);
   $("scoreValue").textContent=score;
   $("nextBtn").classList.remove("hidden");
+  $("nextBar")?.classList.remove("hidden");
   $("nextBtn").textContent=currentIndex===currentSession.length-1 ? "Xem kết quả" : "Tiếp tục";
   showWordDetail(item,card,isCorrect).catch(()=>{});
 }
