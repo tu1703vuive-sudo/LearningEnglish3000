@@ -1,5 +1,5 @@
-const CACHE = "english-3000-v3-1-shell";
-const DATA_CACHE = "english-3000-v3-1-data";
+const CACHE = "english-3000-v3-1-1-shell";
+const DATA_CACHE = "english-3000-v3-1-1-data";
 const ASSETS = [
   "./",
   "./index.html",

@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 V3.1 - học 3000 từ vựng cơ bản theo chủ đề, IPA, audio và ôn lặp lại SRS" />
+  <meta name="description" content="English 3000 V3.1.1 - học 3000 từ vựng cơ bản theo chủ đề, IPA, audio và ôn lặp lại SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.1</title>
+  <title>English 3000 V3.1.1</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.1</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.1.1</p>
         <h1>3000 từ vựng nền tảng</h1>
         <p class="muted">Offline pack • IPA • Chủ đề • Ôn lặp lại thông minh</p>
       </div>
@@ -52,11 +52,11 @@
         </article>
 
         <div class="today-grid">
-          <button id="startDueBtn" class="today-card due-card">
+          <div id="dueStatCard" class="today-card due-card">
             <span>🧠</span>
-            <strong id="dueCount">0</strong>
+            <strong id="dueStatCount">0</strong>
             <small>Từ đến hạn ôn</small>
-          </button>
+          </div>
           <div class="today-card">
             <span>🔥</span>
             <strong id="streakCount">0</strong>
@@ -69,82 +69,128 @@
           </div>
         </div>
 
-        <div class="section-title compact-bottom">
-          <div>
-            <h2>1. Chọn nhóm từ</h2>
-            <p class="muted small">V3 ưu tiên từ đến hạn → từ mới → từ yếu.</p>
+        <section class="start-learning-section">
+          <div class="section-title compact-bottom">
+            <div>
+              <p class="eyebrow mini-eyebrow">BUỔI HỌC TIẾP THEO</p>
+              <h2>Bắt đầu học</h2>
+              <p class="muted small">App tự ưu tiên từ đến hạn, từ mới rồi mới đến từ yếu.</p>
+            </div>
           </div>
-          <button id="reviewWrongBtn" class="ghost-btn">Ôn từ sai</button>
-        </div>
 
-        <div id="browseTabs" class="browse-tabs">
-          <button class="browse-tab active" data-browse="topic">🧩 Chủ đề</button>
-          <button class="browse-tab" data-browse="level">📚 Trình độ</button>
-          <button class="browse-tab" data-browse="stage">🔢 Chặng</button>
-        </div>
+          <article class="continue-card card">
+            <div class="continue-head">
+              <div>
+                <span class="tag">Đề xuất cho bạn</span>
+                <h2 id="continueTitle">Học tiếp 10 từ</h2>
+                <p id="continueSubtitle" class="muted">Đang chuẩn bị gợi ý…</p>
+              </div>
+              <div class="continue-ring" id="continueRing"><span id="continuePercent">0%</span></div>
+            </div>
 
-        <div id="topicPanel" class="selector-panel">
-          <div class="search-wrap">
-            <input id="topicSearch" type="search" placeholder="Tìm: Work, Food, Travel, Health..." autocomplete="off" />
-          </div>
-          <div id="topicGrid" class="topic-grid"></div>
-        </div>
+            <div class="session-mix">
+              <div><span class="mix-dot review"></span><strong id="mixDue">0</strong><small>cần ôn</small></div>
+              <div><span class="mix-dot fresh"></span><strong id="mixNew">0</strong><small>từ mới</small></div>
+              <div><span class="mix-dot weak"></span><strong id="mixWeak">0</strong><small>từ yếu</small></div>
+            </div>
 
-        <div id="levelPanel" class="selector-panel hidden">
-          <div id="levelGrid" class="level-grid"></div>
-        </div>
+            <button id="continueBtn" class="primary continue-main-btn">▶ Học tiếp</button>
 
-        <div id="stagePanel" class="selector-panel hidden">
-          <p class="muted small panel-note">30 chặng × khoảng 100 từ.</p>
-          <div id="stageGrid" class="stage-grid"></div>
-        </div>
+            <div class="quick-start-grid">
+              <button id="newWordsBtn" class="quick-start-btn">
+                <span>✨</span>
+                <div><strong>Học từ mới</strong><small id="newWordsHint">Chưa học</small></div>
+              </button>
+              <button id="startDueBtn" class="quick-start-btn">
+                <span>🧠</span>
+                <div><strong>Ôn đến hạn</strong><small><span id="dueCount">0</span> từ</small></div>
+              </button>
+              <button id="reviewWrongBtn" class="quick-start-btn">
+                <span>⚠️</span>
+                <div><strong>Ôn từ sai</strong><small id="wrongWordsHint">0 từ yếu</small></div>
+              </button>
+            </div>
+          </article>
 
-        <div class="selection-summary card-lite">
-          <span class="muted small">Đang chọn</span>
-          <strong id="selectionSummary">Chủ đề</strong>
-          <span id="selectionCount" class="muted small">0 từ</span>
-        </div>
+          <details id="lessonSettings" class="lesson-settings">
+            <summary>
+              <span>⚙️ Tùy chỉnh buổi học</span>
+              <small id="settingsSummary">10 từ · Anh → Việt</small>
+            </summary>
 
-        <div class="section-title">
-          <div>
-            <h2>2. Chọn số từ</h2>
-            <p class="muted small">10–20 từ/buổi là hợp lý nhất.</p>
-          </div>
-        </div>
+            <div class="settings-body">
+              <div class="settings-block">
+                <div class="settings-label">
+                  <strong>Nhóm từ</strong>
+                  <span id="selectionSummary" class="muted small">Chủ đề</span>
+                </div>
 
-        <div class="choice-row" id="sizeChoices">
-          <button class="choice active" data-size="10">10 từ</button>
-          <button class="choice" data-size="20">20 từ</button>
-          <button class="choice" data-size="30">30 từ</button>
-        </div>
+                <div id="browseTabs" class="browse-tabs compact-tabs">
+                  <button class="browse-tab active" data-browse="topic">🧩 Chủ đề</button>
+                  <button class="browse-tab" data-browse="level">📚 Trình độ</button>
+                  <button class="browse-tab" data-browse="stage">🔢 Chặng</button>
+                </div>
 
-        <div class="section-title">
-          <div><h2>3. Chọn kiểu học</h2></div>
-        </div>
+                <div id="topicPanel" class="selector-panel">
+                  <div class="search-wrap">
+                    <input id="topicSearch" type="search" placeholder="Tìm: Work, Food, Travel, Health..." autocomplete="off" />
+                  </div>
+                  <div id="topicGrid" class="topic-grid"></div>
+                </div>
 
-        <div class="mode-grid" id="modeChoices">
-          <button class="mode-card active" data-mode="envi">
-            <span class="mode-icon">🇬🇧</span>
-            <strong>Anh → Việt</strong>
-            <small>Nhìn từ, chọn nghĩa</small>
-          </button>
-          <button class="mode-card" data-mode="vien">
-            <span class="mode-icon">🇻🇳</span>
-            <strong>Việt → Anh</strong>
-            <small>Nhìn nghĩa, chọn từ</small>
-          </button>
-          <button class="mode-card" data-mode="listen">
-            <span class="mode-icon">🎧</span>
-            <strong>Nghe → Nghĩa</strong>
-            <small>Audio từ điển trước, TTS dự phòng</small>
-          </button>
-        </div>
+                <div id="levelPanel" class="selector-panel hidden">
+                  <div id="levelGrid" class="level-grid"></div>
+                </div>
 
-        <button id="startBtn" class="primary big">Bắt đầu học</button>
+                <div id="stagePanel" class="selector-panel hidden">
+                  <p class="muted small panel-note">30 chặng × khoảng 100 từ.</p>
+                  <div id="stageGrid" class="stage-grid"></div>
+                </div>
 
-        <article class="info-card">
-          <strong>V3.1 có gì mới?</strong>
-          <p>Gói dữ liệu local cùng repo, nghĩa Việt + IPA + loại từ + ví dụ offline; SRS và tiến độ V2/V3 vẫn được giữ nguyên.</p>
+                <div class="selection-summary card-lite compact-selection">
+                  <span class="muted small">Trong nhóm</span>
+                  <strong id="selectionCount">0 từ</strong>
+                </div>
+              </div>
+
+              <div class="settings-block">
+                <div class="settings-label"><strong>Số từ mỗi buổi</strong><span class="muted small">Khuyên dùng 10–20</span></div>
+                <div class="choice-row" id="sizeChoices">
+                  <button class="choice active" data-size="10">10 từ</button>
+                  <button class="choice" data-size="20">20 từ</button>
+                  <button class="choice" data-size="30">30 từ</button>
+                </div>
+              </div>
+
+              <div class="settings-block">
+                <div class="settings-label"><strong>Kiểu học</strong><span class="muted small">Có thể đổi bất cứ lúc nào</span></div>
+                <div class="mode-grid" id="modeChoices">
+                  <button class="mode-card active" data-mode="envi">
+                    <span class="mode-icon">🇬🇧</span>
+                    <strong>Anh → Việt</strong>
+                    <small>Nhìn từ, chọn nghĩa</small>
+                  </button>
+                  <button class="mode-card" data-mode="vien">
+                    <span class="mode-icon">🇻🇳</span>
+                    <strong>Việt → Anh</strong>
+                    <small>Nhìn nghĩa, chọn từ</small>
+                  </button>
+                  <button class="mode-card" data-mode="listen">
+                    <span class="mode-icon">🎧</span>
+                    <strong>Nghe → Nghĩa</strong>
+                    <small>Nghe trước, chọn sau</small>
+                  </button>
+                </div>
+              </div>
+
+              <button id="startBtn" class="secondary big">Bắt đầu với tùy chọn này</button>
+            </div>
+          </details>
+        </section>
+
+        <article class="info-card compact-info">
+          <strong>Luồng mới</strong>
+          <p>Mở app → bấm <b>Học tiếp</b>. Chỉ mở “Tùy chỉnh buổi học” khi bạn muốn đổi chủ đề, số từ hoặc kiểu câu hỏi.</p>
         </article>
       </section>
 
@@ -234,7 +280,7 @@
     </main>
 
     <footer>
-      <p>Tiến độ được lưu trên trình duyệt. V3.1 tương thích dữ liệu V2/V2.1/V3.</p>
+      <p>Tiến độ được lưu trên trình duyệt. V3.1.1 tương thích dữ liệu V2/V2.1/V3/V3.1.</p>
     </footer>
   </div>
 

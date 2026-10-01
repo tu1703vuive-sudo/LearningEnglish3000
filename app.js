@@ -535,7 +535,9 @@ function renderHome() {
   const pct = Math.min(100,Math.round(masteredCount/TARGET_WORDS*100));
   $("totalPercent").textContent = pct+"%";
   $("totalProgress").style.width = pct+"%";
-  $("dueCount").textContent = dueKeys().filter(k=>findItem(k)).length;
+  const allDueCount = dueKeys().filter(k=>findItem(k)).length;
+  if ($("dueStatCount")) $("dueStatCount").textContent = allDueCount;
+  if ($("dueCount")) $("dueCount").textContent = allDueCount;
   $("streakCount").textContent = state.stats.streak || 0;
   $("todayCount").textContent = state.stats.todayAnswers || 0;
 
@@ -547,7 +549,79 @@ function renderHome() {
   const pool = getActivePool();
   $("selectionSummary").textContent = activeContextName();
   $("selectionCount").textContent = `${pool.length} từ`;
+  renderStartRecommendation();
+  updateSettingsSummary();
   saveState();
+}
+
+function isNewWord(item) {
+  return !state.srs[keyOf(item.word)] && !(state.seen[keyOf(item.word)] > 0);
+}
+function isWeakWord(item) {
+  const k = keyOf(item.word);
+  const card = state.srs[k];
+  return !!card && ((state.wrong[k] || 0) > 0 || (card.box || 0) <= 2);
+}
+function dueInPool(pool) {
+  const today = localDateString();
+  return pool.filter(item => state.srs[keyOf(item.word)]?.due && state.srs[keyOf(item.word)].due <= today);
+}
+function newInPool(pool) {
+  return pool.filter(isNewWord);
+}
+function weakInPool(pool) {
+  const today = localDateString();
+  return pool.filter(item => isWeakWord(item) && !(state.srs[keyOf(item.word)]?.due <= today));
+}
+function uniqueByWord(items) {
+  const seen = new Set();
+  return items.filter(item => {
+    const k = keyOf(item.word);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+}
+function pickSmartSessionWords() {
+  const pool = getActivePool();
+  const due = dueInPool(pool).sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0));
+  const fresh = shuffled(newInPool(pool));
+  const weak = weakInPool(pool).sort((a,b)=>(state.wrong[keyOf(b.word)]||0)-(state.wrong[keyOf(a.word)]||0));
+  const rest = [...pool].sort((a,b)=>priorityScore(b)-priorityScore(a));
+  return uniqueByWord([...due,...fresh,...weak,...rest]).slice(0,Math.min(state.sessionSize,pool.length));
+}
+function pickNewWords() {
+  const pool = getActivePool();
+  return shuffled(newInPool(pool)).slice(0,Math.min(state.sessionSize,pool.length));
+}
+function modeLabel() {
+  return state.mode === "vien" ? "Việt → Anh" : state.mode === "listen" ? "Nghe → Nghĩa" : "Anh → Việt";
+}
+function updateSettingsSummary() {
+  if ($("settingsSummary")) $("settingsSummary").textContent = `${state.sessionSize} từ · ${modeLabel()}`;
+}
+function renderStartRecommendation() {
+  if (!$("continueTitle")) return;
+  const pool = getActivePool();
+  const due = dueInPool(pool).length;
+  const fresh = newInPool(pool).length;
+  const weak = weakInPool(pool).length;
+  const takeDue = Math.min(due,state.sessionSize);
+  const takeNew = Math.min(fresh,Math.max(0,state.sessionSize-takeDue));
+  const takeWeak = Math.min(weak,Math.max(0,state.sessionSize-takeDue-takeNew));
+  const known = pool.filter(item=>getMasteredSet().has(keyOf(item.word))).length;
+  const pct = pool.length ? Math.round(known/pool.length*100) : 0;
+
+  $("continueTitle").textContent = `Học tiếp ${Math.min(state.sessionSize,pool.length || state.sessionSize)} từ`;
+  $("continueSubtitle").textContent = `${activeContextName()} · ${modeLabel()}`;
+  $("mixDue").textContent = takeDue;
+  $("mixNew").textContent = takeNew;
+  $("mixWeak").textContent = takeWeak;
+  $("newWordsHint").textContent = `${fresh} từ chưa học`;
+  const wrongCount = Object.values(state.wrong || {}).filter(x=>x>0).length;
+  $("wrongWordsHint").textContent = `${wrongCount} từ yếu`;
+  $("continuePercent").textContent = `${pct}%`;
+  $("continueRing").style.background = `conic-gradient(var(--primary) ${pct}%,var(--line) ${pct}%)`;
 }
 
 function priorityScore(item) {
@@ -610,6 +684,18 @@ async function prepareSession(words, kind="normal") {
 async function startNormalSession() {
   if (!vocab.length) await loadVocabulary();
   await prepareSession(pickSessionWords(),"normal");
+}
+async function startSmartSession() {
+  if (!vocab.length) await loadVocabulary();
+  const words = pickSmartSessionWords();
+  if (!words.length) return alert("Nhóm này chưa có từ để học.");
+  await prepareSession(words,"smart");
+}
+async function startNewWordsSession() {
+  if (!vocab.length) await loadVocabulary();
+  const words = pickNewWords();
+  if (!words.length) return alert("Nhóm này không còn từ mới. Bạn có thể bấm Học tiếp để ôn và củng cố.");
+  await prepareSession(words,"new");
 }
 async function startDueReview() {
   if (!vocab.length) await loadVocabulary();
@@ -677,7 +763,7 @@ function renderQuestion() {
   $("quizProgressBar").style.width=`${currentIndex/total*100}%`;
   $("quizProgressText").textContent=`${currentIndex+1}/${total}`;
   $("scoreValue").textContent=score;
-  $("contextLabel").textContent=sessionKind==="due" ? "Ôn đến hạn" : sessionKind==="wrong" ? "Ôn từ sai" : activeContextName();
+  $("contextLabel").textContent=sessionKind==="due" ? "Ôn đến hạn" : sessionKind==="wrong" ? "Ôn từ sai" : sessionKind==="new" ? "Từ mới" : sessionKind==="smart" ? "Học tiếp" : activeContextName();
   $("levelLabel").textContent=item.level || "—";
   $("answers").innerHTML="";
   $("listenMainBtn").classList.toggle("hidden",state.mode!=="listen");
@@ -802,6 +888,8 @@ document.querySelectorAll("#sizeChoices .choice").forEach(btn=>{
     document.querySelectorAll("#sizeChoices .choice").forEach(x=>x.classList.remove("active"));
     btn.classList.add("active");
     saveState();
+    renderStartRecommendation();
+    updateSettingsSummary();
   };
 });
 document.querySelectorAll("#modeChoices .mode-card").forEach(btn=>{
@@ -810,6 +898,8 @@ document.querySelectorAll("#modeChoices .mode-card").forEach(btn=>{
     document.querySelectorAll("#modeChoices .mode-card").forEach(x=>x.classList.remove("active"));
     btn.classList.add("active");
     saveState();
+    renderStartRecommendation();
+    updateSettingsSummary();
   };
 });
 document.querySelectorAll(".browse-tab").forEach(btn=>{
@@ -823,6 +913,8 @@ document.querySelectorAll(".browse-tab").forEach(btn=>{
 $("topicSearch").addEventListener("input",e=>renderTopics(e.target.value));
 $("themeBtn").onclick=()=>{state.dark=!state.dark;saveState();applyTheme();};
 $("startBtn").onclick=startNormalSession;
+$("continueBtn").onclick=startSmartSession;
+$("newWordsBtn").onclick=startNewWordsSession;
 $("startDueBtn").onclick=startDueReview;
 $("reviewWrongBtn").onclick=startWrongReview;
 $("nextBtn").onclick=nextQuestion;
