@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3.1.1",
+  "name": "English 3000 V3.1.3",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "English 3000 offline-first với luồng Học tiếp một chạm, IPA, chủ đề và SRS."
+  "description": "English 3000 fast-start: mở câu đầu ngay, preload dữ liệu nền, IPA/audio lazy-load."
 }

@@ -1,3 +1,7 @@
+# English 3000 V3.1.3 — Fast Start
+
+Bản này tối ưu tốc độ vào bài: chỉ chuẩn bị dữ liệu cần cho câu đầu tiên, còn nghĩa các câu sau và IPA/audio/ví dụ được preload/lazy-load ở nền.
+
 # English 3000 V3.1 — Offline Pack
 
 V3.1 chuyển phần dữ liệu học sang **offline-first**.

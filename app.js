@@ -101,6 +101,8 @@ let score = 0;
 let wrongThisSession = [];
 let answered = false;
 let sessionKind = "normal";
+let meaningJobs = new Map();
+let sessionPreloadToken = 0;
 
 function saveState() { localStorage.setItem("english3000State", JSON.stringify(state)); }
 function showView(id) {
@@ -651,35 +653,112 @@ function pickWrongWords() {
     .slice(0,state.sessionSize);
 }
 
-async function hydrateWord(item) {
-  const [meaning, lex] = await Promise.all([translateWord(item.word), getLexicalData(item.word)]);
-  return {...item, meaning, lex};
+function cachedMeaningFor(item) {
+  const k = keyOf(item.word);
+  return offlineByWord.get(k)?.meaning || OFFLINE_MEANINGS[k] || state.meaningCache[k] || "";
 }
+
+async function ensureMeaningAt(index) {
+  if (index < 0 || index >= currentSession.length) return null;
+  const item = currentSession[index];
+  if (item.meaning) return item;
+
+  const k = keyOf(item.word);
+  if (meaningJobs.has(k)) {
+    item.meaning = await meaningJobs.get(k);
+    return item;
+  }
+
+  const job = translateWord(item.word)
+    .catch(() => "chưa có nghĩa")
+    .finally(() => meaningJobs.delete(k));
+  meaningJobs.set(k, job);
+  item.meaning = await job;
+  return item;
+}
+
+async function ensureQuestionWindow(index) {
+  if (!currentSession.length) return;
+  const wanted = [];
+  for (let i = index; i < currentSession.length && wanted.length < 4; i++) wanted.push(i);
+  for (let i = 0; i < currentSession.length && wanted.length < 4; i++) {
+    if (!wanted.includes(i)) wanted.push(i);
+  }
+  await Promise.all(wanted.map(ensureMeaningAt));
+}
+
+async function backgroundPreloadMeanings(token) {
+  const pending = currentSession
+    .map((item,index)=>({item,index}))
+    .filter(x=>!x.item.meaning)
+    .map(x=>x.index);
+
+  let cursor = 0;
+  async function worker() {
+    while (cursor < pending.length && token === sessionPreloadToken) {
+      const index = pending[cursor++];
+      await ensureMeaningAt(index);
+    }
+  }
+  await Promise.all(Array.from({length:Math.min(3,pending.length)},()=>worker()));
+}
+
+function backgroundPrefetchAssets(index, token) {
+  const run = async () => {
+    if (token !== sessionPreloadToken) return;
+    const targets = [index, index+1].filter(i=>i>=0 && i<currentSession.length);
+    for (const i of targets) {
+      if (token !== sessionPreloadToken) return;
+      const item = currentSession[i];
+      // Local/offline lexical data resolves immediately. Online dictionary work is
+      // deliberately deferred until after the question is already visible.
+      try { item.lex = item.lex || await getLexicalData(item.word); } catch (_) {}
+    }
+  };
+  if ('requestIdleCallback' in window) requestIdleCallback(()=>run(), {timeout:1200});
+  else setTimeout(()=>run(), 500);
+}
+
 async function prepareSession(words, kind="normal") {
   if (!words.length) return alert("Chưa có từ phù hợp trong nhóm này.");
   sessionKind = kind;
-  showView("loadingView");
-  currentSession = new Array(words.length);
-  let next = 0;
-  let finished = 0;
+  const token = ++sessionPreloadToken;
+  meaningJobs.clear();
 
-  async function worker() {
-    while (true) {
-      const i = next++;
-      if (i >= words.length) break;
-      $("loadingText").textContent = `Đang chuẩn bị ${finished}/${words.length} từ…`;
-      currentSession[i] = await hydrateWord(words[i]);
-      finished++;
-      $("loadingText").textContent = `Đã chuẩn bị ${finished}/${words.length} từ…`;
-    }
+  // Build the session immediately from local/cache data. Do NOT fetch IPA/audio/
+  // examples for all 10–30 words before entering the quiz.
+  currentSession = words.map(item => ({
+    ...item,
+    meaning: cachedMeaningFor(item),
+    lex: offlineByWord.get(keyOf(item.word)) ? {
+      ipa: offlineByWord.get(keyOf(item.word))?.ipa || "",
+      us:"", uk:"", generic:"",
+      pos: offlineByWord.get(keyOf(item.word))?.pos || "",
+      definition: offlineByWord.get(keyOf(item.word))?.meaning || "",
+      example: offlineByWord.get(keyOf(item.word))?.example || "",
+      exampleVi: offlineByWord.get(keyOf(item.word))?.exampleVi || ""
+    } : null
+  }));
+
+  currentIndex = 0;
+  score = 0;
+  wrongThisSession = [];
+
+  // Only wait for enough meanings to draw question 1 + its choices.
+  const readyCount = currentSession.filter(x=>x.meaning).length;
+  if (readyCount < Math.min(4,currentSession.length)) {
+    showView("loadingView");
+    $("loadingText").textContent = "Chuẩn bị câu đầu tiên…";
+    await ensureQuestionWindow(0);
   }
-  await Promise.all(Array.from({length:Math.min(4,words.length)},()=>worker()));
 
-  currentIndex=0;
-  score=0;
-  wrongThisSession=[];
+  if (token !== sessionPreloadToken) return;
   renderQuestion();
   showView("quizView");
+
+  // Everything else happens in the background while the learner answers.
+  backgroundPreloadMeanings(token).catch(()=>{});
+  backgroundPrefetchAssets(0, token);
 }
 async function startNormalSession() {
   if (!vocab.length) await loadVocabulary();
@@ -711,13 +790,20 @@ async function startWrongReview() {
 }
 
 function makeDistractors(item) {
-  let pool = currentSession.filter(x=>x.word!==item.word && x.meaning!==item.meaning);
+  let pool = currentSession.filter(x =>
+    x && x.word !== item.word && x.meaning && x.meaning !== item.meaning
+  );
   if (pool.length >= 3) return shuffled(pool).slice(0,3);
-  const fallback = vocab.filter(x=>x.word!==item.word).slice(0,50).map(x=>({
-    ...x,
-    meaning: state.meaningCache[keyOf(x.word)] || OFFLINE_MEANINGS[keyOf(x.word)] || x.word
-  }));
-  return shuffled([...pool,...fallback]).slice(0,3);
+
+  const fallback = vocab
+    .filter(x=>x.word!==item.word)
+    .map(x=>({ ...x, meaning: cachedMeaningFor(x) }))
+    .filter(x=>x.meaning && x.meaning!==item.meaning)
+    .slice(0,80);
+
+  return shuffled([...pool,...fallback]).filter((x,i,a)=>
+    a.findIndex(y=>keyOf(y.word)===keyOf(x.word))===i
+  ).slice(0,3);
 }
 
 function resetPronunciationUi(conceal) {
@@ -771,6 +857,10 @@ function renderQuestion() {
   $("nextBar")?.classList.add("hidden");
 
   const item=currentSession[currentIndex];
+  if (!item?.meaning) {
+    ensureQuestionWindow(currentIndex).then(()=>renderQuestion()).catch(()=>{});
+    return;
+  }
   const total=currentSession.length;
   $("quizProgressBar").style.width=`${currentIndex/total*100}%`;
   $("quizProgressText").textContent=`${currentIndex+1}/${total}`;
@@ -864,11 +954,19 @@ async function chooseAnswer(button,isCorrect,item) {
   $("nextBtn").textContent=currentIndex===currentSession.length-1 ? "Xem kết quả" : "Tiếp tục";
   showWordDetail(item,card,isCorrect).catch(()=>{});
 }
-function nextQuestion() {
+async function nextQuestion() {
   if (!answered) return;
   if (currentIndex < currentSession.length-1) {
-    currentIndex++;
+    const nextIndex = currentIndex + 1;
+    const oldText = $("nextBtn").textContent;
+    $("nextBtn").disabled = true;
+    $("nextBtn").textContent = "Đang mở câu tiếp…";
+    await ensureQuestionWindow(nextIndex);
+    currentIndex = nextIndex;
+    $("nextBtn").disabled = false;
+    $("nextBtn").textContent = oldText;
     renderQuestion();
+    backgroundPrefetchAssets(currentIndex, sessionPreloadToken);
   } else showResult();
 }
 function showResult() {
