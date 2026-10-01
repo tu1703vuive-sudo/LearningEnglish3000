@@ -337,3 +337,60 @@ button.today-card{cursor:pointer}
 /* ===== V3.1.4 clean database ===== */
 .topic-btn.empty{opacity:.48;cursor:not-allowed;background:var(--bg)}
 .topic-btn.empty:active{transform:none}
+
+
+/* ===== V3.1.5 — Result screen ===== */
+body.result-mode .topbar,
+body.result-mode footer{display:none}
+body.result-mode .app{padding-top:max(12px,env(safe-area-inset-top));padding-bottom:max(22px,env(safe-area-inset-bottom))}
+.result-screen{padding-top:2px}
+.result-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:2px 2px 14px}
+.result-nav .eyebrow{margin-bottom:3px}
+.result-nav strong{font-size:.96rem}
+.compact-icon{width:40px;height:40px;font-size:1.5rem;line-height:1}
+.result-card-v2{padding:20px;margin-top:0;text-align:left}
+.result-hero-v2{display:grid;grid-template-columns:104px 1fr;gap:17px;align-items:center;padding:4px 0 17px}
+.result-score-ring{width:104px;height:104px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--success) 0%,var(--line) 0%);transition:.35s ease}
+.result-score-ring-inner{width:80px;height:80px;border-radius:50%;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px var(--line)}
+.result-score-ring-inner strong{font-size:1.45rem;line-height:1}
+.result-score-ring-inner small{color:var(--muted);font-size:.68rem;margin-top:5px}
+.result-copy{min-width:0}
+.result-emoji-v2{font-size:1.55rem;display:block;margin-bottom:3px}
+.result-complete-label{margin:0 0 4px}
+.result-card-v2 h2{font-size:1.55rem;line-height:1.12;margin:0 0 6px}
+.result-copy .muted{margin:0;line-height:1.4;font-size:.9rem}
+.result-stats-v2{margin:2px 0 8px;gap:8px}
+.result-stats-v2 div{padding:12px 5px;background:var(--bg);border:1px solid var(--line)}
+.result-stats-v2 strong{font-size:1.2rem}
+.result-stats-v2 small{font-size:.72rem}
+.result-total{text-align:center;font-size:.78rem;margin:8px 0 15px}
+.next-review-card{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:center;padding:13px 14px;border-radius:16px;background:rgba(37,99,235,.07);border:1px solid rgba(37,99,235,.14);margin-bottom:18px}
+.next-review-icon{font-size:1.35rem;text-align:center}
+.next-review-card small{display:block;color:var(--muted);font-size:.7rem;margin-bottom:2px}
+.next-review-card strong{display:block;font-size:.88rem;line-height:1.35}
+.result-words-section{border-top:1px solid var(--line);padding-top:16px}
+.result-section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}
+.result-section-head>div strong{display:block;font-size:.95rem}
+.result-section-head>div small{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}
+.result-word-list{display:grid;gap:7px}
+.result-word-row{display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:9px;align-items:center;padding:10px 11px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.result-word-row.is-hidden{display:none}
+.result-word-status{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.78rem;font-weight:900}
+.result-word-status.correct{background:rgba(22,163,74,.11);color:var(--success)}
+.result-word-status.wrong{background:rgba(220,38,38,.09);color:var(--danger)}
+.result-word-main{min-width:0}
+.result-word-main strong{display:block;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.result-word-main small{display:block;color:var(--muted);font-size:.75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.result-word-due{font-size:.69rem;font-weight:800;color:var(--muted);white-space:nowrap;background:var(--card);border:1px solid var(--line);padding:5px 7px;border-radius:999px}
+.result-actions{margin-top:18px;display:grid;gap:9px}
+.result-primary-action,.result-secondary-action{min-height:52px;border-radius:16px;margin:0;font-size:1rem}
+.result-home-link{border:0;background:transparent;color:var(--muted);padding:10px;font-weight:800}
+@media(max-width:390px){
+  .result-card-v2{padding:17px 14px}
+  .result-hero-v2{grid-template-columns:88px 1fr;gap:13px}
+  .result-score-ring{width:88px;height:88px}
+  .result-score-ring-inner{width:68px;height:68px}
+  .result-score-ring-inner strong{font-size:1.25rem}
+  .result-card-v2 h2{font-size:1.38rem}
+  .result-word-row{grid-template-columns:29px minmax(0,1fr) auto;padding:9px}
+}

@@ -7,15 +7,15 @@
   <meta name="description" content="English 3000 V3.1.4 - database sạch 3000 từ từ 3 PDF, IPA, chủ đề và SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.1.4</title>
+  <title>English 3000 V3.1.5</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.1.4</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.1.5</p>
         <h1>3000 từ vựng nền tảng</h1>
-        <p class="muted">Database sạch từ 3 PDF • IPA • SRS • Offline</p>
+        <p class="muted">Database sạch • IPA • SRS • Offline</p>
       </div>
       <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
     </header>
@@ -253,27 +253,78 @@
         </div>
       </section>
 
-      <section id="resultView" class="view">
-        <article class="result-card card">
-          <div class="result-emoji" id="resultEmoji">🎉</div>
-          <p class="eyebrow">HOÀN THÀNH</p>
-          <h2 id="resultTitle">8/10 câu đúng</h2>
-          <p id="resultText" class="muted">Các từ sẽ được lên lịch ôn tự động.</p>
+      <section id="resultView" class="view result-screen">
+        <div class="result-nav">
+          <div>
+            <p class="eyebrow">KẾT QUẢ BUỔI HỌC</p>
+            <strong id="resultSessionLabel">Học tiếp</strong>
+          </div>
+          <button id="resultCloseBtn" class="icon-btn compact-icon" aria-label="Về trang chủ">×</button>
+        </div>
 
-          <div class="result-stats">
-            <div><strong id="resultCorrect">0</strong><small>Đúng</small></div>
-            <div><strong id="resultWrong">0</strong><small>Sai</small></div>
-            <div><strong id="resultMastered">0</strong><small>Đã thuộc</small></div>
+        <article class="result-card result-card-v2 card">
+          <div class="result-hero-v2">
+            <div id="resultScoreRing" class="result-score-ring">
+              <div class="result-score-ring-inner">
+                <strong id="resultPercent">0%</strong>
+                <small>chính xác</small>
+              </div>
+            </div>
+            <div class="result-copy">
+              <span id="resultEmoji" class="result-emoji-v2">🎉</span>
+              <p class="eyebrow result-complete-label">HOÀN THÀNH</p>
+              <h2 id="resultTitle">8/10 câu đúng</h2>
+              <p id="resultText" class="muted">Các từ đã được cập nhật lịch ôn.</p>
+            </div>
           </div>
 
-          <button id="retryWrongBtn" class="primary big">Ôn ngay từ sai</button>
-          <button id="homeBtn" class="secondary big">Về màn hình chọn</button>
+          <div class="result-stats result-stats-v2">
+            <div>
+              <strong id="resultCorrect">0/0</strong>
+              <small>Đúng</small>
+            </div>
+            <div>
+              <strong id="resultMasteredDelta">+0</strong>
+              <small>Mới thuộc</small>
+            </div>
+            <div>
+              <strong id="resultStreak">0</strong>
+              <small>🔥 Streak</small>
+            </div>
+          </div>
+
+          <p id="resultTotalMastered" class="result-total muted">Tổng 0/3000 từ đã thuộc</p>
+
+          <div class="next-review-card">
+            <span class="next-review-icon">🧠</span>
+            <div>
+              <small>Lịch ôn tiếp theo</small>
+              <strong id="resultReviewText">Đang tính lịch ôn…</strong>
+            </div>
+          </div>
+
+          <div class="result-words-section">
+            <div class="result-section-head">
+              <div>
+                <strong>Từ vừa học</strong>
+                <small id="resultWordsCount">0 từ</small>
+              </div>
+              <button id="toggleResultWordsBtn" class="text-btn hidden">Xem tất cả</button>
+            </div>
+            <div id="resultWordsList" class="result-word-list"></div>
+          </div>
+
+          <div class="result-actions">
+            <button id="continueLearningBtn" class="primary result-primary-action">Học tiếp 10 từ →</button>
+            <button id="retryWrongBtn" class="secondary result-secondary-action">Ôn lại từ sai</button>
+            <button id="homeBtn" class="result-home-link">Đổi chủ đề / kiểu học</button>
+          </div>
         </article>
       </section>
     </main>
 
     <footer>
-      <p>Tiến độ được lưu trên trình duyệt. V3.1.4 giữ SRS từ các bản trước và chỉ tính các từ trong database sạch.</p>
+      <p>Tiến độ được lưu trên trình duyệt. V3.1.5 giữ SRS từ các bản trước và chỉ tính các từ trong database sạch.</p>
     </footer>
   </div>
 

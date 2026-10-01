@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3.1.4",
+  "name": "English 3000 V3.1.5",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "English 3000 với database sạch từ 3 PDF: nghĩa, IPA, từ loại, chủ đề và SRS."
+  "description": "English 3000 clean database, compact result screen, IPA, SRS and offline learning."
 }

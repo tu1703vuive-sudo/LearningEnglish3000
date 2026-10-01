@@ -62,6 +62,8 @@ let currentSession = [];
 let currentIndex = 0;
 let score = 0;
 let wrongThisSession = [];
+let sessionMasteredBefore = 0;
+let resultWordsExpanded = false;
 let answered = false;
 let sessionKind = "normal";
 let meaningJobs = new Map();
@@ -71,6 +73,7 @@ function saveState() { localStorage.setItem("english3000State", JSON.stringify(s
 function showView(id) {
   document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
   $(id).classList.add("active");
+  document.body.classList.toggle("result-mode", id === "resultView");
   window.scrollTo({top:0,behavior:"smooth"});
 }
 function todayStatsReset() {
@@ -551,6 +554,8 @@ async function prepareSession(words, kind="normal") {
   currentIndex = 0;
   score = 0;
   wrongThisSession = [];
+  sessionMasteredBefore = state.mastered.length;
+  resultWordsExpanded = false;
 
   // Only wait for enough meanings to draw question 1 + its choices.
   const readyCount = currentSession.filter(x=>x.meaning).length;
@@ -766,24 +771,102 @@ async function nextQuestion() {
     backgroundPrefetchAssets(currentIndex, sessionPreloadToken);
   } else showResult();
 }
+function daysUntilDate(dateString) {
+  if (!dateString) return null;
+  const today = new Date(localDateString()+"T00:00:00");
+  const due = new Date(dateString+"T00:00:00");
+  return Math.round((due-today)/86400000);
+}
+function sessionKindLabel() {
+  if (sessionKind === "due") return "Ôn đến hạn";
+  if (sessionKind === "wrong") return "Ôn từ sai";
+  if (sessionKind === "new") return "Học từ mới";
+  if (sessionKind === "smart") return "Học tiếp thông minh";
+  return activeContextName();
+}
+function dueLabelForWord(word) {
+  const card = state.srs[keyOf(word)];
+  const days = daysUntilDate(card?.due);
+  if (days === null) return "Chưa xếp lịch";
+  if (days <= 0) return "Ôn lại ngay";
+  if (days === 1) return "Ngày mai";
+  return `${days} ngày nữa`;
+}
+function renderResultWords() {
+  const box = $("resultWordsList");
+  if (!box) return;
+  const wrongSet = new Set(wrongThisSession.map(x=>keyOf(x.word)));
+  box.innerHTML = "";
+  currentSession.forEach((item,index)=>{
+    const isWrong = wrongSet.has(keyOf(item.word));
+    const row = document.createElement("div");
+    row.className = "result-word-row" + (!resultWordsExpanded && index >= 5 ? " is-hidden" : "");
+    const status = document.createElement("span");
+    status.className = `result-word-status ${isWrong ? "wrong":"correct"}`;
+    status.textContent = isWrong ? "↻":"✓";
+    const main = document.createElement("div");
+    main.className = "result-word-main";
+    const word = document.createElement("strong");
+    word.textContent = item.word;
+    const meaning = document.createElement("small");
+    meaning.textContent = item.meaning || offlineByWord.get(keyOf(item.word))?.meaning || "";
+    main.append(word,meaning);
+    const due = document.createElement("span");
+    due.className = "result-word-due";
+    due.textContent = dueLabelForWord(item.word);
+    row.append(status,main,due);
+    box.appendChild(row);
+  });
+  $("resultWordsCount").textContent = `${currentSession.length} từ`;
+  const toggle = $("toggleResultWordsBtn");
+  toggle.classList.toggle("hidden",currentSession.length <= 5);
+  toggle.textContent = resultWordsExpanded ? "Thu gọn" : `Xem cả ${currentSession.length}`;
+}
+function resultReviewSummary(wrongCount) {
+  if (wrongCount > 0) return `${wrongCount} từ sai cần ôn lại ngay.`;
+  const entries = currentSession.map(item=>({
+    item,
+    days: daysUntilDate(state.srs[keyOf(item.word)]?.due)
+  })).filter(x=>x.days!==null).sort((a,b)=>a.days-b.days);
+  if (!entries.length) return "Lịch ôn đã được cập nhật.";
+  const first = entries[0].days;
+  const count = entries.filter(x=>x.days===first).length;
+  if (first <= 0) return `${count} từ đang đến hạn ôn.`;
+  if (first === 1) return `${count} từ sẽ quay lại vào ngày mai.`;
+  return `${count} từ sẽ quay lại sau ${first} ngày.`;
+}
 function showResult() {
   $("quizProgressBar").style.width="100%";
-  const wrongCount=currentSession.length-score;
-  $("resultCorrect").textContent=score;
-  $("resultWrong").textContent=wrongCount;
-  $("resultMastered").textContent=state.mastered.length;
-  $("resultTitle").textContent=`${score}/${currentSession.length} câu đúng`;
-  if (score===currentSession.length) {
+  const total = currentSession.length || 1;
+  const wrongCount = total-score;
+  const percent = Math.round(score/total*100);
+  const masteredDelta = Math.max(0,state.mastered.length-sessionMasteredBefore);
+
+  $("resultSessionLabel").textContent = sessionKindLabel();
+  $("resultPercent").textContent = `${percent}%`;
+  $("resultScoreRing").style.background = `conic-gradient(var(--success) ${percent}%,var(--line) ${percent}%)`;
+  $("resultCorrect").textContent = `${score}/${total}`;
+  $("resultMasteredDelta").textContent = `+${masteredDelta}`;
+  $("resultStreak").textContent = state.stats?.streak || 0;
+  $("resultTotalMastered").textContent = `Tổng ${state.mastered.length}/3000 từ đã thuộc`;
+  $("resultReviewText").textContent = resultReviewSummary(wrongCount);
+  $("resultTitle").textContent = `${score}/${total} câu đúng`;
+
+  if (percent === 100) {
     $("resultEmoji").textContent="🏆";
-    $("resultText").textContent="Rất tốt. Các từ đúng đã được giãn lịch ôn xa hơn.";
-  } else if (score>=Math.ceil(currentSession.length*.7)) {
+    $("resultText").textContent="Hoàn thành trọn vẹn. Lịch ôn đã được giãn phù hợp.";
+  } else if (percent >= 70) {
     $("resultEmoji").textContent="🎉";
-    $("resultText").textContent=`Khá tốt. ${wrongCount} từ sai đã được đưa về lịch ôn sớm.`;
+    $("resultText").textContent=`${wrongCount} từ cần củng cố thêm trong lần ôn tới.`;
   } else {
     $("resultEmoji").textContent="💪";
-    $("resultText").textContent="Nên ôn ngay các từ sai trước khi chuyển sang nhóm mới.";
+    $("resultText").textContent="Các từ chưa chắc đã được đưa về lịch ôn sớm.";
   }
+
+  $("continueLearningBtn").textContent = `Học tiếp ${state.sessionSize} từ →`;
   $("retryWrongBtn").classList.toggle("hidden",wrongThisSession.length===0);
+  if (wrongThisSession.length) $("retryWrongBtn").textContent = `Ôn lại ${wrongThisSession.length} từ sai`;
+  renderResultWords();
   showView("resultView");
 }
 
@@ -834,6 +917,9 @@ $("reviewWrongBtn").onclick=startWrongReview;
 $("nextBtn").onclick=nextQuestion;
 $("backBtn").onclick=()=>{renderHome();showView("homeView");};
 $("homeBtn").onclick=()=>{renderHome();showView("homeView");};
+$("resultCloseBtn").onclick=()=>{renderHome();showView("homeView");};
+$("continueLearningBtn").onclick=startSmartSession;
+$("toggleResultWordsBtn").onclick=()=>{resultWordsExpanded=!resultWordsExpanded;renderResultWords();};
 $("retryWrongBtn").onclick=async()=>{
   const uniq=[];
   const seen=new Set();
