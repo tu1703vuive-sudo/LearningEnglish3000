@@ -1,0 +1,4216 @@
+{
+  "schema_version": 1,
+  "dataset": "sentences-v1-core-200",
+  "purpose": "Prototype sentence reading/comprehension lessons from the user-provided PDF corpus.",
+  "quality_tier": "silver",
+  "record_count": 200,
+  "topic_count": 15,
+  "note": "Source text was structurally audited and obvious noisy items were excluded. Original source text is preserved per record. Final linguistic QA is still recommended before production release.",
+  "records": [
+    {
+      "id": "core_0001",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "How old are you?",
+      "vi": "Năm nay bạn bao nhiêu tuổi?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "How old are you?",
+        "original_vi": "Năm nay bạn bao nhiêu tuổi?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0002",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "Where do you live?",
+      "vi": "Anh sống ở đâu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Where do you live?",
+        "original_vi": "Anh sống ở đâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0003",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "Where are you from?",
+      "vi": "Bạn đến từ đâu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Where are you from?",
+        "original_vi": "Bạn đến từ đâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0004",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "Hi! What's your name?",
+      "vi": "Xin chào! Anh tên là gì?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Hi! What's your name?",
+        "original_vi": "Xin chào! Anh tên là gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0005",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "Where are you studying?",
+      "vi": "Cậu đang học ở đâu?",
+      "vocab_matches": [
+        "study"
+      ],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Where are you studying?",
+        "original_vi": "Cậu đang học ở đâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0006",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "Hi, I'm Trung. And you?",
+      "vi": "Chào, tôi là Trung. Còn bạn?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Hi/ Hello, I'm Trung. You are?",
+        "original_vi": "Chào anh, tôi là Trung. Còn anh?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0007",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "Nice to meet you!",
+      "vi": "Rất hân hạnh được biết anh!",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Nice to meet you!",
+        "original_vi": "Rất hân hạnh được biết anh!"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0008",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "My name is Thuong.",
+      "vi": "Tên tôi là Thương.",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "My name is Thuong",
+        "original_vi": "Tên tôi là Thương."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0009",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "I am studying in Hue.",
+      "vi": "Mình học ở Huế",
+      "vocab_matches": [
+        "study"
+      ],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "I am studying in Hue",
+        "original_vi": "Mình học ở Huế"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0010",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "I'm happy to meet you.",
+      "vi": "Rất vui được làm quen với anh.",
+      "vocab_matches": [
+        "happy"
+      ],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "I'm happy to meet you",
+        "original_vi": "Rất vui được làm quen với anh."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0011",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "I come from Quang Ninh.",
+      "vi": "Tôi đến từ Quảng Ninh",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "I come from Quang Ninh",
+        "original_vi": "Tôi đến từ Quảng Ninh"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0012",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "I'm eighteen years old.",
+      "vi": "Năm nay tôi 18 tuổi",
+      "vocab_matches": [
+        "year"
+      ],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "I'm eighteen years old",
+        "original_vi": "Năm nay tôi 18 tuổi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0013",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "I'm Tung. I'm from Nghe An.",
+      "vi": "Tôi là Tùng. Tôi đến từ Nghệ An",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "I'm Tung. I'm from Nghe An",
+        "original_vi": "Tôi là Tùng. Tôi đến từ Nghệ An Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0014",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A1",
+      "en": "I can't speak Vietnamese at all.",
+      "vi": "Tôi không hề biết nói tiếng Việt.",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "I can't speak Vietnamese at all",
+        "original_vi": "Tôi không hề biết nói tiếng Việt."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0015",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "subtopic": "LẦN ĐẦU GẶP MẶT",
+      "level_estimate": "A2",
+      "en": "Hello. It's nice to meet you. I'm Huong.",
+      "vi": "Chào anh. Rất vui được làm quen với anh. Tôi là Hương",
+      "vocab_matches": [],
+      "source": {
+        "file": "Lần đầu gặp mặt.pdf",
+        "original_en": "Hello. It's nice to meet you. I'm Huong.",
+        "original_vi": "Chào anh. Rất vui được làm quen với anh. Tôi là Hương"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0016",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "What is going on?",
+      "vi": "Chuyện gì đang diễn ra thế?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "What is going on?",
+        "original_vi": "Chuyện gì đang diễn ra thế?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0017",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "How is it going today?",
+      "vi": "Hôm nay anh thấy sao rồi?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "How is it going today?",
+        "original_vi": "Hôm nay anh thấy sao rồi? HỘI THOẠI THỰC HÀNH Hội thoại 1"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0018",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "Why are you in a hurry?",
+      "vi": "Sao anh vội vàng thế?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "Why are you in a hurry?",
+        "original_vi": "Sao anh vội vàng thế?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0019",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "How are things with you?",
+      "vi": "Anh có khỏe không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "How are things with you?",
+        "original_vi": "Anh có khỏe không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0020",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "Hi, Thu! How are you today?",
+      "vi": "Chào Thu? Hôm nay cô khỏe không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "Hi, Thu! How are you today?",
+        "original_vi": "Chào Thu? Hôm nay cô khỏe không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0021",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "What are you doing these days?",
+      "vi": "Dạo này anh làm gì vậy?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "What are you doing these days?",
+        "original_vi": "Dạo này anh làm gì vậy?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0022",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "Same old, same old.",
+      "vi": "Vẫn như mọi khi",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "Same old, same old",
+        "original_vi": "Vẫn như mọi khi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0023",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "I'm fine. Thank you.",
+      "vi": "Tôi cũng khỏe. Cảm ơn bạn",
+      "vocab_matches": [
+        "fine"
+      ],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "I'm fine. Thank you",
+        "original_vi": "Tôi cũng khỏe. Cảm ơn bạn"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0024",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "I can't complain too much.",
+      "vi": "Tôi không có gì phải phàn nàn cả.",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "I can't complain too much",
+        "original_vi": "Tôi không có gì phải phàn nàn cả. Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0025",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "I've heard that you are ill.",
+      "vi": "Nghe nói anh bị ốm.",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "I've heard that you are ill.",
+        "original_vi": "Nghe nói anh bị ốm."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0026",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "How are you?",
+      "vi": "Anh có khỏe không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "How are you?",
+        "original_vi": "Anh có khỏe không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0027",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "How are things?",
+      "vi": "Công việc thế nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "How are things?",
+        "original_vi": "Công việc thế nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0028",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "How're you doing?",
+      "vi": "Anh có khỏe không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "How're you doing?",
+        "original_vi": "Anh có khỏe không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0029",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "What's the hurry?",
+      "vi": "Anh vội vàng làm gì vậy?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "What's the hurry?",
+        "original_vi": "Anh vội vàng làm gì vậy?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0030",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "How's everything going?",
+      "vi": "Mọi việc diễn ra thế nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "How's everything going?",
+        "original_vi": "Mọi việc diễn ra thế nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0031",
+      "topic_id": "friends",
+      "topic": "Checking in with Friends",
+      "subtopic": "HỎI THĂM BẠN BÈ",
+      "level_estimate": "A1",
+      "en": "Not so well.",
+      "vi": "Không khỏe lắm.",
+      "vocab_matches": [
+        "well"
+      ],
+      "source": {
+        "file": "Hỏi thăm bạn bè.pdf",
+        "original_en": "Not so well.",
+        "original_vi": "Không khỏe lắm."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0032",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "What are you into?",
+      "vi": "Bạn thích điều gì?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "What are you into?",
+        "original_vi": "Niềm say mô của chị là gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0033",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "Do you like animals?",
+      "vi": "Chị có thích động vật không?",
+      "vocab_matches": [
+        "animal"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "Do you like animals?",
+        "original_vi": "Chị có thích động vật không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0034",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "Do you like going skiing?",
+      "vi": "Anh có thích đi trượt tuyết không?",
+      "vocab_matches": [
+        "skiing"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "Do you like going skiing?",
+        "original_vi": "Anh có thích đi trượt tuyết không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0035",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "What are you interested in?",
+      "vi": "Anh thích cái gì?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "What are you interested in?",
+        "original_vi": "Anh thích cái gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0036",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "What's your favorite color?",
+      "vi": "Anh thích nhất màu nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "What's your favorite color?",
+        "original_vi": "Anh thích nhất màu nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0037",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A2",
+      "en": "What kind of cake do you like?",
+      "vi": "Anh thích loại bánh nào?",
+      "vocab_matches": [
+        "kind",
+        "cake"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "What kind of cake do you like?",
+        "original_vi": "Anh thích loại bánh nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0038",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A2",
+      "en": "What kind of books do you read?",
+      "vi": "Chị có thường đọc loại sách nào?",
+      "vocab_matches": [
+        "kind",
+        "book",
+        "read"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "What kind of books do you read?",
+        "original_vi": "Chị có thường đọc loại sách nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0039",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A2",
+      "en": "I can't stand spicy food. What about you?",
+      "vi": "Tôi không ăn được đồ cay. Thế còn chị thì sao?",
+      "vocab_matches": [
+        "stand"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I can't stand spicy food. What about you?",
+        "original_vi": "Tôi không ăn được đồ cay. Thế còn chị thì sao?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0040",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "I love water skiing.",
+      "vi": "Tôi rất thích lướt ván",
+      "vocab_matches": [
+        "water",
+        "skiing"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I love water skiing",
+        "original_vi": "Tôi rất thích lướt ván"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0041",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "I love short stories.",
+      "vi": "Tôi yêu thích các câu truyện ngắn",
+      "vocab_matches": [],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I love short stories",
+        "original_vi": "Tôi yêu thích các câu truyện ngắn"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0042",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "I really enjoy shopping.",
+      "vi": "Tôi rất thích đi mua sắm",
+      "vocab_matches": [],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I really enjoy shopping",
+        "original_vi": "Tôi rất thích đi mua sắm"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0043",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "I'm interested in music.",
+      "vi": "Tôi thích âm nhạc",
+      "vocab_matches": [
+        "music"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I'm interested in music",
+        "original_vi": "Tôi thích âm nhạc"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0044",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "I'm crazy about football.",
+      "vi": "Tôi phát cuồng lên với bóng đá",
+      "vocab_matches": [
+        "crazy",
+        "football"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I'm crazy about football",
+        "original_vi": "Tôi phát cuồng lên với bóng đá"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0045",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A1",
+      "en": "I'm really into board games.",
+      "vi": "Tôi rất thích các trò chơi bàn cờ.",
+      "vocab_matches": [
+        "board"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I'm really into board games",
+        "original_vi": "Mình rất thích các trò xếp hình"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0046",
+      "topic_id": "hobbies",
+      "topic": "Hobbies & Preferences",
+      "subtopic": "NÓI VỀ SỞ THÍCH",
+      "level_estimate": "A2",
+      "en": "I wish I could play the piano!",
+      "vi": "Mình ước mình có thể chơi được piano!",
+      "vocab_matches": [
+        "play",
+        "piano"
+      ],
+      "source": {
+        "file": "Nói về so thich.pdf",
+        "original_en": "I wish I could play the piano!",
+        "original_vi": "Mình ước mình có thể chơi được piano!"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0047",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "May I see it?",
+      "vi": "Tôi có thể xem được không?",
+      "vocab_matches": [
+        "see"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "May I see it?",
+        "original_vi": "Tôi có thể xem được không? HỘI THOẠI THỰC HÀNH Hội thoại 1"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0048",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "May I come in?",
+      "vi": "Tôi được phép vào trong không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "May I come in?",
+        "original_vi": "Tôi được phép vào trong không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0049",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "May I sit here?",
+      "vi": "Tôi ngồi ở đây được chứ?",
+      "vocab_matches": [
+        "sit"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "May I sit here?",
+        "original_vi": "Tôi ngồi ở đây được chứ?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0050",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "Is playing here okay?",
+      "vi": "Tôi có thể chơi ở đây được không?",
+      "vocab_matches": [
+        "play"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Is playing here okay?",
+        "original_vi": "Tôi có thể chơi ở đây được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0051",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "Can I park my car here?",
+      "vi": "Tôi có thể đỗ xe ở đây được không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Can I park my car here?",
+        "original_vi": "Tôi có thể đỗ xe ở đây được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0052",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "Is someone sitting here?",
+      "vi": "Có ai ngồi đây chưa?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Is someone sitting here?",
+        "original_vi": "Có ai ngồi đây chưa?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0053",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "Is taking pictures allowed here?",
+      "vi": "Tôi được phép chụp ảnh ở đây không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Is taking pictures allowed here?",
+        "original_vi": "Tôi được phép chụp ảnh ở đây không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0054",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "Could I leave a message, please?",
+      "vi": "Tôi có thể nhắn lại không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Could I leave a message, please?",
+        "original_vi": "Tôi có thể nhắn lại không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0055",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A2",
+      "en": "Am I allowed to take pictures here?",
+      "vi": "Tôi chụp ảnh ở đây được chứ?",
+      "vocab_matches": [
+        "take"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Am I allowed to take pictures here?",
+        "original_vi": "Tôi chụp ảnh ở đây được chứ?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0056",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A2",
+      "en": "Is it all right if I open the window?",
+      "vi": "Tôi mở cửa sổ được không?",
+      "vocab_matches": [
+        "right",
+        "open"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Is it all right if I open the window?",
+        "original_vi": "Tôi mở cửa sổ được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0057",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A2",
+      "en": "Would you mind if I took a dog with me?",
+      "vi": "Tôi mang theo chó có làm phiền cô không?",
+      "vocab_matches": [
+        "dog"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Would you mind if I took a dog with me?",
+        "original_vi": "Tôi mang theo chó có làm phiền cô không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0058",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A2",
+      "en": "Would you mind opening the door for me?",
+      "vi": "Bạn có vui lòng mở cửa cho tôi?",
+      "vocab_matches": [
+        "open"
+      ],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Would you mind opening the door for me?",
+        "original_vi": "Bạn có vui lòng mở cửa cho tôi?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0059",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A2",
+      "en": "Am I permitted to park my car here?",
+      "vi": "Tôi được phép đỗ xem ở đây không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "Am I permitted to park my car here?",
+        "original_vi": "Tôi được phép đỗ xem ở đây không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0060",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "May I have a look?",
+      "vi": "Tôi xem qua được không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "May I have a look?",
+        "original_vi": "Tôi xem qua được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0061",
+      "topic_id": "permission",
+      "topic": "Requests & Permission",
+      "subtopic": "ĐỀ NGHỊ XIN PHÉP",
+      "level_estimate": "A1",
+      "en": "May I go out, please?",
+      "vi": "Tôi được phép ra ngoài chứ?",
+      "vocab_matches": [],
+      "source": {
+        "file": "17 - De nghi xin phép.pdf",
+        "original_en": "May I go out, please?",
+        "original_vi": "Tôi được phép ra ngoài chứ? Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0062",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "May I try it?",
+      "vi": "Tôi có thể thử không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "May I try it?",
+        "original_vi": "Tôi có thể thử không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0063",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "How much is it?",
+      "vi": "Cái này bao nhiêu tiền?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "How much is it?",
+        "original_vi": "Cái này bao nhiêu tiền?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0064",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "How much are they?",
+      "vi": "Chúng bao nhiêu tiền?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "How much are they?",
+        "original_vi": "Chúng bao nhiêu tiền?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0065",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "Where can I buy gloves?",
+      "vi": "Tôi có thể mua găng tay ở đâu?",
+      "vocab_matches": [
+        "buy",
+        "glove"
+      ],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "Where can I buy gloves?",
+        "original_vi": "Tôi có thể mua găng tay ở đâu? Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0066",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "What do you want to buy?",
+      "vi": "Anh muốn mua gì?",
+      "vocab_matches": [
+        "buy"
+      ],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "What do you want to buy?",
+        "original_vi": "Anh muốn mua gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0067",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "Where's the fitting room?",
+      "vi": "Phòng thay đồ ở đâu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "Where's the fitting room?",
+        "original_vi": "Phòng thay đồ ở đâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0068",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "What material is this made of?",
+      "vi": "Cái này được làm từ chất liệu gì?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "What's the material of this one?",
+        "original_vi": "Cái này được làm từ nguyên liệu gì vậy?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0069",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "Please try it on.",
+      "vi": "Chị mặc thử xem sao",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "Please try it on",
+        "original_vi": "Chị mặc thử xem sao"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0070",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "I don't like this.",
+      "vi": "Tôi không thích cái này",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "I don't like this.",
+        "original_vi": "Tôi không thích cái này"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0071",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "It's too big for me.",
+      "vi": "Nó quá lớn đối với tôi",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "It's too big for me",
+        "original_vi": "Nó quá lớn đối với tôi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0072",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "I'd like to buy a coat.",
+      "vi": "Tôi muốn mua một chiếc áo khoác.",
+      "vocab_matches": [
+        "buy",
+        "coat"
+      ],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "I want to buy a coat.",
+        "original_vi": "Tôi muốn mua 1 chiếc áo khoác"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0073",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "Could you show me a smaller one?",
+      "vi": "Bạn có thể cho tôi xem một cái nhỏ hơn không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "Give me a smaller one",
+        "original_vi": "Làm ơn cho tôi cỡ nhỏ hơn"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0074",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "I'd like to return this.",
+      "vi": "Tôi muốn trả lại cái này",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "I'd like to return this",
+        "original_vi": "Tôi muốn trả lại cái này"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0075",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "I can't accept the price.",
+      "vi": "Tôi không mua được với giá này",
+      "vocab_matches": [
+        "price"
+      ],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "I can't accept the price",
+        "original_vi": "Tôi không mua được với giá này"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0076",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "No, thanks. I'm just looking.",
+      "vi": "Không, cám ơn. Tôi chỉ xem thôi",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "No, thanks. I'm just looking",
+        "original_vi": "Không, cám ơn. Tôi chỉ xem thôi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0077",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A2",
+      "en": "I'd like a bottle of cooking oil.",
+      "vi": "Tôi muốn mua một chai dầu ăn.",
+      "vocab_matches": [
+        "cooking",
+        "oil"
+      ],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "I want a bottle of cooking oil",
+        "original_vi": "Tôi muốn mua 1 chai dầu ăn"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0078",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "subtopic": "GIAO TIẾP ĐI MUA SẮM",
+      "level_estimate": "A1",
+      "en": "Please show me some other color.",
+      "vi": "Làm ơn cho tôi cái màu khác",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di mua sắm.pdf",
+        "original_en": "Please show me some other color.",
+        "original_vi": "Làm ơn cho tôi cái màu khác"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0079",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "Are you ready to order?",
+      "vi": "Ông sẵn sàng gọi món ăn rồi chứ",
+      "vocab_matches": [
+        "order"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Are you ready to order?",
+        "original_vi": "Ông sẵn sàng gọi món ăn rồi chứ"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0080",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "What's special for today?",
+      "vi": "Món đặc biệt của ngày hôm nay là gì?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "What's special for today?",
+        "original_vi": "Món đặc biệt của ngày hôm nay là gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0081",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "Can I take your order now?",
+      "vi": "Tôi có thể ghi món cho bạn bây giờ được không?",
+      "vocab_matches": [
+        "take",
+        "order"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Can I take your order now?",
+        "original_vi": "Tôi có thể gọi món cho ông bây giờ được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0082",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "What dishes would you like?",
+      "vi": "Ông muốn dùng món gì?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "What dishes would you like?",
+        "original_vi": "Ông muốn dùng món gì? Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0083",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "Would you like to order now?",
+      "vi": "Ông muốn gọi đồ ăn bây giờ không?",
+      "vocab_matches": [
+        "order"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Would you like to order now?",
+        "original_vi": "Ông muốn gọi đồ ăn bây giờ không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0084",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "What salad would you prefer?",
+      "vi": "Anh thích món rau trộn nào hơn?",
+      "vocab_matches": [
+        "salad"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "What salad would you prefer?",
+        "original_vi": "Anh thích món rau trộn nào hơn?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0085",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "Can I have the bill, please?",
+      "vi": "Cho tôi xin hóa đơn được không?",
+      "vocab_matches": [
+        "bill"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Can I have the bill, please?",
+        "original_vi": "Mang hóa đơn đến cho tôi nhé?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0086",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "How would you like that done?",
+      "vi": "Ông muốn món này được chuẩn bị thế nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "How would you like that done?",
+        "original_vi": "Ông muốn món này được chuẩn bị thế nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0087",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "Have you got a table for two people?",
+      "vi": "Anh còn bàn ăn cho 2 người không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Have you got a table for two people?",
+        "original_vi": "Anh còn bàn ăn cho 2 người không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0088",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "What do you have today for breakfast?",
+      "vi": "Hôm nay có món gì cho bữa sáng?",
+      "vocab_matches": [
+        "breakfast"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "What do you have today for breakfast?",
+        "original_vi": "Bữa sáng hôm nay ông muốn dùng món gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0089",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "What would you like for your main course?",
+      "vi": "Ông muốn dùng món gì vào bữa chính?",
+      "vocab_matches": [
+        "course"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "What would you like for your main course?",
+        "original_vi": "Ông muốn dùng món gì vào bữa chính?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0090",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "Would you care for a drink before you order?",
+      "vi": "Trước khi gọi món ông có muốn dùng đồ uống không ạ?",
+      "vocab_matches": [
+        "drink",
+        "order"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Would you care for a drink before you order?",
+        "original_vi": "Trước khi gọi món ông có muốn dùng đồ uống không ạ?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0091",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "I'll order the same.",
+      "vi": "Tôi cũng gọi món tương tự",
+      "vocab_matches": [
+        "order"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "I'll order the same",
+        "original_vi": "Tôi cũng gọi món tương tự"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0092",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "Table for three, please!",
+      "vi": "Sắp xếp cho tôi bàn 3 người nhé!",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Table for three, please!",
+        "original_vi": "Sắp xếp cho tôi bàn 3 người nhé!"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0093",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "I'll order dessert later.",
+      "vi": "Tôi sẽ gọi món tráng miệng sau",
+      "vocab_matches": [
+        "order",
+        "dessert"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "I'll order dessert later",
+        "original_vi": "Tôi sẽ gọi món tráng miệng sau"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0094",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A1",
+      "en": "Could I have the bill, please?",
+      "vi": "Cho tôi xin hóa đơn được không?",
+      "vocab_matches": [
+        "bill"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "Give me the bill, please",
+        "original_vi": "Cho tôi xem hóa đơn nào"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0095",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "This one is good. Let's take it.",
+      "vi": "Chỗ này ổn rồi. Chúng ta ngồi đi",
+      "vocab_matches": [
+        "take"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "This one is good. Let's take it",
+        "original_vi": "Chỗ này ổn rồi. Chúng ta ngồi đi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0096",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "It's my treat this time. I'll pay.",
+      "vi": "Lần này tôi khao. Tôi sẽ thanh toán",
+      "vocab_matches": [
+        "treat",
+        "pay"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "It's my treat this time. I'll pay",
+        "original_vi": "Lần này tôi khao. Tôi sẽ thanh toán"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0097",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "I prefer the one in that quiet corner.",
+      "vi": "Tôi thích bàn ở góc yên tĩnh kia hơn",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "I prefer the one in that quiet corner",
+        "original_vi": "Tôi thích bàn ở góc yên tĩnh kia hơn"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0098",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "subtopic": "GIAO TIẾP TẠI NHÀ HÀNG",
+      "level_estimate": "A2",
+      "en": "I have a reservation for two this evening.",
+      "vi": "Tôi đã đặt trước bàn cho 2 người tối nay.",
+      "vocab_matches": [
+        "reservation",
+        "evening"
+      ],
+      "source": {
+        "file": "Giao tiep tai nha hang.pdf",
+        "original_en": "I have a reservation for two this evening.",
+        "original_vi": "Tôi đã đặt trước bàn cho 2 người tối nay."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0099",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "Is it an express train?",
+      "vi": "Đó có phải là tàu nhanh không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "Is it an express train?",
+        "original_vi": "Đó có phải là tàu nhanh không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0100",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "When is the next train?",
+      "vi": "Chuyến tàu tiếp theo là khi nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "When is the next train?",
+        "original_vi": "Khi nào có chuyến tàu mới? Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0101",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "When does the train leave?",
+      "vi": "Khi nào tàu chuyển bánh?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "When does the train leave?",
+        "original_vi": "Khi nào tàu chuyển bánh?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0102",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "How much is a ticket to Sapa?",
+      "vi": "Vé tàu đến Sapa bao nhiêu tiền?",
+      "vocab_matches": [
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "How much is a ticket to Sapa?",
+        "original_vi": "Vé tàu đến Sapa bao nhiêu tiền?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0103",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "What's the charge for delivery?",
+      "vi": "Tiền vận chuyển là bao nhiêu?",
+      "vocab_matches": [
+        "charge"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "What's the charge for delivery?",
+        "original_vi": "Tiền vận chuyển là bao nhiêu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0104",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "How much is a first class return ticket?",
+      "vi": "Vé khứ hồi hạng nhất giá bao nhiêu?",
+      "vocab_matches": [
+        "class",
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "How much is a first class return ticket?",
+        "original_vi": "Vé khứ hồi hạng nhất giá bao nhiêu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0105",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "Can I have the luggage delivered to my address?",
+      "vi": "Có thể chuyển hành lý này tới địa chỉ của tôi được không?",
+      "vocab_matches": [
+        "luggage"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "Can I have the luggage delivered to my address?",
+        "original_vi": "Có thể chuyển hành lý này tới địa chỉ của tôi được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0106",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "Which train should I take to get to Vinh, please?",
+      "vi": "Cho hỏi tôi phải đi tàu nào tới Vinh?",
+      "vocab_matches": [
+        "take"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "Which train should I take to get to Vinh, please?",
+        "original_vi": "Cho hỏi tôi phải đi tàu nào tới Vinh?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0107",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "One platform ticket, please.",
+      "vi": "Cho tôi 1 vé ra sân ga",
+      "vocab_matches": [
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "One platform ticket, please",
+        "original_vi": "Cho tôi 1 vé ra sân ga"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0108",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "I've been waiting here for ages.",
+      "vi": "Tôi đã đợi ở đây lâu rồi.",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "I've been waiting here for ages",
+        "original_vi": "Tôi đã đợi ở đây lâu rồi."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0109",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "I'll have a return ticket, please.",
+      "vi": "Làm ơn cho tôi vé khứ hồi nhé",
+      "vocab_matches": [
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "I'll have a return ticket, please",
+        "original_vi": "Làm ơn cho tôi vé khứ hồi nhé"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0110",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "The train is delayed half an hour.",
+      "vi": "Tàu bị hoãn khoảng nửa tiếng",
+      "vocab_matches": [
+        "half",
+        "hour"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "The train is delayed half an hour",
+        "original_vi": "Tàu bị hoãn khoảng nửa tiếng"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0111",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A1",
+      "en": "The Nha Trang train leaves at 9:00.",
+      "vi": "Chuyến tàu đến Nha Trang khởi hành lúc 9 giờ",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "The Nha Trang train leaves at 9:00",
+        "original_vi": "Chuyến tàu đến Nha Trang khởi hành lúc 9 giờ"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0112",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "The train is due to arrive at 11:00.",
+      "vi": "Tàu sẽ vào ga lúc 11 giờ",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "The train is due to arrive at 11:00",
+        "original_vi": "Tàu sẽ vào ga lúc 11 giờ"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0113",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "subtopic": "GIAO TIẾP TẠI NHÀ GA",
+      "level_estimate": "A2",
+      "en": "The booking office usually sells tickets ten days in advance.",
+      "vi": "Quầy bán vé thường bán trước 10 ngày",
+      "vocab_matches": [
+        "book",
+        "sell",
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai nhà ga.pdf",
+        "original_en": "The booking office usually sells tickets ten days in advance",
+        "original_vi": "Quầy bán vé thường bán trước 10 ngày HỘI THOẠI THỰC HÀNH Hội thoại 1"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0114",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A1",
+      "en": "How much is the fare?",
+      "vi": "Gía vé bao nhiêu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "How much is the fare?",
+        "original_vi": "Gía vé bao nhiêu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0115",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A1",
+      "en": "Is this your first trip?",
+      "vi": "Đây là chuyến đi đầu tiên của anh à?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "Is this your first trip?",
+        "original_vi": "Đây là chuyến đi đầu tiên của anh à?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0116",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A1",
+      "en": "What is Vung Tau famous for?",
+      "vi": "Vũng Tàu nổi tiếng về cái gì?",
+      "vocab_matches": [
+        "famous"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "What is Vung Tau famous for?",
+        "original_vi": "Vũng Tàu nổi tiếng về cái gì?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0117",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "How much is the guide fee per day?",
+      "vi": "Tiền thuê hướng dẫn mỗi ngày hết bao nhiêu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "How much is the guide fee per day?",
+        "original_vi": "Tiền thuê hướng dẫn mỗi ngày hết bao nhiêu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0118",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "How much luggage can I bring with me?",
+      "vi": "Tôi có thể mang theo bao nhiêu hành lý?",
+      "vocab_matches": [
+        "luggage"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "How much luggage can I bring with me?",
+        "original_vi": "Tôi có thể mang theo bao nhiêu hành lý?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0119",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "Could you tell me the best sightseeing route to take?",
+      "vi": "Anh chỉ giúp tôi tuyến tham quan tốt nhất được không?",
+      "vocab_matches": [
+        "tell",
+        "route",
+        "take"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "Could you tell me the best sightseeing route to take?",
+        "original_vi": "Anh chỉ giúp tôi tuyến tham quan tốt nhất được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0120",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "Would you please tell me some interesting places nearby?",
+      "vi": "Cô làm ơn giới thiệu cho tôi những danh thắng ở đây được không?",
+      "vocab_matches": [
+        "tell"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "Would you please tell me some interesting places nearby?",
+        "original_vi": "Cô làm ơn giới thiệu cho tôi những danh thắng ở đây được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0121",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A1",
+      "en": "We took lots of pictures.",
+      "vi": "Chúng tôi đã chụp rất nhiều ảnh",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "We took lots of pictures",
+        "original_vi": "Chúng tôi đã chụp rất nhiều ảnh"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0122",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A1",
+      "en": "We have a vacation in September.",
+      "vi": "Chúng tôi có 1 kì nghỉ vào tháng 9",
+      "vocab_matches": [
+        "vacation"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "We have a vacation in September",
+        "original_vi": "Chúng tôi có 1 kì nghỉ vào tháng 9"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0123",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "The scenery is splendid. We've enjoyed it very much.",
+      "vi": "Phong cảnh rất tuyệt. Chúng tôi rất thích nó",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "The scenery is splendid. We've enjoyed it very much",
+        "original_vi": "Phong cảnh rất tuyệt. Chúng tôi rất thích nó"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0124",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "There are many well-known historic sites around here.",
+      "vi": "Gần đây có rất nhiều di tích lịch sử nổi tiếng",
+      "vocab_matches": [
+        "well",
+        "around"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "There are many well-known historic sites around here",
+        "original_vi": "Gần đây có rất nhiều di tích lịch sử nổi tiếng"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0125",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "subtopic": "GIAO TIẾP ĐI THAM QUAN",
+      "level_estimate": "A2",
+      "en": "You offered very good service for my group. Thanks a lot.",
+      "vi": "Nhóm chúng tôi đã được phục vụ rất tốt. Cảm ơn bạn rất nhiều.",
+      "vocab_matches": [
+        "service"
+      ],
+      "source": {
+        "file": "Giao tiep di tham quan.pdf",
+        "original_en": "You offered very good service for my group. Thanks a lot",
+        "original_vi": "Cô đã phục vụ đoàn chúng tôi rất tốt. Cảm ơn cô rất nhiều"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0126",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "How long does it last?",
+      "vi": "Bộ phim kéo dài bao lâu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "How long does it last?",
+        "original_vi": "Bộ phim kéo dài bao lâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0127",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "What time will it end?",
+      "vi": "Mấy giờ hết phim?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "What time will it end?",
+        "original_vi": "Mấy giờ hết phim?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0128",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "Can I make a reservation?",
+      "vi": "Có đặt trước được không?",
+      "vocab_matches": [
+        "reservation"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Can I make a reservation?",
+        "original_vi": "Có đặt trước được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0129",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "Where can I buy a ticket?",
+      "vi": "Tôi có thể mua vé ở đâu?",
+      "vocab_matches": [
+        "buy",
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Where can I buy a ticket?",
+        "original_vi": "Tôi có thể mua vé ở đâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0130",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "What seats are left tonight?",
+      "vi": "Tối nay còn vé ở những hàng ghế nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "What seats are left tonight?",
+        "original_vi": "Tối nay còn vé ở những hàng ghế nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0131",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "Where would you like to sit?",
+      "vi": "Anh muốn ngồi ở đâu?",
+      "vocab_matches": [
+        "sit"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Where would you like to sit?",
+        "original_vi": "Anh muốn ngồi ở đâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0132",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A1",
+      "en": "Do you have any cancellations?",
+      "vi": "Có vé nhượng lại không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Do you have any cancellations?",
+        "original_vi": "Có vé nhượng lại không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0133",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A2",
+      "en": "Would you like to go to a movie?",
+      "vi": "Bạn có muốn đi xem phim không?",
+      "vocab_matches": [
+        "movie"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Would you like to go to a movie?",
+        "original_vi": "Anh thích đi xem phimn không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0134",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A2",
+      "en": "Which date do you have tickets for?",
+      "vi": "Hôm nào thì có vé?",
+      "vocab_matches": [
+        "date",
+        "ticket"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Which date do you have tickets for?",
+        "original_vi": "Hôm nào thì có vé?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0135",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A2",
+      "en": "How about going to a movie?",
+      "vi": "Đi xem phim nhé?",
+      "vocab_matches": [
+        "movie"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "What do you say to going to a movie?",
+        "original_vi": "Anh đi xem phim chứ?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0136",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A2",
+      "en": "It was an interesting film, wasn't it?",
+      "vi": "Đó là 1 bộ phim hay, đúng không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "It was an interesting film, wasn't it?",
+        "original_vi": "Đó là 1 bộ phim hay, đúng không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0137",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "subtopic": "GIAO TIẾP TẠI RẠP CHIẾU PHIM",
+      "level_estimate": "A2",
+      "en": "Is it possible to get tickets for tomorrow evening?",
+      "vi": "Vẫn có thể mua được vé cho tối mai chứ?",
+      "vocab_matches": [
+        "ticket",
+        "evening"
+      ],
+      "source": {
+        "file": "Giao tiep tai rap chieu phim.pdf",
+        "original_en": "Is it possible to get tickets for tomorrow evening?",
+        "original_vi": "Vẫn có thể mua được vé cho tối mai chứ?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0138",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "What more could I want?",
+      "vi": "Tôi còn có thể mong muốn điều gì hơn được nữa?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "What more could I want?",
+        "original_vi": "Tôi còn có thể mong muốn điều gì hơn được nữa?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0139",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I'm glad to hear that.",
+      "vi": "Tôi rất vui mừng khi được nghe tin đó",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I'm glad to hear that",
+        "original_vi": "Tôi rất vui mừng khi được nghe tin đó"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0140",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "It will be my pleasure.",
+      "vi": "Đó là niềm vinh hạnh của tôi",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "It will be my pleasure",
+        "original_vi": "Đó là niềm vinh hạnh của tôi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0141",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I couldn't ask for more.",
+      "vi": "Tôi không đòi hỏi gì hơn nữa",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I couldn't ask for more.",
+        "original_vi": "Tôi không đòi hỏi gì hơn nữa"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0142",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I'm pleased to hear that.",
+      "vi": "Tôi rất hài lòng khi nghe tin đó",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I'm pleased to hear that",
+        "original_vi": "Tôi rất hài lòng khi nghe tin đó"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0143",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I'm very pleased with it.",
+      "vi": "Tôi rất thích nó",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I'm very pleased with it",
+        "original_vi": "Tôi rất thích nó"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0144",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I couldn't be more pleased.",
+      "vi": "Tôi rất vui",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I couldn't be more pleased",
+        "original_vi": "Tôi rất vui"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0145",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "That makes me happy to hear.",
+      "vi": "Thật là hạnh phúc khi được nghe tin này",
+      "vocab_matches": [
+        "happy"
+      ],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "That makes me happy to hear",
+        "original_vi": "Thật là hạnh phúc khi được nghe tin này"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0146",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I couldn't be more satisfied.",
+      "vi": "Tôi rất hài lòng",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I couldn't be more satisfied",
+        "original_vi": "Tôi rất hài lòng"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0147",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I find the story interesting.",
+      "vi": "Tôi thấy câu chuyện đó rất thú vị",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I find the story interesting.",
+        "original_vi": "Tôi thấy câu chuyện đó rất thú vị"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0148",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "This should be an exciting game.",
+      "vi": "Trò chơi này cực kì lý thú",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "This should be an exciting game",
+        "original_vi": "Trò chơi này cực kì lý thú Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0149",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A2",
+      "en": "This program is going to be a good one.",
+      "vi": "Đây là 1 chương trình rất hay",
+      "vocab_matches": [
+        "program"
+      ],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "This program is going to be a good one",
+        "original_vi": "Đây là 1 chương trình rất hay"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0150",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A2",
+      "en": "I'm really looking forward to the party tonight.",
+      "vi": "Tôi thực sự mong đợi bữa tiệc tối nay",
+      "vocab_matches": [
+        "party"
+      ],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I'm really looking forward to the party tonight",
+        "original_vi": "Tôi thực sự mong đợi bữa tiệc tối nay"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0151",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "I can't complain.",
+      "vi": "Tôi không có gì phải phàn nàn cả",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I can't complain",
+        "original_vi": "Tôi không có gì phải phàn nàn cả"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0152",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A2",
+      "en": "I'm going to be so happy if I pass this test.",
+      "vi": "Tôi sẽ rất vui nếu như mình có thể thi đỗ lần này.",
+      "vocab_matches": [
+        "happy",
+        "pass",
+        "test"
+      ],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "I'm going to be so happy if I pass this test.",
+        "original_vi": "Tôi sẽ rất vui nếu như mình có thể thi đỗ lần này."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0153",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "subtopic": "VUI MỪNG - HẠNH PHÚC",
+      "level_estimate": "A1",
+      "en": "That's great!",
+      "vi": "Thật là tuyệt vời",
+      "vocab_matches": [],
+      "source": {
+        "file": "Hỏi thăm bạn bè (2).pdf",
+        "original_en": "That's great!",
+        "original_vi": "Thật là tuyệt vời"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0154",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "What if he doesn't agree?",
+      "vi": "Nếu anh ấy không chấp thuận, chúng ta phải làm thế nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "What if he doesn't agree?",
+        "original_vi": "Nếu anh ấy không chấp thuận, chúng ta phải làm thế nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0155",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "How boring it is!",
+      "vi": "Chán quá!",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "How boring it is!",
+        "original_vi": "Chán quá!"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0156",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I'm a bit nervous.",
+      "vi": "Tôi hơi căng thẳng",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm a bit nervous",
+        "original_vi": "Tôi hơi căng thẳng"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0157",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "My heart is broken.",
+      "vi": "Trái tim tôi như tan nát hết rồi",
+      "vocab_matches": [
+        "heart"
+      ],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "My heart is broken",
+        "original_vi": "Trái tim tôi như tan nát hết rồi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0158",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I have stage fright.",
+      "vi": "Tôi thấy hơi hồi hộp",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I have stage fright",
+        "original_vi": "Tôi thấy hơi hồi hộp"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0159",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "It makes me worried.",
+      "vi": "Điều đó làm tôi lo lắng.",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "It makes me worried",
+        "original_vi": "Điều đó khiến tôi lo lắng"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0160",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I want to give it up.",
+      "vi": "Tôi muốn từ bỏ",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I want to give it up",
+        "original_vi": "Tôi muốn từ bỏ"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0161",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "It gives me the creeps.",
+      "vi": "Nó làm tôi hoảng sợ",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "It gives me the creeps",
+        "original_vi": "Nó làm tôi hoảng sợ"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0162",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I'm afraid I'll be late.",
+      "vi": "E là tôi sẽ đến muộn đấy",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm afraid I'll be late",
+        "original_vi": "E là tôi sẽ đến muộn đấy Tiếng Anh giao tiếp cơ bản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0163",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I'm fed up with this lecture.",
+      "vi": "Tôi chán ngấy bài giảng này",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm fed up with this lecture",
+        "original_vi": "Tôi chán ngấy bài giảng này"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0164",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I'm very sad about my mistake.",
+      "vi": "Tôi rất buồn về sai lầm của mình",
+      "vocab_matches": [
+        "sad",
+        "mistake"
+      ],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm very sad about my mistake",
+        "original_vi": "Tôi rất buồn về sai lầm của mình"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0165",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I'm tired of the routine work.",
+      "vi": "Tôi chán công việc thường ngày",
+      "vocab_matches": [
+        "tired",
+        "work"
+      ],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm tired of the routine work",
+        "original_vi": "Tôi chán công việc thường ngày"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0166",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A2",
+      "en": "I really don't know what to do.",
+      "vi": "Thật không biết phải làm thế nào mới phải",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I really don't know what to do",
+        "original_vi": "Thật không biết phải làm thế nào mới phải"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0167",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A1",
+      "en": "I'm concerned about losing money.",
+      "vi": "Tôi lo bị mất tiền",
+      "vocab_matches": [
+        "money"
+      ],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm concerned about losing money.",
+        "original_vi": "Tôi lo bị mất tiền"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0168",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A2",
+      "en": "I'm afraid I will fail in this exam.",
+      "vi": "Toi lo mình không thi đậu đợt này",
+      "vocab_matches": [
+        "fail",
+        "exam"
+      ],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm afraid I will fail in this exam",
+        "original_vi": "Toi lo mình không thi đậu đợt này"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0169",
+      "topic_id": "worry",
+      "topic": "Worry & Concern",
+      "subtopic": "LO LẮNG - BUỒN CHÁN",
+      "level_estimate": "A2",
+      "en": "I'm really sick of waiting for a bus.",
+      "vi": "Tôi thực sự chán việc đợi xe buýt",
+      "vocab_matches": [],
+      "source": {
+        "file": "Vui mừng hạnh phúc.pdf",
+        "original_en": "I'm really sick of waiting for a bus",
+        "original_vi": "Tôi thực sự chán việc đợi xe buýt"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0170",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "What seems to be the matter?",
+      "vi": "Hình như cậu không được khỏe phải không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "What seems to be the matter?",
+        "original_vi": "Hình như cậu không được khỏe phải không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0171",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "Let me examine you.",
+      "vi": "Để tôi khám cho anh",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "Let me examine you",
+        "original_vi": "Để tôi khám cho anh"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0172",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "Let me feel your pulse.",
+      "vi": "Để tôi bắt mạch cho anh",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "Let me feel your pulse",
+        "original_vi": "Để tôi bắt mạch cho anh"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0173",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "You don't look too well.",
+      "vi": "Trông anh không được khỏe.",
+      "vocab_matches": [
+        "well"
+      ],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "You don't look too well.",
+        "original_vi": "Trông anh không được khỏe."
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0174",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "I think I've got the flu.",
+      "vi": "Tôi nghĩ là mình bị cúm rồi",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "I think I've got the flu",
+        "original_vi": "Tôi nghĩ là mình bị cúm rồi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0175",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "Roll up your sleeves, please.",
+      "vi": "Hãy xắn tay áo lên",
+      "vocab_matches": [
+        "sleeve"
+      ],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "Roll up your sleeves, please",
+        "original_vi": "Hãy xắn tay áo lên"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0176",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "I'll test your blood pressure.",
+      "vi": "Để tôi kiểm tra huyết áp cho anh",
+      "vocab_matches": [
+        "test"
+      ],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "I'll test your blood pressure",
+        "original_vi": "Để tôi kiểm tra huyết áp cho anh"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0177",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A1",
+      "en": "I've got a really bad toothache.",
+      "vi": "Tôi bị đau răng rất nặng.",
+      "vocab_matches": [
+        "toothache"
+      ],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "I've got a really bad toothache",
+        "original_vi": "Răng tôi vừa đau 1 trận dữ dội"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0178",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A2",
+      "en": "He sprained his ankle when he fell.",
+      "vi": "Anh ta bị bong gân ở chỗ mắt cá nhân do bị ngã",
+      "vocab_matches": [
+        "sprain",
+        "ankle"
+      ],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "He sprained his ankle when he fell",
+        "original_vi": "Anh ta bị bong gân ở chỗ mắt cá nhân do bị ngã"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0179",
+      "topic_id": "hospital",
+      "topic": "At the Hospital",
+      "subtopic": "GIAO TIẾP TẠI BỆNH VIỆN",
+      "level_estimate": "A2",
+      "en": "I feel dizzy and I've got no appetite.",
+      "vi": "Tôi thấy chóng mặt và chẳng muốn ăn gì cả",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai benh vien.pdf",
+        "original_en": "I feel dizzy and I've got no appetite",
+        "original_vi": "Tôi thấy chóng mặt và chẳng muốn ăn gì cả"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0180",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A1",
+      "en": "What if I overdraw?",
+      "vi": "Chuyện gì sẽ xảy ra nếu tôi rút quá số tiền quy định?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "What if I overdraw?",
+        "original_vi": "Chuyện gì sẽ xảy ra nếu tôi rút quá số tiền quy định?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0181",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A2",
+      "en": "What kind of account do you prefer?",
+      "vi": "Anh thích loại tài khoản nào hơn?",
+      "vocab_matches": [
+        "kind"
+      ],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "What kind of account do you prefer?",
+        "original_vi": "Anh thích loại tài khoản nào hơn?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0182",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A2",
+      "en": "How much do you want to deposit with us?",
+      "vi": "Ông muốn gửi bao nhiêu?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "How much do you want to deposit with us?",
+        "original_vi": "Ông muốn gửi bao nhiêu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0183",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A2",
+      "en": "Is there any minimum for the first deposit?",
+      "vi": "Có mức tối thiểu cho lần gửi đầu tiên không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "Is there any minimum for the first deposit?",
+        "original_vi": "Có mức tối thiểu cho lần gửi đầu tiên không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0184",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A1",
+      "en": "Here is your passbook.",
+      "vi": "Đây là sổ tiết kiệm của anh",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "Here is your passbook",
+        "original_vi": "Đây là sổ tiết kiệm của anh"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0185",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A1",
+      "en": "Please fill in this slip.",
+      "vi": "Làm ơn điền vào phiếu này nhé",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "Please fill in this slip",
+        "original_vi": "Làm ơn điền vào phiếu này nhé"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0186",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A1",
+      "en": "I want to know my balance.",
+      "vi": "Tôi muốn biết số dư trong tài khoản",
+      "vocab_matches": [
+        "balance"
+      ],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "I want to know my balance",
+        "original_vi": "Tôi muốn biết số dư trong tài khoản"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0187",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "subtopic": "GIAO TIẾP NGÂN HÀNG",
+      "level_estimate": "A1",
+      "en": "Please enter the password.",
+      "vi": "Anh vui lòng nhập mật mã",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tại ngan hàng.pdf",
+        "original_en": "Please enter the password",
+        "original_vi": "Anh vui lòng nhập mật mã"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0188",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "By sea or by air?",
+      "vi": "Gửi bằng đường thủy hay máy bay?",
+      "vocab_matches": [
+        "sea",
+        "air"
+      ],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "By sea or by air?",
+        "original_vi": "Gửi bằng đường thủy hay máy bay?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0189",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "How long will it take?",
+      "vi": "Mất khoảng bao lâu?",
+      "vocab_matches": [
+        "take"
+      ],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "How long will it take?",
+        "original_vi": "Mất khoảng bao lâu?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0190",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "May I have a money order?",
+      "vi": "Cho tôi 1 phiếu gửi tiền",
+      "vocab_matches": [
+        "money",
+        "order"
+      ],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "May I have a money order?",
+        "original_vi": "Cho tôi 1 phiếu gửi tiền"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0191",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "Do you wish to insure it?",
+      "vi": "Anh có muốn gửi bảo đảm không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "Do you wish to insure it?",
+        "original_vi": "Anh có muốn gửi bảo đảm không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0192",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "Which stamp must I put on?",
+      "vi": "Tôi phải dán loại tem nào?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "Which stamp must I put on?",
+        "original_vi": "Tôi phải dán loại tem nào?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0193",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "Does it include the insurance fee?",
+      "vi": "Giá này có bao gồm phí bảo hiểm không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "Does it include insurance fee?",
+        "original_vi": "Bao gồm cả phí bảo hiểm không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0194",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A1",
+      "en": "Is this where I claim parcels?",
+      "vi": "Lấy bưu kiện ở đây phải không?",
+      "vocab_matches": [
+        "parcel"
+      ],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "Is this where I claim parcels?",
+        "original_vi": "Lấy bưu kiện ở đây phải không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0195",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "subtopic": "GIAO TIẾP TẠI BƯU ĐIỆN",
+      "level_estimate": "A2",
+      "en": "Could you please pack this for me?",
+      "vi": "Anh có thể đóng gói món đồ này cho tôi được không?",
+      "vocab_matches": [
+        "pack"
+      ],
+      "source": {
+        "file": "Giao tiep tai buu dien.pdf",
+        "original_en": "Could you please pack this for me?",
+        "original_vi": "Anh có thể đóng gói món đồ này cho tôi được không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0196",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "subtopic": "GIAO TIẾP TẠI HIỆU CHỤP ẢNH",
+      "level_estimate": "A2",
+      "en": "Do you know which brand of camera is better?",
+      "vi": "Bạn có biết hãng máy ảnh nào tốt hơn không?",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep hieu chup anh.pdf",
+        "original_en": "Do you know what brand of camera is better?",
+        "original_vi": "Anh biết nhãn hiệu máy ảnh nào tốt hơn không?"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": true,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0197",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "subtopic": "GIAO TIẾP TẠI HIỆU CHỤP ẢNH",
+      "level_estimate": "A1",
+      "en": "I think you blinked.",
+      "vi": "Hình như anh bị chớp mặt rồi",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep hieu chup anh.pdf",
+        "original_en": "I think you blinked",
+        "original_vi": "Hình như anh bị chớp mặt rồi"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0198",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "subtopic": "GIAO TIẾP TẠI HIỆU CHỤP ẢNH",
+      "level_estimate": "A1",
+      "en": "I'm an amateur photographer.",
+      "vi": "Tôi là nhà nhiếp ảnh nghiệp dư",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep hieu chup anh.pdf",
+        "original_en": "I'm an amateur photographer.",
+        "original_vi": "Tôi là nhà nhiếp ảnh nghiệp dư"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0199",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "subtopic": "GIAO TIẾP TẠI HIỆU CHỤP ẢNH",
+      "level_estimate": "A1",
+      "en": "This photo is just too dark.",
+      "vi": "Bức ảnh này tối màu quá",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep hieu chup anh.pdf",
+        "original_en": "This photo is just too dark",
+        "original_vi": "Bức ảnh này tối màu quá"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "core_0200",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "subtopic": "GIAO TIẾP TẠI HIỆU CHỤP ẢNH",
+      "level_estimate": "A1",
+      "en": "Let's pose for a group photo.",
+      "vi": "Chúng ta hãy chụp ảnh chung nhé",
+      "vocab_matches": [],
+      "source": {
+        "file": "Giao tiep hieu chup anh.pdf",
+        "original_en": "Let's pose for a group photo",
+        "original_vi": "Chúng ta hãy chụp ảnh chung nhé"
+      },
+      "review": {
+        "tier": "silver",
+        "correction_applied": false,
+        "needs_final_linguistic_qa": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+ENGLISH 3000 V3.3 — VALIDATION
+===============================
+
+Đã kiểm tra:
+- app.js: node --check OK
+- sw.js: node --check OK
+- src/sentence-learning.js: node --check OK
+- manifest.json: JSON hợp lệ
+- package.json: JSON hợp lệ
+- sentences-v1-core-200.json: JSON hợp lệ, 200 records, 15 topics
+- dialogues-v1-core-30.json: JSON hợp lệ, 30 records, 15 topics
+- HTML: không trùng id; mọi $("id") tĩnh trong app.js đều có id tương ứng trong index.html
+- tests/sentence-learning.test.js: 5/5 PASS
+
+Phạm vi test:
+Các test mới kiểm tra Sentence Learning logic độc lập. Bộ overwrite không chứa toàn bộ
+src/ cũ của repo, vì các file đó không cần ghi đè. Sau khi upload vào repo thật, nên chạy
+`npm test` để chạy cả regression tests cũ + test mới.

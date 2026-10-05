@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3.2.1",
+  "name": "English 3000 V3.3",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "English 3000 stabilization: trust-first data, safe state migration, tested adaptive quiz."
+  "description": "English 3000 V3.3 - Sentence Learning, Dialogue Practice, Topic Learning, Adaptive Quiz and offline SRS."
 }

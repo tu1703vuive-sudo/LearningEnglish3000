@@ -1,0 +1,1265 @@
+{
+  "schema_version": "1.0",
+  "dataset": "dialogues-v1-core-30",
+  "record_count": 30,
+  "topic_count": 15,
+  "quality_tier": "beta",
+  "note": "Curated mini-dialogues for V3.3, based on the situations/topics in sentences-v1-core-200.",
+  "records": [
+    {
+      "id": "dlg_001",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "title": "Lần đầu gặp mặt",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Hi, I'm Minh. What's your name?",
+          "vi": "Chào, tôi là Minh. Bạn tên gì?"
+        },
+        {
+          "speaker": "B",
+          "en": "I'm Lan. Nice to meet you.",
+          "vi": "Tôi là Lan. Rất vui được gặp bạn."
+        },
+        {
+          "speaker": "A",
+          "en": "Nice to meet you too. Where are you from?",
+          "vi": "Tôi cũng rất vui được gặp bạn. Bạn đến từ đâu?"
+        },
+        {
+          "speaker": "B",
+          "en": "I'm from Hanoi.",
+          "vi": "Tôi đến từ Hà Nội."
+        }
+      ],
+      "question_vi": "Lan đến từ đâu?",
+      "options_vi": [
+        "Hà Nội",
+        "Đà Nẵng",
+        "Huế",
+        "TP.HCM"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_002",
+      "topic_id": "introductions",
+      "topic": "Introductions",
+      "title": "Hỏi thông tin cơ bản",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Where do you live?",
+          "vi": "Bạn sống ở đâu?"
+        },
+        {
+          "speaker": "B",
+          "en": "I live near the city center.",
+          "vi": "Tôi sống gần trung tâm thành phố."
+        },
+        {
+          "speaker": "A",
+          "en": "Do you study here?",
+          "vi": "Bạn học ở đây à?"
+        },
+        {
+          "speaker": "B",
+          "en": "Yes, I do.",
+          "vi": "Vâng."
+        }
+      ],
+      "question_vi": "B đang làm gì ở đây?",
+      "options_vi": [
+        "Đang học",
+        "Đang du lịch",
+        "Đang mua sắm",
+        "Đang khám bệnh"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_003",
+      "topic_id": "friends",
+      "topic": "Friends",
+      "title": "Gặp lại bạn",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Hi! How is it going today?",
+          "vi": "Chào! Hôm nay bạn thế nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "Pretty good. How about you?",
+          "vi": "Khá ổn. Còn bạn?"
+        },
+        {
+          "speaker": "A",
+          "en": "I'm fine, thanks.",
+          "vi": "Tôi ổn, cảm ơn."
+        }
+      ],
+      "question_vi": "Hai người đang làm gì?",
+      "options_vi": [
+        "Hỏi thăm nhau",
+        "Đặt món ăn",
+        "Mua vé tàu",
+        "Mở tài khoản"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_004",
+      "topic_id": "friends",
+      "topic": "Friends",
+      "title": "Đang vội",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Why are you in a hurry?",
+          "vi": "Sao bạn vội vậy?"
+        },
+        {
+          "speaker": "B",
+          "en": "I'm late for class.",
+          "vi": "Tôi bị muộn học."
+        },
+        {
+          "speaker": "A",
+          "en": "Okay. See you later!",
+          "vi": "Được rồi. Hẹn gặp lại!"
+        }
+      ],
+      "question_vi": "Vì sao B đang vội?",
+      "options_vi": [
+        "Bị muộn học",
+        "Đói bụng",
+        "Đau răng",
+        "Mất ví"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_005",
+      "topic_id": "hobbies",
+      "topic": "Hobbies",
+      "title": "Sở thích đọc sách",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "What are you into?",
+          "vi": "Bạn thích gì?"
+        },
+        {
+          "speaker": "B",
+          "en": "I really like reading.",
+          "vi": "Tôi rất thích đọc sách."
+        },
+        {
+          "speaker": "A",
+          "en": "What kind of books do you read?",
+          "vi": "Bạn đọc loại sách nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "Mostly travel books.",
+          "vi": "Chủ yếu là sách du lịch."
+        }
+      ],
+      "question_vi": "B thích loại sách nào?",
+      "options_vi": [
+        "Sách du lịch",
+        "Sách nấu ăn",
+        "Truyện tranh",
+        "Sách kỹ thuật"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_006",
+      "topic_id": "hobbies",
+      "topic": "Hobbies",
+      "title": "Đồ ăn cay",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Do you like spicy food?",
+          "vi": "Bạn có thích đồ cay không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Not really. I can't stand it.",
+          "vi": "Không lắm. Tôi không chịu được đồ cay."
+        },
+        {
+          "speaker": "A",
+          "en": "Me neither.",
+          "vi": "Tôi cũng vậy."
+        }
+      ],
+      "question_vi": "B cảm thấy thế nào về đồ cay?",
+      "options_vi": [
+        "Không thích",
+        "Rất thích",
+        "Muốn gọi thêm",
+        "Chưa từng ăn"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_007",
+      "topic_id": "permission",
+      "topic": "Permission",
+      "title": "Xin ngồi",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Is someone sitting here?",
+          "vi": "Có ai ngồi đây chưa?"
+        },
+        {
+          "speaker": "B",
+          "en": "No. You can sit here.",
+          "vi": "Chưa. Bạn có thể ngồi đây."
+        },
+        {
+          "speaker": "A",
+          "en": "Thanks.",
+          "vi": "Cảm ơn."
+        }
+      ],
+      "question_vi": "A đang xin phép làm gì?",
+      "options_vi": [
+        "Ngồi vào ghế",
+        "Đỗ xe",
+        "Chụp ảnh",
+        "Vào phòng"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_008",
+      "topic_id": "permission",
+      "topic": "Permission",
+      "title": "Xin chụp ảnh",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Is taking pictures allowed here?",
+          "vi": "Ở đây có được chụp ảnh không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Sorry, no photos inside.",
+          "vi": "Xin lỗi, không được chụp ảnh bên trong."
+        },
+        {
+          "speaker": "A",
+          "en": "Okay, I understand.",
+          "vi": "Được, tôi hiểu."
+        }
+      ],
+      "question_vi": "A có được chụp ảnh bên trong không?",
+      "options_vi": [
+        "Không",
+        "Có",
+        "Chỉ buổi tối",
+        "Chỉ cuối tuần"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_009",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "title": "Thử áo khoác",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "I'd like to buy a coat.",
+          "vi": "Tôi muốn mua một chiếc áo khoác."
+        },
+        {
+          "speaker": "B",
+          "en": "What size do you need?",
+          "vi": "Bạn cần cỡ nào?"
+        },
+        {
+          "speaker": "A",
+          "en": "Medium. May I try it on?",
+          "vi": "Cỡ vừa. Tôi có thể thử không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Of course. The fitting room is over there.",
+          "vi": "Tất nhiên. Phòng thử đồ ở đằng kia."
+        }
+      ],
+      "question_vi": "A muốn mua gì?",
+      "options_vi": [
+        "Áo khoác",
+        "Giày",
+        "Mũ",
+        "Găng tay"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_010",
+      "topic_id": "shopping",
+      "topic": "Shopping",
+      "title": "Hỏi giá",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "How much is this bag?",
+          "vi": "Chiếc túi này bao nhiêu tiền?"
+        },
+        {
+          "speaker": "B",
+          "en": "It's thirty dollars.",
+          "vi": "Nó giá 30 đô."
+        },
+        {
+          "speaker": "A",
+          "en": "Do you have a smaller one?",
+          "vi": "Bạn có chiếc nhỏ hơn không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Yes, let me show you.",
+          "vi": "Có, để tôi cho bạn xem."
+        }
+      ],
+      "question_vi": "A hỏi thêm điều gì?",
+      "options_vi": [
+        "Có chiếc nhỏ hơn không",
+        "Có màu đỏ không",
+        "Có giảm giá không",
+        "Có giao hàng không"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_011",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "title": "Gọi món",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Are you ready to order?",
+          "vi": "Bạn sẵn sàng gọi món chưa?"
+        },
+        {
+          "speaker": "B",
+          "en": "Yes. I'd like the chicken, please.",
+          "vi": "Rồi. Cho tôi món gà."
+        },
+        {
+          "speaker": "A",
+          "en": "Would you like something to drink?",
+          "vi": "Bạn muốn uống gì không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Just water, please.",
+          "vi": "Chỉ nước thôi."
+        }
+      ],
+      "question_vi": "B gọi đồ uống gì?",
+      "options_vi": [
+        "Nước",
+        "Cà phê",
+        "Trà",
+        "Nước cam"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_012",
+      "topic_id": "restaurant",
+      "topic": "Restaurant",
+      "title": "Xin hóa đơn",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Was everything okay?",
+          "vi": "Mọi thứ ổn chứ?"
+        },
+        {
+          "speaker": "B",
+          "en": "Yes, thank you. Can I have the bill, please?",
+          "vi": "Vâng, cảm ơn. Cho tôi xin hóa đơn."
+        },
+        {
+          "speaker": "A",
+          "en": "Of course. I'll bring it right away.",
+          "vi": "Tất nhiên. Tôi sẽ mang ra ngay."
+        }
+      ],
+      "question_vi": "B muốn gì?",
+      "options_vi": [
+        "Hóa đơn",
+        "Thực đơn",
+        "Món tráng miệng",
+        "Một bàn khác"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_013",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "title": "Hỏi chuyến tàu",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "When is the next train to Vinh?",
+          "vi": "Chuyến tàu tiếp theo đi Vinh lúc nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "At ten thirty.",
+          "vi": "Lúc 10 giờ 30."
+        },
+        {
+          "speaker": "A",
+          "en": "Is it an express train?",
+          "vi": "Đó là tàu nhanh phải không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Yes, it is.",
+          "vi": "Vâng."
+        }
+      ],
+      "question_vi": "Chuyến tàu khởi hành lúc mấy giờ?",
+      "options_vi": [
+        "10:30",
+        "9:00",
+        "11:30",
+        "12:00"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_014",
+      "topic_id": "train_station",
+      "topic": "Train Station",
+      "title": "Mua vé",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "How much is a ticket to Sapa?",
+          "vi": "Vé đi Sapa bao nhiêu tiền?"
+        },
+        {
+          "speaker": "B",
+          "en": "Twenty dollars.",
+          "vi": "20 đô."
+        },
+        {
+          "speaker": "A",
+          "en": "One ticket, please.",
+          "vi": "Cho tôi một vé."
+        },
+        {
+          "speaker": "B",
+          "en": "Here you are.",
+          "vi": "Vé của bạn đây."
+        }
+      ],
+      "question_vi": "A mua mấy vé?",
+      "options_vi": [
+        "Một vé",
+        "Hai vé",
+        "Ba vé",
+        "Bốn vé"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_015",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "title": "Hỏi nơi tham quan",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Could you tell me some interesting places nearby?",
+          "vi": "Bạn có thể giới thiệu vài nơi thú vị gần đây không?"
+        },
+        {
+          "speaker": "B",
+          "en": "You should visit the old temple and the lake.",
+          "vi": "Bạn nên thăm ngôi đền cổ và hồ."
+        },
+        {
+          "speaker": "A",
+          "en": "How much is the fare to the temple?",
+          "vi": "Giá vé đi đến ngôi đền là bao nhiêu?"
+        },
+        {
+          "speaker": "B",
+          "en": "About five dollars.",
+          "vi": "Khoảng 5 đô."
+        }
+      ],
+      "question_vi": "B gợi ý thăm những nơi nào?",
+      "options_vi": [
+        "Đền cổ và hồ",
+        "Bãi biển và chợ",
+        "Bảo tàng và sân bay",
+        "Nhà ga và ngân hàng"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_016",
+      "topic_id": "sightseeing",
+      "topic": "Sightseeing",
+      "title": "Chụp ảnh khi du lịch",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Is this your first trip here?",
+          "vi": "Đây là chuyến đi đầu tiên của bạn ở đây à?"
+        },
+        {
+          "speaker": "B",
+          "en": "Yes. We took lots of pictures today.",
+          "vi": "Vâng. Hôm nay chúng tôi đã chụp rất nhiều ảnh."
+        },
+        {
+          "speaker": "A",
+          "en": "I hope you enjoy the trip.",
+          "vi": "Hy vọng bạn có chuyến đi vui vẻ."
+        }
+      ],
+      "question_vi": "B đã làm gì hôm nay?",
+      "options_vi": [
+        "Chụp nhiều ảnh",
+        "Mua nhiều quần áo",
+        "Đi khám bệnh",
+        "Mở tài khoản"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_017",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "title": "Mua vé xem phim",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Where can I buy a ticket?",
+          "vi": "Tôi có thể mua vé ở đâu?"
+        },
+        {
+          "speaker": "B",
+          "en": "At the counter over there.",
+          "vi": "Ở quầy đằng kia."
+        },
+        {
+          "speaker": "A",
+          "en": "What seats are left tonight?",
+          "vi": "Tối nay còn ghế nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "Only seats in the back row.",
+          "vi": "Chỉ còn ghế hàng sau."
+        }
+      ],
+      "question_vi": "Tối nay còn ghế ở đâu?",
+      "options_vi": [
+        "Hàng sau",
+        "Hàng đầu",
+        "Giữa rạp",
+        "Không còn ghế"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_018",
+      "topic_id": "cinema",
+      "topic": "Cinema",
+      "title": "Rủ đi xem phim",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Would you like to go to a movie tonight?",
+          "vi": "Tối nay bạn có muốn đi xem phim không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Sure. What time does it start?",
+          "vi": "Được. Phim bắt đầu lúc mấy giờ?"
+        },
+        {
+          "speaker": "A",
+          "en": "At seven.",
+          "vi": "Lúc 7 giờ."
+        }
+      ],
+      "question_vi": "Phim bắt đầu lúc mấy giờ?",
+      "options_vi": [
+        "7 giờ",
+        "6 giờ",
+        "8 giờ",
+        "9 giờ"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_019",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "title": "Tin vui",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "I got the job!",
+          "vi": "Tôi đã được nhận việc!"
+        },
+        {
+          "speaker": "B",
+          "en": "That's great news. I'm glad to hear that.",
+          "vi": "Tin tuyệt quá. Tôi rất vui khi nghe vậy."
+        },
+        {
+          "speaker": "A",
+          "en": "Thank you!",
+          "vi": "Cảm ơn!"
+        }
+      ],
+      "question_vi": "Vì sao B vui?",
+      "options_vi": [
+        "A được nhận việc",
+        "A mua vé tàu",
+        "A bị ốm",
+        "A mất đồ"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_020",
+      "topic_id": "happiness",
+      "topic": "Happiness",
+      "title": "Hài lòng",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "How do you like your new room?",
+          "vi": "Bạn thấy phòng mới thế nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "I'm very pleased with it.",
+          "vi": "Tôi rất hài lòng."
+        },
+        {
+          "speaker": "A",
+          "en": "I'm happy to hear that.",
+          "vi": "Tôi vui khi nghe vậy."
+        }
+      ],
+      "question_vi": "B cảm thấy thế nào về phòng mới?",
+      "options_vi": [
+        "Rất hài lòng",
+        "Thất vọng",
+        "Lo lắng",
+        "Sợ hãi"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_021",
+      "topic_id": "worry",
+      "topic": "Worry",
+      "title": "Lo lắng trước khi nói",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "You look nervous.",
+          "vi": "Trông bạn có vẻ căng thẳng."
+        },
+        {
+          "speaker": "B",
+          "en": "I have stage fright.",
+          "vi": "Tôi bị hồi hộp khi đứng trước đám đông."
+        },
+        {
+          "speaker": "A",
+          "en": "Don't worry. You'll be fine.",
+          "vi": "Đừng lo. Bạn sẽ ổn thôi."
+        }
+      ],
+      "question_vi": "B đang lo về điều gì?",
+      "options_vi": [
+        "Nói trước đám đông",
+        "Đi tàu",
+        "Mua hàng",
+        "Gửi bưu kiện"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_022",
+      "topic_id": "worry",
+      "topic": "Worry",
+      "title": "Chờ quyết định",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "What if he doesn't agree?",
+          "vi": "Nếu anh ấy không đồng ý thì sao?"
+        },
+        {
+          "speaker": "B",
+          "en": "Let's wait for his answer first.",
+          "vi": "Hãy chờ câu trả lời của anh ấy trước."
+        },
+        {
+          "speaker": "A",
+          "en": "Okay, but I'm still worried.",
+          "vi": "Được, nhưng tôi vẫn lo."
+        }
+      ],
+      "question_vi": "A đang cảm thấy thế nào?",
+      "options_vi": [
+        "Lo lắng",
+        "Vui vẻ",
+        "Buồn ngủ",
+        "Đói"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_023",
+      "topic_id": "hospital",
+      "topic": "Hospital",
+      "title": "Khám cúm",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "What seems to be the matter?",
+          "vi": "Bạn thấy không khỏe ở đâu?"
+        },
+        {
+          "speaker": "B",
+          "en": "I think I've got the flu.",
+          "vi": "Tôi nghĩ mình bị cúm."
+        },
+        {
+          "speaker": "A",
+          "en": "Let me examine you.",
+          "vi": "Để tôi khám cho bạn."
+        }
+      ],
+      "question_vi": "B nghĩ mình bị gì?",
+      "options_vi": [
+        "Cúm",
+        "Đau răng",
+        "Gãy tay",
+        "Đau mắt"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_024",
+      "topic_id": "hospital",
+      "topic": "Hospital",
+      "title": "Đo huyết áp",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Roll up your sleeve, please.",
+          "vi": "Vui lòng xắn tay áo lên."
+        },
+        {
+          "speaker": "B",
+          "en": "Okay.",
+          "vi": "Vâng."
+        },
+        {
+          "speaker": "A",
+          "en": "I'll test your blood pressure.",
+          "vi": "Tôi sẽ đo huyết áp cho bạn."
+        }
+      ],
+      "question_vi": "Nhân viên y tế sẽ làm gì?",
+      "options_vi": [
+        "Đo huyết áp",
+        "Chụp X-quang",
+        "Nhổ răng",
+        "Băng chân"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_025",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "title": "Mở tài khoản",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "What kind of account do you prefer?",
+          "vi": "Bạn muốn loại tài khoản nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "A savings account, please.",
+          "vi": "Cho tôi tài khoản tiết kiệm."
+        },
+        {
+          "speaker": "A",
+          "en": "Please fill in this form.",
+          "vi": "Vui lòng điền mẫu này."
+        }
+      ],
+      "question_vi": "B muốn loại tài khoản nào?",
+      "options_vi": [
+        "Tài khoản tiết kiệm",
+        "Tài khoản doanh nghiệp",
+        "Thẻ tín dụng",
+        "Khoản vay"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_026",
+      "topic_id": "banking",
+      "topic": "Banking",
+      "title": "Kiểm tra số dư",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "How can I help you?",
+          "vi": "Tôi có thể giúp gì cho bạn?"
+        },
+        {
+          "speaker": "B",
+          "en": "I want to know my balance.",
+          "vi": "Tôi muốn biết số dư tài khoản."
+        },
+        {
+          "speaker": "A",
+          "en": "Please enter your password.",
+          "vi": "Vui lòng nhập mật khẩu."
+        }
+      ],
+      "question_vi": "B muốn biết điều gì?",
+      "options_vi": [
+        "Số dư tài khoản",
+        "Tỷ giá",
+        "Lãi suất vay",
+        "Giờ mở cửa"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_027",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "title": "Gửi bưu kiện",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "I'd like to send this parcel.",
+          "vi": "Tôi muốn gửi bưu kiện này."
+        },
+        {
+          "speaker": "B",
+          "en": "By sea or by air?",
+          "vi": "Gửi đường biển hay đường hàng không?"
+        },
+        {
+          "speaker": "A",
+          "en": "By air, please. How long will it take?",
+          "vi": "Gửi đường hàng không. Mất bao lâu?"
+        },
+        {
+          "speaker": "B",
+          "en": "About three days.",
+          "vi": "Khoảng ba ngày."
+        }
+      ],
+      "question_vi": "Bưu kiện dự kiến mất bao lâu?",
+      "options_vi": [
+        "Khoảng ba ngày",
+        "Một ngày",
+        "Một tuần",
+        "Một tháng"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_028",
+      "topic_id": "post_office",
+      "topic": "Post Office",
+      "title": "Đóng gói đồ",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Could you please pack this for me?",
+          "vi": "Bạn có thể đóng gói cái này giúp tôi không?"
+        },
+        {
+          "speaker": "B",
+          "en": "Sure. Do you wish to insure it?",
+          "vi": "Được. Bạn có muốn gửi bảo hiểm không?"
+        },
+        {
+          "speaker": "A",
+          "en": "Yes, please.",
+          "vi": "Có."
+        }
+      ],
+      "question_vi": "Nhân viên hỏi thêm điều gì?",
+      "options_vi": [
+        "Có muốn bảo hiểm bưu kiện không",
+        "Có muốn mua tem không",
+        "Có muốn đổi tiền không",
+        "Có muốn đặt vé không"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_029",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "title": "Chụp ảnh nhóm",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "Let's pose for a group photo.",
+          "vi": "Hãy tạo dáng chụp ảnh nhóm."
+        },
+        {
+          "speaker": "B",
+          "en": "Good idea. Is everyone ready?",
+          "vi": "Ý hay. Mọi người sẵn sàng chưa?"
+        },
+        {
+          "speaker": "A",
+          "en": "Yes. Smile!",
+          "vi": "Rồi. Cười lên!"
+        }
+      ],
+      "question_vi": "Họ chuẩn bị làm gì?",
+      "options_vi": [
+        "Chụp ảnh nhóm",
+        "Xem phim",
+        "Ăn tối",
+        "Đi tàu"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    },
+    {
+      "id": "dlg_030",
+      "topic_id": "photo_service",
+      "topic": "Photo Service",
+      "title": "Ảnh quá tối",
+      "level_estimate": "A1-A2",
+      "lines": [
+        {
+          "speaker": "A",
+          "en": "How does this photo look?",
+          "vi": "Bức ảnh này trông thế nào?"
+        },
+        {
+          "speaker": "B",
+          "en": "It's too dark.",
+          "vi": "Nó tối quá."
+        },
+        {
+          "speaker": "A",
+          "en": "Let's take another one.",
+          "vi": "Hãy chụp lại một tấm khác."
+        }
+      ],
+      "question_vi": "Vấn đề của bức ảnh là gì?",
+      "options_vi": [
+        "Quá tối",
+        "Quá sáng",
+        "Bị rách",
+        "Quá nhỏ"
+      ],
+      "answer_index": 0,
+      "source": {
+        "type": "curated_for_v3.3",
+        "basis": "sentences-v1-core-200 topic and situation"
+      },
+      "review": {
+        "tier": "beta",
+        "needs_final_linguistic_qa": true
+      }
+    }
+  ]
+}

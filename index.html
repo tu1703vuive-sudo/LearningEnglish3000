@@ -4,18 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 V3.2.1 - Adaptive Quiz, database sạch 3000 từ, IPA và SRS" />
+  <meta name="description" content="English 3000 V3.3 - Sentence Learning, Dialogue Practice, Topic Learning, Adaptive Quiz, IPA và SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.2.1</title>
+  <title>English 3000 V3.3</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.2.1</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.3</p>
         <h1>3000 từ vựng nền tảng</h1>
-        <p class="muted">Stabilization • Data Quality • Adaptive Quiz</p>
+        <p class="muted">Sentence Learning • Dialogue • Topic Learning • Adaptive Quiz</p>
       </div>
       <button id="themeBtn" class="icon-btn" aria-label="Đổi giao diện">☀️</button>
     </header>
@@ -26,7 +26,7 @@
           <div>
             <span class="tag">Lộ trình chính</span>
             <h2>Bộ từ vựng đã kiểm định</h2>
-            <p>Quiz tự tăng/giảm độ khó theo mức nhớ của từng từ, trên database 3000 từ đã làm sạch.</p>
+            <p>Quiz tự tăng/giảm độ khó theo mức nhớ của từng từ, trên database đã làm sạch.</p>
           </div>
           <div class="hero-stat">
             <strong id="masteredTop">0</strong>
@@ -46,7 +46,7 @@
           <div class="offline-pack-icon">📦</div>
           <div class="offline-pack-copy">
             <strong id="offlinePackStatus">Đang kiểm tra gói offline…</strong>
-            <span id="offlinePackHint">V3.2.1 chỉ nạp mục đạt validation; số lượng thực tế không bị ép về 3.000.</span>
+            <span id="offlinePackHint">V3.3 giữ database trust-first và bổ sung 200 câu thực tế + 30 hội thoại mini offline.</span>
           </div>
           <span id="offlinePackCount" class="offline-pack-count">0</span>
         </article>
@@ -78,6 +78,30 @@
             </div>
           </div>
 
+          <article class="topic-learning-entry card">
+            <button id="openTopicLearningBtn" class="topic-learning-entry-btn" type="button">
+              <span class="topic-learning-entry-icon">🧩</span>
+              <span class="topic-learning-entry-copy">
+                <strong>Học theo chủ đề</strong>
+                <small id="homeTopicName">Chọn Food, Work, Travel, Health...</small>
+                <span id="homeTopicMeta" class="topic-learning-entry-meta">Đang tải tiến độ…</span>
+              </span>
+              <span class="topic-learning-entry-arrow">›</span>
+            </button>
+          </article>
+
+          <article class="sentence-learning-entry card">
+            <button id="openSentenceLearningBtn" class="topic-learning-entry-btn" type="button">
+              <span class="topic-learning-entry-icon sentence-entry-icon">📝</span>
+              <span class="topic-learning-entry-copy">
+                <strong>Học câu thực tế</strong>
+                <small>Đọc hiểu → nghe hiểu → hội thoại ngắn</small>
+                <span id="homeSentenceMeta" class="topic-learning-entry-meta">Đang tải 200 câu…</span>
+              </span>
+              <span class="topic-learning-entry-arrow">›</span>
+            </button>
+          </article>
+
           <article class="continue-card card">
             <div class="continue-head">
               <div>
@@ -95,7 +119,6 @@
             </div>
 
             <button id="continueBtn" class="primary continue-main-btn">▶ Học thông minh</button>
-
             <div class="quick-start-grid">
               <button id="newWordsBtn" class="quick-start-btn">
                 <span>✨</span>
@@ -124,24 +147,20 @@
                   <strong>Nhóm từ</strong>
                   <span id="selectionSummary" class="muted small">Chủ đề</span>
                 </div>
-
                 <div id="browseTabs" class="browse-tabs compact-tabs">
                   <button class="browse-tab active" data-browse="topic">🧩 Chủ đề</button>
                   <button class="browse-tab" data-browse="stage">🔢 Chặng</button>
                 </div>
-
                 <div id="topicPanel" class="selector-panel">
                   <div class="search-wrap">
                     <input id="topicSearch" type="search" placeholder="Tìm: Work, Food, Travel, Health..." autocomplete="off" />
                   </div>
                   <div id="topicGrid" class="topic-grid"></div>
                 </div>
-
                 <div id="stagePanel" class="selector-panel hidden">
-                  <p class="muted small panel-note">30 chặng × khoảng 100 từ.</p>
+                  <p class="muted small panel-note">Các chặng × khoảng 100 từ.</p>
                   <div id="stageGrid" class="stage-grid"></div>
                 </div>
-
                 <div class="selection-summary card-lite compact-selection">
                   <span class="muted small">Trong nhóm</span>
                   <strong id="selectionCount">0 từ</strong>
@@ -161,24 +180,16 @@
                 <div class="settings-label"><strong>Kiểu học</strong><span class="muted small">Adaptive được khuyên dùng</span></div>
                 <div class="mode-grid adaptive-mode-grid" id="modeChoices">
                   <button class="mode-card adaptive-card active" data-mode="adaptive">
-                    <span class="mode-icon">🧠</span>
-                    <strong>Adaptive</strong>
-                    <small>Tự đổi Chọn → Nghe → Gõ theo mức nhớ</small>
+                    <span class="mode-icon">🧠</span><strong>Adaptive</strong><small>Tự đổi Chọn → Nghe → Gõ theo mức nhớ</small>
                   </button>
                   <button class="mode-card" data-mode="envi">
-                    <span class="mode-icon">🇬🇧</span>
-                    <strong>Anh → Việt</strong>
-                    <small>Nhìn từ, chọn nghĩa</small>
+                    <span class="mode-icon">🇬🇧</span><strong>Anh → Việt</strong><small>Nhìn từ, chọn nghĩa</small>
                   </button>
                   <button class="mode-card" data-mode="vien">
-                    <span class="mode-icon">🇻🇳</span>
-                    <strong>Việt → Anh</strong>
-                    <small>Nhìn nghĩa, chọn từ</small>
+                    <span class="mode-icon">🇻🇳</span><strong>Việt → Anh</strong><small>Nhìn nghĩa, chọn từ</small>
                   </button>
                   <button class="mode-card" data-mode="listen">
-                    <span class="mode-icon">🎧</span>
-                    <strong>Nghe → Nghĩa</strong>
-                    <small>Nghe trước, chọn sau</small>
+                    <span class="mode-icon">🎧</span><strong>Nghe → Nghĩa</strong><small>Nghe trước, chọn sau</small>
                   </button>
                 </div>
               </div>
@@ -191,6 +202,198 @@
         <article class="info-card compact-info adaptive-info-card">
           <strong>🧠 Adaptive hoạt động thế nào?</strong>
           <p><b>Mới</b> → chọn nghĩa · <b>Đang học</b> → đảo Anh/Việt · <b>Đang nhớ</b> → nghe · <b>Gần thuộc</b> → gõ từ. Sai nhiều thì app tự hạ độ khó và cho ôn sớm.</p>
+        </article>
+      </section>
+
+      <section id="topicView" class="view">
+        <div class="topic-view-top">
+          <button id="topicBackBtn" class="icon-btn" aria-label="Quay lại trang chủ">←</button>
+          <div>
+            <p class="eyebrow mini-eyebrow">TOPIC LEARNING</p>
+            <h2>Học theo chủ đề</h2>
+            <p class="muted small">Chọn một nhóm từ rồi học, ôn và củng cố ngay trong đúng chủ đề đó.</p>
+          </div>
+        </div>
+
+        <article id="topicLearningDetail" class="topic-learning-detail card">
+          <div class="topic-learning-detail-head">
+            <div>
+              <span class="tag">Chủ đề đang chọn</span>
+              <h2 id="topicLearningName">Chủ đề</h2>
+              <p id="topicLearningProgressText" class="muted small">0/0 từ đã thuộc</p>
+            </div>
+            <div class="topic-learning-ring" id="topicLearningRing"><span id="topicLearningPercent">0%</span></div>
+          </div>
+          <div class="progress-bar topic-learning-progress"><span id="topicLearningProgress"></span></div>
+
+          <div class="topic-stat-grid">
+            <div><strong id="topicTotalCount">0</strong><small>Tổng từ</small></div>
+            <div><strong id="topicNewCount">0</strong><small>Chưa học</small></div>
+            <div><strong id="topicDueCount">0</strong><small>Cần ôn</small></div>
+            <div><strong id="topicWeakCount">0</strong><small>Từ yếu</small></div>
+          </div>
+
+          <div class="topic-learning-options">
+            <div class="settings-label"><strong>Số từ mỗi buổi</strong><span class="muted small">Khuyên dùng 10–20</span></div>
+            <div class="choice-row" id="topicSizeChoices">
+              <button class="choice active" data-size="10">10 từ</button>
+              <button class="choice" data-size="20">20 từ</button>
+              <button class="choice" data-size="30">30 từ</button>
+            </div>
+
+            <div class="settings-label topic-mode-label"><strong>Kiểu học</strong><span class="muted small">Adaptive được khuyên dùng</span></div>
+            <div class="mode-grid topic-mode-grid" id="topicModeChoices">
+              <button class="mode-card adaptive-card active" data-mode="adaptive"><span class="mode-icon">🧠</span><strong>Adaptive</strong><small>Tự đổi dạng câu</small></button>
+              <button class="mode-card" data-mode="envi"><span class="mode-icon">🇬🇧</span><strong>Anh → Việt</strong><small>Chọn nghĩa</small></button>
+              <button class="mode-card" data-mode="vien"><span class="mode-icon">🇻🇳</span><strong>Việt → Anh</strong><small>Chọn từ</small></button>
+              <button class="mode-card" data-mode="listen"><span class="mode-icon">🎧</span><strong>Nghe → Nghĩa</strong><small>Nghe trước</small></button>
+            </div>
+          </div>
+
+          <button id="topicStartBtn" class="primary big topic-start-btn">▶ Học 10 từ theo chủ đề</button>
+          <div class="topic-quick-actions">
+            <button id="topicNewBtn" class="secondary">✨ Từ mới</button>
+            <button id="topicDueBtn" class="secondary">🧠 Ôn đến hạn</button>
+            <button id="topicWrongBtn" class="secondary">⚠️ Từ sai</button>
+          </div>
+        </article>
+
+        <div class="topic-picker-head">
+          <div>
+            <h3>Đổi chủ đề</h3>
+            <p class="muted small">Chỉ các từ đã được mapping tin cậy mới xuất hiện trong từng chủ đề.</p>
+          </div>
+        </div>
+        <div class="search-wrap">
+          <input id="topicLearningSearch" type="search" placeholder="Tìm chủ đề: Food, Work, Travel, Health..." autocomplete="off" />
+        </div>
+        <div id="topicLearningGrid" class="topic-learning-grid"></div>
+      </section>
+
+      <section id="sentenceView" class="view">
+        <div class="topic-view-top">
+          <button id="sentenceBackBtn" class="icon-btn" aria-label="Quay lại trang chủ">←</button>
+          <div>
+            <p class="eyebrow mini-eyebrow">SENTENCE LEARNING · V3.3</p>
+            <h2>Hiểu câu người ta đang nói</h2>
+            <p class="muted small">200 câu thực tế đã audit. Học theo hướng nhìn/nghe câu → hiểu ý, không dịch từng từ.</p>
+          </div>
+        </div>
+
+        <article class="sentence-overview card">
+          <div class="sentence-overview-top">
+            <div>
+              <span class="tag">Sentence Pack V1</span>
+              <h3><span id="sentenceMasteredCount">0</span>/<span id="sentenceTotalCount">200</span> câu đã hiểu</h3>
+              <p id="sentenceOverviewHint" class="muted small">Mỗi câu được tính đã hiểu sau 2 lần trả lời đúng liên tiếp.</p>
+            </div>
+            <div class="topic-learning-ring" id="sentenceProgressRing"><span id="sentenceProgressPercent">0%</span></div>
+          </div>
+          <div class="progress-bar topic-learning-progress"><span id="sentenceProgressBar"></span></div>
+          <div class="sentence-mini-stats">
+            <div><strong id="sentenceSeenCount">0</strong><small>Đã gặp</small></div>
+            <div><strong id="sentenceFreshCount">200</strong><small>Chưa gặp</small></div>
+            <div><strong id="sentenceWeakCount">0</strong><small>Cần củng cố</small></div>
+            <div><strong id="dialogueTotalCount">30</strong><small>Hội thoại</small></div>
+          </div>
+        </article>
+
+        <div class="sentence-mode-section">
+          <div class="settings-label"><strong>Cách luyện</strong><span class="muted small">Đi từ dễ đến khó</span></div>
+          <div id="sentenceModeChoices" class="sentence-mode-grid">
+            <button class="sentence-mode-card active" data-sentence-mode="study"><span>📖</span><strong>Học câu</strong><small>Nhìn câu + mở nghĩa</small></button>
+            <button class="sentence-mode-card" data-sentence-mode="read"><span>👀</span><strong>Đọc hiểu</strong><small>Nhìn câu → chọn ý</small></button>
+            <button class="sentence-mode-card" data-sentence-mode="listen"><span>🎧</span><strong>Nghe hiểu</strong><small>Nghe câu → chọn ý</small></button>
+            <button class="sentence-mode-card" data-sentence-mode="dialogue"><span>💬</span><strong>Hội thoại</strong><small>Đọc đoạn → hiểu tình huống</small></button>
+          </div>
+        </div>
+
+        <div class="sentence-size-section">
+          <div class="settings-label"><strong>Số câu mỗi buổi</strong><span class="muted small">10 câu là vừa</span></div>
+          <div id="sentenceSizeChoices" class="choice-row sentence-size-row">
+            <button class="choice" data-sentence-size="5">5</button>
+            <button class="choice active" data-sentence-size="10">10</button>
+            <button class="choice" data-sentence-size="15">15</button>
+            <button class="choice" data-sentence-size="20">20</button>
+          </div>
+        </div>
+
+        <div class="topic-picker-head sentence-topic-head">
+          <div><h3>Chọn tình huống</h3><p class="muted small">15 nhóm từ bộ tài liệu bạn tổng hợp.</p></div>
+          <button id="sentenceAllTopicsBtn" class="text-btn">Tất cả</button>
+        </div>
+        <div class="search-wrap"><input id="sentenceTopicSearch" type="search" placeholder="Tìm: Shopping, Restaurant, Friends..." autocomplete="off" /></div>
+        <div id="sentenceTopicGrid" class="sentence-topic-grid"></div>
+        <button id="sentenceStartBtn" class="primary big sentence-start-main">▶ Bắt đầu học 10 câu</button>
+        <p id="sentenceDataNote" class="muted tiny-note">Dataset V1 đang ở mức Silver/Beta; câu gốc vẫn được lưu trong dữ liệu để tiếp tục QA.</p>
+      </section>
+
+      <section id="sentenceStudyView" class="view">
+        <div class="sentence-session-top">
+          <button id="sentenceStudyBackBtn" class="icon-btn" aria-label="Thoát buổi học">←</button>
+          <div class="quiz-progress"><div class="progress-bar"><span id="sentenceStudyProgressBar"></span></div><small id="sentenceStudyProgressText">1/10</small></div>
+          <div id="sentenceStudyKnownPill" class="score-pill">✓ 0</div>
+        </div>
+        <article class="sentence-card card">
+          <div class="question-meta"><span id="sentenceStudyTopic" class="tag">Topic</span><span id="sentenceStudyLevel" class="soft-tag">A1</span></div>
+          <p class="quiz-instruction">Đọc câu và cố hiểu ý trước khi mở tiếng Việt</p>
+          <h2 id="sentenceStudyEnglish" class="sentence-english">English sentence</h2>
+          <button id="sentenceStudyAudioBtn" class="sentence-audio-main">🔊 Nghe câu</button>
+          <button id="sentenceRevealBtn" class="secondary sentence-reveal-btn">Hiện nghĩa tiếng Việt</button>
+          <div id="sentenceMeaningBox" class="sentence-meaning-box hidden"><small>Ý của câu</small><strong id="sentenceStudyVietnamese"></strong></div>
+          <div id="sentenceSourceBox" class="sentence-source-box"><span id="sentenceStudySource">Nguồn</span><span id="sentenceStudyCorrection" class="hidden">Đã chuẩn hóa câu gốc</span></div>
+          <div class="sentence-self-actions">
+            <button id="sentenceNotYetBtn" class="secondary danger-soft">Chưa chắc</button>
+            <button id="sentenceUnderstandBtn" class="primary">✓ Tôi hiểu câu này</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="sentenceQuizView" class="view">
+        <div class="sentence-session-top">
+          <button id="sentenceQuizBackBtn" class="icon-btn" aria-label="Thoát buổi học">←</button>
+          <div class="quiz-progress"><div class="progress-bar"><span id="sentenceQuizProgressBar"></span></div><small id="sentenceQuizProgressText">1/10</small></div>
+          <div class="score-pill">✓ <span id="sentenceQuizScore">0</span></div>
+        </div>
+        <article class="sentence-card card">
+          <div class="question-meta"><span id="sentenceQuizTopic" class="tag">Topic</span><span id="sentenceQuizModeBadge" class="soft-tag">Đọc hiểu</span></div>
+          <p id="sentenceQuizInstruction" class="quiz-instruction">Câu này có ý gì?</p>
+          <button id="sentenceListenPromptBtn" class="sentence-listen-prompt hidden">▶ Nghe câu</button>
+          <h2 id="sentenceQuizEnglish" class="sentence-english">English sentence</h2>
+          <div id="sentenceQuizAnswers" class="answers sentence-answer-grid"></div>
+          <div id="sentenceQuizFeedback" class="feedback feedback-banner"></div>
+          <div id="sentenceQuizCorrectMeaning" class="sentence-meaning-box hidden"><small>Ý đúng</small><strong></strong></div>
+        </article>
+        <div id="sentenceQuizNextBar" class="next-bar hidden"><button id="sentenceQuizNextBtn" class="primary next-fixed-btn">Tiếp tục</button></div>
+      </section>
+
+      <section id="dialogueView" class="view">
+        <div class="sentence-session-top">
+          <button id="dialogueBackBtn" class="icon-btn" aria-label="Thoát hội thoại">←</button>
+          <div class="quiz-progress"><div class="progress-bar"><span id="dialogueProgressBar"></span></div><small id="dialogueProgressText">1/5</small></div>
+          <div class="score-pill">✓ <span id="dialogueScore">0</span></div>
+        </div>
+        <article class="dialogue-card card">
+          <div class="question-meta"><span id="dialogueTopic" class="tag">Topic</span><span class="soft-tag">Mini dialogue</span></div>
+          <h2 id="dialogueTitle">Tình huống</h2>
+          <div id="dialogueLines" class="dialogue-lines"></div>
+          <button id="dialogueTranslationBtn" class="text-btn dialogue-translation-btn">Hiện bản dịch</button>
+          <div class="dialogue-question-box"><small>Kiểm tra hiểu ý</small><strong id="dialogueQuestion"></strong></div>
+          <div id="dialogueAnswers" class="answers sentence-answer-grid"></div>
+          <div id="dialogueFeedback" class="feedback feedback-banner"></div>
+        </article>
+        <div id="dialogueNextBar" class="next-bar hidden"><button id="dialogueNextBtn" class="primary next-fixed-btn">Tiếp tục</button></div>
+      </section>
+
+      <section id="sentenceResultView" class="view result-screen">
+        <div class="result-nav"><div><p class="eyebrow">SENTENCE LEARNING</p><strong id="sentenceResultLabel">Hoàn thành</strong></div><button id="sentenceResultCloseBtn" class="icon-btn compact-icon">×</button></div>
+        <article class="result-card result-card-v2 card">
+          <div class="result-hero-v2">
+            <div id="sentenceResultRing" class="result-score-ring"><div class="result-score-ring-inner"><strong id="sentenceResultPercent">0%</strong><small>hiểu đúng</small></div></div>
+            <div class="result-copy"><span class="result-emoji-v2">📝</span><p class="eyebrow result-complete-label">HOÀN THÀNH</p><h2 id="sentenceResultTitle">0/0 câu</h2><p id="sentenceResultText" class="muted">Tiến độ câu đã được lưu.</p></div>
+          </div>
+          <div class="result-stats result-stats-v2"><div><strong id="sentenceResultCorrect">0/0</strong><small>Đúng/Hiểu</small></div><div><strong id="sentenceResultNewMastered">+0</strong><small>Mới vững</small></div><div><strong id="sentenceResultTotalMastered">0</strong><small>Tổng đã hiểu</small></div></div>
+          <div class="result-actions"><button id="sentenceResultContinueBtn" class="primary result-primary-action">Học tiếp →</button><button id="sentenceResultTopicsBtn" class="secondary result-secondary-action">Đổi tình huống</button><button id="sentenceResultHomeBtn" class="result-home-link">Về trang chủ</button></div>
         </article>
       </section>
 
@@ -217,12 +420,9 @@
             <span id="contextLabel" class="tag">Chủ đề</span>
             <div class="question-badges"><span id="adaptiveStageLabel" class="adaptive-stage-badge">Mới</span><span id="posLabel" class="soft-tag">word</span></div>
           </div>
-
           <p id="promptLabel" class="quiz-instruction">Chọn nghĩa đúng</p>
-
           <button id="listenMainBtn" class="audio-btn hidden" aria-label="Nghe từ">🔊</button>
           <h2 id="questionWord" class="question-word">hello</h2>
-
           <div id="pronunciationBox" class="pronunciation-inline">
             <span id="ipaText" class="ipa-text">Đang tìm IPA…</span>
             <div id="audioChoices" class="audio-choices-inline">
@@ -234,7 +434,6 @@
           </div>
 
           <div id="answers" class="answers quiz-answers"></div>
-
           <div id="typingBox" class="typing-box hidden">
             <label for="typingAnswerInput">Gõ từ tiếng Anh</label>
             <div class="typing-input-row">
@@ -246,7 +445,6 @@
           </div>
 
           <div id="feedback" class="feedback feedback-banner"></div>
-
           <div id="wordDetail" class="answer-detail hidden">
             <div class="answer-summary">
               <strong id="detailWord">word</strong>
@@ -295,36 +493,20 @@
           </div>
 
           <div class="result-stats result-stats-v2">
-            <div>
-              <strong id="resultCorrect">0/0</strong>
-              <small>Đúng</small>
-            </div>
-            <div>
-              <strong id="resultMasteredDelta">+0</strong>
-              <small>Mới thuộc</small>
-            </div>
-            <div>
-              <strong id="resultStreak">0</strong>
-              <small>🔥 Streak</small>
-            </div>
+            <div><strong id="resultCorrect">0/0</strong><small>Đúng</small></div>
+            <div><strong id="resultMasteredDelta">+0</strong><small>Mới thuộc</small></div>
+            <div><strong id="resultStreak">0</strong><small>🔥 Streak</small></div>
           </div>
-
           <p id="resultTotalMastered" class="result-total muted">Tổng 0 từ đã thuộc</p>
 
           <div class="next-review-card">
             <span class="next-review-icon">🧠</span>
-            <div>
-              <small>Lịch ôn tiếp theo</small>
-              <strong id="resultReviewText">Đang tính lịch ôn…</strong>
-            </div>
+            <div><small>Lịch ôn tiếp theo</small><strong id="resultReviewText">Đang tính lịch ôn…</strong></div>
           </div>
 
           <div class="result-words-section">
             <div class="result-section-head">
-              <div>
-                <strong>Từ vừa học</strong>
-                <small id="resultWordsCount">0 từ</small>
-              </div>
+              <div><strong>Từ vừa học</strong><small id="resultWordsCount">0 từ</small></div>
               <button id="toggleResultWordsBtn" class="text-btn hidden">Xem tất cả</button>
             </div>
             <div id="resultWordsList" class="result-word-list"></div>
@@ -340,7 +522,7 @@
     </main>
 
     <footer>
-      <p>V3.2.1 dùng schema state có migration an toàn; “đã thuộc” được tính trực tiếp từ SRS.</p>
+      <p>V3.3 · Sentence Learning + Mini Dialogue · Topic Learning · Adaptive Quiz · offline-first.</p>
     </footer>
   </div>
 
