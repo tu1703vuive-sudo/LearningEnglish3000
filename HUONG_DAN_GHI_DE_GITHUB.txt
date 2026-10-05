@@ -1,11 +1,10 @@
-ENGLISH 3000 V3.3 — CÁCH UPDATE THỦ CÔNG TRÊN GITHUB
-=====================================================
+LearningEnglish3000 V3.2.2 - Topic Learning
+============================================
 
-Đây là bộ FILE HOÀN CHỈNH để ghi đè/thêm vào repo hiện tại.
-KHÔNG dán file .patch.
-KHÔNG xóa các file src/ cũ không nằm trong gói này.
+CÁCH DÙNG GÓI NÀY
 
-A. FILE GHI ĐÈ
+Trên GitHub, ghi đè đúng các file sau bằng file cùng tên trong gói:
+
 1. /app.js
 2. /index.html
 3. /style.css
@@ -13,67 +12,40 @@ A. FILE GHI ĐÈ
 5. /manifest.json
 6. /package.json
 7. /src/config.js
+8. /tests/session.test.js
+9. Thêm mới /CHANGELOG_V3.2.2.md
 
-B. FILE THÊM MỚI
-8. /src/sentence-learning.js
-9. /tests/sentence-learning.test.js
-10. /data/content/sentences-v1-core-200.json
-11. /data/content/dialogues-v1-core-30.json
-12. /CHANGELOG_V3.3.md
-
-C. KHÔNG XÓA / KHÔNG GHI ĐÈ
-- data/vocab-clean.json
-- data/audit-report-v3.2.1.json
+KHÔNG XÓA / KHÔNG GHI ĐÈ:
+- thư mục data/
 - src/state.js
-- src/session.js
-- src/srs.js
 - src/data.js
+- src/srs.js
+- src/session.js
 - src/quiz-engine.js
 - src/audio.js
 - src/ui.js
 - src/utils.js
 - scripts/
-- các file dữ liệu khác trong repo
+- các file audit hiện tại
 
-CÁCH LÀM TRÊN GITHUB
---------------------
-Với file cần ghi đè:
-1. Mở đúng file trong repo GitHub.
-2. Bấm biểu tượng Edit (bút chì).
-3. Ctrl+A toàn bộ nội dung cũ.
-4. Dán toàn bộ nội dung file cùng tên trong gói V3.3.
-5. Commit changes.
-
-Với file mới:
-1. Chọn Add file > Create new file.
-2. Gõ đúng đường dẫn, ví dụ: src/sentence-learning.js
-3. Dán nội dung file tương ứng.
-4. Commit changes.
-
-Với data/content:
-- Nếu chưa có thư mục content, GitHub tự tạo khi bạn nhập tên file:
-  data/content/sentences-v1-core-200.json
-  data/content/dialogues-v1-core-30.json
+THỨ TỰ KHUYÊN DÙNG
+1. Ghi đè app.js
+2. Ghi đè index.html
+3. Ghi đè style.css
+4. Ghi đè src/config.js
+5. Ghi đè sw.js
+6. Ghi đè manifest.json
+7. Ghi đè package.json
+8. Ghi đè tests/session.test.js
+9. Tạo CHANGELOG_V3.2.2.md
 
 SAU KHI UPDATE
---------------
-1. Chờ GitHub Pages deploy xong.
-2. Mở website.
-3. Nhấn Ctrl+F5.
-4. Nếu vẫn thấy V3.2.2, đóng tab và mở lại; Service Worker V3.3 sẽ thay cache cũ.
+- Nếu dùng GitHub Pages, chờ deploy hoàn tất.
+- Refresh mạnh trình duyệt: Ctrl + F5.
+- Nếu vẫn thấy V3.2.1, đóng tab rồi mở lại. Service Worker V3.2.2 sẽ thay cache cũ.
 
-DẤU HIỆU CÀI ĐÚNG
-------------------
-- Header hiện: ENGLISH 3000 · V3.3
-- Trang chủ có nút: 📝 Học câu thực tế
-- Bấm vào thấy:
-  + 200 câu
-  + 30 hội thoại
-  + 15 tình huống
-  + Học câu / Đọc hiểu / Nghe hiểu / Hội thoại
-
-KIỂM TRA NẾU CÓ MÁY LOCAL
--------------------------
-npm test
-python -m http.server 8080
-Mở http://localhost:8080
+KIỂM TRA NHANH
+- Trang đầu phải hiện ENGLISH 3000 · V3.2.2.
+- Trong Bắt đầu học phải có ô “🧩 Học theo chủ đề”.
+- Bấm vào phải mở màn Topic Learning riêng.
+- Chọn topic rồi Ôn đến hạn / Từ sai phải chỉ dùng từ trong topic đó.

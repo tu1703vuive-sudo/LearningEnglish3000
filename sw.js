@@ -1,11 +1,10 @@
-const VERSION='v3.3.0';
+const VERSION='v3.2.2';
 const SHELL=`english3000-shell-${VERSION}`;
 const DATA=`english3000-data-${VERSION}`;
 const API='english3000-api-v1';
 const SHELL_ASSETS=['./','./index.html','./style.css','./app.js','./manifest.json',
-  './src/config.js','./src/utils.js','./src/state.js','./src/srs.js','./src/data.js','./src/session.js','./src/quiz-engine.js','./src/audio.js','./src/ui.js','./src/sentence-learning.js'];
-const DATA_ASSETS=['./data/vocab-clean.json','./data/audit-report-v3.2.1.json',
-  './data/content/sentences-v1-core-200.json','./data/content/dialogues-v1-core-30.json'];
+  './src/config.js','./src/utils.js','./src/state.js','./src/srs.js','./src/data.js','./src/session.js','./src/quiz-engine.js','./src/audio.js','./src/ui.js'];
+const DATA_ASSETS=['./data/vocab-clean.json','./data/audit-report-v3.2.1.json'];
 self.addEventListener('install',event=>{event.waitUntil(Promise.all([
   caches.open(SHELL).then(c=>c.addAll(SHELL_ASSETS)),
   caches.open(DATA).then(c=>c.addAll(DATA_ASSETS))

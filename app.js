@@ -1,4 +1,4 @@
-import { APP_VERSION, STAGE_SIZE, SENTENCE_DATA_URL, DIALOGUE_DATA_URL } from './src/config.js';
+import { APP_VERSION, STAGE_SIZE } from './src/config.js';
 import { keyOf, fisherYates, localDateString } from './src/utils.js';
 import { loadState, saveState as persistState, ensureTodayStats, applyLearningAnswer } from './src/state.js';
 import { masteredKeys, dueKeys as getDueKeys } from './src/srs.js';
@@ -14,11 +14,6 @@ import {
 } from './src/quiz-engine.js';
 import { fetchOnlineAudioData as fetchAudioData, ttsSpeak, playUrl } from './src/audio.js';
 import { $, showView } from './src/ui.js';
-import {
-  SENTENCE_STORAGE_KEY, normalizeSentencePack, normalizeDialoguePack, sentenceTopics,
-  emptySentenceProgress, sanitizeSentenceProgress, recordSentenceResult, markSentenceUnderstood, recordDialogueResult,
-  topicSentenceStats, pickSentenceSession, buildMeaningChoices, pickDialogueSession
-} from './src/sentence-learning.js';
 let state = loadState();
 let vocab = [];
 let topics = [];
@@ -36,22 +31,6 @@ let sessionKind = "normal";
 let sessionPreloadToken = 0;
 let currentQuestionMode = "envi";
 let typingHintUsed = false;
-let sentenceRecords = [];
-let dialogueRecords = [];
-let sentenceTopicList = [];
-let sentenceProgress = loadSentenceProgress();
-let sentenceSelectedTopicId = '';
-let sentenceMode = 'study';
-let sentenceSession = [];
-let sentenceIndex = 0;
-let sentenceScore = 0;
-let sentenceAnswered = false;
-let sentenceMasteredBefore = 0;
-let dialogueSession = [];
-let dialogueIndex = 0;
-let dialogueScore = 0;
-let dialogueAnswered = false;
-let dialogueTranslationVisible = false;
 function saveState() { persistState(state); }
 function todayStatsReset() { ensureTodayStats(state); }
 function updateOfflinePackStatus() {
@@ -109,7 +88,6 @@ async function loadOfflinePack() {
 }
 async function loadVocabulary() {
   await loadOfflinePack();
-  await loadSentenceContent();
   renderHome();
   updateOfflinePackStatus();
 }
@@ -230,224 +208,6 @@ function renderHomeTopicEntry() {
     ? `${stats.known}/${stats.total} thuộc · ${stats.fresh} chưa học${stats.due ? ` · ${stats.due} cần ôn` : ""}`
     : "Chủ đề này chưa có từ được mapping tin cậy";
 }
-// ===== V3.3 Sentence Learning =====
-function loadSentenceProgress() {
-  try { return sanitizeSentenceProgress(JSON.parse(localStorage.getItem(SENTENCE_STORAGE_KEY) || 'null')); }
-  catch { return emptySentenceProgress(); }
-}
-function saveSentenceProgress() {
-  try { localStorage.setItem(SENTENCE_STORAGE_KEY, JSON.stringify(sentenceProgress)); } catch {}
-}
-async function loadSentenceContent() {
-  try {
-    const [sentenceRes, dialogueRes] = await Promise.all([fetch(SENTENCE_DATA_URL), fetch(DIALOGUE_DATA_URL)]);
-    if (!sentenceRes.ok) throw new Error(`Sentence HTTP ${sentenceRes.status}`);
-    sentenceRecords = normalizeSentencePack(await sentenceRes.json());
-    if (dialogueRes.ok) dialogueRecords = normalizeDialoguePack(await dialogueRes.json());
-    else dialogueRecords = [];
-    sentenceTopicList = sentenceTopics(sentenceRecords);
-    const validTopic = sentenceTopicList.find(t=>t.id===sentenceProgress.lastTopicId);
-    if (!validTopic && sentenceTopicList.length) sentenceProgress.lastTopicId = sentenceTopicList[0].id;
-    saveSentenceProgress();
-  } catch (error) {
-    console.error('Sentence pack error', error);
-    sentenceRecords=[]; dialogueRecords=[]; sentenceTopicList=[];
-  }
-}
-function selectedSentenceTopicId() { if (sentenceSelectedTopicId === '__all__') return ''; return sentenceSelectedTopicId || sentenceProgress.lastTopicId || sentenceTopicList[0]?.id || ''; }
-function sentenceTopicName(id) { return sentenceTopicList.find(t=>t.id===id)?.name || 'Tất cả tình huống'; }
-function renderSentenceHomeEntry() {
-  if (!$('homeSentenceMeta')) return;
-  const stats = topicSentenceStats(sentenceRecords,sentenceProgress,'');
-  $('homeSentenceMeta').textContent = sentenceRecords.length
-    ? `${stats.mastered}/${stats.total} câu đã hiểu · ${stats.fresh} câu chưa gặp · ${dialogueRecords.length} hội thoại`
-    : 'Chưa tải được Sentence Pack';
-}
-function renderSentenceOverview() {
-  if (!$('sentenceTotalCount')) return;
-  const stats = topicSentenceStats(sentenceRecords,sentenceProgress,'');
-  $('sentenceTotalCount').textContent = stats.total;
-  $('sentenceMasteredCount').textContent = stats.mastered;
-  $('sentenceSeenCount').textContent = stats.seen;
-  $('sentenceFreshCount').textContent = stats.fresh;
-  $('sentenceWeakCount').textContent = stats.weak;
-  $('dialogueTotalCount').textContent = dialogueRecords.length;
-  $('sentenceProgressPercent').textContent = `${stats.pct}%`;
-  $('sentenceProgressBar').style.width = `${stats.pct}%`;
-  $('sentenceProgressRing').style.background = `conic-gradient(var(--primary) ${stats.pct}%,var(--line) ${stats.pct}%)`;
-}
-function renderSentenceTopics(filter='') {
-  const grid=$('sentenceTopicGrid'); if(!grid) return;
-  grid.innerHTML='';
-  const q=keyOf(filter);
-  const list=sentenceTopicList.filter(t=>!q || keyOf(t.name).includes(q) || keyOf(t.id).includes(q));
-  for(const topic of list){
-    const stats=topicSentenceStats(sentenceRecords,sentenceProgress,topic.id);
-    const dCount=dialogueRecords.filter(x=>x.topic_id===topic.id).length;
-    const b=document.createElement('button');
-    b.type='button';
-    b.className='sentence-topic-card'+(selectedSentenceTopicId()===topic.id?' active':'');
-    b.innerHTML=`<span class="sentence-topic-icon">${sentenceTopicEmoji(topic.id)}</span><span class="sentence-topic-copy"><strong>${topic.name}</strong><small>${stats.mastered}/${stats.total} đã hiểu · ${stats.fresh} mới${dCount?` · ${dCount} hội thoại`:''}</small><span class="topic-card-progress"><i style="width:${stats.pct}%"></i></span></span><span class="topic-learning-card-arrow">›</span>`;
-    b.onclick=()=>{sentenceSelectedTopicId=topic.id;sentenceProgress.lastTopicId=topic.id;saveSentenceProgress();renderSentenceHub();};
-    grid.appendChild(b);
-  }
-  if(!list.length) grid.innerHTML='<p class="muted small">Không tìm thấy tình huống.</p>';
-}
-function sentenceTopicEmoji(id){
-  return ({introductions:'👋',friends:'🤝',hobbies:'🎯',permission:'🙋',shopping:'🛍️',restaurant:'🍜',train_station:'🚆',sightseeing:'🗺️',cinema:'🎬',happiness:'😊',worry:'😟',hospital:'🏥',banking:'🏦',post_office:'📦',photo_service:'📷'})[id] || '📝';
-}
-function renderSentenceHub(){
-  renderSentenceOverview();
-  renderSentenceTopics($('sentenceTopicSearch')?.value||'');
-  document.querySelectorAll('#sentenceModeChoices .sentence-mode-card').forEach(b=>b.classList.toggle('active',b.dataset.sentenceMode===sentenceMode));
-  document.querySelectorAll('#sentenceSizeChoices .choice').forEach(b=>b.classList.toggle('active',Number(b.dataset.sentenceSize)===sentenceProgress.sentenceSize));
-  const topicId=selectedSentenceTopicId();
-  const stats=topicSentenceStats(sentenceRecords,sentenceProgress,topicId);
-  const isDialogue=sentenceMode==='dialogue';
-  const max=isDialogue ? dialogueRecords.filter(x=>x.topic_id===topicId).length : stats.total;
-  const take=Math.min(isDialogue?5:sentenceProgress.sentenceSize,max || (isDialogue?5:sentenceProgress.sentenceSize));
-  $('sentenceStartBtn').textContent=isDialogue?`▶ Luyện ${take} hội thoại · ${sentenceTopicName(topicId)}`:`▶ Học ${take} câu · ${sentenceTopicName(topicId)}`;
-  $('sentenceStartBtn').disabled=!max;
-}
-function beginSentenceMode(){
-  const topicId=selectedSentenceTopicId();
-  sentenceProgress.lastTopicId=topicId; saveSentenceProgress();
-  if(sentenceMode==='dialogue') return startDialogueSession();
-  sentenceSession=pickSentenceSession(sentenceRecords,sentenceProgress,topicId,sentenceProgress.sentenceSize);
-  if(!sentenceSession.length) return alert('Tình huống này chưa có câu để học.');
-  sentenceIndex=0; sentenceScore=0; sentenceAnswered=false; sentenceMasteredBefore=topicSentenceStats(sentenceRecords,sentenceProgress,'').mastered;
-  if(sentenceMode==='study'){renderSentenceStudy();showView('sentenceStudyView');}
-  else {renderSentenceQuiz();showView('sentenceQuizView');}
-}
-function renderSentenceStudy(){
-  const item=sentenceSession[sentenceIndex]; if(!item) return finishSentenceSession('study');
-  const total=sentenceSession.length;
-  $('sentenceStudyProgressBar').style.width=`${sentenceIndex/total*100}%`;
-  $('sentenceStudyProgressText').textContent=`${sentenceIndex+1}/${total}`;
-  $('sentenceStudyKnownPill').textContent=`✓ ${sentenceScore}`;
-  $('sentenceStudyTopic').textContent=item.topic;
-  $('sentenceStudyLevel').textContent=item.level_estimate||'A1';
-  $('sentenceStudyEnglish').textContent=item.en;
-  $('sentenceStudyVietnamese').textContent=item.vi;
-  $('sentenceMeaningBox').classList.add('hidden');
-  $('sentenceRevealBtn').classList.remove('hidden');
-  $('sentenceStudySource').textContent=`Nguồn: ${item.source?.file||'Sentence Pack V1'}`;
-  $('sentenceStudyCorrection').classList.toggle('hidden',!item.review?.correction_applied);
-}
-function answerSentenceStudy(understood){
-  const item=sentenceSession[sentenceIndex]; if(!item)return;
-  markSentenceUnderstood(sentenceProgress,item.id,understood);saveSentenceProgress();
-  if(understood) sentenceScore++;
-  sentenceIndex++;
-  if(sentenceIndex>=sentenceSession.length) finishSentenceSession('study'); else renderSentenceStudy();
-}
-function renderSentenceQuiz(){
-  const item=sentenceSession[sentenceIndex]; if(!item) return finishSentenceSession(sentenceMode);
-  sentenceAnswered=false;
-  const total=sentenceSession.length;
-  $('sentenceQuizProgressBar').style.width=`${sentenceIndex/total*100}%`;
-  $('sentenceQuizProgressText').textContent=`${sentenceIndex+1}/${total}`;
-  $('sentenceQuizScore').textContent=sentenceScore;
-  $('sentenceQuizTopic').textContent=item.topic;
-  const listening=sentenceMode==='listen';
-  $('sentenceQuizModeBadge').textContent=listening?'Nghe hiểu':'Đọc hiểu';
-  $('sentenceQuizInstruction').textContent=listening?'Nghe câu rồi chọn ý đúng':'Câu này có ý gì?';
-  $('sentenceQuizEnglish').textContent=item.en;
-  $('sentenceQuizEnglish').classList.toggle('listening-hidden',listening);
-  $('sentenceListenPromptBtn').classList.toggle('hidden',!listening);
-  $('sentenceQuizFeedback').textContent=''; $('sentenceQuizFeedback').className='feedback feedback-banner';
-  $('sentenceQuizCorrectMeaning').classList.add('hidden');
-  $('sentenceQuizNextBar').classList.add('hidden');
-  const box=$('sentenceQuizAnswers');box.innerHTML='';
-  for(const meaning of buildMeaningChoices(item,sentenceRecords,4)){
-    const b=document.createElement('button'); b.className='answer-btn sentence-answer-btn'; b.textContent=meaning;
-    b.onclick=()=>answerSentenceQuiz(b,meaning===item.vi,item);
-    box.appendChild(b);
-  }
-  if(listening) setTimeout(()=>ttsSpeak(item.en),120);
-}
-function answerSentenceQuiz(btn,ok,item){
-  if(sentenceAnswered)return; sentenceAnswered=true;
-  recordSentenceResult(sentenceProgress,item.id,ok);saveSentenceProgress();
-  if(ok) sentenceScore++;
-  document.querySelectorAll('#sentenceQuizAnswers .sentence-answer-btn').forEach(b=>{b.disabled=true;if(b.textContent===item.vi)b.classList.add('correct');});
-  if(!ok) btn.classList.add('wrong');
-  $('sentenceQuizFeedback').className=`feedback feedback-banner ${ok?'ok':'bad'}`;
-  $('sentenceQuizFeedback').textContent=ok?'✓ Hiểu đúng':`✕ Ý đúng: ${item.vi}`;
-  $('sentenceQuizCorrectMeaning').querySelector('strong').textContent=item.vi;
-  $('sentenceQuizCorrectMeaning').classList.remove('hidden');
-  $('sentenceQuizEnglish').classList.remove('listening-hidden');
-  $('sentenceQuizNextBar').classList.remove('hidden');
-  $('sentenceQuizNextBtn').textContent=sentenceIndex===sentenceSession.length-1?'Xem kết quả':'Tiếp tục';
-}
-function nextSentenceQuiz(){
-  if(!sentenceAnswered)return;
-  sentenceIndex++;
-  if(sentenceIndex>=sentenceSession.length) finishSentenceSession(sentenceMode); else renderSentenceQuiz();
-}
-function startDialogueSession(){
-  const topicId=selectedSentenceTopicId();
-  dialogueSession=pickDialogueSession(dialogueRecords,topicId,5);
-  if(!dialogueSession.length)return alert('Tình huống này chưa có hội thoại mini.');
-  dialogueIndex=0;dialogueScore=0;dialogueAnswered=false;dialogueTranslationVisible=false;sentenceMasteredBefore=topicSentenceStats(sentenceRecords,sentenceProgress,'').mastered;
-  renderDialogue();showView('dialogueView');
-}
-function renderDialogue(){
-  const item=dialogueSession[dialogueIndex]; if(!item)return finishSentenceSession('dialogue');
-  dialogueAnswered=false;dialogueTranslationVisible=false;
-  $('dialogueProgressBar').style.width=`${dialogueIndex/dialogueSession.length*100}%`;
-  $('dialogueProgressText').textContent=`${dialogueIndex+1}/${dialogueSession.length}`;
-  $('dialogueScore').textContent=dialogueScore;
-  $('dialogueTopic').textContent=item.topic;
-  $('dialogueTitle').textContent=item.title;
-  $('dialogueQuestion').textContent=item.question_vi;
-  $('dialogueTranslationBtn').textContent='Hiện bản dịch';
-  $('dialogueFeedback').textContent='';$('dialogueFeedback').className='feedback feedback-banner';
-  $('dialogueNextBar').classList.add('hidden');
-  const lines=$('dialogueLines');lines.innerHTML='';
-  item.lines.forEach(line=>{
-    const row=document.createElement('div');row.className='dialogue-line';
-    row.innerHTML=`<span class="dialogue-speaker">${line.speaker}</span><div><p>${line.en}</p><small class="dialogue-vi hidden">${line.vi}</small></div><button class="dialogue-audio-btn" aria-label="Nghe câu">🔊</button>`;
-    row.querySelector('button').onclick=()=>ttsSpeak(line.en);
-    lines.appendChild(row);
-  });
-  const answers=$('dialogueAnswers');answers.innerHTML='';
-  item.options_vi.forEach((opt,i)=>{const b=document.createElement('button');b.className='answer-btn sentence-answer-btn';b.textContent=opt;b.onclick=()=>answerDialogue(b,i===item.answer_index,item);answers.appendChild(b);});
-}
-function toggleDialogueTranslation(){
-  dialogueTranslationVisible=!dialogueTranslationVisible;
-  document.querySelectorAll('#dialogueLines .dialogue-vi').forEach(x=>x.classList.toggle('hidden',!dialogueTranslationVisible));
-  $('dialogueTranslationBtn').textContent=dialogueTranslationVisible?'Ẩn bản dịch':'Hiện bản dịch';
-}
-function answerDialogue(btn,ok,item){
-  if(dialogueAnswered)return;dialogueAnswered=true;
-  recordDialogueResult(sentenceProgress,item.id,ok);saveSentenceProgress();
-  if(ok)dialogueScore++;
-  document.querySelectorAll('#dialogueAnswers .sentence-answer-btn').forEach((b,i)=>{b.disabled=true;if(i===item.answer_index)b.classList.add('correct');});
-  if(!ok)btn.classList.add('wrong');
-  $('dialogueFeedback').className=`feedback feedback-banner ${ok?'ok':'bad'}`;
-  $('dialogueFeedback').textContent=ok?'✓ Hiểu đúng tình huống':'✕ Chưa đúng — xem lại đoạn hội thoại';
-  $('dialogueNextBar').classList.remove('hidden');
-  $('dialogueNextBtn').textContent=dialogueIndex===dialogueSession.length-1?'Xem kết quả':'Tiếp tục';
-}
-function nextDialogue(){if(!dialogueAnswered)return;dialogueIndex++;if(dialogueIndex>=dialogueSession.length)finishSentenceSession('dialogue');else renderDialogue();}
-function finishSentenceSession(kind){
-  const total=kind==='dialogue'?dialogueSession.length:sentenceSession.length;
-  const correct=kind==='dialogue'?dialogueScore:sentenceScore;
-  const pct=total?Math.round(correct/total*100):0;
-  const masteredNow=topicSentenceStats(sentenceRecords,sentenceProgress,'').mastered;
-  const delta=Math.max(0,masteredNow-sentenceMasteredBefore);
-  $('sentenceResultLabel').textContent=kind==='dialogue'?'Hội thoại · '+sentenceTopicName(selectedSentenceTopicId()):(kind==='listen'?'Nghe hiểu':kind==='read'?'Đọc hiểu':'Học câu')+' · '+sentenceTopicName(selectedSentenceTopicId());
-  $('sentenceResultPercent').textContent=`${pct}%`;
-  $('sentenceResultRing').style.background=`conic-gradient(var(--success) ${pct}%,var(--line) ${pct}%)`;
-  $('sentenceResultTitle').textContent=`${correct}/${total} câu hiểu đúng`;
-  $('sentenceResultCorrect').textContent=`${correct}/${total}`;
-  $('sentenceResultNewMastered').textContent=`+${delta}`;
-  $('sentenceResultTotalMastered').textContent=masteredNow;
-  $('sentenceResultText').textContent=kind==='dialogue'?'Tiến độ hội thoại đã được lưu.':'Câu chưa chắc sẽ được ưu tiên xuất hiện lại ở các buổi sau.';
-  showView('sentenceResultView');
-}
-
 function renderTopics(filter="") {
   const grid = $("topicGrid");
   grid.innerHTML = "";
@@ -516,7 +276,6 @@ function renderHome() {
   renderStartRecommendation();
   updateSettingsSummary();
   renderHomeTopicEntry();
-  renderSentenceHomeEntry();
   renderTopicLearning($("topicLearningSearch")?.value || "");
   saveState();
 }
@@ -1018,28 +777,6 @@ $("topicStartBtn")?.addEventListener("click",()=>{state.browseMode="topic";saveS
 $("topicNewBtn")?.addEventListener("click",()=>{state.browseMode="topic";saveState();startNewWordsSession();});
 $("topicDueBtn")?.addEventListener("click",()=>{state.browseMode="topic";saveState();startDueReview();});
 $("topicWrongBtn")?.addEventListener("click",()=>{state.browseMode="topic";saveState();startWrongReview();});
-$("openSentenceLearningBtn")?.addEventListener("click",()=>{sentenceSelectedTopicId=sentenceProgress.lastTopicId||sentenceTopicList[0]?.id||"";renderSentenceHub();showView("sentenceView");});
-$("sentenceBackBtn")?.addEventListener("click",()=>{renderHome();showView("homeView");});
-$("sentenceStudyBackBtn")?.addEventListener("click",()=>{renderSentenceHub();showView("sentenceView");});
-$("sentenceQuizBackBtn")?.addEventListener("click",()=>{renderSentenceHub();showView("sentenceView");});
-$("dialogueBackBtn")?.addEventListener("click",()=>{renderSentenceHub();showView("sentenceView");});
-$("sentenceTopicSearch")?.addEventListener("input",e=>renderSentenceTopics(e.target.value));
-$("sentenceAllTopicsBtn")?.addEventListener("click",()=>{sentenceSelectedTopicId="__all__";renderSentenceHub();});
-document.querySelectorAll("#sentenceModeChoices .sentence-mode-card").forEach(btn=>btn.onclick=()=>{sentenceMode=btn.dataset.sentenceMode;renderSentenceHub();});
-document.querySelectorAll("#sentenceSizeChoices .choice").forEach(btn=>btn.onclick=()=>{sentenceProgress.sentenceSize=Number(btn.dataset.sentenceSize);saveSentenceProgress();renderSentenceHub();});
-$("sentenceStartBtn")?.addEventListener("click",beginSentenceMode);
-$("sentenceRevealBtn")?.addEventListener("click",()=>{$("sentenceMeaningBox").classList.remove("hidden");$("sentenceRevealBtn").classList.add("hidden");});
-$("sentenceStudyAudioBtn")?.addEventListener("click",()=>{const item=sentenceSession[sentenceIndex];if(item)ttsSpeak(item.en);});
-$("sentenceUnderstandBtn")?.addEventListener("click",()=>answerSentenceStudy(true));
-$("sentenceNotYetBtn")?.addEventListener("click",()=>answerSentenceStudy(false));
-$("sentenceListenPromptBtn")?.addEventListener("click",()=>{const item=sentenceSession[sentenceIndex];if(item)ttsSpeak(item.en);});
-$("sentenceQuizNextBtn")?.addEventListener("click",nextSentenceQuiz);
-$("dialogueTranslationBtn")?.addEventListener("click",toggleDialogueTranslation);
-$("dialogueNextBtn")?.addEventListener("click",nextDialogue);
-$("sentenceResultCloseBtn")?.addEventListener("click",()=>{renderSentenceHub();showView("sentenceView");});
-$("sentenceResultContinueBtn")?.addEventListener("click",beginSentenceMode);
-$("sentenceResultTopicsBtn")?.addEventListener("click",()=>{renderSentenceHub();showView("sentenceView");});
-$("sentenceResultHomeBtn")?.addEventListener("click",()=>{renderHome();showView("homeView");});
 $("nextBtn").onclick=nextQuestion;
 $("backBtn").onclick=()=>{renderHome();showView("homeView");};
 $("homeBtn").onclick=()=>{renderHome();showView("homeView");};
