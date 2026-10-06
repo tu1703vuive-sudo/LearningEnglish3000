@@ -1,4 +1,4 @@
-export const APP_VERSION = '3.3.0';
+export const APP_VERSION = '3.3.1';
 export const STATE_SCHEMA_VERSION = 4;
 export const STORAGE_KEY = 'english3000State';
 export const STAGE_SIZE = 100;

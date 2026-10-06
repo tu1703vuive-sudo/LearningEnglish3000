@@ -1,9 +1,9 @@
 {
-  "name": "English 3000 V3.3",
+  "name": "English 3000 V3.3.1",
   "short_name": "English3000",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#0f172a",
-  "description": "English 3000 V3.3 - Sentence Learning, Dialogue Practice, Topic Learning, Adaptive Quiz and offline SRS."
+  "description": "English 3000 V3.3.1 - Sentence Learning, Dialogue Practice, Topic Learning, Adaptive Quiz and offline SRS."
 }

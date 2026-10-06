@@ -230,6 +230,42 @@ function renderHomeTopicEntry() {
     ? `${stats.known}/${stats.total} thuộc · ${stats.fresh} chưa học${stats.due ? ` · ${stats.due} cần ôn` : ""}`
     : "Chủ đề này chưa có từ được mapping tin cậy";
 }
+
+function renderHomeTopicQuickGrid() {
+  const grid = $("homeTopicQuickGrid");
+  if (!grid) return;
+  grid.innerHTML = "";
+  const usable = topics.filter(t=>getTopicPool(t).length>0);
+  const selected = selectedTopic();
+  const ordered = [
+    ...(selected ? usable.filter(t=>t.id===selected.id) : []),
+    ...usable.filter(t=>!selected || t.id!==selected.id)
+  ];
+  const preview = ordered.slice(0,8);
+  for (const topic of preview) {
+    const stats = getTopicStats(topic);
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "home-topic-chip" + (state.selectedTopicId===topic.id ? " active" : "");
+    b.innerHTML = `
+      <span class="home-topic-chip-name">${topicLabel(topic)}</span>
+      <span class="home-topic-chip-meta">${stats.total} từ · ${stats.pct}%</span>
+      <span class="home-topic-chip-bar"><i style="width:${stats.pct}%"></i></span>`;
+    b.onclick = () => {
+      state.browseMode = "topic";
+      state.selectedTopicId = topic.id;
+      saveState();
+      renderHome();
+      showView("topicView");
+    };
+    grid.appendChild(b);
+  }
+  if (!preview.length) {
+    grid.innerHTML = '<p class="muted small">Chưa có chủ đề khả dụng.</p>';
+  }
+  const more = $("openAllTopicsBtn");
+  if (more) more.textContent = `Xem tất cả ${usable.length} chủ đề`;
+}
 // ===== V3.3 Sentence Learning =====
 function loadSentenceProgress() {
   try { return sanitizeSentenceProgress(JSON.parse(localStorage.getItem(SENTENCE_STORAGE_KEY) || 'null')); }
@@ -516,6 +552,7 @@ function renderHome() {
   renderStartRecommendation();
   updateSettingsSummary();
   renderHomeTopicEntry();
+  renderHomeTopicQuickGrid();
   renderSentenceHomeEntry();
   renderTopicLearning($("topicLearningSearch")?.value || "");
   saveState();
@@ -1008,6 +1045,12 @@ $("newWordsBtn").onclick=startNewWordsSession;
 $("startDueBtn").onclick=startDueReview;
 $("reviewWrongBtn").onclick=startWrongReview;
 $("openTopicLearningBtn")?.addEventListener("click",()=>{
+  state.browseMode="topic";
+  saveState();
+  renderHome();
+  showView("topicView");
+});
+$("openAllTopicsBtn")?.addEventListener("click",()=>{
   state.browseMode="topic";
   saveState();
   renderHome();

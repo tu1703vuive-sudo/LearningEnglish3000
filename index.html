@@ -4,16 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="theme-color" content="#0f172a" />
-  <meta name="description" content="English 3000 V3.3 - Sentence Learning, Dialogue Practice, Topic Learning, Adaptive Quiz, IPA và SRS" />
+  <meta name="description" content="English 3000 V3.3.1 - Sentence Learning, Dialogue Practice, Topic Learning, Adaptive Quiz, IPA và SRS" />
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
-  <title>English 3000 V3.3</title>
+  <title>English 3000 V3.3.1</title>
 </head>
 <body>
   <div class="app">
     <header class="topbar">
       <div>
-        <p class="eyebrow">ENGLISH 3000 · V3.3</p>
+        <p class="eyebrow">ENGLISH 3000 · V3.3.1</p>
         <h1>3000 từ vựng nền tảng</h1>
         <p class="muted">Sentence Learning • Dialogue • Topic Learning • Adaptive Quiz</p>
       </div>
@@ -78,16 +78,20 @@
             </div>
           </div>
 
-          <article class="topic-learning-entry card">
-            <button id="openTopicLearningBtn" class="topic-learning-entry-btn" type="button">
-              <span class="topic-learning-entry-icon">🧩</span>
-              <span class="topic-learning-entry-copy">
-                <strong>Học theo chủ đề</strong>
-                <small id="homeTopicName">Chọn Food, Work, Travel, Health...</small>
-                <span id="homeTopicMeta" class="topic-learning-entry-meta">Đang tải tiến độ…</span>
-              </span>
-              <span class="topic-learning-entry-arrow">›</span>
-            </button>
+          <article class="home-topic-card card">
+            <div class="home-topic-head">
+              <div class="home-topic-title-wrap">
+                <span class="topic-learning-entry-icon">🧩</span>
+                <div>
+                  <strong>Học theo chủ đề</strong>
+                  <small id="homeTopicName" class="muted">Chọn Food, Work, Travel, Health...</small>
+                  <span id="homeTopicMeta" class="topic-learning-entry-meta">Đang tải tiến độ…</span>
+                </div>
+              </div>
+              <button id="openTopicLearningBtn" class="text-btn home-topic-all-btn" type="button">Tất cả ›</button>
+            </div>
+            <div id="homeTopicQuickGrid" class="home-topic-quick-grid" aria-label="Chọn chủ đề để học"></div>
+            <button id="openAllTopicsBtn" class="secondary home-topic-more-btn" type="button">Xem tất cả chủ đề</button>
           </article>
 
           <article class="sentence-learning-entry card">
@@ -274,7 +278,7 @@
         <div class="topic-view-top">
           <button id="sentenceBackBtn" class="icon-btn" aria-label="Quay lại trang chủ">←</button>
           <div>
-            <p class="eyebrow mini-eyebrow">SENTENCE LEARNING · V3.3</p>
+            <p class="eyebrow mini-eyebrow">SENTENCE LEARNING · V3.3.1</p>
             <h2>Hiểu câu người ta đang nói</h2>
             <p class="muted small">200 câu thực tế đã audit. Học theo hướng nhìn/nghe câu → hiểu ý, không dịch từng từ.</p>
           </div>
@@ -522,7 +526,7 @@
     </main>
 
     <footer>
-      <p>V3.3 · Sentence Learning + Mini Dialogue · Topic Learning · Adaptive Quiz · offline-first.</p>
+      <p>V3.3.1 · Sentence Learning + Mini Dialogue · Topic Learning · Adaptive Quiz · offline-first.</p>
     </footer>
   </div>
 

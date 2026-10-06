@@ -411,3 +411,22 @@ body.result-mode .app{padding-top:max(12px,env(safe-area-inset-top));padding-bot
 .dialogue-question-box strong{font-size:1rem;line-height:1.4}
 @media(min-width:560px){.sentence-topic-grid{grid-template-columns:repeat(2,1fr)}.sentence-mode-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:420px){.sentence-mini-stats{grid-template-columns:repeat(2,1fr)}.sentence-self-actions{grid-template-columns:1fr}.sentence-card,.dialogue-card{padding:15px}.sentence-session-top{grid-template-columns:40px 1fr auto;gap:8px}}
+
+
+/* ===== V3.3.1 Visible Topic Learning ===== */
+.home-topic-card{margin-top:10px;padding:15px 15px 14px}
+.home-topic-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.home-topic-title-wrap{display:flex;align-items:center;gap:11px;min-width:0}
+.home-topic-title-wrap>div{min-width:0}
+.home-topic-title-wrap strong{display:block;font-size:1.02rem}
+.home-topic-title-wrap small{display:block;font-size:.76rem;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home-topic-all-btn{flex:0 0 auto;border:0;background:transparent;color:var(--primary);font-weight:850;cursor:pointer;padding:8px 4px}
+.home-topic-quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.home-topic-chip{border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:14px;padding:11px 10px;text-align:left;cursor:pointer;min-width:0}
+.home-topic-chip.active{border-color:var(--primary);box-shadow:0 0 0 2px rgba(37,99,235,.09)}
+.home-topic-chip-name{display:block;font-size:.82rem;font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.home-topic-chip-meta{display:block;color:var(--muted);font-size:.66rem;margin-top:4px}
+.home-topic-chip-bar{display:block;height:4px;background:var(--line);border-radius:999px;overflow:hidden;margin-top:7px}
+.home-topic-chip-bar i{display:block;height:100%;background:var(--primary);border-radius:999px}
+.home-topic-more-btn{width:100%;margin-top:10px;min-height:42px}
+@media(min-width:680px){.home-topic-quick-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}

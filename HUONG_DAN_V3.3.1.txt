@@ -1,0 +1,16 @@
+V3.3.1 - SỬA HỌC THEO CHỦ ĐỀ BỊ ẨN
+
+Ghi đè các file:
+- index.html
+- app.js
+- style.css
+- sw.js
+- manifest.json
+- package.json
+- src/config.js
+
+Thêm file CHANGELOG_V3.3.1.md nếu muốn.
+
+Không cần thay data/content hoặc các module khác nếu bạn đã cài V3.3.
+Sau khi GitHub Pages deploy xong: Ctrl + Shift + R / Ctrl + F5.
+Nếu vẫn thấy V3.3, đóng tab rồi mở lại sau khi deploy hoàn tất.

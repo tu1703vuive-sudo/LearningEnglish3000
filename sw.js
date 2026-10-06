@@ -1,4 +1,4 @@
-const VERSION='v3.3.0';
+const VERSION='v3.3.1';
 const SHELL=`english3000-shell-${VERSION}`;
 const DATA=`english3000-data-${VERSION}`;
 const API='english3000-api-v1';
