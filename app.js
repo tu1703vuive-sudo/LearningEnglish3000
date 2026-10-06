@@ -1,4 +1,4 @@
-import { APP_VERSION, STAGE_SIZE, SENTENCE_DATA_URL, DIALOGUE_DATA_URL } from './src/config.js';
+import { APP_VERSION, STAGE_SIZE, TOPIC_MAP_URL, SENTENCE_DATA_URL, DIALOGUE_DATA_URL } from './src/config.js';
 import { keyOf, fisherYates, localDateString } from './src/utils.js';
 import { loadState, saveState as persistState, ensureTodayStats, applyLearningAnswer } from './src/state.js';
 import { masteredKeys, dueKeys as getDueKeys } from './src/srs.js';
@@ -14,6 +14,7 @@ import {
 } from './src/quiz-engine.js';
 import { fetchOnlineAudioData as fetchAudioData, ttsSpeak, playUrl } from './src/audio.js';
 import { $, showView } from './src/ui.js';
+import { hydrateTopicsWithWordMap } from './src/topic-mapping.js';
 import {
   SENTENCE_STORAGE_KEY, normalizeSentencePack, normalizeDialoguePack, sentenceTopics,
   emptySentenceProgress, sanitizeSentenceProgress, recordSentenceResult, markSentenceUnderstood, recordDialogueResult,
@@ -88,12 +89,25 @@ async function getLexicalData(word) {
 }
 function findItem(k) { return vocabByKey.get(keyOf(k)) || null; }
 function topicLabel(topic) { return topic.nameVi || topic.name || `Chủ đề ${topic.id}`; }
+async function loadTopicWordMap() {
+  try {
+    const res = await fetch(TOPIC_MAP_URL, { cache: 'no-cache' });
+    if (!res.ok) throw new Error(`Topic map HTTP ${res.status}`);
+    return await res.json();
+  } catch (error) {
+    console.warn('Topic mapping fallback unavailable; keeping embedded topic words.', error);
+    return [];
+  }
+}
 async function loadOfflinePack() {
   try {
     const checked = await loadVocabPack();
-    offlinePack = { meta: checked.meta, words: checked.words, topics: checked.topics };
     vocab = checked.words.map(item => ({ ...item, level:'unknown' }));
-    topics = checked.topics;
+    const topicMap = await loadTopicWordMap();
+    const hydrated = hydrateTopicsWithWordMap(checked.topics, vocab, topicMap);
+    topics = hydrated.topics;
+    offlinePack = { meta: { ...checked.meta, topicMap: hydrated.report }, words: checked.words, topics };
+    if (hydrated.report.sourceRows) console.info('Topic mapping:', hydrated.report);
     const indexes = buildIndexes(vocab);
     vocabByKey = indexes.byKey;
     offlineByWord = new Map(vocab.map(item => [keyOf(item.word), item]));

@@ -1,0 +1,6328 @@
+{
+  "meta": {
+    "version": "topic-map-v1",
+    "source": "3000-tu-vung-tieng-anh-thong-dung-oxford-theo-chu-de.pdf",
+    "topicCount": 60,
+    "rowCount": 1579,
+    "uniqueWordCount": 1447,
+    "note": "Topic mapping source extracted from the user-provided topic vocabulary PDF. Rows may intentionally repeat a word across multiple topics."
+  },
+  "rows": [
+    {
+      "word": "Watercolour",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Thumbtack",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Textbook",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Test Tube",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Tape measure",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Stencil",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Stapler",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Set Square",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Scissors",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Ruler",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Ribbon",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Protractor",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Post-it note",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Pin",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Pencil",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Pencil Sharpener",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Pencil Case",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Pen",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Paper",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Paper Clip",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Palette",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Paint",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Paintbrush",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Notebook",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Map",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Index card",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Highlighter",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Glue",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Globe",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Flash card",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "File Holder",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "File cabinet",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Felt pen",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Rubber",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Duster",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Dossier",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Dictionary",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Desk",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Crayon",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Computer",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Compass",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Coloured Pencil",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Clock",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Chalk",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Chair",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Carbon paper",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Calculator",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Bookcase",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Book",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Board",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Blackboard",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Beaker",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Ballpoint pen",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Bag",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Backpack",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Funnel",
+      "topic": "đồ dùng học tập"
+    },
+    {
+      "word": "Pack",
+      "topic": "hành động"
+    },
+    {
+      "word": "Paint",
+      "topic": "hành động"
+    },
+    {
+      "word": "Paste",
+      "topic": "hành động"
+    },
+    {
+      "word": "Pick",
+      "topic": "hành động"
+    },
+    {
+      "word": "Plant",
+      "topic": "hành động"
+    },
+    {
+      "word": "Play",
+      "topic": "hành động"
+    },
+    {
+      "word": "Point",
+      "topic": "hành động"
+    },
+    {
+      "word": "Pour",
+      "topic": "hành động"
+    },
+    {
+      "word": "Pull",
+      "topic": "hành động"
+    },
+    {
+      "word": "Push",
+      "topic": "hành động"
+    },
+    {
+      "word": "Rake",
+      "topic": "hành động"
+    },
+    {
+      "word": "Read",
+      "topic": "hành động"
+    },
+    {
+      "word": "Ride",
+      "topic": "hành động"
+    },
+    {
+      "word": "Row",
+      "topic": "hành động"
+    },
+    {
+      "word": "Run",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sail",
+      "topic": "hành động"
+    },
+    {
+      "word": "Scrub",
+      "topic": "hành động"
+    },
+    {
+      "word": "See",
+      "topic": "hành động"
+    },
+    {
+      "word": "Set",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sew",
+      "topic": "hành động"
+    },
+    {
+      "word": "Shout",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sing",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sit",
+      "topic": "hành động"
+    },
+    {
+      "word": "Skate",
+      "topic": "hành động"
+    },
+    {
+      "word": "Skip",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sleep",
+      "topic": "hành động"
+    },
+    {
+      "word": "Slide",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sneeze",
+      "topic": "hành động"
+    },
+    {
+      "word": "Spin",
+      "topic": "hành động"
+    },
+    {
+      "word": "Stand",
+      "topic": "hành động"
+    },
+    {
+      "word": "Stop",
+      "topic": "hành động"
+    },
+    {
+      "word": "Sweep",
+      "topic": "hành động"
+    },
+    {
+      "word": "Swim",
+      "topic": "hành động"
+    },
+    {
+      "word": "Swing",
+      "topic": "hành động"
+    },
+    {
+      "word": "Take",
+      "topic": "hành động"
+    },
+    {
+      "word": "Talk",
+      "topic": "hành động"
+    },
+    {
+      "word": "Tell",
+      "topic": "hành động"
+    },
+    {
+      "word": "Throw",
+      "topic": "hành động"
+    },
+    {
+      "word": "Tie",
+      "topic": "hành động"
+    },
+    {
+      "word": "Brush your teeth",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Buy",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Comb the hair",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Cook",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Do exercise",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Do your homework",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Eat out",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Feed the dog",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Finish working",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Gardening",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Get dressed",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Get up",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Go home",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Go shopping",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Go to bed",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Go to the movies",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Have a bath",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Have a nap",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Have breakfast",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Have dinner",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Have lunch",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Have a shower",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Listen to music",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Make breakfast",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Make up",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Meditation",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Play outside",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Play sports",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Read books",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Read newspapers",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Relax",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Shave",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Sleep",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Surf the internet",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "v.",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Drink",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Turn off phrasal",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Visit your friend",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Wake up phrasal",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Wash your face",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Wash the dishes",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Watch television",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Work",
+      "topic": "hoạt động thường ngày"
+    },
+    {
+      "word": "Sea",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Ocean",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Wave",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Island",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Harbor",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Lighthouse",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Submarine",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Ship",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Boat",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Captain",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Fisherman",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Lifeguard",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Seashore",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Beach",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Coast",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Seagull",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Whale",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Shark",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Dolphin",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Octopus",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Fish",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Jellyfish",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Sea horse",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Seaweed",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Coral",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Coral reef",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Shellfish",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Clam",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Starfish",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Seal",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Turtle",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Crab",
+      "topic": "chủ đề biển"
+    },
+    {
+      "word": "Decimal",
+      "topic": "số"
+    },
+    {
+      "word": "Fraction",
+      "topic": "số"
+    },
+    {
+      "word": "Percentage",
+      "topic": "số"
+    },
+    {
+      "word": "Divide",
+      "topic": "số"
+    },
+    {
+      "word": "Multiply",
+      "topic": "số"
+    },
+    {
+      "word": "Total",
+      "topic": "số"
+    },
+    {
+      "word": "Dozen",
+      "topic": "số"
+    },
+    {
+      "word": "Around",
+      "topic": "số"
+    },
+    {
+      "word": "Zero",
+      "topic": "số"
+    },
+    {
+      "word": "Hundred",
+      "topic": "số"
+    },
+    {
+      "word": "Thousand",
+      "topic": "số"
+    },
+    {
+      "word": "Million",
+      "topic": "số"
+    },
+    {
+      "word": "Billion",
+      "topic": "số"
+    },
+    {
+      "word": "Half",
+      "topic": "số"
+    },
+    {
+      "word": "Customer",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Cashier",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Attendant",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Manager",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Wallet",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Purse",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Scale",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Counter",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Barcode reader",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Receipt",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Pay",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Expensive",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Cheap",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Discount",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Sell",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Price",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Trolley",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Credit card",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Cash",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Shop",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Money",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Basket",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Bag",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Buy",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Housewares",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Toy store",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Shopping mall",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Grocery store",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Bargain",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Brochure",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Liquor store",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Drugstore",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Candy store",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Pet shop",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Shoe shop",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Meat shop",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Florist",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Butcher",
+      "topic": "mua sắm"
+    },
+    {
+      "word": "Lamp",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Pillowcase",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Curtain",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Bed",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Mirror",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Cushion",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Wardrobe",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Fitted carpet",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Dressing table",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Wallpaper",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Pillow",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Carpet",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Blind",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Mattress",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Bedspread",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Blanket",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Jewelry",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Alarm clock",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Air conditioner",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Comforter",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Hanger",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Comb",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Light switch",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Chest of drawers",
+      "topic": "phòng ngủ"
+    },
+    {
+      "word": "Classmate",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Schoolmate",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Roommate",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Soulmate",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Colleague",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Partner",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Buddy",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Ally",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Companion",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Pal",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Friendship",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Close",
+      "topic": "tình bạn"
+    },
+    {
+      "word": "Dishwasher",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Dish drainer",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Steamer",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Colander",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Lid",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Blender",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Pot",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Toaster",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Dishtowel",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Refrigerator",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Freezer",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Cabinet",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Microwave",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Bowl",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Cutting board",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Stove",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Coffee maker",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Oven",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Oven cleaner",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Jar",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Sink",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Sponge",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Chopstick",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Pan",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Cooker",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Mug",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Kettle",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Glass",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Teapot",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Grill",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Tray",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Whisk",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Knife",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Spoon",
+      "topic": "nhà bếp"
+    },
+    {
+      "word": "Earring",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Necklace",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Bracelet",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Brooch",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Hair clip",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Wedding ring",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Jeweler",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Jewelry store",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Anklet",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Noble",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Luxurious",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Modern",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Suitable",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Twinkle",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Bead",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Hair tie",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Pocket watch",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Tiepin",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Precious stone",
+      "topic": "đồ trang sức"
+    },
+    {
+      "word": "Land",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Pollute",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Decompose",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Balance",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Climate change",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Global warming",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Oil slick",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Ozone layer",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Ecology",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Water",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Air",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Forest",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Flora",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Creature",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Insect",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Reproduction",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Wildlife",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Sewage",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Fauna",
+      "topic": "môi trường"
+    },
+    {
+      "word": "Drapes",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Cushion",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Sofa",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Rug",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Banister",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Bookcase",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Ceiling",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Clock",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Desk",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Frame",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Lampshade",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Mantelpiece",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Painting",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Speaker",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Step",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Stereo",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Television",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Vase",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Wall unit",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Lamp",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Calendar",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Fan",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Chair",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Stool",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Ashtray",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Bookshelf",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Fuse",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Switch",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Couch",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Curtain",
+      "topic": "phòng khách"
+    },
+    {
+      "word": "Emergency room",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Obstetrician",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Operating room",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Needle",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Laboratory",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Pharmacy",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Hospital bed",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Call button",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Doctor",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Nurse",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Gurney",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Waiting room",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Surgeon",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Midwife",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Injection",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Calcium",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Hospital",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Crutch",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Paramedic",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Stretcher",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Treat",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Condition",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Recovery",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Suffer",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Deteriorate",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Coma",
+      "topic": "bệnh viện"
+    },
+    {
+      "word": "Monitor",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Mouse pad",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Printer",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Scanner",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Open",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Close",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Delete",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Insert",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Merge",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Helpline",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Hard disk",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Software",
+      "topic": "máy tính"
+    },
+    {
+      "word": "CD-ROM",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Toolbar",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Database",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Hacker",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Save",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Select",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Copy",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Computer",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Laptop",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Speaker",
+      "topic": "máy tính"
+    },
+    {
+      "word": "File",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Disk drive",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Battery",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Click",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Type",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Mouse",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Keyboard",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Mouse mat",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Key",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Shut down phrasal",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Folder",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Print",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Program",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Screen",
+      "topic": "máy tính"
+    },
+    {
+      "word": "Dusting",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Cooking",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Ironing",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Sweep",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Wipe",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Throw out phrasal",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Vacuum",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Cleaning",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Polish",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Fold",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Scrub",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Tighten",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Make the bed",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Set the table",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Clear the table",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Mow the lawn",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Dishwashing",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Water the plants",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Clean the kitchen",
+      "topic": "công việc nhà"
+    },
+    {
+      "word": "Bakery",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Bookshop",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Butcher's",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Candy store",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Flower shop",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Store",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Shop",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Food stall",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Dry-cleaner's",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Shoe store",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Barbershop",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Bookstall",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Sports center",
+      "topic": "cửa hàng"
+    },
+    {
+      "word": "Play",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Circus",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Stadium",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Orchestra",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Scene",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Opera",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Theater",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Applaud",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Exhibit",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Art gallery",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Comedy",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Chamber music",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Casino",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Pub",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Concert hall",
+      "topic": "giải trí"
+    },
+    {
+      "word": "Travel",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Travel agent",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Vacation",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Flight",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Voyage",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Relax",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Cancel",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Souvenir",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Travel sickness",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Journey",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Peak season",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Route",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Excursion",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Luggage",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Tourist",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Ticket",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Eager",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Sunglasses",
+      "topic": "du lịch"
+    },
+    {
+      "word": "Moon",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Cake",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Toy",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Mask",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Banyan",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Lantern",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Bamboo",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Celebrate",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Rabbit",
+      "topic": "Tết trung thu"
+    },
+    {
+      "word": "Sport",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Skiing",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Ice skating",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Horse racing",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Running",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Walking",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Water sports",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Boxing",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Swimming",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Football",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Basketball",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Badminton",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Tennis",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Table tennis",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Baseball",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Cycling",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Golf",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Contact sport",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Water polo",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Archery",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Weightlifting",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Wrestling",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Bowling",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Lacrosse",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Hockey",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Referee",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Dart",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Host",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Wushu",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Sportsmanship",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Captain",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Cross-country",
+      "topic": "thể thao"
+    },
+    {
+      "word": "Village",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Countryside",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Cottage",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Winding",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Well",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Buffalo",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Field",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Canal",
+      "topic": "quê hương"
+    },
+    {
+      "word": "River",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Pond",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Folk music",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Farm",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Plow",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Agriculture",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Boat",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Peaceful",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Bay",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Hill",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Forest",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Mountain",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Port",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Lake",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Sea",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Sand",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Valley",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Waterfall",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Barn",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Harvest",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Cattle",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Rural",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Cliff",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Landscape",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Terraced house",
+      "topic": "quê hương"
+    },
+    {
+      "word": "Bride",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Vow",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Groomsman",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Groom",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Tuxedo",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Party",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Wedding",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Wedding card",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Reception",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Champagne",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Bouquet",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Married",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Newlywed",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Cake",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Ring",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Emblem",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Band",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Congratulation",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Jewelry",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Wine",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Dowry",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Honeymoon",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Anniversary",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Husband",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Wife",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Ceremony",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Betroth",
+      "topic": "đám cưới"
+    },
+    {
+      "word": "Switch off phrasal",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Lavatory",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Blanket",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Oxygen mask",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Serve",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Window seat",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Airsick",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Cockpit",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Fasten",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Take off",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Co-pilot",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Assist",
+      "topic": "sân bay"
+    },
+    {
+      "word": "First-class",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Confiscate",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Turn on phrasal",
+      "topic": "sân bay"
+    },
+    {
+      "word": "Fever",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Cough",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Hurt",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Swollen",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Pus",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Graze",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Headache",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Insomnia",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Rash",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Black eye",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Bruise",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Constipation",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Diarrhea",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Sore eyes",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Runny nose",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Sniffle",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Sneeze",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Bad breath",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Earache",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Nausea",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Eating disorder",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Asthma",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Backache",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Chill",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Fever virus",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Allergy",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Paralyse",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Infected",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Inflamed",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Gout",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Hepatitis",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Lump",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Insect bite",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Stomachache",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Toothache",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "High blood pressure",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Sore throat",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Sprain",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Burn",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Malaria",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Scabies",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Smallpox",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Heart attack",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Tuberculosis",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Diabetes",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Cancer",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Pneumonia",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Chicken pox",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Depression",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Low blood pressure",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Hypertension",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Measles",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Migraine",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Mumps",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Rheumatism",
+      "topic": "sức khỏe"
+    },
+    {
+      "word": "Tomato",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Spinach",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Water Spinach",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Thai Basil",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Eggplant",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Beet",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Pepper",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Cauliflower",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Cilantro",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Marrow",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Fish Mint",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Rice Paddy",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Batata",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Asparagus",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Mustard Leaves",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Pumpkin buds",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Pumpkin",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Corn",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Pepper-elder",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Onion",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Cress",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Celery",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Potato",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Carrot",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Artichoke",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Beetroot",
+      "topic": "rau, củ, quả"
+    },
+    {
+      "word": "Second",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Minute",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Hour",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Week",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Decade",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Century",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Weekend",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Month",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Year",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Millennium",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Morning",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Afternoon",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Evening",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Midnight",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Dusk",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Dawn",
+      "topic": "thời gian"
+    },
+    {
+      "word": "Road",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Traffic",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Vehicle",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Roadside",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Car hire",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Ring road",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Petrol station",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Kerb",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Turning",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Fork",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Toll road",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Motorway",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Dual carriageway",
+      "topic": "giao thông"
+    },
+    {
+      "word": "One-way street",
+      "topic": "giao thông"
+    },
+    {
+      "word": "T-junction",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Roundabout",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Accident",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Parking-meter",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Car park",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Parking space",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Parking ticket",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Driving licence",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Reverse gear",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Learner driver",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Passenger",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Stall",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Tyre pressure",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Traffic light",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Speed limit",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Speeding fine",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Level crossing",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Jump leads",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Oil",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Diesel",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Petrol",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Unleaded",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Petrol pump",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Driver",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Drive",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Change gear",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Jack",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Flat tyre",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Puncture",
+      "topic": "giao thông"
+    },
+    {
+      "word": "Angry",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Sleepy",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Grateful",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Scared",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Embarrassed",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Confused",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Sad",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Hungry",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Full",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Happy",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Jealous",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Thirsty",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Tense",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Tired",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Bored",
+      "topic": "cảm xúc, cảm giác"
+    },
+    {
+      "word": "Reliable",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Rude",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Selfish",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Sensitive",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Stubborn",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Patient",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Humorous",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Sincere",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Generous",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Honest",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Kind",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Loyal",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Modest",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Nasty",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Shy",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Sociable",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Reserved",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Confident",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Pleasant",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Clever",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Thoughtful",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Proud",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Lazy",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Crazy",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Silly",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Bossy",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Gossip",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Extrovert",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Coward",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Big-head",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Snob",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Liar",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Ambitious",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Introvert",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Stingy",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Arrogant",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Vain",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Hostile",
+      "topic": "tính cách"
+    },
+    {
+      "word": "Juice",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Lemonade",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Beer",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Soda",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Cider",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Rum",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Ginger ale",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Champagne",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Bitter",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Malt",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Barley",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Distillery",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Coffee",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Milk",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Tea",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Red wine",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Non-alcoholic",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Full-cream",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Herbal",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Mineral water",
+      "topic": "đồ uống"
+    },
+    {
+      "word": "Lotus",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Lily",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Poppy",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Bougainvillea",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Gerbera flower",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Tuberose",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Dahlia",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Jasmine",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Sunflower",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Marigold",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Orchid",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Rose",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Carnation",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Cherry blossom",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Poinsettia",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Flamboyant",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Hibiscus",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Peach blossom",
+      "topic": "các loài hoa"
+    },
+    {
+      "word": "Movie",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Famous",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Comedy",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Audience",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Film Festival",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Movie star",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Soundtrack",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Cartoon",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Drama",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Action film",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Celebrity",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Script",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Theater",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Actor",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Actress",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Director",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Romantic",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Silent film",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Movie ticket",
+      "topic": "phim ảnh"
+    },
+    {
+      "word": "Stadium",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Stand",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Pitch",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Touchline",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Penalty area",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Goal",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Penalty",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Corner kick",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Free kick",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Kick off phrasal",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Offside",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Bet",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "The bench",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Foul",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Shoot",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Goalkeeper",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Defender",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Centre back",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Midfielder",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Winger",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Referee",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Commentator",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Supporter",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Linesman",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Red card",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Yellow card",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Coach",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Reserve team",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Caution",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Stimulant",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Strategy",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Striker",
+      "topic": "bóng đá"
+    },
+    {
+      "word": "Winter",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Candle",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Snow",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Sack",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Card",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Fireplace",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Chimney",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Gift",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Christmas",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Ornament",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Pine tree",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Sled",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Bell",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Snowflake",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Wreath",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Scarf",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Christmas card",
+      "topic": "Giáng sinh"
+    },
+    {
+      "word": "Beef",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Pork",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Yoghurt",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Pie",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Bread",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Cake",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Chip",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Biscuit",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Noodle",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Butter",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Olive",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Soy",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Flour",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Lunch",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Mint",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Vanilla",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Candy",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Popcorn",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Snack",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Fast food",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Junk food",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Health food",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Flavor",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Stale",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Sour",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Burnt",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Overdone",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Underdone",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Full",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Veal",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Cereal",
+      "topic": "đồ ăn"
+    },
+    {
+      "word": "Music",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Play",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Note",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Drum",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Playlist",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Musician",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Rhythm",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Dance",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Listen",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Volume",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Song",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Sing",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Piano",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Guitar",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Instrument",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Harmony",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Melody",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "String",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "The brass",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Symphony",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Overture",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Conductor",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Composer",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Solo",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Lead singer",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Guitarist",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Drummer",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Lyrics",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Chorus",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Opera",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Folk music",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Album",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Tune",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Violin",
+      "topic": "âm nhạc"
+    },
+    {
+      "word": "Date",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Engagement",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Ring",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Romantic",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Sweet",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Alone",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Couple",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Forever",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Boyfriend",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Girlfriend",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Kiss",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Heart",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Hug",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Propose",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Chocolate",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Wedding",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Anniversary",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Darling",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Single",
+      "topic": "tình yêu"
+    },
+    {
+      "word": "Restaurant",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Main course",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Napkin",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Wine",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Cutlery",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Drink",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Combo",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Side dish",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Meal",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Order",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Speciality",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Dessert",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Salad",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Menu",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Guest",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Coupon",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Animated",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Hotel",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Hall",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Vacancy",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Lobby",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Check-in",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Desk clerk",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Double bed",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Single bed",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Doorman",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Reception",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Elevator",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Reservation",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Bellboy",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Check out phrasal",
+      "topic": "nhà hàng, khách sạn"
+    },
+    {
+      "word": "Nursery school",
+      "topic": "trường học"
+    },
+    {
+      "word": "Teacher",
+      "topic": "trường học"
+    },
+    {
+      "word": "Classmate",
+      "topic": "trường học"
+    },
+    {
+      "word": "Library",
+      "topic": "trường học"
+    },
+    {
+      "word": "Pen",
+      "topic": "trường học"
+    },
+    {
+      "word": "Pencil",
+      "topic": "trường học"
+    },
+    {
+      "word": "Ruler",
+      "topic": "trường học"
+    },
+    {
+      "word": "Calculator",
+      "topic": "trường học"
+    },
+    {
+      "word": "Chalk",
+      "topic": "trường học"
+    },
+    {
+      "word": "Student",
+      "topic": "trường học"
+    },
+    {
+      "word": "Classroom",
+      "topic": "trường học"
+    },
+    {
+      "word": "Primary school",
+      "topic": "trường học"
+    },
+    {
+      "word": "University",
+      "topic": "trường học"
+    },
+    {
+      "word": "Principal",
+      "topic": "trường học"
+    },
+    {
+      "word": "Blackboard",
+      "topic": "trường học"
+    },
+    {
+      "word": "Compass",
+      "topic": "trường học"
+    },
+    {
+      "word": "History",
+      "topic": "trường học"
+    },
+    {
+      "word": "Economics",
+      "topic": "trường học"
+    },
+    {
+      "word": "Chemistry",
+      "topic": "trường học"
+    },
+    {
+      "word": "Biology",
+      "topic": "trường học"
+    },
+    {
+      "word": "Geography",
+      "topic": "trường học"
+    },
+    {
+      "word": "Art",
+      "topic": "trường học"
+    },
+    {
+      "word": "Fail",
+      "topic": "trường học"
+    },
+    {
+      "word": "Pass",
+      "topic": "trường học"
+    },
+    {
+      "word": "Graduate",
+      "topic": "trường học"
+    },
+    {
+      "word": "Degree",
+      "topic": "trường học"
+    },
+    {
+      "word": "Playground",
+      "topic": "trường học"
+    },
+    {
+      "word": "Uniform",
+      "topic": "trường học"
+    },
+    {
+      "word": "Grade",
+      "topic": "trường học"
+    },
+    {
+      "word": "Proctor",
+      "topic": "trường học"
+    },
+    {
+      "word": "School bag",
+      "topic": "trường học"
+    },
+    {
+      "word": "Dean",
+      "topic": "trường học"
+    },
+    {
+      "word": "Lesson",
+      "topic": "trường học"
+    },
+    {
+      "word": "Course",
+      "topic": "trường học"
+    },
+    {
+      "word": "Navy blue",
+      "topic": "màu sắc"
+    },
+    {
+      "word": "Bright red",
+      "topic": "màu sắc"
+    },
+    {
+      "word": "Vivid",
+      "topic": "màu sắc"
+    },
+    {
+      "word": "Weather",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Warm",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Wind",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Rain",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Temperature",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Sunny",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Sunshine",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Icy",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Atmosphere",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Dry",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Sun",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Cloud",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Fog",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Snow",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Cold",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Cool",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Hot",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Wet",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Erratic",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Thunder",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Hailstone",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Blustery",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Downpour",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Raincoat",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Blizzard",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Rainbow",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Dew",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Sleet",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Stormy",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Snowflake",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Puddle",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Lightning",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Mild",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Dull",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Shelter",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Celsius",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Fine",
+      "topic": "thời tiết"
+    },
+    {
+      "word": "Skirt",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Leggings",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Overalls",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Turtleneck",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Bow tie",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Tie",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Tunic",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Vest",
+      "topic": "quần áo"
+    },
+    {
+      "word": "T-shirt",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Shirt",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Jeans",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Dress",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Coat",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Jacket",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Sweater",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Jumpsuit",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Shorts",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Suit",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Hat",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Cap",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Glove",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Scarf",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Sandals",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Slippers",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Pocket",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Sleeve",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Collar",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Zip",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Blouse",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Button",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Underwear",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Bra",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Pants",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Belt",
+      "topic": "quần áo"
+    },
+    {
+      "word": "High heels",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Try on phrasal",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Size",
+      "topic": "quần áo"
+    },
+    {
+      "word": "Head",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Face",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Hair",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Ear",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Neck",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Forehead",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Beard",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Eye",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Nose",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Mouth",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Chin",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Shoulder",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Elbow",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Arm",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Chest",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Armpit",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Wrist",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Navel",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Ankle",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Waist",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Abdomen",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Leg",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Thigh",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Knee",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Hand",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Thumb",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Back",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Foot",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Finger",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Toe",
+      "topic": "bộ phận cơ thể"
+    },
+    {
+      "word": "Public school",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Private school",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Primary school",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Nursery school",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "School",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "University",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Professor",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Lecturer",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Researcher",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Graduate",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Degree",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Thesis",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Debate",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Semester",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Student",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Tuition fee",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Exam",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Fail",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Pass",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Study",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Learn",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Course",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Subject",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Grade",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Mark",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Attendance",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Absence",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Projector",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Textbook",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Question",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Answer",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Mistake",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Right",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Wrong",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Register",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Assembly",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Holiday",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Teacher",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Pupil",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Playground",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Library",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Hall",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Dormitory",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Locker",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Classroom",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Chalk",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Lesson",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Homework",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Test",
+      "topic": "giáo dục"
+    },
+    {
+      "word": "Husband",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Uncle",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Aunt",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Son-in-law",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Daughter-in-law",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Grandfather",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Wife",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Father",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Mother",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Daughter",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Son",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Sister",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Brother",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Grandmother",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Cousin",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Parent",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Mother-in-law",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Father-in-law",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Adopt",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Children",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Family tree",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Anniversary",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Stepchild",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Half-brother",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Half-sister",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Godfather",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Hereditary",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Stepmother",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Stepfather",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Orphan",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Generation",
+      "topic": "gia đình"
+    },
+    {
+      "word": "Orange",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Lemon",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Mango",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Apple",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Tangerine",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Grape",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Strawberry",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Melon",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Passion fruit",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Grapefruit",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Watermelon",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Peach",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Pear",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Banana",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Plum",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Papaya",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Avocado",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Starfruit",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Pineapple",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Coconut",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Raspberry",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Nectarine",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Mulberry",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Raisin",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Jackfruit",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Persimmon",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Custard apple",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Quince",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Cherry",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Kiwi",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Pomegranate",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Guava",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Apricot",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Blueberry",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Durian",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Lychee",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Tamarind",
+      "topic": "trái cây"
+    },
+    {
+      "word": "Piglet",
+      "topic": "động vật"
+    },
+    {
+      "word": "Sow",
+      "topic": "động vật"
+    },
+    {
+      "word": "Pig",
+      "topic": "động vật"
+    },
+    {
+      "word": "Duck",
+      "topic": "động vật"
+    },
+    {
+      "word": "Animal",
+      "topic": "động vật"
+    },
+    {
+      "word": "Goat",
+      "topic": "động vật"
+    },
+    {
+      "word": "Horse",
+      "topic": "động vật"
+    },
+    {
+      "word": "Goose",
+      "topic": "động vật"
+    },
+    {
+      "word": "Donkey",
+      "topic": "động vật"
+    },
+    {
+      "word": "Sheep",
+      "topic": "động vật"
+    },
+    {
+      "word": "Ox",
+      "topic": "động vật"
+    },
+    {
+      "word": "Dog",
+      "topic": "động vật"
+    },
+    {
+      "word": "Cat",
+      "topic": "động vật"
+    },
+    {
+      "word": "Chicken",
+      "topic": "động vật"
+    },
+    {
+      "word": "Rooster",
+      "topic": "động vật"
+    },
+    {
+      "word": "Hen",
+      "topic": "động vật"
+    },
+    {
+      "word": "Cow",
+      "topic": "động vật"
+    },
+    {
+      "word": "Bull",
+      "topic": "động vật"
+    },
+    {
+      "word": "Calf",
+      "topic": "động vật"
+    },
+    {
+      "word": "Rabbit",
+      "topic": "động vật"
+    },
+    {
+      "word": "Owl",
+      "topic": "động vật"
+    },
+    {
+      "word": "Deer",
+      "topic": "động vật"
+    },
+    {
+      "word": "Mink",
+      "topic": "động vật"
+    },
+    {
+      "word": "Monkey",
+      "topic": "động vật"
+    },
+    {
+      "word": "Snake",
+      "topic": "động vật"
+    },
+    {
+      "word": "Lizard",
+      "topic": "động vật"
+    },
+    {
+      "word": "Giraffe",
+      "topic": "động vật"
+    },
+    {
+      "word": "Bear",
+      "topic": "động vật"
+    },
+    {
+      "word": "Rhino",
+      "topic": "động vật"
+    },
+    {
+      "word": "Elephant",
+      "topic": "động vật"
+    },
+    {
+      "word": "Panther",
+      "topic": "động vật"
+    },
+    {
+      "word": "Leopard",
+      "topic": "động vật"
+    },
+    {
+      "word": "Tiger",
+      "topic": "động vật"
+    },
+    {
+      "word": "Lion",
+      "topic": "động vật"
+    },
+    {
+      "word": "Fox",
+      "topic": "động vật"
+    },
+    {
+      "word": "Dinosaur",
+      "topic": "động vật"
+    },
+    {
+      "word": "Turtle",
+      "topic": "động vật"
+    },
+    {
+      "word": "Snail",
+      "topic": "động vật"
+    },
+    {
+      "word": "Crow",
+      "topic": "động vật"
+    },
+    {
+      "word": "Parrot",
+      "topic": "động vật"
+    },
+    {
+      "word": "Caterpillar",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Cocoon",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Butterfly",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Dragonfly",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Cricket",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Grasshopper",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Cockroach",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Beetle",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Termite",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Ant",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Mosquito",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Ladybug",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Spider",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Firefly",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Fly",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Bee",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Wasp",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Centipede",
+      "topic": "côn trùng"
+    },
+    {
+      "word": "Class",
+      "topic": "học tập"
+    },
+    {
+      "word": "Classroom",
+      "topic": "học tập"
+    },
+    {
+      "word": "Textbook",
+      "topic": "học tập"
+    },
+    {
+      "word": "Workbook",
+      "topic": "học tập"
+    },
+    {
+      "word": "Reference book",
+      "topic": "học tập"
+    },
+    {
+      "word": "Notebook",
+      "topic": "học tập"
+    },
+    {
+      "word": "Notepad",
+      "topic": "học tập"
+    },
+    {
+      "word": "Pencil",
+      "topic": "học tập"
+    },
+    {
+      "word": "Crayon",
+      "topic": "học tập"
+    },
+    {
+      "word": "Pencil sharpener",
+      "topic": "học tập"
+    },
+    {
+      "word": "Eraser",
+      "topic": "học tập"
+    },
+    {
+      "word": "Pen",
+      "topic": "học tập"
+    },
+    {
+      "word": "Ballpoint pen",
+      "topic": "học tập"
+    },
+    {
+      "word": "Paper",
+      "topic": "học tập"
+    },
+    {
+      "word": "Desk",
+      "topic": "học tập"
+    },
+    {
+      "word": "Map",
+      "topic": "học tập"
+    },
+    {
+      "word": "Glue",
+      "topic": "học tập"
+    },
+    {
+      "word": "Scissors",
+      "topic": "học tập"
+    },
+    {
+      "word": "Ruler",
+      "topic": "học tập"
+    },
+    {
+      "word": "Protractor",
+      "topic": "học tập"
+    },
+    {
+      "word": "Ink",
+      "topic": "học tập"
+    },
+    {
+      "word": "Chalk",
+      "topic": "học tập"
+    },
+    {
+      "word": "Folder",
+      "topic": "học tập"
+    },
+    {
+      "word": "Tree",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Pine",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Cedar",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Oak",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Ivy",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Moss",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Mushroom",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Wheat",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Corn",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Flower",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Grass",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Herb",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Bush",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Coconut tree",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Apple tree",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Shrubland",
+      "topic": "thực vật"
+    },
+    {
+      "word": "Denmark",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "England",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Sweden",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Austria",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Australia",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "France",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Germany",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Switzerland",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Greece",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Italy",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Spain",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Russia",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Canada",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Mexico",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "America",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Brazil",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Japan",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Korea",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "China",
+      "topic": "quốc gia"
+    },
+    {
+      "word": "Herring",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Skate",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Salmon",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Prawn",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Cuttlefish",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Lobster",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Squid",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Shrimp",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Oyster",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Crab",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Cockle",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Scallop",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Octopus",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Fish",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Eel",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Mussel",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Clam",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Jellyfish",
+      "topic": "hải sản"
+    },
+    {
+      "word": "Charcoal",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Battery",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Gasoline",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Turbine",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Sun",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Wind",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Waterfall",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Refinery",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Dam",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Power plant",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Transformer",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Heat",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Natural gas",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Diesel",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Solar power",
+      "topic": "năng lượng"
+    },
+    {
+      "word": "Dancer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Designer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Magician",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Sailor",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Commentator",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Dentist",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Postman",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Writer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Pilot",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Tailor",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Journalist",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Grocer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Clerk",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Assistant",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Model",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Consultant",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Self-employed",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Supervisor",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Mechanic",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Hairdresser",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Architect",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Engineer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Vet",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Shoemaker",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Translator",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Interpreter",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Police officer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Teacher",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Doctor",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Nurse",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Farmer",
+      "topic": "nghề nghiệp"
+    },
+    {
+      "word": "Keep-fit",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Regular",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Diabetes",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Goiter",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Body",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Thin",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Fat",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Overweight",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Eating disorder",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Nutrient",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Allergy",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Vitamin",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Overeat",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Nutritious",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Vegetarian",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Mineral",
+      "topic": "chế độ ăn uống"
+    },
+    {
+      "word": "Earthquake",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Aftershock",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Flood",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Famine",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Avalanche",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Blizzard",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Tornado",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Forest fire",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Hurricane",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Storm",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Evacuation",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Evacuate",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Catastrophic",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Nationwide",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Precaution",
+      "topic": "thảm họa thiên nhiên"
+    },
+    {
+      "word": "Avenue",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Curve",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Turn right",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Turn left",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Junction",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Turning",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Roundabout",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Pavement",
+      "topic": "chỉ đường"
+    },
+    {
+      "word": "Bar",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Chef",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Waitress",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Bill",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Service",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Tip",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Knife",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Bowl",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Teapot",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Glass",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Breakfast",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Dinner",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Lunch",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Booking office",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Menu",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Starter",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Main course",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Dessert",
+      "topic": "phòng khách sạn"
+    },
+    {
+      "word": "Advanced",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Equip",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Graphic",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Notify",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Parcel",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Press",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Receive",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Service",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Spacious",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Speedy",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Staff",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Subscribe",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Technology",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Thoughtful",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Transfer",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Transmit",
+      "topic": "bưu điện"
+    },
+    {
+      "word": "Retire",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Dismiss",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Finance",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Appointment",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Multinational",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Investor",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Inherit",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Accountant",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Lend",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Borrow",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Rent",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Co-ordinate",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Purchase",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Opportunity",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Challenge",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Intensive course",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Commerce",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Costly",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Responsible",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Communicate",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Abroad",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Inheritance",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Fortune",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Property",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Cash machine",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Insurance policy",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Credit card",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Debit card",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Rental contract",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Credit limit",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Survey",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Possession",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Poverty",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Charge",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Outsource",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Grant",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Warehouse",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Lease",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Campaign",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Insecurity",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Commit",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Short-term cost",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Expense",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Invoice",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Bribery",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Corrupt",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Budget",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Cost of borrowing",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Retail banking",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Treasury",
+      "topic": "ngân hàng"
+    },
+    {
+      "word": "Investment bank",
+      "topic": "ngân hàng"
+    }
+  ]
+}
